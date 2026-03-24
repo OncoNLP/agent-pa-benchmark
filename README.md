@@ -136,4 +136,4 @@ Optional but scored fields: `heptameric_peptide`, `substrate_uniprot`, `supporti
 
 ## Questions?
 
-Open an issue or contact the project maintainers.
+Contact Hui Lin for details.
