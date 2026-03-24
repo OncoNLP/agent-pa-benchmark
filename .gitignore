@@ -1,7 +1,6 @@
 # Data files (too large / licensed)
+# Raw PA2 XLSX (licensed, not committed)
 gold_standard/input/*.xlsx
-gold_standard/parsed/*.json
-gold_standard/parsed/*.csv
 # All database subdirectories (data is not committed)
 databases/*/
 !databases/__init__.py
