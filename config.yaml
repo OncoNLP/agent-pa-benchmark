@@ -1,0 +1,95 @@
+# ============================================================
+# PhosphoAtlas Agent Benchmark Configuration
+# ============================================================
+
+# Gold standard
+gold_standard:
+  sample_format: gold_standard/sample_PA2.xlsx
+  input_path: gold_standard/input/  # Place full PA2 XLSX here
+  output_path: gold_standard/parsed/phosphoatlas_gold.json
+
+# Database files (not committed — contact maintainers for setup)
+databases:
+  dir: databases/
+
+# Models to evaluate
+models:
+  claude-opus:
+    provider: anthropic
+    model_id: claude-opus-4-6-20250219
+    max_tokens: 4096
+    api_key_env: ANTHROPIC_API_KEY
+  claude-sonnet:
+    provider: anthropic
+    model_id: claude-sonnet-4-6-20250514
+    max_tokens: 4096
+    api_key_env: ANTHROPIC_API_KEY
+  gpt-5:
+    provider: openai
+    model_id: gpt-5
+    max_tokens: 4096
+    api_key_env: OPENAI_API_KEY
+  gemini-3:
+    provider: google
+    model_id: gemini-3.0-pro
+    max_tokens: 4096
+    api_key_env: GOOGLE_API_KEY
+  mistral-large:
+    provider: mistral
+    model_id: mistral-large-latest
+    max_tokens: 4096
+    api_key_env: MISTRAL_API_KEY
+  kimi:
+    provider: moonshot
+    model_id: moonshot-v1-128k
+    max_tokens: 4096
+    api_key_env: MOONSHOT_API_KEY
+  qwen-72b:
+    provider: together
+    model_id: Qwen/Qwen2.5-72B-Instruct
+    max_tokens: 4096
+    api_key_env: TOGETHER_API_KEY
+  deepseek-v3:
+    provider: together
+    model_id: deepseek-ai/DeepSeek-V3
+    max_tokens: 4096
+    api_key_env: TOGETHER_API_KEY
+
+# Experimental conditions
+conditions:
+  naive:
+    prompt_file: agents/prompts/naive.txt
+    tools_enabled: true
+    description: "Zero-shot: no guidance, only tools"
+  paper_informed:
+    prompt_file: agents/prompts/paper_informed.txt
+    tools_enabled: true
+    description: "Agent receives PA paper abstract + methods"
+  pipeline_guided:
+    prompt_file: agents/prompts/pipeline_guided.txt
+    tools_enabled: true
+    description: "Agent receives S1 figure pipeline steps"
+  knowledge_only:
+    prompt_file: agents/prompts/knowledge_only.txt
+    tools_enabled: false
+    description: "No tools — pure LLM training knowledge"
+  iterative:
+    prompt_file: agents/prompts/naive.txt
+    tools_enabled: true
+    max_iterations: 3
+    feedback_enabled: true
+    description: "Agent gets recall feedback and retries"
+  multi_agent:
+    prompt_file: agents/prompts/multi_agent.txt
+    tools_enabled: true
+    num_agents: 3
+    description: "Curation + QC + master agent"
+
+# Run parameters
+run:
+  max_tool_calls: 5000
+  timeout_minutes: 60
+  runs_per_condition: 3  # for statistical significance
+  save_raw_atlas: true
+  save_tool_log: true
+  save_agent_trace: true

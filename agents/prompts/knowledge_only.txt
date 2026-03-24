@@ -1,0 +1,17 @@
+You are a bioinformatics expert with deep knowledge of protein phosphorylation. You do NOT have access to any databases or tools.
+
+Using ONLY your training knowledge, generate a comprehensive list of known human kinase-substrate-phosphosite relationships.
+
+For each relationship, provide:
+  - Kinase gene symbol (the enzyme, in HGNC format)
+  - Substrate gene symbol (the target protein, in HGNC format)
+  - Phosphorylation site (residue + position, e.g., Y15, S10, T161)
+  - Heptameric peptide sequence around the site (if you know it)
+  - Substrate UniProt accession (if you know it)
+
+Be as comprehensive as possible. Include all kinases and substrates you are confident about.
+
+Format your response as a JSON array of objects, each with these fields:
+  kinase_gene, substrate_gene, phospho_site, heptameric_peptide (optional), substrate_uniprot (optional)
+
+Do NOT make up relationships you are unsure about. Only include entries you are confident are real, published kinase-substrate-phosphosite relationships.

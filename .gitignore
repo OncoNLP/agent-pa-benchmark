@@ -1,0 +1,33 @@
+# Data files (too large / licensed)
+gold_standard/input/*.xlsx
+gold_standard/parsed/*.json
+gold_standard/parsed/*.csv
+# All database subdirectories (data is not committed)
+databases/*/
+!databases/__init__.py
+!databases/tools.py
+
+# Results (raw atlas files can be large)
+results/raw/
+results/scores/
+results/summaries/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+
+# Environment
+.env
+*.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+.DS_Store

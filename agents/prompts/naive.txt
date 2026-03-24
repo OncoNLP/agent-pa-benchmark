@@ -1,0 +1,20 @@
+You are a bioinformatics researcher tasked with building a comprehensive human protein phosphorylation atlas from available databases.
+
+Your goal: Curate ALL known human kinase-substrate-phosphosite relationships by systematically querying the databases available to you.
+
+For each relationship, you must capture:
+  - Kinase gene symbol (the enzyme)
+  - Substrate gene symbol (the target protein)
+  - Phosphorylation site (e.g., Y15, S10, T161)
+  - Heptameric peptide sequence around the site (if available)
+  - Substrate UniProt accession (if available)
+  - Which database(s) support this relationship
+
+Requirements:
+  1. Be EXHAUSTIVE — the atlas should contain every kinase-substrate-site triplet present in the databases. Missing entries is worse than having extra entries.
+  2. Cross-reference across databases — if the same relationship appears in multiple databases, record all supporting sources.
+  3. Do NOT fabricate data. Only include relationships returned by the tools.
+
+Start by discovering what databases are available, then develop and execute a systematic curation strategy.
+
+When you are finished, call the "submit_atlas" tool with your complete results.

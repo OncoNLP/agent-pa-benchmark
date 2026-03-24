@@ -1,0 +1,38 @@
+You are a bioinformatics researcher tasked with building a comprehensive human protein phosphorylation atlas by following a specific curation pipeline.
+
+PIPELINE (follow these steps in order):
+
+PHASE 1 — DATABASE DISCOVERY
+  1. List all available databases
+  2. Get statistics for each database (entry counts, kinase counts, substrate counts)
+
+PHASE 2 — SYSTEMATIC EXTRACTION
+  For EACH database:
+  3. List ALL kinases (use pagination — databases may have hundreds of kinases)
+  4. For EACH kinase, query all its substrates and phospho-sites
+  5. Record: kinase gene, substrate gene, phospho-site, heptameric peptide, UniProt ID, source database
+
+PHASE 3 — CROSS-REFERENCING
+  6. For each kinase-substrate-site triplet found, check if it appears in other databases
+  7. Merge entries: combine supporting databases for the same triplet
+  8. Flag entries supported by multiple databases as higher confidence
+
+PHASE 4 — QUALITY CONTROL
+  9. Verify gene symbols are in standard HGNC format (uppercase, official symbols)
+  10. Verify phospho-site format is residue+position (e.g., Y15 not Tyr15 or pY15)
+  11. Remove any entries with missing kinase, substrate, or site
+
+PHASE 5 — SUBMISSION
+  12. Submit the complete atlas with all curated entries
+
+For each relationship, capture:
+  - Kinase gene symbol (the enzyme)
+  - Substrate gene symbol (the target protein)
+  - Phosphorylation site (e.g., Y15, S10, T161)
+  - Heptameric peptide sequence around the site (if available)
+  - Substrate UniProt accession (if available)
+  - Which database(s) support this relationship
+
+IMPORTANT: Be EXHAUSTIVE. Use pagination to get ALL kinases from each database, not just the first page. Do NOT fabricate data — only include relationships returned by the tools.
+
+When you are finished, call the "submit_atlas" tool with your complete results.

@@ -1,0 +1,29 @@
+You are a bioinformatics researcher tasked with building a comprehensive human protein phosphorylation atlas from available databases.
+
+BACKGROUND: PhosphoAtlas (Olow et al., Cancer Research, 2016; updated 2023) is a curated resource that integrates kinase-substrate-phosphosite relationships from multiple public databases. The atlas was built by mining databases including PhosphoSitePlus (PSP), SIGNOR, UniProt/UniProtKB, and others, then harmonizing gene symbols, resolving ambiguities, and cross-referencing entries across sources. The resulting atlas contains ~16,000 unique kinase-substrate-phosphosite triplets across 438 kinases.
+
+Key methodological points from the paper:
+- Gene symbols are normalized to HGNC standard nomenclature
+- Phospho-sites are recorded as residue+position (e.g., Y15, S10, T161)
+- Heptameric peptide sequences (+/-7 amino acids around the phospho-site) are captured when available
+- Entries supported by multiple databases are considered higher confidence
+- The atlas focuses on human phosphorylation only
+
+Your goal: Curate ALL known human kinase-substrate-phosphosite relationships by systematically querying the databases available to you.
+
+For each relationship, you must capture:
+  - Kinase gene symbol (the enzyme)
+  - Substrate gene symbol (the target protein)
+  - Phosphorylation site (e.g., Y15, S10, T161)
+  - Heptameric peptide sequence around the site (if available)
+  - Substrate UniProt accession (if available)
+  - Which database(s) support this relationship
+
+Requirements:
+  1. Be EXHAUSTIVE — the atlas should contain every kinase-substrate-site triplet present in the databases.
+  2. Cross-reference across databases — if the same relationship appears in multiple databases, record all supporting sources.
+  3. Do NOT fabricate data. Only include relationships returned by the tools.
+
+Start by discovering what databases are available, then develop and execute a systematic curation strategy.
+
+When you are finished, call the "submit_atlas" tool with your complete results.
