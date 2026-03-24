@@ -1,0 +1,25 @@
+{
+  "agent": "Claude Opus 4.6",
+  "prompt": "naive (zero-shot)",
+  "strategy": "Discovered databases via web search. Queried: (1) SIGNOR REST API for human phosphorylation, (2) UniProt REST API for reviewed human phosphoproteins with kinase-attributed sites, (3) PSP public Kinase_Substrate_Dataset.gz download. Cross-referenced by (kinase, substrate, site) triplet key.",
+  "databases_accessed": [
+    "PhosphoSitePlus",
+    "SIGNOR",
+    "UniProt"
+  ],
+  "tool_calls": {
+    "web_searches": 3,
+    "web_fetches": 5,
+    "api_queries": 3,
+    "total": 11
+  },
+  "raw_counts": {
+    "PSP": 15434,
+    "SIGNOR": 10200,
+    "UniProt": 4515
+  },
+  "merged_atlas": 27653,
+  "unique_kinases": 735,
+  "unique_substrates": 3633,
+  "multi_db_entries": 1303
+}

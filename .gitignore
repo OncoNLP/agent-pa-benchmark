@@ -21,6 +21,10 @@ venv/
 .vscode/
 .idea/
 
+# Raw database query outputs (large JSON/CSV from API calls)
+contributions/*/raw_api_data/
+/tmp/
+
 # OS
 .DS_Store
 Thumbs.db

@@ -1,0 +1,141 @@
+{
+  "atlas_level": {
+    "total_agent_entries": 27653,
+    "total_gold_entries": 15640,
+    "true_positives": 14224,
+    "false_positives": 7980,
+    "false_negatives": 1416,
+    "precision": 0.6406,
+    "recall": 0.9095,
+    "f1": 0.7517
+  },
+  "column_level": {
+    "matched_triplets": 14224,
+    "site_exact": 14224,
+    "site_total": 14224,
+    "site_accuracy": 1.0,
+    "peptide_exact": 10199,
+    "peptide_case_diff": 3475,
+    "peptide_missing": 0,
+    "peptide_mismatch": 197,
+    "peptide_total": 13871,
+    "peptide_exact_accuracy": 0.7353,
+    "peptide_close_accuracy": 0.9858,
+    "uniprot_exact": 14127,
+    "uniprot_total": 14224,
+    "uniprot_accuracy": 0.9932
+  },
+  "kinase_discovery": {
+    "kinases_in_gold": 436,
+    "kinases_discovered": 415,
+    "kinases_missed": 21,
+    "kinases_novel": 313,
+    "discovery_rate": 0.9518,
+    "missed_kinases": [
+      "ADRBK2",
+      "BCAT2",
+      "CAD",
+      "ERBB3",
+      "FCGR3A",
+      "GTF2H1",
+      "MAP3K9",
+      "MYT1",
+      "PAK7",
+      "PDIK1L",
+      "PEG3",
+      "PKD1",
+      "PRKAR1A",
+      "PRKAR2A",
+      "PRKAR2B",
+      "PRKRIR",
+      "PRKY",
+      "RAD17",
+      "RPS6KC1",
+      "SHB",
+      "TTN"
+    ],
+    "novel_kinases": [
+      "AATK",
+      "ABL; IN VITRO",
+      "ACP1",
+      "ACVR2A",
+      "ACVR2B",
+      "AK2",
+      "ALPK3",
+      "ALPL",
+      "APP-KINASE I",
+      "AREG",
+      "ATM OR ATR",
+      "ATR; IN VITRO",
+      "AUTOCATALYSIS",
+      "AUTOCATALYSIS; ALTERNATE",
+      "BCKDK",
+      "BMPR1A",
+      "BMPR2",
+      "BORA",
+      "BUB1B",
+      "CAK",
+      "CAMK",
+      "CAMK1D",
+      "CAMK2",
+      "CAMK2; IN VITRO",
+      "CCNC",
+      "CCRK",
+      "CDC14A",
+      "CDC14B",
+      "CDC25A",
+      "CDC25B",
+      "CDC25C",
+      "CDC42BP",
+      "CDK11",
+      "CDK11; IN VITRO",
+      "CDK1; IN VITRO",
+      "CDK5; IN VITRO",
+      "CDK5RAP2",
+      "CDKL1",
+      "CDKN2A",
+      "CDKN3",
+      "CHKA",
+      "CK",
+      "CK1",
+      "CK2; IN VITRO",
+      "CKB",
+      "CSN1S1",
+      "CSNK1E; IN VITRO",
+      "CSNK2A3",
+      "CTDNEP1",
+      "CTDP1"
+    ]
+  },
+  "cross_referencing": {
+    "multi_db_count": 1303,
+    "multi_db_pct": 4.7,
+    "db_coverage": {
+      "SIGNOR": 9292,
+      "PhosphoSitePlus": 15149,
+      "UniProt": 4515
+    }
+  },
+  "per_tier": {
+    "A": {
+      "kinases": 34,
+      "gold_entries": 9517,
+      "recall": 0.9172
+    },
+    "B": {
+      "kinases": 101,
+      "gold_entries": 4332,
+      "recall": 0.8998
+    },
+    "C": {
+      "kinases": 146,
+      "gold_entries": 1475,
+      "recall": 0.9058
+    },
+    "D": {
+      "kinases": 155,
+      "gold_entries": 316,
+      "recall": 0.8259
+    }
+  }
+}
