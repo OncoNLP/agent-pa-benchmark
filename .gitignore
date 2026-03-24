@@ -1,15 +1,10 @@
-# Data files (too large / licensed)
 # Raw PA2 XLSX (licensed, not committed)
 gold_standard/input/*.xlsx
-# All database subdirectories (data is not committed)
+
+# Database files (not committed — setup separately)
 databases/*/
 !databases/__init__.py
 !databases/tools.py
-
-# Results (raw atlas files can be large)
-results/raw/
-results/scores/
-results/summaries/
 
 # Python
 __pycache__/
@@ -29,4 +24,3 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
-.DS_Store

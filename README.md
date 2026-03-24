@@ -1,8 +1,16 @@
 # PhosphoAtlas Agent Benchmark
 
-Benchmarking AI agents on their ability to curate a comprehensive human protein phosphorylation atlas from public databases, evaluated against PhosphoAtlas 2.0 as the gold standard.
+Benchmarking AI agents on their ability to curate a comprehensive human protein phosphorylation atlas, evaluated against PhosphoAtlas 2.0 as the gold standard.
 
-## Quick Start
+## For Students: Getting Started
+
+### What you need
+
+1. **The prompt** — start with `agents/prompts/naive.txt`. This is the system prompt your agent receives.
+2. **The gold standard** — `gold_standard/parsed/phosphoatlas_gold.json` (already in this repo). This is what your agent's output is scored against.
+3. **The scorer** — `evaluation/scorer.py` scores your agent's output.
+
+### Step-by-step
 
 ```bash
 # 1. Clone and install
@@ -10,139 +18,122 @@ git clone https://github.com/OncoNLP/agent-pa-benchmark.git
 cd agent-pa-benchmark
 pip install -r requirements.txt
 
-# 2. Add database files to databases/ (contact maintainers for setup)
+# 2. Build and run your agent (your own code)
+#    Your agent should produce a JSON file — an array of objects like:
+#    [
+#      {
+#        "kinase_gene": "CDK1",
+#        "substrate_gene": "RB1",
+#        "phospho_site": "S807",
+#        "heptameric_peptide": "...",       (optional)
+#        "substrate_uniprot": "P06400",     (optional)
+#        "supporting_databases": ["PSP"]    (optional)
+#      },
+#      ...
+#    ]
 
-# 3. Parse gold standard
-python run_experiment.py --step parse --pa2-input gold_standard/input/PA2.xlsx
+# 3. Score your atlas against the gold standard
+python -m evaluation.scorer \
+    --atlas path/to/your_atlas.json \
+    --gold gold_standard/parsed/phosphoatlas_gold.json \
+    --output results/scores/your_model_name
 
-# 4. Implement your agent runner (see agents/base_agent.py)
-
-# 5. Score your atlas
-python run_experiment.py --step score --atlas results/raw/your_atlas.json
-
-# 6. Compare across models
-python run_experiment.py --step compare
+# 4. Check your scores
+cat results/scores/your_model_name/summary.json
 ```
+
+### What to upload
+
+Create a folder under `contributions/` with your name/model:
+
+```
+contributions/
+└── your_name_model/
+    ├── agent_runner.py        # Your agent implementation
+    ├── atlas.json             # Raw atlas output from your agent
+    └── scores/                # Output from the scorer
+        ├── summary.json
+        ├── per_kinase.json
+        └── peptide_mismatches.json
+```
+
+Commit and push your folder. Do NOT modify files outside your own folder.
 
 ## Repository Structure
 
 ```
 agent-pa-benchmark/
-├── run_experiment.py          # Single entry point
-├── config.yaml                # Model configs, conditions, budgets
+├── run_experiment.py              # Entry point (parse, score, compare)
 │
-├── gold_standard/             # PA2.0 gold standard
-│   ├── parse_pa2.py           # XLSX → JSON parser
-│   ├── sample_PA2.xlsx        # Format reference
-│   └── input/                 # Place full PA2 XLSX here (gitignored)
+├── gold_standard/                 # Gold standard data
+│   ├── parsed/
+│   │   ├── phosphoatlas_gold.json # Structured gold standard (use this for scoring)
+│   │   └── phosphoatlas_gold.csv  # Flat CSV (for inspection)
+│   ├── parse_pa2.py               # Parser (if you need to re-parse from XLSX)
+│   └── sample_PA2.xlsx            # Format reference
 │
-├── databases/                 # Local DB files + query interface
-│   ├── tools.py               # DatabaseTools — universal query API
-│   └── */                     # Database subdirectories (gitignored)
+├── agents/                        # Agent framework
+│   ├── base_agent.py              # Abstract base class (tool loop, budget, logging)
+│   └── prompts/
+│       ├── naive.txt              # START HERE — zero-shot, no guidance
+│       ├── paper_informed.txt     # Includes PA paper context
+│       └── pipeline_guided.txt    # Includes S1 pipeline steps
 │
-├── agents/                    # Agent implementations
-│   ├── base_agent.py          # Abstract base class (tool loop, logging, budget)
-│   └── prompts/               # Experiment prompts
-│       ├── naive.txt          # Zero-shot, no guidance
-│       ├── paper_informed.txt # PA paper context provided
-│       ├── pipeline_guided.txt# S1 pipeline steps provided
-│       ├── knowledge_only.txt # No tools, pure LLM knowledge
-│       └── multi_agent.txt    # Curation + QC + master
+├── evaluation/                    # Scoring pipeline
+│   ├── scorer.py                  # Main scorer (run this)
+│   ├── normalizer.py              # Gene symbol / phospho-site normalization
+│   └── analyzer.py                # Cross-model comparison
 │
-├── evaluation/                # Scoring pipeline
-│   ├── scorer.py              # Triplet + column-level scoring
-│   ├── normalizer.py          # Gene symbol / site normalization
-│   └── analyzer.py            # Cross-model comparison
+├── contributions/                 # YOUR WORK GOES HERE
+│   └── example/                   # Example structure
 │
-├── experiments/               # Experiment configs (YAML)
-├── results/                   # Outputs (gitignored)
-│   ├── raw/                   # Atlas JSONs
-│   ├── scores/                # Score files
-│   └── summaries/             # Comparison tables
-│
-├── paper/                     # Manuscript assets
+├── paper/                         # Manuscript assets
 │   ├── figures/
 │   ├── tables/
 │   └── supplementary/
 │
-└── scripts/                   # Utilities
-    └── setup_server.sh        # Server setup
-```
-
-## Experimental Conditions
-
-| Condition | Tools | Guidance | Tests |
-|-----------|-------|----------|-------|
-| `naive` | Yes | None | Zero-shot tool use strategy |
-| `paper_informed` | Yes | Paper abstract + methods | Effect of domain context |
-| `pipeline_guided` | Yes | S1 pipeline steps | Effect of explicit instructions |
-| `knowledge_only` | No | None | Inherent biological knowledge |
-| `iterative` | Yes | Feedback after each round | Self-improvement capability |
-| `multi_agent` | Yes | Role assignments | Multi-agent coordination |
-
-## Implementing an Agent Runner
-
-Subclass `BaseAgent` and implement 4 methods:
-
-```python
-from agents.base_agent import BaseAgent
-
-class MyAgent(BaseAgent):
-    def _call_model(self, messages, tools):
-        # Call your LLM API
-        ...
-
-    def _parse_tool_calls(self, response):
-        # Extract [(tool_name, args), ...] from response
-        ...
-
-    def _parse_text(self, response):
-        # Extract text content from response
-        ...
-
-    def _format_tool_result(self, tool_name, result):
-        # Format tool result as a message for the model
-        ...
-```
-
-Then run:
-
-```python
-agent = MyAgent(model_name="my-model", databases_dir="databases")
-prompt = open("agents/prompts/naive.txt").read()
-result = agent.run(prompt, condition="naive")
-
-# Save atlas
-import json
-with open("results/raw/my-model_naive_run0.json", "w") as f:
-    json.dump(result["atlas"], f)
+└── results/                       # Aggregated results
+    └── summaries/
 ```
 
 ## Scoring Metrics
 
-- **Triplet-level**: Precision, Recall, F1 on (kinase, substrate, site) matching
-- **Column-level**: Accuracy of phospho-site, heptameric peptide, UniProt ID
-- **Kinase discovery**: Fraction of gold-standard kinases found
-- **Cross-referencing**: Fraction of entries verified across multiple DBs
-- **Per-tier**: Recall by kinase size (A: 100+, B: 20-99, C: 5-19, D: <5 substrates)
+Your agent is evaluated on:
 
-## Database Tools API
+| Metric | What it measures |
+|--------|-----------------|
+| **Precision** | Fraction of agent entries that are in the gold standard |
+| **Recall** | Fraction of gold standard entries the agent found |
+| **F1** | Harmonic mean of precision and recall |
+| **Kinase discovery** | How many of the 438 gold-standard kinases were found |
+| **Peptide accuracy** | For matched entries, did the heptameric peptide match? |
+| **UniProt accuracy** | For matched entries, did the substrate UniProt ID match? |
+| **Per-tier recall** | Recall broken down by kinase size (A/B/C/D tiers) |
 
-The agent interacts with databases via `DatabaseTools`:
+## Experimental Conditions
 
-| Tool | Description |
-|------|-------------|
-| `list_databases()` | Available databases |
-| `get_stats(db)` | Entry/kinase/substrate counts |
-| `list_kinases(db, offset, limit)` | Paginated kinase list |
-| `list_substrates(db, offset, limit)` | Paginated substrate list |
-| `search(db, keyword, limit)` | Free-text search |
-| `query_by_kinase(db, gene)` | All substrates for a kinase |
-| `query_by_substrate(db, gene)` | All kinases for a substrate |
-| `query_by_site(db, gene, site)` | Specific gene+site records |
-| `query_all_dbs(gene)` | Cross-database query |
-| `submit_atlas(entries)` | Submit final atlas |
+Start with `naive`. We may ask you to run additional conditions later.
 
-## Contributing
+| Condition | Prompt file | Description |
+|-----------|-------------|-------------|
+| `naive` | `agents/prompts/naive.txt` | Zero-shot: "build a phosphorylation atlas" + tools, no guidance |
+| `paper_informed` | `agents/prompts/paper_informed.txt` | Agent receives PhosphoAtlas paper context |
+| `pipeline_guided` | `agents/prompts/pipeline_guided.txt` | Agent receives explicit S1 pipeline steps |
 
-Each team member implements their assigned model's agent runner in `agents/` and commits results to `results/`.
+## Atlas JSON Format
+
+Your agent must produce a JSON array. Each entry must have at minimum:
+
+```json
+{
+  "kinase_gene": "CDK1",
+  "substrate_gene": "RB1",
+  "phospho_site": "S807"
+}
+```
+
+Optional but scored fields: `heptameric_peptide`, `substrate_uniprot`, `supporting_databases`.
+
+## Questions?
+
+Open an issue or contact the project maintainers.
