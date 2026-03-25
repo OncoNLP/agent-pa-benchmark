@@ -23,3 +23,6 @@ Also, yesterday when I was trying the model before I knew that we needed to log 
 This makes me think it may be hallucinating.
 
 Todo: check for hallucinations, make it grab more kinases, give URL endpoints.
+1. Mistral by Borna: log the original url failure, and upload atlas (even failed) if any
+
+2. Qwen3-235B by Andrew: UniProt API worked, but other database API access failed. Log the failures in details and upload the atlas (even failed) if any.
