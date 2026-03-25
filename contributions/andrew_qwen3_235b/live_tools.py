@@ -1,4 +1,10 @@
 """
+DO NOT USE — TEMPORARY WORKAROUND ONLY.
+This module was built before we understood the benchmark design. The database
+files are intentionally absent; agents are expected to identify the correct
+external APIs themselves. Providing a live UniProt backend bypasses that test.
+Kept for reference and documentation purposes only.
+
 Live UniProt database tool layer for the PhosphoAtlas benchmark.
 
 This is a drop-in replacement for databases.tools.DatabaseTools that queries

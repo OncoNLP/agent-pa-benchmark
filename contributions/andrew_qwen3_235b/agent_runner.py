@@ -41,7 +41,7 @@ Implementation notes
   during _format_tool_result to keep request/response pairs correctly matched
 """
 
-from contributions.andrew_qwen3_235b.live_tools import LiveDatabaseTools
+# from contributions.andrew_qwen3_235b.live_tools import LiveDatabaseTools  # workaround — not used in official runs
 from agents.base_agent import BaseAgent
 from openai import OpenAI
 import json
@@ -78,9 +78,8 @@ class QwenAgent(BaseAgent):
             timeout_minutes=timeout_minutes,
         )
 
-        # Replace the local DatabaseTools with our live UniProt API layer.
-        # Same interface, different backend. The model sees identical tool names.
-        self.tools = LiveDatabaseTools()
+        # LiveDatabaseTools was a temporary workaround — not used for official runs.
+        # self.tools = LiveDatabaseTools()
 
         api_key = os.environ.get("TOGETHER_API_KEY")
         if not api_key:
