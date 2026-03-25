@@ -1,0 +1,22 @@
+{
+  "agent": "Claude Opus 4.6",
+  "prompt": "pipeline_guided",
+  "strategy": "You are a bioinformatics researcher tasked with building a comprehensive human protein phosphorylation atlas by following the exact curation pipeline described in Olow et al. (Cancer Research, 2016).  BACKGROUND: PhosphoAtlas was built using a multi-phase pipeline that integrates data from 38+ publi...",
+  "databases_accessed": [
+    "PhosphoSitePlus",
+    "SIGNOR",
+    "UniProt"
+  ],
+  "tool_calls": {
+    "total": 8399
+  },
+  "raw_counts": {
+    "PSP": 15024,
+    "SIGNOR": 12086,
+    "UniProt": 4461
+  },
+  "merged_atlas": 23745,
+  "unique_kinases": 853,
+  "unique_substrates": 3549,
+  "multi_db_entries": 6910
+}

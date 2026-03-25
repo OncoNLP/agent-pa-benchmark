@@ -24,6 +24,11 @@ GENE_ALIASES: dict[str, str] = {
     "mTOR": "MTOR", "FRAP": "MTOR", "FRAP1": "MTOR",
     "Chk1": "CHEK1", "Chk2": "CHEK2",
     "AMPK": "PRKAA1", "BARK": "ADRBK1", "BARK1": "ADRBK1",
+    # PA2 gold standard aliases — kinases stored under legacy names
+    "ADRBK2": "GRK3", "BARK2": "GRK3",
+    "MYT1": "PKMYT1",
+    "PAK7": "PAK5",
+    "PKD1": "PRKD1",
 }
 
 

@@ -1,0 +1,3229 @@
+[
+  {
+    "kinase": "BCAT2",
+    "kinase_normalized": "BCAT2",
+    "gold_entry_count": 1,
+    "kinase_uniprot": "O15382",
+    "alias_evidence": {},
+    "entries": [
+      {
+        "gold_kinase": "BCAT2",
+        "gold_kinase_normalized": "BCAT2",
+        "substrate_gene": "NFKBIA",
+        "substrate_uniprot": "P25963",
+        "phospho_site": "S32",
+        "heptameric_peptide": "LLDDRHDsGLDsMkD",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "AURKA",
+          "AURKB",
+          "AURKC",
+          "CHUK",
+          "CSNK2A1",
+          "EIF2AK2",
+          "IKBKB",
+          "IKBKE",
+          "IKBKG",
+          "IKK-COMPLEX",
+          "IKKA",
+          "IKKE",
+          "MAP3K14",
+          "MAPK15",
+          "RPS6KA1",
+          "RPS6KA2",
+          "RPS6KA3",
+          "SGK1"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "CSNK2A1",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "LLDDRHDsGLDsMkD",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "AURKA",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "LLDDRHDsGLDsMkD",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "AURKC",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "LLDDRHDsGLDsMkD",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "SGK1",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "LLDDRHDsGLDsMkD",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "IKBKE",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "LLDDRHDsGLDsMkD",
+            "in_vivo": "X",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "CHUK",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "LLDDRHDsGLDsMkD",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "RPS6KA1",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "LLDDRHDsGLDsMkD",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "MAP3K14",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "LLDDRHDsGLDsMkD",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "IKBKB",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "LLDDRHDsGLDsMkD",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "AURKB",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "LLDDRHDsGLDsMkD",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "MAPK15",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "LLDDRHDsGLDsMkD",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "RPS6KA3",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "LLDDRHDsGLDsMkD",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "RPS6KA3",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LLDDRHDsGLDSMKD",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "EIF2AK2",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LLDDRHDsGLDSMKD",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "AURKA",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LLDDRHDsGLDSMKD",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "IKBKB",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LLDDRHDsGLDSMKD",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "IKK-complex",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LLDDRHDsGLDSMKD",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "RPS6KA2",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LLDDRHDsGLDSMKD",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "AURKC",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LLDDRHDsGLDSMKD",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "CHUK",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LLDDRHDsGLDSMKD",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "CSNK2A1",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LLDDRHDsGLDSMKD",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "IKBKG",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LLDDRHDsGLDSMKD",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "RPS6KA1",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LLDDRHDsGLDSMKD",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "IKKA",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "IKKE",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "S32",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "AURKA",
+          "AURKB",
+          "AURKC",
+          "CHUK",
+          "CSNK2A1",
+          "EIF2AK2",
+          "IKBKB",
+          "IKBKE",
+          "IKBKG",
+          "IKK-complex",
+          "IKKA",
+          "IKKE",
+          "MAP3K14",
+          "MAPK15",
+          "RPS6KA1",
+          "RPS6KA2",
+          "RPS6KA3",
+          "SGK1"
+        ]
+      }
+    ],
+    "entries_found_in_agent": 1,
+    "entries_found_in_dbs": 1,
+    "entries_truly_absent": 0,
+    "category": "attribution_mismatch"
+  },
+  {
+    "kinase": "ERBB3",
+    "kinase_normalized": "ERBB3",
+    "gold_entry_count": 19,
+    "kinase_uniprot": "P21860",
+    "alias_evidence": {
+      "ERBB3": [
+        {
+          "database": "psp",
+          "role": "search_hit",
+          "match_count": 1,
+          "sample": [
+            "ROR1\u2192ERBB3 Y1307"
+          ]
+        },
+        {
+          "database": "signor",
+          "role": "search_hit",
+          "match_count": 3,
+          "sample": [
+            "EGFR\u2192ERBB3 Y1289",
+            "CDK5\u2192ERBB3 T873",
+            "CDK5\u2192ERBB3 S1123"
+          ]
+        }
+      ]
+    },
+    "entries": [
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "ABI1",
+        "substrate_uniprot": "Q8IZP0",
+        "phospho_site": "Y213",
+        "heptameric_peptide": "PPtVPNDyMtsPARL",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "ABL1",
+          "PTEN"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "ABL1",
+            "substrate_gene": "ABI1",
+            "phospho_site": "Y213",
+            "substrate_uniprot": "Q8IZP0",
+            "heptameric_peptide": "PPtVPNDyMtsPARL",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PTEN",
+            "substrate_gene": "ABI1",
+            "phospho_site": "Y213",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "PPTVPNDyMTSPARL",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "ABL1",
+            "substrate_gene": "ABI1",
+            "phospho_site": "Y213",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "PPTVPNDyMTSPARL",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "ABL1",
+            "substrate_gene": "ABI1",
+            "phospho_site": "Y213",
+            "substrate_uniprot": "Q8IZP0",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "ABL1",
+          "PTEN"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "ACTA1",
+        "substrate_uniprot": "P68133",
+        "phospho_site": "Y55",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": false,
+        "agent_kinases": [],
+        "database_evidence": [],
+        "database_kinases": []
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "BCAR1",
+        "substrate_uniprot": "P56945",
+        "phospho_site": "Y664",
+        "heptameric_peptide": "EGGWMEDyDyVHLQG",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "PTK2",
+          "PTK6",
+          "SRC"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "PTK6",
+            "substrate_gene": "BCAR1",
+            "phospho_site": "Y664",
+            "substrate_uniprot": "P56945",
+            "heptameric_peptide": "EGGWMEDyDyVHLQG",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "SRC",
+            "substrate_gene": "BCAR1",
+            "phospho_site": "Y664",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "EGGWMEDyDYVHLQG",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PTK6",
+            "substrate_gene": "BCAR1",
+            "phospho_site": "Y664",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "EGGWMEDyDYVHLQG",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PTK2",
+            "substrate_gene": "BCAR1",
+            "phospho_site": "Y664",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "EGGWMEDyDYVHLQG",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "PTK2",
+          "PTK6",
+          "SRC"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "BCR",
+        "substrate_uniprot": "P11274",
+        "phospho_site": "Y246",
+        "heptameric_peptide": "sCGVDGDyEDAELNP",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "FES"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "FES",
+            "substrate_gene": "BCR",
+            "phospho_site": "Y246",
+            "substrate_uniprot": "P11274",
+            "heptameric_peptide": "sCGVDGDyEDAELNP",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "FES",
+            "substrate_gene": "BCR",
+            "phospho_site": "Y246",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "SCGVDGDyEDAELNP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "FES",
+            "substrate_gene": "BCR",
+            "phospho_site": "Y246",
+            "substrate_uniprot": "P11274",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "FES"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "CD5",
+        "substrate_uniprot": "P06127",
+        "phospho_site": "Y453",
+        "heptameric_peptide": "AsHVDNEysQPPRNs",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "FYN",
+          "LCK"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "LCK",
+            "substrate_gene": "CD5",
+            "phospho_site": "Y453",
+            "substrate_uniprot": "P06127",
+            "heptameric_peptide": "AsHVDNEysQPPRNs",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "FYN",
+            "substrate_gene": "CD5",
+            "phospho_site": "Y453",
+            "substrate_uniprot": "P06127",
+            "heptameric_peptide": "AsHVDNEysQPPRNs",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "FYN",
+            "substrate_gene": "CD5",
+            "phospho_site": "Y453",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "ASHVDNEySQPPRNS",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "LCK",
+            "substrate_gene": "CD5",
+            "phospho_site": "Y453",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "ASHVDNEySQPPRNS",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "FYN",
+          "LCK"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "CDK6",
+        "substrate_uniprot": "Q00534",
+        "phospho_site": "Y13",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": false,
+        "agent_kinases": [],
+        "database_evidence": [],
+        "database_kinases": []
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "CRKL",
+        "substrate_uniprot": "P46109",
+        "phospho_site": "Y207",
+        "heptameric_peptide": "IPEPAHAyAQPQttt",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "ABL1",
+          "BCR-ABL",
+          "BCR/ABL"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "BCR/ABL",
+            "substrate_gene": "CRKL",
+            "phospho_site": "Y207",
+            "substrate_uniprot": "P46109",
+            "heptameric_peptide": "IPEPAHAyAQPQttt",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "ABL1",
+            "substrate_gene": "CRKL",
+            "phospho_site": "Y207",
+            "substrate_uniprot": "P46109",
+            "heptameric_peptide": "IPEPAHAyAQPQttt",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "BCR-ABL",
+            "substrate_gene": "CRKL",
+            "phospho_site": "Y207",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "IPEPAHAyAQPQTTT",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "ABL1",
+          "BCR-ABL",
+          "BCR/ABL"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "EHD1",
+        "substrate_uniprot": "Q9H4M9",
+        "phospho_site": "Y453",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": false,
+        "agent_kinases": [],
+        "database_evidence": [],
+        "database_kinases": []
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "FGFR1",
+        "substrate_uniprot": "P11362",
+        "phospho_site": "Y730",
+        "heptameric_peptide": "SNCTNELyMMMRDCW",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "AUTOCATALYSIS",
+          "FGFR1"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "FGFR1",
+            "substrate_gene": "FGFR1",
+            "phospho_site": "Y730",
+            "substrate_uniprot": "P11362",
+            "heptameric_peptide": "SNCTNELyMMMRDCW",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "FGFR1",
+            "substrate_gene": "FGFR1",
+            "phospho_site": "Y730",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "SNCTNELyMMMRDCW",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "FGFR1",
+            "substrate_gene": "FGFR1",
+            "phospho_site": "Y730",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "SNCTNELyMMMRDCW",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "autocatalysis",
+            "substrate_gene": "FGFR1",
+            "phospho_site": "Y730",
+            "substrate_uniprot": "P11362",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "FGFR1",
+          "autocatalysis"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "HNRNPK",
+        "substrate_uniprot": "P61978",
+        "phospho_site": "Y230",
+        "heptameric_peptide": "QPyDPNFyDETyDyG",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "SRC"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "SRC",
+            "substrate_gene": "HNRNPK",
+            "phospho_site": "Y230",
+            "substrate_uniprot": "P61978",
+            "heptameric_peptide": "QPyDPNFyDETyDyG",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "SRC",
+            "substrate_gene": "HNRNPK",
+            "phospho_site": "Y230",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "QPYDPNFyDETYDYG",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "SRC"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "IFNAR2",
+        "substrate_uniprot": "P48551",
+        "phospho_site": "Y411",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": false,
+        "agent_kinases": [],
+        "database_evidence": [],
+        "database_kinases": []
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "IRS4",
+        "substrate_uniprot": "O14654",
+        "phospho_site": "Y779",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "FER"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "FER",
+            "substrate_gene": "IRS4",
+            "phospho_site": "Y779",
+            "substrate_uniprot": "O14654",
+            "heptameric_peptide": "DNDsEsDyMFMAPGA",
+            "in_vivo": "X",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "FER"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "KDR",
+        "substrate_uniprot": "P35968",
+        "phospho_site": "Y996",
+        "heptameric_peptide": "EEAPEDLyKDFLTLE",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "AUTOCATALYSIS",
+          "KDR",
+          "PTPN2",
+          "PTPN6"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "KDR",
+            "substrate_gene": "KDR",
+            "phospho_site": "Y996",
+            "substrate_uniprot": "P35968",
+            "heptameric_peptide": "EEAPEDLyKDFLTLE",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "KDR",
+            "substrate_gene": "KDR",
+            "phospho_site": "Y996",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "EEAPEDLyKDFLTLE",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PTPN2",
+            "substrate_gene": "KDR",
+            "phospho_site": "Y996",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "EEAPEDLyKDFLTLE",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PTPN6",
+            "substrate_gene": "KDR",
+            "phospho_site": "Y996",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "EEAPEDLyKDFLTLE",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "autocatalysis",
+            "substrate_gene": "KDR",
+            "phospho_site": "Y996",
+            "substrate_uniprot": "P35968",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "KDR",
+          "PTPN2",
+          "PTPN6",
+          "autocatalysis"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "NFKBIA",
+        "substrate_uniprot": "P25963",
+        "phospho_site": "Y305",
+        "heptameric_peptide": "FtEDELPyDDCVFGG",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "ABL1",
+          "BTK"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "ABL1",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "Y305",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "FtEDELPyDDCVFGG",
+            "in_vivo": "X",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "BTK",
+            "substrate_gene": "NFKBIA",
+            "phospho_site": "Y305",
+            "substrate_uniprot": "P25963",
+            "heptameric_peptide": "FtEDELPyDDCVFGG",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "ABL1",
+          "BTK"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "NTRK1",
+        "substrate_uniprot": "P04629",
+        "phospho_site": "Y791",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "AUTOCATALYSIS",
+          "NTRK1"
+        ],
+        "database_evidence": [
+          {
+            "database": "signor",
+            "kinase_gene": "NTRK1",
+            "substrate_gene": "NTRK1",
+            "phospho_site": "Y791",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LAQAPPVyLDVLG",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "autocatalysis",
+            "substrate_gene": "NTRK1",
+            "phospho_site": "Y791",
+            "substrate_uniprot": "P04629",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "NTRK1",
+          "autocatalysis"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "PLCG1",
+        "substrate_uniprot": "P19174",
+        "phospho_site": "Y771",
+        "heptameric_peptide": "IGtAEPdyGALyEGR",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "ABL1",
+          "EGFR",
+          "HCK",
+          "LYN",
+          "NTRK1",
+          "SYK"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "SYK",
+            "substrate_gene": "PLCG1",
+            "phospho_site": "Y771",
+            "substrate_uniprot": "P19174",
+            "heptameric_peptide": "IGtAEPdyGALyEGR",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "ABL1",
+            "substrate_gene": "PLCG1",
+            "phospho_site": "Y771",
+            "substrate_uniprot": "P19174",
+            "heptameric_peptide": "IGtAEPdyGALyEGR",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "NTRK1",
+            "substrate_gene": "PLCG1",
+            "phospho_site": "Y771",
+            "substrate_uniprot": "P19174",
+            "heptameric_peptide": "IGtAEPdyGALyEGR",
+            "in_vivo": "X",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "EGFR",
+            "substrate_gene": "PLCG1",
+            "phospho_site": "Y771",
+            "substrate_uniprot": "P19174",
+            "heptameric_peptide": "IGtAEPdyGALyEGR",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "SYK",
+            "substrate_gene": "PLCG1",
+            "phospho_site": "Y771",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "IGTAEPDyGALYEGR",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "EGFR",
+            "substrate_gene": "PLCG1",
+            "phospho_site": "Y771",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "IGTAEPDyGALYEGR",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "LYN",
+            "substrate_gene": "PLCG1",
+            "phospho_site": "Y771",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "IGTAEPDyGALYEGR",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "ABL1",
+            "substrate_gene": "PLCG1",
+            "phospho_site": "Y771",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "IGTAEPDyGALYEGR",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "HCK",
+            "substrate_gene": "PLCG1",
+            "phospho_site": "Y771",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "IGTAEPDyGALYEGR",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "SYK",
+            "substrate_gene": "PLCG1",
+            "phospho_site": "Y771",
+            "substrate_uniprot": "P19174",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "ABL1",
+          "EGFR",
+          "HCK",
+          "LYN",
+          "NTRK1",
+          "SYK"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "PLCG2",
+        "substrate_uniprot": "P16885",
+        "phospho_site": "Y1197",
+        "heptameric_peptide": "LESEEELySSCRQLR",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "BTK",
+          "LCK"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "LCK",
+            "substrate_gene": "PLCG2",
+            "phospho_site": "Y1197",
+            "substrate_uniprot": "P16885",
+            "heptameric_peptide": "LESEEELySSCRQLR",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "BTK",
+            "substrate_gene": "PLCG2",
+            "phospho_site": "Y1197",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LESEEELySSCRQLR",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "BTK",
+            "substrate_gene": "PLCG2",
+            "phospho_site": "Y1197",
+            "substrate_uniprot": "P16885",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "BTK",
+          "LCK"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "SYK",
+        "substrate_uniprot": "P43405",
+        "phospho_site": "Y525",
+        "heptameric_peptide": "ALRADENyykAQtHG",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "AUTOCATALYSIS",
+          "LYN",
+          "SYK"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "SYK",
+            "substrate_gene": "SYK",
+            "phospho_site": "Y525",
+            "substrate_uniprot": "P43405",
+            "heptameric_peptide": "ALRADENyykAQtHG",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "LYN",
+            "substrate_gene": "SYK",
+            "phospho_site": "Y525",
+            "substrate_uniprot": "P43405",
+            "heptameric_peptide": "ALRADENyykAQtHG",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "SYK",
+            "substrate_gene": "SYK",
+            "phospho_site": "Y525",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "ALRADENyYKAQTHG",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "autocatalysis",
+            "substrate_gene": "SYK",
+            "phospho_site": "Y525",
+            "substrate_uniprot": "P43405",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "LYN",
+          "SYK",
+          "autocatalysis"
+        ]
+      },
+      {
+        "gold_kinase": "ERBB3",
+        "gold_kinase_normalized": "ERBB3",
+        "substrate_gene": "TSC2",
+        "substrate_uniprot": "P49815",
+        "phospho_site": "Y1571",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": false,
+        "agent_kinases": [],
+        "database_evidence": [],
+        "database_kinases": []
+      }
+    ],
+    "entries_found_in_agent": 14,
+    "entries_found_in_dbs": 14,
+    "entries_truly_absent": 5,
+    "category": "attribution_mismatch"
+  },
+  {
+    "kinase": "FCGR3A",
+    "kinase_normalized": "FCGR3A",
+    "gold_entry_count": 1,
+    "kinase_uniprot": "P08637",
+    "alias_evidence": {
+      "FCGR3A": [
+        {
+          "database": "uniprot",
+          "role": "search_hit",
+          "match_count": 2,
+          "sample": [
+            "PKC\u2192FCGR3A S236",
+            "PKC\u2192FCGR3A T237"
+          ]
+        }
+      ],
+      "CD16": [
+        {
+          "database": "signor",
+          "role": "search_hit",
+          "match_count": 2,
+          "sample": [
+            "PRKCA\u2192CD163 S1084",
+            "CSNK2B\u2192CD163 S1085"
+          ]
+        }
+      ]
+    },
+    "entries": [
+      {
+        "gold_kinase": "FCGR3A",
+        "gold_kinase_normalized": "FCGR3A",
+        "substrate_gene": "LCK",
+        "substrate_uniprot": "P06239",
+        "phospho_site": "Y394",
+        "heptameric_peptide": "RLIEDNEytAREGAk",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "AUTOCATALYSIS",
+          "AXL",
+          "LCK",
+          "PTPN22",
+          "PTPN6",
+          "PTPRC",
+          "PYV0094"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "LCK",
+            "substrate_gene": "LCK",
+            "phospho_site": "Y394",
+            "substrate_uniprot": "P06239",
+            "heptameric_peptide": "RLIEDNEytAREGAk",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "LCK",
+            "substrate_gene": "TBK1",
+            "phospho_site": "Y394",
+            "substrate_uniprot": "Q9UHD2",
+            "heptameric_peptide": "LNTIGLIyEkISLPk",
+            "in_vivo": "X",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "pYV0094",
+            "substrate_gene": "LCK",
+            "phospho_site": "Y394",
+            "substrate_uniprot": "P06239",
+            "heptameric_peptide": "RLIEDNEytAREGAk",
+            "in_vivo": "X",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "AXL",
+            "substrate_gene": "LCK",
+            "phospho_site": "Y394",
+            "substrate_uniprot": "P06239",
+            "heptameric_peptide": "RLIEDNEytAREGAk",
+            "in_vivo": "X",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "LCK",
+            "substrate_gene": "TBK1",
+            "phospho_site": "Y394",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "LNTIGLIyEKISLPK",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "LCK",
+            "substrate_gene": "LCK",
+            "phospho_site": "Y394",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "RLIEDNEyTAREGAK",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PTPN22",
+            "substrate_gene": "LCK",
+            "phospho_site": "Y394",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "RLIEDNEyTAREGAK",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PTPN6",
+            "substrate_gene": "LCK",
+            "phospho_site": "Y394",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "RLIEDNEyTAREGAK",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PTPRC",
+            "substrate_gene": "LCK",
+            "phospho_site": "Y394",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "RLIEDNEyTAREGAK",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "autocatalysis",
+            "substrate_gene": "LCK",
+            "phospho_site": "Y394",
+            "substrate_uniprot": "P06239",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "AXL",
+          "LCK",
+          "PTPN22",
+          "PTPN6",
+          "PTPRC",
+          "autocatalysis",
+          "pYV0094"
+        ]
+      }
+    ],
+    "entries_found_in_agent": 1,
+    "entries_found_in_dbs": 1,
+    "entries_truly_absent": 0,
+    "category": "attribution_mismatch"
+  },
+  {
+    "kinase": "MNAT1",
+    "kinase_normalized": "MNAT1",
+    "gold_entry_count": 3,
+    "kinase_uniprot": "P51948",
+    "alias_evidence": {
+      "MNAT1": [
+        {
+          "database": "psp",
+          "role": "search_hit",
+          "match_count": 1,
+          "sample": [
+            "PRKCA\u2192NMNAT1 S136"
+          ]
+        },
+        {
+          "database": "signor",
+          "role": "kinase",
+          "entry_count": 1,
+          "sample_substrates": [
+            "ESR1 S118"
+          ]
+        },
+        {
+          "database": "signor",
+          "role": "search_hit",
+          "match_count": 1,
+          "sample": [
+            "MNAT1\u2192ESR1 S118"
+          ]
+        }
+      ]
+    },
+    "entries": [
+      {
+        "gold_kinase": "MNAT1",
+        "gold_kinase_normalized": "MNAT1",
+        "substrate_gene": "ESR1",
+        "substrate_uniprot": "P03372",
+        "phospho_site": "S102",
+        "heptameric_peptide": "GGFPPLNsVsPsPLM",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "GSK3B"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "GSK3B",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S102",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "GGFPPLNsVsPsPLM",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "GSK3B",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S102",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "GGFPPLNsVSPSPLM",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "GSK3B"
+        ]
+      },
+      {
+        "gold_kinase": "MNAT1",
+        "gold_kinase_normalized": "MNAT1",
+        "substrate_gene": "ESR1",
+        "substrate_uniprot": "P03372",
+        "phospho_site": "S104",
+        "heptameric_peptide": "FPPLNsVsPsPLMLL",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "AKT",
+          "AKT1",
+          "CDK2",
+          "CDK3",
+          "CYCLINA2/CDK2",
+          "ERK1/2",
+          "GSK3B",
+          "MAPK1",
+          "MAPK3",
+          "MTOR",
+          "NLK"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "MAPK3",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "FPPLNsVsPsPLMLL",
+            "in_vivo": "X",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "CDK3",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "FPPLNsVsPsPLMLL",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "GSK3B",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "FPPLNsVsPsPLMLL",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "CDK2",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "FPPLNsVsPsPLMLL",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "NLK",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "FPPLNsVsPsPLMLL",
+            "in_vivo": "X",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "MAPK1",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "FPPLNsVsPsPLMLL",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "MTOR",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "FPPLNsVsPsPLMLL",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "CDK3",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "FPPLNSVsPSPLMLL",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "AKT",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "FPPLNSVsPSPLMLL",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "CDK2",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "FPPLNSVsPSPLMLL",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "MAPK1",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "FPPLNSVsPSPLMLL",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "MAPK3",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "FPPLNSVsPSPLMLL",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "CyclinA2/CDK2",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "FPPLNSVsPSPLMLL",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "AKT1",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "FPPLNSVsPSPLMLL",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "ERK1/2",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "FPPLNSVsPSPLMLL",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "GSK3B",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "FPPLNSVsPSPLMLL",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "CDK2",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S104",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "AKT",
+          "AKT1",
+          "CDK2",
+          "CDK3",
+          "CyclinA2/CDK2",
+          "ERK1/2",
+          "GSK3B",
+          "MAPK1",
+          "MAPK3",
+          "MTOR",
+          "NLK"
+        ]
+      },
+      {
+        "gold_kinase": "MNAT1",
+        "gold_kinase_normalized": "MNAT1",
+        "substrate_gene": "ESR1",
+        "substrate_uniprot": "P03372",
+        "phospho_site": "S106",
+        "heptameric_peptide": "PLNsVsPsPLMLLHP",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "AKT",
+          "AKT1",
+          "CDK2",
+          "CDK3",
+          "CYCLINA2/CDK2",
+          "ERK1/2",
+          "GSK3B",
+          "MAPK1",
+          "MAPK3",
+          "MTOR",
+          "NLK"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "MAPK3",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "PLNsVsPsPLMLLHP",
+            "in_vivo": "X",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "CDK3",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "PLNsVsPsPLMLLHP",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "GSK3B",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "PLNsVsPsPLMLLHP",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "CDK2",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "PLNsVsPsPLMLLHP",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "NLK",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "PLNsVsPsPLMLLHP",
+            "in_vivo": "X",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "MAPK1",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "PLNsVsPsPLMLLHP",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "MTOR",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "PLNsVsPsPLMLLHP",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "CDK3",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "PLNSVSPsPLMLLHP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "MAPK1",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "PLNSVSPsPLMLLHP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "MAPK3",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "PLNSVSPsPLMLLHP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "AKT",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "PLNSVSPsPLMLLHP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "CDK2",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "PLNSVSPsPLMLLHP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "CyclinA2/CDK2",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "PLNSVSPsPLMLLHP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "GSK3B",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "PLNSVSPsPLMLLHP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "AKT1",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "PLNSVSPsPLMLLHP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "ERK1/2",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "PLNSVSPsPLMLLHP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "CDK2",
+            "substrate_gene": "ESR1",
+            "phospho_site": "S106",
+            "substrate_uniprot": "P03372",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "AKT",
+          "AKT1",
+          "CDK2",
+          "CDK3",
+          "CyclinA2/CDK2",
+          "ERK1/2",
+          "GSK3B",
+          "MAPK1",
+          "MAPK3",
+          "MTOR",
+          "NLK"
+        ]
+      }
+    ],
+    "entries_found_in_agent": 3,
+    "entries_found_in_dbs": 3,
+    "entries_truly_absent": 0,
+    "category": "attribution_mismatch"
+  },
+  {
+    "kinase": "PDIK1L",
+    "kinase_normalized": "PDIK1L",
+    "gold_entry_count": 1,
+    "kinase_uniprot": "Q8N165",
+    "alias_evidence": {
+      "PDIK1L": [
+        {
+          "database": "signor",
+          "role": "search_hit",
+          "match_count": 2,
+          "sample": [
+            "CTDSPL2\u2192PDIK1L S194",
+            "CTDSPL2\u2192PDIK1L S216"
+          ]
+        }
+      ]
+    },
+    "entries": [
+      {
+        "gold_kinase": "PDIK1L",
+        "gold_kinase_normalized": "PDIK1L",
+        "substrate_gene": "TNF",
+        "substrate_uniprot": "P01375",
+        "phospho_site": "S2",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "CK1"
+        ],
+        "database_evidence": [
+          {
+            "database": "uniprot",
+            "kinase_gene": "CK1",
+            "substrate_gene": "TNF",
+            "phospho_site": "S2",
+            "substrate_uniprot": "P01375",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "CK1"
+        ]
+      }
+    ],
+    "entries_found_in_agent": 1,
+    "entries_found_in_dbs": 1,
+    "entries_truly_absent": 0,
+    "category": "attribution_mismatch"
+  },
+  {
+    "kinase": "PEG3",
+    "kinase_normalized": "PEG3",
+    "gold_entry_count": 1,
+    "kinase_uniprot": "Q9GZU2",
+    "alias_evidence": {},
+    "entries": [
+      {
+        "gold_kinase": "PEG3",
+        "gold_kinase_normalized": "PEG3",
+        "substrate_gene": "CDC25B",
+        "substrate_uniprot": "P30305",
+        "phospho_site": "S323",
+        "heptameric_peptide": "QRLFRsPsMPCsVIR",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "MAPK14",
+          "MAPKAPK2",
+          "MARK3",
+          "MELK",
+          "ROBO"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "MAPKAPK2",
+            "substrate_gene": "CDC25B",
+            "phospho_site": "S323",
+            "substrate_uniprot": "P30305",
+            "heptameric_peptide": "QRLFRsPsMPCsVIR",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "MELK",
+            "substrate_gene": "CDC25B",
+            "phospho_site": "S323",
+            "substrate_uniprot": "P30305",
+            "heptameric_peptide": "QRLFRsPsMPCsVIR",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "p38",
+            "substrate_gene": "CDC25B",
+            "phospho_site": "S323",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "QRLFRSPsMPCSVIR",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "ROBO",
+            "substrate_gene": "CDC25B",
+            "phospho_site": "S323",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "QRLFRSPsMPCSVIR",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "MARK3",
+            "substrate_gene": "CDC25B",
+            "phospho_site": "S323",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "QRLFRSPsMPCSVIR",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "MELK",
+            "substrate_gene": "CDC25B",
+            "phospho_site": "S323",
+            "substrate_uniprot": "P30305",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "MAPK14",
+            "substrate_gene": "CDC25B",
+            "phospho_site": "S323",
+            "substrate_uniprot": "P30305",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "MAPK14",
+          "MAPKAPK2",
+          "MARK3",
+          "MELK",
+          "ROBO",
+          "p38"
+        ]
+      }
+    ],
+    "entries_found_in_agent": 1,
+    "entries_found_in_dbs": 1,
+    "entries_truly_absent": 0,
+    "category": "attribution_mismatch"
+  },
+  {
+    "kinase": "PRKACG",
+    "kinase_normalized": "PRKACG",
+    "gold_entry_count": 4,
+    "kinase_uniprot": "P22612",
+    "alias_evidence": {
+      "PRKACG": [
+        {
+          "database": "signor",
+          "role": "kinase",
+          "entry_count": 12,
+          "sample_substrates": [
+            "MYBPC3 S284",
+            "MYBPC3 S304",
+            "BAD S75",
+            "NOS3 S1177",
+            "MYBPC3 S311"
+          ]
+        },
+        {
+          "database": "signor",
+          "role": "search_hit",
+          "match_count": 3,
+          "sample": [
+            "PRKACG\u2192MYBPC3 S284",
+            "PRKACG\u2192MYBPC3 S304",
+            "PRKACG\u2192BAD S75"
+          ]
+        },
+        {
+          "database": "uniprot",
+          "role": "search_hit",
+          "match_count": 2,
+          "sample": [
+            "autocatalysis\u2192PRKACG T198",
+            "autocatalysis\u2192PRKACG S339"
+          ]
+        }
+      ]
+    },
+    "entries": [
+      {
+        "gold_kinase": "PRKACG",
+        "gold_kinase_normalized": "PRKACG",
+        "substrate_gene": "LIPE",
+        "substrate_uniprot": "Q05469",
+        "phospho_site": "S853",
+        "heptameric_peptide": "IAEPMRRsVsEAALA",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "PRKACA",
+          "PRKG1"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "PRKACA",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S853",
+            "substrate_uniprot": "Q05469",
+            "heptameric_peptide": "IAEPMRRsVsEAALA",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "PRKG1",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S853",
+            "substrate_uniprot": "Q05469",
+            "heptameric_peptide": "IAEPMRRsVsEAALA",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "Prkaca",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S853",
+            "substrate_uniprot": "Q05469",
+            "heptameric_peptide": "IAEPMRRsVsEAALA",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PRKACA",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S853",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "IAEPMRRsVSEAALA",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "PRKACA",
+          "PRKG1",
+          "Prkaca"
+        ]
+      },
+      {
+        "gold_kinase": "PRKACG",
+        "gold_kinase_normalized": "PRKACG",
+        "substrate_gene": "LIPE",
+        "substrate_uniprot": "Q05469",
+        "phospho_site": "S855",
+        "heptameric_peptide": "EPMRRsVsEAALAQP",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "CAMK1",
+          "CAMK2A",
+          "PRKAA1",
+          "PRKACA"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "PRKAA1",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S855",
+            "substrate_uniprot": "Q05469",
+            "heptameric_peptide": "EPMRRsVsEAALAQP",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "CAMK1",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S855",
+            "substrate_uniprot": "Q05469",
+            "heptameric_peptide": "EPMRRsVsEAALAQP",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "Prkaca",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S855",
+            "substrate_uniprot": "Q05469",
+            "heptameric_peptide": "EPMRRsVsEAALAQP",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "AMPK",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S855",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "EPMRRSVsEAALAQP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PRKAA1",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S855",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "EPMRRSVsEAALAQP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "CAMK2A",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S855",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "EPMRRSVsEAALAQP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PRKACA",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S855",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "EPMRRSVsEAALAQP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "AMPK",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S855",
+            "substrate_uniprot": "Q05469",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "AMPK",
+          "CAMK1",
+          "CAMK2A",
+          "PRKAA1",
+          "PRKACA",
+          "Prkaca"
+        ]
+      },
+      {
+        "gold_kinase": "PRKACG",
+        "gold_kinase_normalized": "PRKACG",
+        "substrate_gene": "LIPE",
+        "substrate_uniprot": "Q05469",
+        "phospho_site": "S950",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "PRKACA"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "Prkaca",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S950",
+            "substrate_uniprot": "Q05469",
+            "heptameric_peptide": "EGFHPRRssQGAtQM",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PKA",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S950",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "EGFHPRRsSQGATQM",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PRKACA",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S950",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "EGFHPRRsSQGATQM",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "PKA",
+          "PRKACA",
+          "Prkaca"
+        ]
+      },
+      {
+        "gold_kinase": "PRKACG",
+        "gold_kinase_normalized": "PRKACG",
+        "substrate_gene": "LIPE",
+        "substrate_uniprot": "Q05469",
+        "phospho_site": "S951",
+        "heptameric_peptide": "GFHPRRssQGAtQMP",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "PRKACA"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "PRKACA",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S951",
+            "substrate_uniprot": "Q05469",
+            "heptameric_peptide": "GFHPRRssQGAtQMP",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "Prkaca",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S951",
+            "substrate_uniprot": "Q05469",
+            "heptameric_peptide": "GFHPRRssQGAtQMP",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PRKACA",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S951",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "GFHPRRSsQGATQMP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PKA",
+            "substrate_gene": "LIPE",
+            "phospho_site": "S951",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "GFHPRRSsQGATQMP",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "PKA",
+          "PRKACA",
+          "Prkaca"
+        ]
+      }
+    ],
+    "entries_found_in_agent": 4,
+    "entries_found_in_dbs": 4,
+    "entries_truly_absent": 0,
+    "category": "attribution_mismatch"
+  },
+  {
+    "kinase": "PRKAR1A",
+    "kinase_normalized": "PRKAR1A",
+    "gold_entry_count": 3,
+    "kinase_uniprot": "P10644",
+    "alias_evidence": {
+      "PRKAR1A": [
+        {
+          "database": "psp",
+          "role": "search_hit",
+          "match_count": 3,
+          "sample": [
+            "CDK16\u2192PRKAR1A S83",
+            "STK25\u2192PRKAR1A S83",
+            "STK25\u2192PRKAR1A S77"
+          ]
+        },
+        {
+          "database": "signor",
+          "role": "search_hit",
+          "match_count": 3,
+          "sample": [
+            "CyclinY/CDK16\u2192PRKAR1A S83",
+            "CDK16\u2192PRKAR1A S83",
+            "CyclinE/CDK2\u2192PRKAR1A S83"
+          ]
+        }
+      ]
+    },
+    "entries": [
+      {
+        "gold_kinase": "PRKAR1A",
+        "gold_kinase_normalized": "PRKAR1A",
+        "substrate_gene": "HLA-A",
+        "substrate_uniprot": "",
+        "phospho_site": "S336",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": false,
+        "agent_kinases": [],
+        "database_evidence": [],
+        "database_kinases": []
+      },
+      {
+        "gold_kinase": "PRKAR1A",
+        "gold_kinase_normalized": "PRKAR1A",
+        "substrate_gene": "HLA-A",
+        "substrate_uniprot": "",
+        "phospho_site": "S337",
+        "heptameric_peptide": "VMWRRKSsDRkGGsy",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "PRKACA"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "PRKACA",
+            "substrate_gene": "HLA-A",
+            "phospho_site": "S337",
+            "substrate_uniprot": "P04439",
+            "heptameric_peptide": "VMWRRKSsDRkGGsy",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "PRKACA"
+        ]
+      },
+      {
+        "gold_kinase": "PRKAR1A",
+        "gold_kinase_normalized": "PRKAR1A",
+        "substrate_gene": "HLA-A(V)",
+        "substrate_uniprot": "",
+        "phospho_site": "S343",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": false,
+        "agent_kinases": [],
+        "database_evidence": [],
+        "database_kinases": []
+      }
+    ],
+    "entries_found_in_agent": 1,
+    "entries_found_in_dbs": 1,
+    "entries_truly_absent": 2,
+    "category": "attribution_mismatch"
+  },
+  {
+    "kinase": "PRKRIR",
+    "kinase_normalized": "PRKRIR",
+    "gold_entry_count": 1,
+    "kinase_uniprot": "O43422",
+    "alias_evidence": {},
+    "entries": [
+      {
+        "gold_kinase": "PRKRIR",
+        "gold_kinase_normalized": "PRKRIR",
+        "substrate_gene": "EIF2S1",
+        "substrate_uniprot": "P05198",
+        "phospho_site": "S52",
+        "heptameric_peptide": "MILLsELsRRRIRsI",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "EIF2AK1",
+          "EIF2AK2",
+          "EIF2AK3",
+          "EIF2AK4",
+          "MAPK1",
+          "MAPK14",
+          "MARK2",
+          "PRKCD",
+          "RPS6KA3",
+          "THAP12"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "EIF2AK1",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "P05198",
+            "heptameric_peptide": "MILLsELsRRRIRsI",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "EIF2AK2",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "P05198",
+            "heptameric_peptide": "MILLsELsRRRIRsI",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "MARK2",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "P05198",
+            "heptameric_peptide": "MILLsELsRRRIRsI",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "Eif2ak3",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "P05198",
+            "heptameric_peptide": "MILLsELsRRRIRsI",
+            "in_vivo": "X",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "MAPK14",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "P05198",
+            "heptameric_peptide": "MILLsELsRRRIRsI",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "MAPK1",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "P05198",
+            "heptameric_peptide": "MILLsELsRRRIRsI",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "EIF2AK4",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "P05198",
+            "heptameric_peptide": "MILLsELsRRRIRsI",
+            "in_vivo": "X",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "EIF2AK3",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "P05198",
+            "heptameric_peptide": "MILLsELsRRRIRsI",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "RPS6KA3",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "P05198",
+            "heptameric_peptide": "MILLsELsRRRIRsI",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "EIF2AK3",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "MILLSELsRRRIRSI",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "EIF2AK4",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "MILLSELsRRRIRSI",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "PRKCD",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "MILLSELsRRRIRSI",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "EIF2AK1",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "MILLSELsRRRIRSI",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "THAP12",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "MILLSELsRRRIRSI",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "EIF2AK2",
+            "substrate_gene": "EIF2S1",
+            "phospho_site": "S52",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "MILLSELsRRRIRSI",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "EIF2AK1",
+          "EIF2AK2",
+          "EIF2AK3",
+          "EIF2AK4",
+          "Eif2ak3",
+          "MAPK1",
+          "MAPK14",
+          "MARK2",
+          "PRKCD",
+          "RPS6KA3",
+          "THAP12"
+        ]
+      }
+    ],
+    "entries_found_in_agent": 1,
+    "entries_found_in_dbs": 1,
+    "entries_truly_absent": 0,
+    "category": "attribution_mismatch"
+  },
+  {
+    "kinase": "PRKY",
+    "kinase_normalized": "PRKY",
+    "gold_entry_count": 1,
+    "kinase_uniprot": "O43930",
+    "alias_evidence": {
+      "PRKY": [
+        {
+          "database": "psp",
+          "role": "search_hit",
+          "match_count": 3,
+          "sample": [
+            "RPS6KA1\u2192YBX1 S102",
+            "AKT1\u2192YBX1 S102",
+            "RPS6KA3\u2192YBX1 S102"
+          ]
+        },
+        {
+          "database": "signor",
+          "role": "search_hit",
+          "match_count": 3,
+          "sample": [
+            "AKT1\u2192YBX1 S102",
+            "AKT1\u2192YBX1 S102",
+            "RPS6KA3\u2192YBX1 S102"
+          ]
+        }
+      ]
+    },
+    "entries": [
+      {
+        "gold_kinase": "PRKY",
+        "gold_kinase_normalized": "PRKY",
+        "substrate_gene": "ADCY3",
+        "substrate_uniprot": "O60266",
+        "phospho_site": "S1076",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "CAMK2",
+          "CAMK2G"
+        ],
+        "database_evidence": [
+          {
+            "database": "signor",
+            "kinase_gene": "CAMK2G",
+            "substrate_gene": "ADCY3",
+            "phospho_site": "S1076",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "NVASRMEsTGVMGNI",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "CaMK2",
+            "substrate_gene": "ADCY3",
+            "phospho_site": "S1076",
+            "substrate_uniprot": "O60266",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "CAMK2G",
+          "CaMK2"
+        ]
+      }
+    ],
+    "entries_found_in_agent": 1,
+    "entries_found_in_dbs": 1,
+    "entries_truly_absent": 0,
+    "category": "attribution_mismatch"
+  },
+  {
+    "kinase": "RPS6KC1",
+    "kinase_normalized": "RPS6KC1",
+    "gold_entry_count": 1,
+    "kinase_uniprot": "Q96S38",
+    "alias_evidence": {},
+    "entries": [
+      {
+        "gold_kinase": "RPS6KC1",
+        "gold_kinase_normalized": "RPS6KC1",
+        "substrate_gene": "SAMHD1",
+        "substrate_uniprot": "Q9Y3Z3",
+        "phospho_site": "T592",
+        "heptameric_peptide": "DVIAPLItPQkkEWN",
+        "pa_version": "PA2_2023",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "CDK1",
+          "CDK2",
+          "UL97"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "CDK1",
+            "substrate_gene": "SAMHD1",
+            "phospho_site": "T592",
+            "substrate_uniprot": "Q9Y3Z3",
+            "heptameric_peptide": "DVIAPLItPQkkEWN",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "UL97",
+            "substrate_gene": "SAMHD1",
+            "phospho_site": "T592",
+            "substrate_uniprot": "Q9Y3Z3",
+            "heptameric_peptide": "DVIAPLItPQkkEWN",
+            "in_vivo": "X",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "psp",
+            "kinase_gene": "CDK2",
+            "substrate_gene": "SAMHD1",
+            "phospho_site": "T592",
+            "substrate_uniprot": "Q9Y3Z3",
+            "heptameric_peptide": "DVIAPLItPQkkEWN",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "CDK1",
+            "substrate_gene": "SAMHD1",
+            "phospho_site": "T592",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "DVIAPLItPQKKEWN",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "CDK1",
+            "substrate_gene": "SAMHD1",
+            "phospho_site": "T592",
+            "substrate_uniprot": "Q9Y3Z3",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "CDK1",
+          "CDK2",
+          "UL97"
+        ]
+      }
+    ],
+    "entries_found_in_agent": 1,
+    "entries_found_in_dbs": 1,
+    "entries_truly_absent": 0,
+    "category": "attribution_mismatch"
+  },
+  {
+    "kinase": "SHB",
+    "kinase_normalized": "SHB",
+    "gold_entry_count": 1,
+    "kinase_uniprot": "Q15464",
+    "alias_evidence": {},
+    "entries": [
+      {
+        "gold_kinase": "SHB",
+        "gold_kinase_normalized": "SHB",
+        "substrate_gene": "FGFR1",
+        "substrate_uniprot": "P11362",
+        "phospho_site": "Y766",
+        "heptameric_peptide": "ALTSNQEyLDLSMPL",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": true,
+        "agent_kinases": [
+          "AUTOCATALYSIS",
+          "FGFR1"
+        ],
+        "database_evidence": [
+          {
+            "database": "psp",
+            "kinase_gene": "FGFR1",
+            "substrate_gene": "FGFR1",
+            "phospho_site": "Y766",
+            "substrate_uniprot": "P11362",
+            "heptameric_peptide": "ALTSNQEyLDLSMPL",
+            "in_vivo": "",
+            "in_vitro": "X",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "signor",
+            "kinase_gene": "FGFR1",
+            "substrate_gene": "FGFR1",
+            "phospho_site": "Y766",
+            "substrate_uniprot": "",
+            "heptameric_peptide": "ALTSNQEyLDLSMPL",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          },
+          {
+            "database": "uniprot",
+            "kinase_gene": "autocatalysis",
+            "substrate_gene": "FGFR1",
+            "phospho_site": "Y766",
+            "substrate_uniprot": "P11362",
+            "heptameric_peptide": "",
+            "in_vivo": "",
+            "in_vitro": "",
+            "pubmed_id": "",
+            "mechanism": ""
+          }
+        ],
+        "database_kinases": [
+          "FGFR1",
+          "autocatalysis"
+        ]
+      }
+    ],
+    "entries_found_in_agent": 1,
+    "entries_found_in_dbs": 1,
+    "entries_truly_absent": 0,
+    "category": "attribution_mismatch"
+  }
+]

@@ -1,0 +1,255 @@
+==========================================================================================
+GOLD STANDARD MISMATCH ANALYSIS
+==========================================================================================
+
+Total missed kinases:      23
+Attribution mismatches:    21
+Truly absent:              2
+
+------------------------------------------------------------------------------------------
+ATTRIBUTION MISMATCHES
+Gold standard says kinase=X, databases say kinase=Y for same substrate+site
+------------------------------------------------------------------------------------------
+
+  ACVR1 (UniProt: Q04771, 1 gold entries)
+    Alias evidence:
+      ACVR1 in signor: 2 entries as kinase (e.g. SMAD1 S463, SMAD1 S465)
+           SMAD1 S463     AGENT HAS under: BMPR1A, BMPR1B, MAP3K7
+                            psp: BMPR1B
+                            signor: ACVR1, BMPR1A, BMPR1A/1B/2, BMPR1B, MAP3K7
+
+  BCAT2 (UniProt: O15382, 1 gold entries)
+          NFKBIA S32      AGENT HAS under: AURKA, AURKB, AURKC, CHUK, CSNK2A1, IKBKB, IKBKE, IKBKG, IKKA, IKKE, MAP3K14, MAPK15, RPS6KA1, RPS6KA2, RPS6KA3, SGK1
+                            psp: AURKA, AURKB, AURKC, CHUK, CSNK2A1, IKBKB, IKBKE, MAP3K14, MAPK15, RPS6KA1, RPS6KA3, SGK1
+                            signor: AURKA, AURKC, CHUK, CSNK2A1, EIF2AK2, IKBKB, IKBKG, IKK-complex, RPS6KA1, RPS6KA2, RPS6KA3
+                            uniprot: IKKA, IKKE
+
+  CAD (UniProt: P27708, 1 gold entries)
+    Alias evidence:
+      CAD in signor: 1 entries as kinase (e.g. CAD T1037)
+             CAD T1037    NOT IN AGENT ATLAS OR DBS
+
+  ERBB3 (UniProt: P21860, 19 gold entries)
+    Alias evidence:
+            ABI1 Y213     AGENT HAS under: ABL1, PTEN
+                            psp: ABL1
+                            signor: ABL1, PTEN
+                            uniprot: ABL1
+           ACTA1 Y55      NOT IN AGENT ATLAS OR DBS
+           BCAR1 Y664     AGENT HAS under: PTK6, SRC
+                            psp: PTK6
+                            signor: PTK2, PTK6, SRC
+             BCR Y246     AGENT HAS under: FES
+                            psp: FES
+                            signor: FES
+                            uniprot: FES
+             CD5 Y453     AGENT HAS under: FYN, LCK
+                            psp: FYN, LCK
+                            signor: FYN, LCK
+            CDK6 Y13      NOT IN AGENT ATLAS OR DBS
+            CRKL Y207     AGENT HAS under: ABL1, BCR/ABL
+                            psp: ABL1, BCR/ABL
+                            signor: BCR-ABL
+            EHD1 Y453     NOT IN AGENT ATLAS OR DBS
+           FGFR1 Y730     AGENT HAS under: AUTOCATALYSIS, FGFR1
+                            psp: FGFR1
+                            signor: FGFR1
+                            uniprot: autocatalysis
+          HNRNPK Y230     AGENT HAS under: SRC
+                            psp: SRC
+                            signor: SRC
+          IFNAR2 Y411     NOT IN AGENT ATLAS OR DBS
+            IRS4 Y779     AGENT HAS under: FER
+                            psp: FER
+             KDR Y996     AGENT HAS under: AUTOCATALYSIS, KDR, PTPN2, PTPN6
+                            psp: KDR
+                            signor: KDR, PTPN2, PTPN6
+                            uniprot: autocatalysis
+          NFKBIA Y305     AGENT HAS under: ABL1, BTK
+                            psp: ABL1, BTK
+           NTRK1 Y791     AGENT HAS under: AUTOCATALYSIS, NTRK1
+                            signor: NTRK1
+                            uniprot: autocatalysis
+           PLCG1 Y771     AGENT HAS under: ABL1, EGFR, NTRK1, SYK
+                            psp: ABL1, EGFR, NTRK1, SYK
+                            signor: ABL1, EGFR, HCK, LYN, SYK
+                            uniprot: SYK
+           PLCG2 Y1197    AGENT HAS under: BTK, LCK
+                            psp: LCK
+                            signor: BTK
+                            uniprot: BTK
+             SYK Y525     AGENT HAS under: AUTOCATALYSIS, LYN, SYK
+                            psp: LYN, SYK
+                            signor: SYK
+                            uniprot: autocatalysis
+            TSC2 Y1571    NOT IN AGENT ATLAS OR DBS
+
+  FCGR3A (UniProt: P08637, 1 gold entries)
+    Alias evidence:
+             LCK Y394     AGENT HAS under: AUTOCATALYSIS, AXL, LCK, PTPN22, PTPN6, PTPRC, PYV0094
+                            psp: AXL, LCK, pYV0094
+                            signor: LCK, PTPN22, PTPN6, PTPRC
+                            uniprot: autocatalysis
+
+  GTF2H1 (UniProt: P32780, 2 gold entries)
+    Alias evidence:
+      GTF2H1 in signor: 2 entries as kinase (e.g. E2F1 S403, E2F1 T433)
+            E2F1 S403     AGENT HAS under: CDK7, GSK3-BETA, GSK3B, MAPK11
+                            psp: CDK7, GSK3B, MAPK11, Mapk11
+                            signor: CDK7, GTF2H1, TFIIH
+                            uniprot: GSK3-beta
+            E2F1 T433     AGENT HAS under: CDK7, GSK3-BETA, GSK3B, MAPK11
+                            psp: CDK7, GSK3B, MAPK11, Mapk11
+                            signor: CDK7, GTF2H1, TFIIH
+                            uniprot: GSK3-beta
+
+  MAP3K9 (UniProt: P80192, 1 gold entries)
+    Alias evidence:
+      MAP3K9 in signor: 1 entries as kinase (e.g. MAP3K9 T312)
+          MAP3K9 T312     AGENT HAS under: AUTOCATALYSIS
+                            signor: MAP3K9
+                            uniprot: autocatalysis
+
+  MNAT1 (UniProt: P51948, 3 gold entries)
+    Alias evidence:
+      MNAT1 in signor: 1 entries as kinase (e.g. ESR1 S118)
+            ESR1 S102     AGENT HAS under: GSK3B
+                            psp: GSK3B
+                            signor: GSK3B
+            ESR1 S104     AGENT HAS under: AKT1, CDK2, CDK3, GSK3B, MAPK1, MAPK3, MTOR, NLK
+                            psp: CDK2, CDK3, GSK3B, MAPK1, MAPK3, MTOR, NLK
+                            signor: AKT, AKT1, CDK2, CDK3, CyclinA2/CDK2, ERK1/2, GSK3B, MAPK1, MAPK3
+                            uniprot: CDK2
+            ESR1 S106     AGENT HAS under: AKT1, CDK2, CDK3, GSK3B, MAPK1, MAPK3, MTOR, NLK
+                            psp: CDK2, CDK3, GSK3B, MAPK1, MAPK3, MTOR, NLK
+                            signor: AKT, AKT1, CDK2, CDK3, CyclinA2/CDK2, ERK1/2, GSK3B, MAPK1, MAPK3
+                            uniprot: CDK2
+
+  NEK8 (UniProt: Q86SG6, 1 gold entries)
+    Alias evidence:
+      NEK8 in signor: 1 entries as kinase (e.g. NEK8 T162)
+            NEK8 T162     AGENT HAS under: AUTOCATALYSIS
+                            signor: NEK8
+                            uniprot: autocatalysis
+
+  PDIK1L (UniProt: Q8N165, 1 gold entries)
+    Alias evidence:
+             TNF S2       AGENT HAS under: CK1
+                            uniprot: CK1
+
+  PEG3 (UniProt: Q9GZU2, 1 gold entries)
+          CDC25B S323     AGENT HAS under: MAPK14, MAPKAPK2, MARK3, MELK
+                            psp: MAPKAPK2, MELK
+                            signor: MARK3, ROBO, p38
+                            uniprot: MAPK14, MELK
+
+  PHKG1 (UniProt: Q16816, 4 gold entries)
+    Alias evidence:
+      PHKG1 in psp: 1 entries as kinase (e.g. MAPT S262)
+      PHKG1 in signor: 9 entries as kinase (e.g. PHKG1 S31, PHKG1 S82, MAPT S622)
+            MAPT S554     AGENT HAS under: PHK
+                            signor: PHKG1
+                            uniprot: PHK
+            MAPT S579     AGENT HAS under: BRSK1, BRSK2, CAMK2A, CHEK2, GSK3A, GSK3B, MARK1, MARK2, MARK3, MARK4, PHK, PRKACA
+                            psp: PRKACA
+                            signor: CAMK2A, CHEK2, GSK3A, GSK3B, MARK1, PHKG1, PP2B, PRKACA
+                            uniprot: BRSK1, BRSK2, MARK1, MARK2, MARK3, MARK4, PHK
+           PHKG1 S31      NOT IN AGENT ATLAS OR DBS
+           PHKG1 S82      NOT IN AGENT ATLAS OR DBS
+
+  PRKACG (UniProt: P22612, 4 gold entries)
+    Alias evidence:
+      PRKACG in signor: 12 entries as kinase (e.g. MYBPC3 S284, MYBPC3 S304, BAD S75)
+            LIPE S853     AGENT HAS under: PRKACA, PRKG1
+                            psp: PRKACA, PRKG1, Prkaca
+                            signor: PRKACA
+            LIPE S855     AGENT HAS under: CAMK1, CAMK2A, PRKAA1, PRKACA
+                            psp: CAMK1, PRKAA1, Prkaca
+                            signor: AMPK, CAMK2A, PRKAA1, PRKACA
+                            uniprot: AMPK
+            LIPE S950     AGENT HAS under: PRKACA
+                            psp: Prkaca
+                            signor: PKA, PRKACA
+            LIPE S951     AGENT HAS under: PRKACA
+                            psp: PRKACA, Prkaca
+                            signor: PKA, PRKACA
+
+  PRKAR1A (UniProt: P10644, 3 gold entries)
+    Alias evidence:
+           HLA-A S336     NOT IN AGENT ATLAS OR DBS
+           HLA-A S337     AGENT HAS under: PRKACA
+                            psp: PRKACA
+        HLA-A(V) S343     NOT IN AGENT ATLAS OR DBS
+
+  PRKAR2A (UniProt: P13861, 1 gold entries)
+    Alias evidence:
+      PRKAR2A in signor: 1 entries as kinase (e.g. PRKAR2A S99)
+         PRKAR2A S99      AGENT HAS under: PRKACA
+                            signor: PRKAR2A
+                            uniprot: PKA
+
+  PRKAR2B (UniProt: P31323, 3 gold entries)
+    Alias evidence:
+      PRKAR2B in signor: 1 entries as kinase (e.g. PRKAR2B S114)
+           LASP1 S146     AGENT HAS under: PRKACA, PRKCB, PRKG1, PRKG2
+                            psp: PRKACA, PRKG1, PRKG2
+                            signor: PRKACA, PRKCB, PRKG1, PRKG2
+           LASP1 S99      NOT IN AGENT ATLAS OR DBS
+         PRKAR2B S114     AGENT HAS under: PRKACA
+                            psp: PRKACA
+                            signor: PRKACA, PRKAR2B
+
+  PRKRIR (UniProt: O43422, 1 gold entries)
+          EIF2S1 S52      AGENT HAS under: EIF2AK1, EIF2AK2, EIF2AK3, EIF2AK4, MAPK1, MAPK14, MARK2, RPS6KA3
+                            psp: EIF2AK1, EIF2AK2, EIF2AK3, EIF2AK4, Eif2ak3, MAPK1, MAPK14, MARK2, RPS6KA3
+                            signor: EIF2AK1, EIF2AK2, EIF2AK3, EIF2AK4, PRKCD, THAP12
+
+  PRKY (UniProt: O43930, 1 gold entries)
+    Alias evidence:
+           ADCY3 S1076    AGENT HAS under: CAMK2, CAMK2G
+                            signor: CAMK2G
+                            uniprot: CaMK2
+
+  RPS6KC1 (UniProt: Q96S38, 1 gold entries)
+          SAMHD1 T592     AGENT HAS under: CDK1, CDK2, UL97
+                            psp: CDK1, CDK2, UL97
+                            signor: CDK1
+                            uniprot: CDK1
+
+  SHB (UniProt: Q15464, 1 gold entries)
+           FGFR1 Y766     AGENT HAS under: AUTOCATALYSIS, FGFR1
+                            psp: FGFR1
+                            signor: FGFR1
+                            uniprot: autocatalysis
+
+  TTN (UniProt: Q8WZ42, 1 gold entries)
+    Alias evidence:
+      TTN in signor: 1 entries as kinase (e.g. TCAP S157)
+            TCAP S157     AGENT HAS under: CAMK2A, GSK3B, PRKD1
+                            psp: CAMK2A, GSK3B, PRKD1
+                            signor: GSK3B, TTN
+
+  Total attribution-mismatch entries: 52
+
+------------------------------------------------------------------------------------------
+TRULY ABSENT
+Neither kinase nor substrate+site found in any database
+------------------------------------------------------------------------------------------
+  EPHB4 (UniProt: P54760, 3 gold entries)
+            SDC3 Y409    
+            SDC3 Y419    
+            SDC3 Y431    
+  RAD17 (UniProt: O75943, 2 gold entries)
+             ATR S480    
+             ATR S549    
+
+  Total truly absent entries: 5
+
+==========================================================================================
+RECALL CEILING
+==========================================================================================
+  Gold standard entries:          15640
+  Attribution mismatch entries:   52
+  Truly absent entries:           5
+  Max possible recall:            0.9997
+  Unreachable:                    5 (0.032%)

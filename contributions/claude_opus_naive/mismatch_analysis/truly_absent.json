@@ -1,0 +1,120 @@
+[
+  {
+    "kinase": "EPHB4",
+    "kinase_normalized": "EPHB4",
+    "gold_entry_count": 3,
+    "kinase_uniprot": "P54760",
+    "alias_evidence": {},
+    "entries": [
+      {
+        "gold_kinase": "EPHB4",
+        "gold_kinase_normalized": "EPHB4",
+        "substrate_gene": "SDC3",
+        "substrate_uniprot": "O75056",
+        "phospho_site": "Y409",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": false,
+        "agent_kinases": [],
+        "database_evidence": [],
+        "database_kinases": []
+      },
+      {
+        "gold_kinase": "EPHB4",
+        "gold_kinase_normalized": "EPHB4",
+        "substrate_gene": "SDC3",
+        "substrate_uniprot": "O75056",
+        "phospho_site": "Y419",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": false,
+        "agent_kinases": [],
+        "database_evidence": [],
+        "database_kinases": []
+      },
+      {
+        "gold_kinase": "EPHB4",
+        "gold_kinase_normalized": "EPHB4",
+        "substrate_gene": "SDC3",
+        "substrate_uniprot": "O75056",
+        "phospho_site": "Y431",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": false,
+        "agent_kinases": [],
+        "database_evidence": [],
+        "database_kinases": []
+      }
+    ],
+    "category": "truly_absent"
+  },
+  {
+    "kinase": "RAD17",
+    "kinase_normalized": "RAD17",
+    "gold_entry_count": 2,
+    "kinase_uniprot": "O75943",
+    "alias_evidence": {
+      "RAD17": [
+        {
+          "database": "psp",
+          "role": "search_hit",
+          "match_count": 3,
+          "sample": [
+            "CSNK2A1\u2192RAD17 S678",
+            "CSNK1E\u2192RAD17 T681",
+            "ATR\u2192RAD17 S646"
+          ]
+        },
+        {
+          "database": "signor",
+          "role": "search_hit",
+          "match_count": 3,
+          "sample": [
+            "ATR\u2192RAD17 S646",
+            "ATR\u2192RAD17 S656",
+            "ATM\u2192RAD17 S656"
+          ]
+        },
+        {
+          "database": "uniprot",
+          "role": "search_hit",
+          "match_count": 3,
+          "sample": [
+            "ATM\u2192RAD17 T633",
+            "ATR\u2192RAD17 S646",
+            "ATM\u2192RAD17 S646"
+          ]
+        }
+      ]
+    },
+    "entries": [
+      {
+        "gold_kinase": "RAD17",
+        "gold_kinase_normalized": "RAD17",
+        "substrate_gene": "ATR",
+        "substrate_uniprot": "Q13535",
+        "phospho_site": "S480",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": false,
+        "agent_kinases": [],
+        "database_evidence": [],
+        "database_kinases": []
+      },
+      {
+        "gold_kinase": "RAD17",
+        "gold_kinase_normalized": "RAD17",
+        "substrate_gene": "ATR",
+        "substrate_uniprot": "Q13535",
+        "phospho_site": "S549",
+        "heptameric_peptide": "",
+        "pa_version": "PA1_2016",
+        "in_agent_atlas": false,
+        "agent_kinases": [],
+        "database_evidence": [],
+        "database_kinases": []
+      }
+    ],
+    "category": "truly_absent"
+  }
+]
