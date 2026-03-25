@@ -1,5 +1,5 @@
 """
-Run script for the Qwen2.5-72B-Instruct PhosphoAtlas agent.
+Run script for the Qwen3_235b-Instruct PhosphoAtlas agent.
 
 Usage
 -----

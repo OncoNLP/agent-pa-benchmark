@@ -1,34 +1,44 @@
 """
-Qwen2.5-72B-Instruct agent for the PhosphoAtlas Benchmark.
+Qwen3-235B PhosphoAtlas benchmark agent.
 
-Provider: Together AI (OpenAI-compatible endpoint)
-Model:    Qwen/Qwen2.5-72B-Instruct
-Author:   Andrew Lim
+Provider : Together AI  (OpenAI-compatible endpoint)
+Model    : Qwen/Qwen3-235B-A22B-Instruct-2507-tput
+Author   : Andrew Lim, UCSF Radiation Oncology
 
-Design notes
-------------
-Together AI's endpoint follows the OpenAI chat completions spec, so we use the
-`openai` Python client pointed at Together's base URL.
+Overview
+--------
+QwenAgent subclasses BaseAgent and implements the four abstract methods
+required to run the benchmark loop against Together AI's API. On each
+turn the model receives the full conversation history and a fixed tool
+list, decides which database tool to call, and the result is fed back
+— repeating until the model calls submit_atlas or the budget is reached.
 
-Two implementation details that differ from a naive OpenAI subclass:
+Database layer
+--------------
+Local database files are not available in this environment. LiveDatabaseTools
+(live_tools.py) replaces the shared DatabaseTools with a live UniProt REST
+API backend. The tool names and schemas the model sees are identical — only
+the backend changes. Coverage is limited to UniProt; PSP and SIGNOR entries
+present in other agents' runs are absent here. This is disclosed in methods.
 
-1. Assistant message injection:
-   BaseAgent's loop does not append the assistant's response to self.messages
-   before feeding back tool results. OpenAI-compatible APIs require:
-       [assistant msg with tool_calls] → [tool result msg(s)]
-   We append the assistant message at the end of _call_model so the
-   conversation history is always well-formed when the next call goes out.
+Accumulator pattern
+-------------------
+The model drives curation strategy (which kinases to query) but is not
+required to regenerate all collected entries at submission time — a known
+failure mode on Together AI due to large output token generation. Instead,
+_format_tool_result captures entries from every query_by_kinase result as
+they arrive. If the model submits an empty atlas, run() falls back to these
+accumulated entries automatically.
 
-2. Tool call ID tracking:
-   _format_tool_result only receives (tool_name, result) — no ID. But the
-   OpenAI tool-result message requires the matching tool_call_id. We stash
-   IDs during _parse_tool_calls in a queue and pop them in order during
-   _format_tool_result.
-
-Parsing mode: STRICT — only structured tool_calls are honoured. If the model
-returns JSON in plain text instead of using the tool_call mechanism, we do NOT
-silently rescue it. This is intentional for Paper 1 benchmarking: format
-compliance is a real model characteristic worth measuring.
+Implementation notes
+--------------------
+- temperature=0 throughout for reproducibility
+- Strict tool call parsing: text-mode JSON fallback is intentionally absent
+  (format compliance is a measurable Paper 1 characteristic)
+- Assistant messages are appended inside _call_model (not by BaseAgent) to
+  satisfy the OpenAI message ordering requirement: assistant → tool result
+- tool_call_ids are stashed during _parse_tool_calls and popped in order
+  during _format_tool_result to keep request/response pairs correctly matched
 """
 
 from contributions.andrew_qwen3_235b.live_tools import LiveDatabaseTools

@@ -1,0 +1,119 @@
+================================================================================
+QWEN3-235B PHOSPHOATLAS AGENT — DEVELOPMENT NOTES
+Andrew Lim | UCSF Radiation Oncology
+================================================================================
+
+MODEL & SETUP
+-------------
+We're running Qwen3-235B-A22B-Instruct-2507 via Together AI. The model ID
+in config.yaml (Qwen/Qwen2.5-72B-Instruct) turned out to require a dedicated
+paid endpoint — after some trial and error we landed on the serverless variant:
+Qwen/Qwen3-235B-A22B-Instruct-2507-tput. API key lives in ~/.zshrc as
+TOGETHER_API_KEY.
+
+NOTE: Worth disclosing in Paper 1: the actual benchmarked model is Qwen3-235B,
+not the Qwen2.5-72B originally listed in config.
+
+naive.txt prompt
+      ↓
+  BaseAgent.run()          ← the loop lives here (shared infra, we don't touch)
+      ↓
+  QwenAgent._call_model()  ← sends messages + tool list to Together AI
+      ↓
+  model responds with tool_calls → [list_kinases, query_by_kinase, ...]
+      ↓
+  QwenAgent._format_tool_result()  ← executes tool, accumulates entries
+      ↓
+  LiveDatabaseTools.dispatch()     ← hits UniProt REST API, returns data
+      ↓
+  result fed back to model → repeat
+      ↓
+  budget hit → QwenAgent.run() fallback → atlas.json
+
+
+TEMP NOTE: DATABASE FILES NEEDED FROM MAINTAINER
+--------------------------------------
+The shared DatabaseTools in databases/tools.py already has full support for
+PSP, SIGNOR, and UniProt — the logic is written, it just needs the data files.
+
+Ask your maintainer for these three files:
+
+  databases/psp/Kinase_Substrate_Dataset
+  databases/signor/signor_phospho_human.json
+  databases/uniprot/uniprot_phospho_parsed.json
+
+Once those are in place, remove the self.tools = LiveDatabaseTools() line
+from agent_runner.py and the original DatabaseTools takes over automatically
+— all three databases, heptameric peptides, in-vivo/in-vitro evidence,
+the works. No other code changes needed.
+
+Until then, LiveDatabaseTools (UniProt live API only) is the workaround.
+
+
+TOOL CONSTRAINTS — HOW AGENTS ACCESS DATA
+------------------------------------------
+Every agent in this benchmark — Claude, GPT, Qwen, whoever — receives the
+same fixed list of tool definitions on every API call. They can only call
+tools on that list. No internet browsing, no external APIs, nothing outside
+what we explicitly define.
+
+Claude can browse the web in Claude.ai, GPT-4 has web search in ChatGPT —
+but here they're just LLMs receiving a tool list, same as Qwen. The model's
+native capabilities don't matter; only the tools we hand it do.
+
+This is what makes the benchmark a controlled comparison. The tool schemas
+are defined in databases/tools.py (get_tool_definitions) and assembled in
+base_agent.py. Our LiveDatabaseTools swaps the backend (UniProt REST API
+instead of local files) while keeping the same tool names and schemas
+the model sees.
+
+
+DATABASE LAYER
+--------------
+The local database files (PSP, SIGNOR, UniProt snapshots) aren't committed
+to the repo and we didn't have them. Rather than blocking, we built
+LiveDatabaseTools — a drop-in replacement that queries the UniProt REST API
+live. Same interface, different backend. The model never knows the difference.
+
+One bug we hit: the initial query_by_kinase used ft_mod_res:"by CDK1" as a
+phrase search. UniProt strips stop words during indexing so "by" disappeared
+and everything returned count=0. Fixed to ft_mod_res:CDK1 and immediately
+got 155 CDK1 substrates. Also worth noting: some kinases (GSK3B, etc.) still
+return empty because UniProt uses variant names instead of HGNC symbols —
+that's a database annotation gap, not a code bug.
+
+Live queries mean our data reflects current UniProt, not the snapshot PA2
+was built from. The maintainer anticipated this — it's why scoring emphasizes
+P/R over AUC.
+
+
+THE submit_atlas PROBLEM
+------------------------
+This was the main headache. The naive prompt says "when you are finished,
+call submit_atlas" — but the model interpreted "finished" as having queried
+all 632 kinases. It never considered itself done within our budget.
+
+We tried injecting a budget warning at 80% of tool calls to force submission,
+which worked in that the model called submit_atlas — but then it tried to
+regenerate thousands of collected entries as JSON output tokens in one shot
+and the Together AI API hung silently for 15 minutes.
+
+The fix was to stop relying on the model for submission entirely. We added
+an accumulator that captures entries directly from tool results as they come
+in, and overrode run() to use those accumulated entries if the model submits
+empty. The model still drives the strategy (which kinases to query), we just
+don't make it re-serialize everything at the end. Verified working: 20-call
+smoke test saved 379 real entries.
+
+
+WHAT'S LEFT
+-----------
+- Full production run (haven't pulled the trigger yet)
+- Context growth slows API calls over time — may need to raise timeout for
+  a complete 632-kinase run
+- heptameric_peptide is always empty — would need to fetch full protein
+  sequences to compute flanking AAs, skipping for now
+- Kimi agent not started yet
+- Haven't scored against the gold standard yet
+
+================================================================================
