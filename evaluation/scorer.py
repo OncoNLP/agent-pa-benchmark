@@ -311,12 +311,29 @@ def score_per_tier(agent_entries: list, gold: dict) -> dict:
 
 def score_atlas(agent_entries: list, gold: dict) -> dict:
     """Run all scoring metrics and return a comprehensive result."""
+    al = score_triplets(agent_entries, gold)
+    cl = score_columns(agent_entries, gold)
+    kd = score_kinase_discovery(agent_entries, gold)
+    cr = score_cross_referencing(agent_entries)
+    pt = score_per_tier(agent_entries, gold)
+
+    overview = {
+        "atlas_size": al["total_agent_entries"],
+        "recall": al["recall"],
+        "precision": al["precision"],
+        "f1": al["f1"],
+        "kinases_found": f"{kd['kinases_discovered']}/{kd['kinases_in_gold']}",
+        "multi_db_pct": cr["multi_db_pct"],
+        "peptide_accuracy": cl["peptide_exact_accuracy"],
+    }
+
     return {
-        "atlas_level": score_triplets(agent_entries, gold),
-        "column_level": score_columns(agent_entries, gold),
-        "kinase_discovery": score_kinase_discovery(agent_entries, gold),
-        "cross_referencing": score_cross_referencing(agent_entries),
-        "per_tier": score_per_tier(agent_entries, gold),
+        "overview": overview,
+        "atlas_level": al,
+        "column_level": cl,
+        "kinase_discovery": kd,
+        "cross_referencing": cr,
+        "per_tier": pt,
     }
 
 
@@ -342,25 +359,26 @@ def main():
     scores = score_atlas(atlas, gold)
 
     # Print summary
+    ov = scores["overview"]
     al = scores["atlas_level"]
     cl = scores["column_level"]
-    kd = scores["kinase_discovery"]
-    cr = scores["cross_referencing"]
     print(f"\n{'='*60}")
     print(f"RESULTS")
     print(f"{'='*60}")
-    print(f"Triplet: P={al['precision']} R={al['recall']} F1={al['f1']}")
+    print(f"Atlas size:       {ov['atlas_size']}")
+    print(f"Recall:           {ov['recall']}")
+    print(f"Precision:        {ov['precision']}")
+    print(f"F1:               {ov['f1']}")
+    print(f"Kinases found:    {ov['kinases_found']}")
+    print(f"Multi-DB:         {ov['multi_db_pct']}%")
+    print(f"Peptide accuracy: {ov['peptide_accuracy']}")
     print(f"  TP={al['true_positives']} FP={al['false_positives']} FN={al['false_negatives']}")
-    print(f"Columns (matched): site={cl['site_accuracy']} peptide={cl['peptide_exact_accuracy']} uniprot={cl['uniprot_accuracy']}")
-    print(f"Kinases: {kd['kinases_discovered']}/{kd['kinases_in_gold']} ({kd['discovery_rate']})")
-    print(f"Cross-ref: {cr['multi_db_pct']}% multi-DB")
     for tier, ts in scores["per_tier"].items():
         print(f"  Tier {tier}: {ts['kinases']} kinases, recall={ts['recall']}")
 
     # Save
     # Summary (without per-kinase and mismatch details)
-    summary = {k: v for k, v in scores.items() if k != "per_tier"}
-    summary["per_tier"] = scores["per_tier"]
+    summary = {k: v for k, v in scores.items()}
     summary["column_level"] = {k: v for k, v in cl.items() if k != "peptide_mismatches"}
 
     with open(output_dir / "summary.json", "w") as f:
