@@ -197,17 +197,33 @@ def score_columns(agent_entries: list, gold: dict) -> dict:
 
 
 def score_kinase_discovery(agent_entries: list, gold: dict) -> dict:
-    """Score how many gold-standard kinases the agent discovered."""
-    agent_kinases = set()
+    """Score how many gold-standard kinases the agent discovered.
+
+    A kinase is 'discovered' only if at least one of its gold-standard
+    triplets is matched — not merely if the kinase name appears in the atlas.
+    """
+    gold_triplets = gold["triplet_keys"]
+
+    # Kinases with at least one matched gold triplet
+    matched_kinases = set()
+    all_agent_kinases = set()
     for e in agent_entries:
         k = normalize_gene_symbol(e.get("kinase_gene", ""))
-        if k:
-            agent_kinases.add(k)
+        if not k:
+            continue
+        all_agent_kinases.add(k)
+        key = make_triplet_key(
+            e.get("kinase_gene", ""),
+            e.get("substrate_gene", ""),
+            e.get("phospho_site", ""),
+        )
+        if key in gold_triplets:
+            matched_kinases.add(k)
 
     gold_kinases = gold["kinase_names"]
-    discovered = agent_kinases & gold_kinases
-    missed = gold_kinases - agent_kinases
-    novel = agent_kinases - gold_kinases
+    discovered = matched_kinases & gold_kinases
+    missed = gold_kinases - matched_kinases
+    novel = all_agent_kinases - gold_kinases
 
     return {
         "kinases_in_gold": len(gold_kinases),

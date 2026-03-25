@@ -1,58 +1,60 @@
 {
   "overview": {
     "atlas_size": 27653,
-    "recall": 0.9095,
-    "precision": 0.6406,
-    "f1": 0.7517,
-    "kinases_found": "415/436",
+    "recall": 0.91,
+    "precision": 0.6408,
+    "f1": 0.752,
+    "kinases_found": "410/433",
     "multi_db_pct": 4.7,
-    "peptide_accuracy": 0.7353
+    "peptide_accuracy": 0.735
   },
   "atlas_level": {
     "total_agent_entries": 27653,
-    "total_gold_entries": 15640,
-    "true_positives": 14224,
-    "false_positives": 7980,
-    "false_negatives": 1416,
-    "precision": 0.6406,
-    "recall": 0.9095,
-    "f1": 0.7517
+    "total_gold_entries": 15635,
+    "true_positives": 14228,
+    "false_positives": 7976,
+    "false_negatives": 1407,
+    "precision": 0.6408,
+    "recall": 0.91,
+    "f1": 0.752
   },
   "column_level": {
-    "matched_triplets": 14224,
-    "site_exact": 14224,
-    "site_total": 14224,
+    "matched_triplets": 14228,
+    "site_exact": 14228,
+    "site_total": 14228,
     "site_accuracy": 1.0,
-    "peptide_exact": 10199,
-    "peptide_case_diff": 3475,
+    "peptide_exact": 10198,
+    "peptide_case_diff": 3479,
     "peptide_missing": 0,
     "peptide_mismatch": 197,
-    "peptide_total": 13871,
-    "peptide_exact_accuracy": 0.7353,
+    "peptide_total": 13874,
+    "peptide_exact_accuracy": 0.735,
     "peptide_close_accuracy": 0.9858,
-    "uniprot_exact": 14127,
-    "uniprot_total": 14224,
+    "uniprot_exact": 14131,
+    "uniprot_total": 14228,
     "uniprot_accuracy": 0.9932
   },
   "kinase_discovery": {
-    "kinases_in_gold": 436,
-    "kinases_discovered": 415,
-    "kinases_missed": 21,
-    "kinases_novel": 313,
-    "discovery_rate": 0.9518,
+    "kinases_in_gold": 433,
+    "kinases_discovered": 410,
+    "kinases_missed": 23,
+    "kinases_novel": 312,
+    "discovery_rate": 0.9469,
     "missed_kinases": [
-      "ADRBK2",
+      "ACVR1",
       "BCAT2",
       "CAD",
+      "EPHB4",
       "ERBB3",
       "FCGR3A",
       "GTF2H1",
       "MAP3K9",
-      "MYT1",
-      "PAK7",
+      "MNAT1",
+      "NEK8",
       "PDIK1L",
       "PEG3",
-      "PKD1",
+      "PHKG1",
+      "PRKACG",
       "PRKAR1A",
       "PRKAR2A",
       "PRKAR2B",
@@ -132,19 +134,19 @@
       "recall": 0.9172
     },
     "B": {
-      "kinases": 101,
-      "gold_entries": 4332,
+      "kinases": 102,
+      "gold_entries": 4353,
       "recall": 0.8998
     },
     "C": {
-      "kinases": 146,
-      "gold_entries": 1475,
-      "recall": 0.9058
+      "kinases": 144,
+      "gold_entries": 1452,
+      "recall": 0.9091
     },
     "D": {
-      "kinases": 155,
-      "gold_entries": 316,
-      "recall": 0.8259
+      "kinases": 153,
+      "gold_entries": 313,
+      "recall": 0.8371
     }
   }
 }
