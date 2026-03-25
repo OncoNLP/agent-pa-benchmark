@@ -1,4 +1,13 @@
 {
+  "overview": {
+    "atlas_size": 23745,
+    "recall": 0.9531,
+    "precision": 0.6518,
+    "f1": 0.7742,
+    "kinases_found": "420/436",
+    "multi_db_pct": 29.1,
+    "peptide_accuracy": 0.9564
+  },
   "atlas_level": {
     "total_agent_entries": 23745,
     "total_gold_entries": 15640,

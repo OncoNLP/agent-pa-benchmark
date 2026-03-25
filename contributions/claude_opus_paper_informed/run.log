@@ -1,0 +1,149 @@
+[21:21:18][SETUP] Prompt: agents/prompts/paper_informed.txt (2027 chars)
+[21:21:18][SETUP] Condition: paper_informed, Run ID: 0
+[21:21:18][SETUP] Output: contributions/claude_opus_paper_informed
+[21:21:18][DISCOVER] Listing available databases...
+[21:21:18][DISCOVER] Found 3 databases: ['psp', 'signor', 'uniprot']
+[21:21:18][STATS] psp: 15173 entries, 530 kinases, 2966 substrates
+[21:21:18][STATS] signor: 13409 entries, 579 kinases, 2401 substrates
+[21:21:18][STATS] uniprot: 4461 entries, 341 kinases, 1492 substrates
+[21:21:18][CURATE] === PhosphoSitePlus: exhaustive kinase extraction ===
+[21:21:18][CURATE]   psp kinases offset=0: +100, total=100/530
+[21:21:18][CURATE]   psp kinases offset=100: +100, total=200/530
+[21:21:18][CURATE]   psp kinases offset=200: +100, total=300/530
+[21:21:18][CURATE]   psp kinases offset=300: +100, total=400/530
+[21:21:18][CURATE]   psp kinases offset=400: +100, total=500/530
+[21:21:18][CURATE]   psp kinases offset=500: +30, total=530/530
+[21:21:18][CURATE]   psp kinase progress: 50/530, atlas=1945
+[21:21:18][CURATE]   psp kinase progress: 100/530, atlas=4355
+[21:21:18][CURATE]   psp kinase progress: 150/530, atlas=5460
+[21:21:18][CURATE]   psp kinase progress: 200/530, atlas=6704
+[21:21:18][CURATE]   psp kinase progress: 250/530, atlas=7451
+[21:21:18][CURATE]   psp kinase progress: 300/530, atlas=9419
+[21:21:18][CURATE]   psp kinase progress: 350/530, atlas=9969
+[21:21:18][CURATE]   psp kinase progress: 400/530, atlas=12858
+[21:21:18][CURATE]   psp kinase progress: 450/530, atlas=13456
+[21:21:18][CURATE]   psp kinase progress: 500/530, atlas=14622
+[21:21:18][CURATE]   psp kinase done: +15024 new, 15024 total
+[21:21:18][CURATE] === SIGNOR: exhaustive kinase extraction ===
+[21:21:18][CURATE]   signor kinases offset=0: +100, total=100/579
+[21:21:18][CURATE]   signor kinases offset=100: +100, total=200/579
+[21:21:18][CURATE]   signor kinases offset=200: +100, total=300/579
+[21:21:18][CURATE]   signor kinases offset=300: +100, total=400/579
+[21:21:18][CURATE]   signor kinases offset=400: +100, total=500/579
+[21:21:18][CURATE]   signor kinases offset=500: +79, total=579/579
+[21:21:18][CURATE]   signor kinase progress: 50/579, atlas=15765
+[21:21:18][CURATE]   signor kinase progress: 100/579, atlas=16244
+[21:21:18][CURATE]   signor kinase progress: 150/579, atlas=16978
+[21:21:18][CURATE]   signor kinase progress: 200/579, atlas=17505
+[21:21:18][CURATE]   signor kinase progress: 250/579, atlas=17822
+[21:21:18][CURATE]   signor kinase progress: 300/579, atlas=18393
+[21:21:18][CURATE]   signor kinase progress: 350/579, atlas=18552
+[21:21:18][CURATE]   signor kinase progress: 400/579, atlas=19077
+[21:21:18][CURATE]   signor kinase progress: 450/579, atlas=20026
+[21:21:18][CURATE]   signor kinase progress: 500/579, atlas=20436
+[21:21:18][CURATE]   signor kinase progress: 550/579, atlas=20698
+[21:21:18][CURATE]   signor kinase done: +5790 new, 20814 total
+[21:21:18][CURATE] === UniProt: exhaustive kinase extraction ===
+[21:21:18][CURATE]   uniprot kinases offset=0: +100, total=100/341
+[21:21:18][CURATE]   uniprot kinases offset=100: +100, total=200/341
+[21:21:18][CURATE]   uniprot kinases offset=200: +100, total=300/341
+[21:21:18][CURATE]   uniprot kinases offset=300: +41, total=341/341
+[21:21:18][CURATE]   uniprot kinase progress: 50/341, atlas=21072
+[21:21:18][CURATE]   uniprot kinase progress: 100/341, atlas=21661
+[21:21:18][CURATE]   uniprot kinase progress: 150/341, atlas=21934
+[21:21:18][CURATE]   uniprot kinase progress: 200/341, atlas=22155
+[21:21:18][CURATE]   uniprot kinase progress: 250/341, atlas=22781
+[21:21:18][CURATE]   uniprot kinase progress: 300/341, atlas=23029
+[21:21:18][CURATE]   uniprot kinase done: +2931 new, 23745 total
+[21:21:18][XREF] === Cross-referencing: substrate sweep ===
+[21:21:18][XREF]   psp substrates offset=0: +100, total=100/2966
+[21:21:18][XREF]   psp substrates offset=100: +100, total=200/2966
+[21:21:18][XREF]   psp substrates offset=200: +100, total=300/2966
+[21:21:18][XREF]   psp substrates offset=300: +100, total=400/2966
+[21:21:18][XREF]   psp substrates offset=400: +100, total=500/2966
+[21:21:18][XREF]   psp substrates offset=500: +100, total=600/2966
+[21:21:18][XREF]   psp substrates offset=600: +100, total=700/2966
+[21:21:18][XREF]   psp substrates offset=700: +100, total=800/2966
+[21:21:18][XREF]   psp substrates offset=800: +100, total=900/2966
+[21:21:18][XREF]   psp substrates offset=900: +100, total=1000/2966
+[21:21:18][XREF]   psp substrates offset=1000: +100, total=1100/2966
+[21:21:18][XREF]   psp substrates offset=1100: +100, total=1200/2966
+[21:21:18][XREF]   psp substrates offset=1200: +100, total=1300/2966
+[21:21:18][XREF]   psp substrates offset=1300: +100, total=1400/2966
+[21:21:18][XREF]   psp substrates offset=1400: +100, total=1500/2966
+[21:21:18][XREF]   psp substrates offset=1500: +100, total=1600/2966
+[21:21:18][XREF]   psp substrates offset=1600: +100, total=1700/2966
+[21:21:18][XREF]   psp substrates offset=1700: +100, total=1800/2966
+[21:21:18][XREF]   psp substrates offset=1800: +100, total=1900/2966
+[21:21:18][XREF]   psp substrates offset=1900: +100, total=2000/2966
+[21:21:18][XREF]   psp substrates offset=2000: +100, total=2100/2966
+[21:21:18][XREF]   psp substrates offset=2100: +100, total=2200/2966
+[21:21:18][XREF]   psp substrates offset=2200: +100, total=2300/2966
+[21:21:18][XREF]   psp substrates offset=2300: +100, total=2400/2966
+[21:21:18][XREF]   psp substrates offset=2400: +100, total=2500/2966
+[21:21:18][XREF]   psp substrates offset=2500: +100, total=2600/2966
+[21:21:18][XREF]   psp substrates offset=2600: +100, total=2700/2966
+[21:21:18][XREF]   psp substrates offset=2700: +100, total=2800/2966
+[21:21:18][XREF]   psp substrates offset=2800: +100, total=2900/2966
+[21:21:18][XREF]   psp substrates offset=2900: +66, total=2966/2966
+[21:21:18][XREF]   psp substrate sweep: +0 new
+[21:21:18][XREF]   signor substrates offset=0: +100, total=100/2401
+[21:21:18][XREF]   signor substrates offset=100: +100, total=200/2401
+[21:21:18][XREF]   signor substrates offset=200: +100, total=300/2401
+[21:21:18][XREF]   signor substrates offset=300: +100, total=400/2401
+[21:21:18][XREF]   signor substrates offset=400: +100, total=500/2401
+[21:21:18][XREF]   signor substrates offset=500: +100, total=600/2401
+[21:21:18][XREF]   signor substrates offset=600: +100, total=700/2401
+[21:21:18][XREF]   signor substrates offset=700: +100, total=800/2401
+[21:21:18][XREF]   signor substrates offset=800: +100, total=900/2401
+[21:21:18][XREF]   signor substrates offset=900: +100, total=1000/2401
+[21:21:18][XREF]   signor substrates offset=1000: +100, total=1100/2401
+[21:21:18][XREF]   signor substrates offset=1100: +100, total=1200/2401
+[21:21:18][XREF]   signor substrates offset=1200: +100, total=1300/2401
+[21:21:18][XREF]   signor substrates offset=1300: +100, total=1400/2401
+[21:21:18][XREF]   signor substrates offset=1400: +100, total=1500/2401
+[21:21:18][XREF]   signor substrates offset=1500: +100, total=1600/2401
+[21:21:18][XREF]   signor substrates offset=1600: +100, total=1700/2401
+[21:21:18][XREF]   signor substrates offset=1700: +100, total=1800/2401
+[21:21:18][XREF]   signor substrates offset=1800: +100, total=1900/2401
+[21:21:18][XREF]   signor substrates offset=1900: +100, total=2000/2401
+[21:21:18][XREF]   signor substrates offset=2000: +100, total=2100/2401
+[21:21:18][XREF]   signor substrates offset=2100: +100, total=2200/2401
+[21:21:18][XREF]   signor substrates offset=2200: +100, total=2300/2401
+[21:21:18][XREF]   signor substrates offset=2300: +100, total=2400/2401
+[21:21:18][XREF]   signor substrates offset=2400: +1, total=2401/2401
+[21:21:18][XREF]   signor substrate sweep: +0 new
+[21:21:18][XREF]   uniprot substrates offset=0: +100, total=100/1492
+[21:21:18][XREF]   uniprot substrates offset=100: +100, total=200/1492
+[21:21:18][XREF]   uniprot substrates offset=200: +100, total=300/1492
+[21:21:18][XREF]   uniprot substrates offset=300: +100, total=400/1492
+[21:21:18][XREF]   uniprot substrates offset=400: +100, total=500/1492
+[21:21:18][XREF]   uniprot substrates offset=500: +100, total=600/1492
+[21:21:18][XREF]   uniprot substrates offset=600: +100, total=700/1492
+[21:21:18][XREF]   uniprot substrates offset=700: +100, total=800/1492
+[21:21:18][XREF]   uniprot substrates offset=800: +100, total=900/1492
+[21:21:18][XREF]   uniprot substrates offset=900: +100, total=1000/1492
+[21:21:18][XREF]   uniprot substrates offset=1000: +100, total=1100/1492
+[21:21:18][XREF]   uniprot substrates offset=1100: +100, total=1200/1492
+[21:21:18][XREF]   uniprot substrates offset=1200: +100, total=1300/1492
+[21:21:18][XREF]   uniprot substrates offset=1300: +100, total=1400/1492
+[21:21:18][XREF]   uniprot substrates offset=1400: +92, total=1492/1492
+[21:21:18][XREF]   uniprot substrate sweep: +0 new
+[21:21:18][RESULT] === Final atlas ===
+[21:21:19][RESULT]   Unique triplets:   23745
+[21:21:19][RESULT]   Unique kinases:    853
+[21:21:19][RESULT]   Unique substrates: 3549
+[21:21:19][RESULT]   Multi-DB support:  6910 (29.1%)
+[21:21:19][RESULT]   With UniProt ID:   18236
+[21:21:19][RESULT]   With peptide:      20813
+[21:21:19][DONE] Elapsed: 0.1s (0.0m)
+[21:21:19][DONE] Tool calls: 8399
+[21:21:19][SAVE] Atlas: contributions/claude_opus_paper_informed/atlas.json (23745 entries)
+[21:21:19][SCORE] Running evaluation scorer...
+[21:21:19][SCORE]   Atlas size:       23745
+[21:21:19][SCORE]   Recall:           0.9531
+[21:21:19][SCORE]   Precision:        0.6518
+[21:21:19][SCORE]   F1:               0.7742
+[21:21:19][SCORE]   Kinases found:    420/436
+[21:21:19][SCORE]   Multi-DB:         29.1%
+[21:21:19][SCORE]   Peptide accuracy: 0.9564

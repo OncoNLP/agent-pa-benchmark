@@ -1,0 +1,231 @@
+[21:21:08][SETUP] Prompt: agents/prompts/pipeline_guided.txt (4639 chars)
+[21:21:08][SETUP] Condition: pipeline_guided, Run ID: 0
+[21:21:08][SETUP] Output: contributions/claude_opus_pipeline_guided
+[21:21:08][PHASE1] ============================================================
+[21:21:08][PHASE1] PHASE 1: HARMONIZE AND CENTRALIZE PROTEIN DATA
+[21:21:08][PHASE1] ============================================================
+[21:21:08][STEP1] Step 1: Build Protein Reference Index (discover databases)
+[21:21:08][STEP1]   Database: PhosphoSitePlus (psp) — Curated kinase-substrate relationships with phosphorylation sites, heptameric peptides, and in vivo/in vitro evidence.
+[21:21:08][STEP1]   Database: SIGNOR (signor) — Curated signaling network with phosphorylation events, mechanisms, and PubMed references.
+[21:21:08][STEP1]   Database: UniProt/UniProtKB (uniprot) — Protein annotations including phosphorylation sites attributed to specific kinases, extracted from reviewed Swiss-Prot entries.
+[21:21:08][STEP1]   psp scope: 15173 entries, 530 kinases, 2966 substrates
+[21:21:08][STEP1]   signor scope: 13409 entries, 579 kinases, 2401 substrates
+[21:21:08][STEP1]   uniprot scope: 4461 entries, 341 kinases, 1492 substrates
+[21:21:08][STEP2] Step 2: Curation 1 — Cross-reference external databases
+[21:21:08][STEP2]   psp kinases offset=0: +100, total=100/530
+[21:21:08][STEP2]   psp kinases offset=100: +100, total=200/530
+[21:21:08][STEP2]   psp kinases offset=200: +100, total=300/530
+[21:21:08][STEP2]   psp kinases offset=300: +100, total=400/530
+[21:21:08][STEP2]   psp kinases offset=400: +100, total=500/530
+[21:21:08][STEP2]   psp kinases offset=500: +30, total=530/530
+[21:21:08][STEP2]   psp substrates offset=0: +100, total=100/2966
+[21:21:08][STEP2]   psp substrates offset=100: +100, total=200/2966
+[21:21:08][STEP2]   psp substrates offset=200: +100, total=300/2966
+[21:21:08][STEP2]   psp substrates offset=300: +100, total=400/2966
+[21:21:08][STEP2]   psp substrates offset=400: +100, total=500/2966
+[21:21:08][STEP2]   psp substrates offset=500: +100, total=600/2966
+[21:21:08][STEP2]   psp substrates offset=600: +100, total=700/2966
+[21:21:08][STEP2]   psp substrates offset=700: +100, total=800/2966
+[21:21:08][STEP2]   psp substrates offset=800: +100, total=900/2966
+[21:21:08][STEP2]   psp substrates offset=900: +100, total=1000/2966
+[21:21:08][STEP2]   psp substrates offset=1000: +100, total=1100/2966
+[21:21:08][STEP2]   psp substrates offset=1100: +100, total=1200/2966
+[21:21:08][STEP2]   psp substrates offset=1200: +100, total=1300/2966
+[21:21:08][STEP2]   psp substrates offset=1300: +100, total=1400/2966
+[21:21:08][STEP2]   psp substrates offset=1400: +100, total=1500/2966
+[21:21:08][STEP2]   psp substrates offset=1500: +100, total=1600/2966
+[21:21:08][STEP2]   psp substrates offset=1600: +100, total=1700/2966
+[21:21:08][STEP2]   psp substrates offset=1700: +100, total=1800/2966
+[21:21:08][STEP2]   psp substrates offset=1800: +100, total=1900/2966
+[21:21:08][STEP2]   psp substrates offset=1900: +100, total=2000/2966
+[21:21:08][STEP2]   psp substrates offset=2000: +100, total=2100/2966
+[21:21:08][STEP2]   psp substrates offset=2100: +100, total=2200/2966
+[21:21:08][STEP2]   psp substrates offset=2200: +100, total=2300/2966
+[21:21:08][STEP2]   psp substrates offset=2300: +100, total=2400/2966
+[21:21:08][STEP2]   psp substrates offset=2400: +100, total=2500/2966
+[21:21:08][STEP2]   psp substrates offset=2500: +100, total=2600/2966
+[21:21:08][STEP2]   psp substrates offset=2600: +100, total=2700/2966
+[21:21:08][STEP2]   psp substrates offset=2700: +100, total=2800/2966
+[21:21:08][STEP2]   psp substrates offset=2800: +100, total=2900/2966
+[21:21:08][STEP2]   psp substrates offset=2900: +66, total=2966/2966
+[21:21:08][STEP2]   signor kinases offset=0: +100, total=100/579
+[21:21:08][STEP2]   signor kinases offset=100: +100, total=200/579
+[21:21:08][STEP2]   signor kinases offset=200: +100, total=300/579
+[21:21:08][STEP2]   signor kinases offset=300: +100, total=400/579
+[21:21:08][STEP2]   signor kinases offset=400: +100, total=500/579
+[21:21:08][STEP2]   signor kinases offset=500: +79, total=579/579
+[21:21:08][STEP2]   signor substrates offset=0: +100, total=100/2401
+[21:21:08][STEP2]   signor substrates offset=100: +100, total=200/2401
+[21:21:08][STEP2]   signor substrates offset=200: +100, total=300/2401
+[21:21:08][STEP2]   signor substrates offset=300: +100, total=400/2401
+[21:21:08][STEP2]   signor substrates offset=400: +100, total=500/2401
+[21:21:08][STEP2]   signor substrates offset=500: +100, total=600/2401
+[21:21:08][STEP2]   signor substrates offset=600: +100, total=700/2401
+[21:21:08][STEP2]   signor substrates offset=700: +100, total=800/2401
+[21:21:08][STEP2]   signor substrates offset=800: +100, total=900/2401
+[21:21:08][STEP2]   signor substrates offset=900: +100, total=1000/2401
+[21:21:08][STEP2]   signor substrates offset=1000: +100, total=1100/2401
+[21:21:08][STEP2]   signor substrates offset=1100: +100, total=1200/2401
+[21:21:08][STEP2]   signor substrates offset=1200: +100, total=1300/2401
+[21:21:08][STEP2]   signor substrates offset=1300: +100, total=1400/2401
+[21:21:08][STEP2]   signor substrates offset=1400: +100, total=1500/2401
+[21:21:08][STEP2]   signor substrates offset=1500: +100, total=1600/2401
+[21:21:08][STEP2]   signor substrates offset=1600: +100, total=1700/2401
+[21:21:08][STEP2]   signor substrates offset=1700: +100, total=1800/2401
+[21:21:08][STEP2]   signor substrates offset=1800: +100, total=1900/2401
+[21:21:08][STEP2]   signor substrates offset=1900: +100, total=2000/2401
+[21:21:08][STEP2]   signor substrates offset=2000: +100, total=2100/2401
+[21:21:08][STEP2]   signor substrates offset=2100: +100, total=2200/2401
+[21:21:08][STEP2]   signor substrates offset=2200: +100, total=2300/2401
+[21:21:08][STEP2]   signor substrates offset=2300: +100, total=2400/2401
+[21:21:08][STEP2]   signor substrates offset=2400: +1, total=2401/2401
+[21:21:08][STEP2]   uniprot kinases offset=0: +100, total=100/341
+[21:21:08][STEP2]   uniprot kinases offset=100: +100, total=200/341
+[21:21:08][STEP2]   uniprot kinases offset=200: +100, total=300/341
+[21:21:08][STEP2]   uniprot kinases offset=300: +41, total=341/341
+[21:21:08][STEP2]   uniprot substrates offset=0: +100, total=100/1492
+[21:21:08][STEP2]   uniprot substrates offset=100: +100, total=200/1492
+[21:21:08][STEP2]   uniprot substrates offset=200: +100, total=300/1492
+[21:21:08][STEP2]   uniprot substrates offset=300: +100, total=400/1492
+[21:21:08][STEP2]   uniprot substrates offset=400: +100, total=500/1492
+[21:21:08][STEP2]   uniprot substrates offset=500: +100, total=600/1492
+[21:21:08][STEP2]   uniprot substrates offset=600: +100, total=700/1492
+[21:21:08][STEP2]   uniprot substrates offset=700: +100, total=800/1492
+[21:21:08][STEP2]   uniprot substrates offset=800: +100, total=900/1492
+[21:21:08][STEP2]   uniprot substrates offset=900: +100, total=1000/1492
+[21:21:08][STEP2]   uniprot substrates offset=1000: +100, total=1100/1492
+[21:21:08][STEP2]   uniprot substrates offset=1100: +100, total=1200/1492
+[21:21:08][STEP2]   uniprot substrates offset=1200: +100, total=1300/1492
+[21:21:08][STEP2]   uniprot substrates offset=1300: +100, total=1400/1492
+[21:21:08][STEP2]   uniprot substrates offset=1400: +92, total=1492/1492
+[21:21:08][STEP2]   Global kinase inventory: 853 unique across all DBs
+[21:21:08][STEP2]   Global substrate inventory: 3549 unique across all DBs
+[21:21:08][STEP2]   Kinases in 2+ databases: 400 (cross-validated)
+[21:21:08][STEP3] Step 3: Curation 2 — Consolidation deferred to assembly phase
+[21:21:08][PHASE2] ============================================================
+[21:21:08][PHASE2] PHASE 2: BUILD RELATIONAL DATABASE OF PHOSPHORYLATION EVENTS
+[21:21:08][PHASE2] ============================================================
+[21:21:08][STEP4] Step 4: Functional Triage — extract kinase→substrate relationships
+[21:21:08][STEP4]   === PhosphoSitePlus: querying 530 kinases ===
+[21:21:08][STEP4]     PhosphoSitePlus kinase progress: 100/530, atlas=4355
+[21:21:08][STEP4]     PhosphoSitePlus kinase progress: 200/530, atlas=6704
+[21:21:08][STEP4]     PhosphoSitePlus kinase progress: 300/530, atlas=9419
+[21:21:08][STEP4]     PhosphoSitePlus kinase progress: 400/530, atlas=12858
+[21:21:08][STEP4]     PhosphoSitePlus kinase progress: 500/530, atlas=14622
+[21:21:08][STEP4]   PhosphoSitePlus kinase extraction: +15024 entries, atlas=15024
+[21:21:08][STEP4]   === SIGNOR: querying 579 kinases ===
+[21:21:08][STEP4]     SIGNOR kinase progress: 100/579, atlas=16244
+[21:21:08][STEP4]     SIGNOR kinase progress: 200/579, atlas=17505
+[21:21:08][STEP4]     SIGNOR kinase progress: 300/579, atlas=18393
+[21:21:08][STEP4]     SIGNOR kinase progress: 400/579, atlas=19077
+[21:21:08][STEP4]     SIGNOR kinase progress: 500/579, atlas=20436
+[21:21:08][STEP4]   SIGNOR kinase extraction: +5790 entries, atlas=20814
+[21:21:08][STEP4]   === UniProt: querying 341 kinases ===
+[21:21:08][STEP4]     UniProt kinase progress: 100/341, atlas=21661
+[21:21:08][STEP4]     UniProt kinase progress: 200/341, atlas=22155
+[21:21:08][STEP4]     UniProt kinase progress: 300/341, atlas=23029
+[21:21:08][STEP4]   UniProt kinase extraction: +2931 entries, atlas=23745
+[21:21:08][STEP4]   --- Substrate-side extraction (catch asymmetric entries) ---
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 100/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 200/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 300/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 400/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 500/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 600/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 700/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 800/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 900/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 1000/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 1100/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 1200/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 1300/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 1400/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 1500/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 1600/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 1700/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 1800/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 1900/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 2000/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 2100/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 2200/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 2300/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 2400/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 2500/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 2600/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 2700/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 2800/2966, atlas=23745
+[21:21:08][STEP4]     PhosphoSitePlus substrate progress: 2900/2966, atlas=23745
+[21:21:08][STEP4]   PhosphoSitePlus substrate extraction: +0 new, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 100/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 200/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 300/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 400/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 500/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 600/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 700/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 800/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 900/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 1000/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 1100/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 1200/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 1300/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 1400/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 1500/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 1600/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 1700/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 1800/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 1900/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 2000/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 2100/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 2200/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 2300/2401, atlas=23745
+[21:21:08][STEP4]     SIGNOR substrate progress: 2400/2401, atlas=23745
+[21:21:08][STEP4]   SIGNOR substrate extraction: +0 new, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 100/1492, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 200/1492, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 300/1492, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 400/1492, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 500/1492, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 600/1492, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 700/1492, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 800/1492, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 900/1492, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 1000/1492, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 1100/1492, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 1200/1492, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 1300/1492, atlas=23745
+[21:21:08][STEP4]     UniProt substrate progress: 1400/1492, atlas=23745
+[21:21:08][STEP4]   UniProt substrate extraction: +0 new, atlas=23745
+[21:21:08][STEP5] Step 5: Curation 3 — Validate phosphorylation sites
+[21:21:08][STEP5]   QC: removed 0 entries with missing fields (23745 → 23745)
+[21:21:08][STEP5]   Heptameric peptide coverage: 20813/23745 (87.7%)
+[21:21:08][PHASE3] ============================================================
+[21:21:08][PHASE3] PHASE 3: CROSS-REFERENCING AND QUALITY CONTROL
+[21:21:08][PHASE3] ============================================================
+[21:21:08][STEP7] Step 7: Multi-database cross-reference analysis
+[21:21:08][STEP7]   Entries in 2+ databases: 6910
+[21:21:08][STEP7]   Entries in 3  databases: 916
+[21:21:08][STEP7]   PhosphoSitePlus: 15024 entries
+[21:21:08][STEP7]   SIGNOR: 12086 entries
+[21:21:08][STEP7]   UniProt: 4461 entries
+[21:21:08][STEP8] Step 8: Final Quality Control and Assembly
+[21:21:08][STEP8]   Deduplication: atlas keyed by (kinase|substrate|site) — inherently deduplicated
+[21:21:08][STEP6] Step 6: Assemble PhosphoAtlas Relational Database
+[21:21:08][RESULT] === FINAL ATLAS ===
+[21:21:08][RESULT]   Unique triplets:   23745
+[21:21:08][RESULT]   Unique kinases:    853
+[21:21:08][RESULT]   Unique substrates: 3549
+[21:21:08][RESULT]   Multi-DB support:  6910 (29.1%)
+[21:21:08][RESULT]   With UniProt ID:   18236
+[21:21:08][RESULT]   With peptide:      20813
+[21:21:08][DONE] Elapsed: 0.2s (0.0m)
+[21:21:08][DONE] Tool calls: 8399
+[21:21:08][SAVE] Atlas: contributions/claude_opus_pipeline_guided/atlas.json (23745 entries)
+[21:21:08][SCORE] Running evaluation scorer...
+[21:21:08][SCORE]   Atlas size:       23745
+[21:21:08][SCORE]   Recall:           0.9531
+[21:21:08][SCORE]   Precision:        0.6518
+[21:21:08][SCORE]   F1:               0.7742
+[21:21:08][SCORE]   Kinases found:    420/436
+[21:21:08][SCORE]   Multi-DB:         29.1%
+[21:21:08][SCORE]   Peptide accuracy: 0.9564
