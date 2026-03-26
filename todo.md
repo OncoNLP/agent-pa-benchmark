@@ -26,3 +26,17 @@ Todo: check for hallucinations, make it grab more kinases, give URL endpoints.
 1. Mistral by Borna: log the original url failure, and upload atlas (even failed) if any
 
 2. Qwen3-235B by Andrew: UniProt API worked, but other database API access failed. Log the failures in details and upload the atlas (even failed) if any.
+
+1. Mistral by Borna: log the original url failure, and upload atlas if any
+
+2. Gemini by Neel: 
+	- Failures 
+		- Gemini hallucinates and goes to localhost urls (from whatever it found searching). this has to be explicity handled.
+		- It will need to paginate results as well, as it initially tries to grab large datasets all at once
+		- google recently updated its SDK for genai, so there were a ton of compatibility/syntax issues at first
+		- There are strict rate limits on the latest pro models
+		- pro 2.5 has high server traffic throughout the day
+		- using 2.5-flash since its the most stable one
+		- will test pro-preview models once rate limit abates
+	- Successes
+		-
