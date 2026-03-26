@@ -1,0 +1,131 @@
+{
+  "overview": {
+    "atlas_size": 15434,
+    "recall": 0.8727,
+    "precision": 0.9007,
+    "f1": 0.8865,
+    "kinases_found": "404/433",
+    "multi_db_pct": 0.0,
+    "peptide_accuracy": 0.9758
+  },
+  "atlas_level": {
+    "total_agent_entries": 15434,
+    "total_gold_entries": 15635,
+    "true_positives": 13644,
+    "false_positives": 1505,
+    "false_negatives": 1991,
+    "precision": 0.9007,
+    "recall": 0.8727,
+    "f1": 0.8865
+  },
+  "column_level": {
+    "matched_triplets": 13644,
+    "site_exact": 13644,
+    "site_total": 13644,
+    "site_accuracy": 1.0,
+    "peptide_exact": 13272,
+    "peptide_case_diff": 322,
+    "peptide_missing": 0,
+    "peptide_mismatch": 7,
+    "peptide_total": 13601,
+    "peptide_exact_accuracy": 0.9758,
+    "peptide_close_accuracy": 0.9995,
+    "uniprot_exact": 13601,
+    "uniprot_total": 13644,
+    "uniprot_accuracy": 0.9968
+  },
+  "kinase_discovery": {
+    "kinases_in_gold": 433,
+    "kinases_discovered": 404,
+    "kinases_missed": 29,
+    "kinases_novel": 25,
+    "discovery_rate": 0.933,
+    "missed_kinases": [
+      "ACVR1",
+      "ADRBK1",
+      "BCAT2",
+      "CAD",
+      "CRK",
+      "EPHA3",
+      "EPHB4",
+      "ERBB3",
+      "FCGR3A",
+      "GTF2H1",
+      "MAP3K9",
+      "MNAT1",
+      "NEK8",
+      "NRK",
+      "PDIK1L",
+      "PEG3",
+      "PHKG1",
+      "PRKACG",
+      "PRKAR1A",
+      "PRKAR2A",
+      "PRKAR2B",
+      "PRKRIR",
+      "PRKY",
+      "RAD17",
+      "RPS6KC1",
+      "SHB",
+      "SIK3",
+      "TESK2",
+      "TTN"
+    ],
+    "novel_kinases": [
+      "AATK",
+      "AK2",
+      "ALPK3",
+      "BCKDK",
+      "CKB",
+      "DCLK1",
+      "KHK",
+      "MAST4",
+      "MLKL",
+      "NEK10",
+      "OBSCN",
+      "PFKFB3",
+      "PHKG2",
+      "PIKFYVE",
+      "PIP4K2A",
+      "PMVK",
+      "PYV0001",
+      "PYV0094",
+      "RIOK1",
+      "STK36",
+      "TAOK3",
+      "TNK1",
+      "TRIB2",
+      "TSSK1B",
+      "UL97"
+    ]
+  },
+  "cross_referencing": {
+    "multi_db_count": 0,
+    "multi_db_pct": 0.0,
+    "db_coverage": {
+      "PhosphoSitePlus": 15434
+    }
+  },
+  "per_tier": {
+    "A": {
+      "kinases": 34,
+      "gold_entries": 9517,
+      "recall": 0.8811
+    },
+    "B": {
+      "kinases": 102,
+      "gold_entries": 4353,
+      "recall": 0.8626
+    },
+    "C": {
+      "kinases": 144,
+      "gold_entries": 1452,
+      "recall": 0.8698
+    },
+    "D": {
+      "kinases": 153,
+      "gold_entries": 313,
+      "recall": 0.77
+    }
+  }
+}
