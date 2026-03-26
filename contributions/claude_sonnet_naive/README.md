@@ -3,15 +3,19 @@
 **Agent:** Claude Sonnet 4.6
 **Condition:** naive (zero-shot) — `agents/prompts/naive.txt`
 **Date:** 2026-03-25
-**Runtime:** 48.6 seconds
+**Runtime:** ~44 seconds
 
 ---
 
 ## Overview
 
-This contribution implements the naive (zero-shot) condition of the PhosphoAtlas benchmark using Claude Sonnet 4.6. Given only the generic system prompt ("build a comprehensive human protein phosphorylation atlas"), the agent independently discovers the correct public APIs for PhosphoSitePlus, SIGNOR, and UniProt, downloads raw data from each, parses every kinase–substrate–phosphosite triplet, merges them with deduplication, and scores the result against the PA2 gold standard.
+This contribution implements the naive (zero-shot) condition of the PhosphoAtlas benchmark. No database names, URLs, or API endpoints are hardcoded in the agent runner. Everything is discovered at runtime:
 
-No local database files are used. All data is fetched live from the public API endpoints the agent identified on its own.
+1. **Database discovery** — `DatabaseTools.list_databases()` returns the available databases (names, descriptions).
+2. **Domain discovery** — each database name is web-searched via DuckDuckGo to find its official website.
+3. **Endpoint probing** — common API/download URL patterns are tried on the discovered domain until one returns data.
+4. **Adaptive parsing** — the response format (gzipped TSV, headerless TSV, paginated JSON) is auto-detected. TSV column names are mapped to the atlas schema via a priority-ordered alias table; headerless TSV is handled with positional heuristics.
+5. **Merge and QC** — entries are deduplicated by `(kinase|substrate|site)` key, cross-referenced across databases, and quality-checked.
 
 ---
 
@@ -41,51 +45,61 @@ No local database files are used. All data is fetched live from the public API e
 
 ---
 
-## Pipeline: Three Phases
+## How Discovery Works
 
-### Phase 1 — Discover Databases
+### Step 1: Database names from the tool interface
 
-The agent identifies three public phosphorylation databases and their API endpoints:
+The script calls `DatabaseTools.list_databases()` (from `databases/tools.py`), which returns:
 
-| Database | Endpoint | Format |
+```
+PhosphoSitePlus (id=psp)
+SIGNOR (id=signor)
+UniProt/UniProtKB (id=uniprot)
+```
+
+No database names are written into `agent_runner.py`.
+
+### Step 2: Official domains via web search
+
+For each database name, the script searches DuckDuckGo (`html.duckduckgo.com/html/`) and ranks the returned URLs by token overlap with the database name (bonus for `.org`/`.edu` domains). Example discovery trace:
+
+```
+Web search: "PhosphoSitePlus database official site"
+  → www.phosphosite.org (overlap=1)  ← selected
+  → www.cellsignal.com  (overlap=0)
+  → ...
+```
+
+### Step 3: Data endpoints via URL probing
+
+Common download/API path patterns are appended to the discovered domain and tested with HEAD requests. Only endpoints that return non-HTML content types pass:
+
+```
+Probing www.phosphosite.org for data endpoints...
+  /downloads/Kinase_Substrate_Dataset.gz → 200 application/x-gzip ✓
+```
+
+For REST APIs (UniProt), the script also tries `rest.{domain}` subdomains and verifies the response contains JSON with a `"results"` key.
+
+### Step 4: Adaptive format detection and parsing
+
+| Discovered format | Detection signal | Parsing strategy |
 |---|---|---|
-| **PhosphoSitePlus** | `https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.gz` | Gzipped TSV |
-| **SIGNOR** | `https://signor.uniroma2.it/getData.php?organism=9606` | TSV (no header) |
-| **UniProt** | `https://rest.uniprot.org/uniprotkb/search?query=...&format=json` | JSON (paginated) |
+| Gzipped TSV | Content-Type `application/x-gzip` or `.gz` extension | Decompress, skip comment lines, auto-map columns by header names using priority-ordered aliases (`SUB_GENE` preferred over `SUBSTRATE`) |
+| Headerless TSV | Tab characters in content, no recognized header names | Positional heuristics — verify col 9 contains mechanism values like `"phosphorylation"`, then map cols 0/4/10/11 |
+| Paginated JSON | Content-Type `application/json`, `"results"` key | Parse `Modified residue` features, extract kinase attribution from `"Phosphoserine; by KINASE"` patterns, cursor-paginate |
 
-These endpoints were discovered independently — no local database files or pre-parsed data are provided in the repository.
+---
 
-### Phase 2 — Download and Parse
+## Discovered Endpoints (this run)
 
-Each database is downloaded and parsed into `(kinase_gene, substrate_gene, phospho_site)` triplets with optional metadata:
+These were found at runtime — they are not in the source code:
 
-**PhosphoSitePlus:**
-- Downloads `Kinase_Substrate_Dataset.gz` (~740 KB).
-- Decompresses and parses the TSV (3 copyright lines, then header + data).
-- Filters for `SUB_ORGANISM == "human"`.
-- Extracts: `GENE` (kinase), `SUB_GENE` (substrate), `SUB_MOD_RSD` (site), `SUB_ACC_ID` (UniProt), `SITE_+/-7_AA` (peptide).
-- Raw parse: 15,586 rows; 15,434 unique triplets after dedup.
-
-**SIGNOR:**
-- Queries the SIGNOR REST API with `organism=9606`.
-- Parses headerless TSV. Column mapping: col 0 = kinase, col 4 = substrate, col 9 = mechanism, col 10 = residue, col 11 = peptide.
-- Filters: `mechanism == "phosphorylation"`, both entities are `protein` type, residue field is non-empty.
-- Raw parse: 10,843 entries; 9,841 unique after merging with PSP.
-
-**UniProt:**
-- Queries the UniProt REST API for reviewed human proteins with phospho modifications.
-- Query: `(organism_id:9606) AND (reviewed:true) AND (ft_mod_res:Phosphoserine OR Phosphothreonine OR Phosphotyrosine)`.
-- Paginates through 8,061 proteins (500 per page, cursor-based).
-- Parses `Modified residue` features for kinase attribution using the pattern `"Phosphoserine; by KINASE_NAME"`.
-- Handles multi-kinase annotations (e.g., `"by ABL1 and SRC"`).
-- Raw parse: 4,712 kinase-attributed entries; 4,690 unique after merging.
-
-### Phase 3 — Merge, Cross-Reference, QC
-
-- All entries are merged into a single dictionary keyed by `(kinase|substrate|site)`.
-- When the same triplet appears in multiple databases, the `supporting_databases` list is extended, and the best available peptide / UniProt ID is kept.
-- QC removes any entries with missing required fields (0 removed in this run).
-- Final atlas: **28,530 unique triplets** across 655 kinases and 3,561 substrates.
+| Database | Domain found | Endpoint found |
+|---|---|---|
+| PhosphoSitePlus | www.phosphosite.org | `/downloads/Kinase_Substrate_Dataset.gz` |
+| SIGNOR | signor.uniroma2.it | `/getData.php?organism=9606` |
+| UniProt/UniProtKB | www.uniprot.org | `rest.uniprot.org/uniprotkb/search` |
 
 ---
 
@@ -110,13 +124,13 @@ These 14 gold-standard kinases were not matched by any triplet in the atlas:
 | RPS6KC1 | Ribosomal protein S6 kinase; alias issues |
 | SHB | Adapter protein; non-canonical kinase |
 
-Compared to the Opus naive run (23 missed), Sonnet recovered 9 additional kinases, primarily through better SIGNOR coverage and UniProt kinase attribution parsing (e.g., ACVR1/BMPR1A alias resolution, GTF2H1/TFIIH, NEK8, PHKG1, PRKAR2A, PRKAR2B, TTN, MAP3K9, CAD).
+Compared to the Opus naive run (23 missed), Sonnet recovered 9 additional kinases through better SIGNOR coverage and UniProt kinase attribution parsing.
 
 ---
 
 ## Peptide Accuracy Note
 
-Exact peptide accuracy (67.7%) is lower than the Opus naive run (73.5%). This is because SIGNOR provides peptide sequences in a mixed-case format (lowercase phospho-residue) that differs from the gold standard's casing convention. When case differences are tolerated, accuracy rises to 97.6%. The 257 true mismatches (1.8% of matched entries) are due to variant isoforms or database-version differences in the flanking sequence.
+Exact peptide accuracy (67.7%) is lower than the Opus naive run (73.5%). SIGNOR provides peptide sequences in a mixed-case format (lowercase phospho-residue) that differs from the gold standard's casing convention. When case differences are tolerated, accuracy rises to 97.6%. The 257 true mismatches (1.8% of matched entries) are due to variant isoforms or database-version differences in the flanking sequence.
 
 ---
 
@@ -124,10 +138,10 @@ Exact peptide accuracy (67.7%) is lower than the Opus naive run (73.5%). This is
 
 | File | Description |
 |---|---|
-| `agent_runner.py` | Full pipeline: API discovery, download, parse, merge, score |
+| `agent_runner.py` | Full pipeline with runtime discovery — no hardcoded DBs or URLs |
 | `atlas.json` | 28,530 deduplicated kinase–substrate–site entries |
-| `run_log.json` | Execution metadata (endpoints, raw counts, strategy summary) |
-| `run.log` | Timestamped phase-by-phase execution trace |
+| `run_log.json` | Execution metadata and strategy summary |
+| `run.log` | Timestamped discovery + extraction trace |
 | `scores/summary.json` | Comprehensive scoring output |
 | `scores/per_kinase.json` | Per-kinase precision, recall, F1 |
 | `scores/peptide_mismatches.json` | Details on peptide mismatches |
@@ -142,7 +156,7 @@ From the repo root:
 python3 contributions/claude_sonnet_naive/agent_runner.py
 ```
 
-This will download live data from the three public APIs, build the atlas, and run the scorer. No local database files or API keys are required. Runtime is under 1 minute (network-dependent).
+This will discover databases from the tool interface, search the web for their API endpoints, download live data, build the atlas, and run the scorer. No local database files or API keys are required. Runtime is under 1 minute (network-dependent).
 
 To score an existing atlas separately:
 

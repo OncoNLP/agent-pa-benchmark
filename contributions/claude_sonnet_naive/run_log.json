@@ -1,21 +1,16 @@
 {
   "agent": "Claude Sonnet 4.6",
   "prompt": "naive (zero-shot)",
-  "strategy": "Naive (zero-shot) pipeline: Independently discovered 3 database APIs. (1) PSP: Downloaded Kinase_Substrate_Dataset.gz from phosphosite.org, parsed gzipped TSV, filtered for human SUB_ORGANISM. (2) SIGNOR: Queried getData.php?organism=9606, parsed TSV, filtered for mechanism=phosphorylation with protein-protein entries and non-empty residue. (3) UniProt: Queried rest.uniprot.org REST API for reviewed human proteins with phospho modifications, parsed 'Modified residue' features with kinase attribution ('by KINASE' pattern). Merged all entries by (kinase|substrate|site) key, aggregating supporting databases, peptides, and UniProt IDs. Final atlas: 28530 unique triplets, 655 kinases, 1435 multi-DB entries (5.0%).",
+  "strategy": "Runtime discovery pipeline: (1) Discovered databases via DatabaseTools.list_databases() tool interface. (2) Web-searched each database name via DuckDuckGo to find official domains. (3) Probed common API/download paths on each domain to find data endpoints. (4) Downloaded raw data, auto-detected format (gzip TSV, plain TSV, paginated JSON), and parsed entries using adaptive column mapping. (5) Merged across databases by (kinase|substrate|site) key with dedup. No database names or URLs hardcoded.",
   "databases_accessed": [
     "PhosphoSitePlus",
     "SIGNOR",
-    "UniProt"
+    "UniProt/UniProtKB"
   ],
-  "api_endpoints": {
-    "PhosphoSitePlus": "https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.gz",
-    "SIGNOR": "https://signor.uniroma2.it/getData.php?organism=9606",
-    "UniProt": "https://rest.uniprot.org/uniprotkb/search?query=(organism_id:9606)+AND+(reviewed:true)+AND+(ft_mod_res:Phospho*)"
-  },
   "raw_counts": {
-    "PSP": 15434,
     "SIGNOR": 9841,
-    "UniProt": 4690
+    "PhosphoSitePlus": 15434,
+    "UniProt/UniProtKB": 4690
   },
   "merged_atlas": 28530,
   "unique_kinases": 655,

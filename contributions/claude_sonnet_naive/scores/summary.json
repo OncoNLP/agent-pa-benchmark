@@ -24,12 +24,12 @@
     "site_total": 14905,
     "site_accuracy": 1.0,
     "peptide_exact": 9551,
-    "peptide_case_diff": 4215,
+    "peptide_case_diff": 4214,
     "peptide_missing": 88,
-    "peptide_mismatch": 257,
+    "peptide_mismatch": 258,
     "peptide_total": 14111,
     "peptide_exact_accuracy": 0.6768,
-    "peptide_close_accuracy": 0.9756,
+    "peptide_close_accuracy": 0.9755,
     "uniprot_exact": 8765,
     "uniprot_total": 8797,
     "uniprot_accuracy": 0.9964
@@ -115,7 +115,7 @@
     "db_coverage": {
       "SIGNOR": 9841,
       "PhosphoSitePlus": 15434,
-      "UniProt": 4690
+      "UniProt/UniProtKB": 4690
     }
   },
   "per_tier": {
