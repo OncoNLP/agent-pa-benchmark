@@ -11,9 +11,12 @@ paid endpoint — after some trial and error we landed on the serverless variant
 Qwen/Qwen3-235B-A22B-Instruct-2507-tput. API key lives in ~/.zshrc as
 TOGETHER_API_KEY.
 
-NOTE: Worth disclosing in Paper 1: the actual benchmarked model is Qwen3-235B,
+Worth disclosing in Paper 1: the actual benchmarked model is Qwen3-235B,
 not the Qwen2.5-72B originally listed in config.
 
+
+HOW THE PIPELINE WORKS
+-----------------------
 naive.txt prompt
       ↓
   BaseAgent.run()          ← the loop lives here (shared infra, we don't touch)
@@ -24,67 +27,46 @@ naive.txt prompt
       ↓
   QwenAgent._format_tool_result()  ← executes tool, accumulates entries
       ↓
-  LiveDatabaseTools.dispatch()     ← hits UniProt REST API, returns data
+  DatabaseTools.dispatch()         ← reads local files (empty by default)
       ↓
   result fed back to model → repeat
       ↓
   budget hit → QwenAgent.run() fallback → atlas.json
 
 
-TEMP NOTE: DATABASE FILES NEEDED FROM MAINTAINER
---------------------------------------
-The shared DatabaseTools in databases/tools.py already has full support for
-PSP, SIGNOR, and UniProt — the logic is written, it just needs the data files.
-
-Ask your maintainer for these three files:
-
-  databases/psp/Kinase_Substrate_Dataset
-  databases/signor/signor_phospho_human.json
-  databases/uniprot/uniprot_phospho_parsed.json
-
-Once those are in place, remove the self.tools = LiveDatabaseTools() line
-from agent_runner.py and the original DatabaseTools takes over automatically
-— all three databases, heptameric peptides, in-vivo/in-vitro evidence,
-the works. No other code changes needed.
-
-Until then, LiveDatabaseTools (UniProt live API only) is the workaround.
-
-
 TOOL CONSTRAINTS — HOW AGENTS ACCESS DATA
 ------------------------------------------
-Every agent in this benchmark — Claude, GPT, Qwen, whoever — receives the
-same fixed list of tool definitions on every API call. They can only call
-tools on that list. No internet browsing, no external APIs, nothing outside
-what we explicitly define.
+Every agent in this benchmark receives the same fixed list of tool definitions
+on every API call. They can only call tools on that list — no internet
+browsing, no external APIs, nothing outside what we explicitly define.
 
-Claude can browse the web in Claude.ai, GPT-4 has web search in ChatGPT —
-but here they're just LLMs receiving a tool list, same as Qwen. The model's
-native capabilities don't matter; only the tools we hand it do.
+This makes it a controlled comparison. The tool schemas are defined in
+databases/tools.py and assembled in base_agent.py.
 
-This is what makes the benchmark a controlled comparison. The tool schemas
-are defined in databases/tools.py (get_tool_definitions) and assembled in
-base_agent.py. Our LiveDatabaseTools swaps the backend (UniProt REST API
-instead of local files) while keeping the same tool names and schemas
-the model sees.
+Important clarification from maintainer: the local database files are
+intentionally NOT provided. Identifying the correct external APIs/URLs to
+populate those tools is part of the test. Mistral failed because it provided
+an outdated URL. Qwen's behavior with empty databases is the actual Paper 1
+finding — log anything interesting in todo.md.
 
 
-DATABASE LAYER
---------------
-The local database files (PSP, SIGNOR, UniProt snapshots) aren't committed
-to the repo and we didn't have them. Rather than blocking, we built
-LiveDatabaseTools — a drop-in replacement that queries the UniProt REST API
-live. Same interface, different backend. The model never knows the difference.
+DATABASE LAYER — WHAT WE TRIED
+--------------------------------
+The local database files aren't in the repo by design. I initially assumed
+this was an access issue and built LiveDatabaseTools — a drop-in replacement
+that queries the UniProt REST API live. This was later confirmed to be outside
+the benchmark's intended design (agents should find the APIs themselves).
 
-One bug we hit: the initial query_by_kinase used ft_mod_res:"by CDK1" as a
-phrase search. UniProt strips stop words during indexing so "by" disappeared
-and everything returned count=0. Fixed to ft_mod_res:CDK1 and immediately
-got 155 CDK1 substrates. Also worth noting: some kinases (GSK3B, etc.) still
-return empty because UniProt uses variant names instead of HGNC symbols —
-that's a database annotation gap, not a code bug.
+LiveDatabaseTools is kept in the repo as a documented workaround/experiment
+but is NOT the official Paper 1 result. The official run uses empty databases
+and measures what Qwen does in that situation.
 
-Live queries mean our data reflects current UniProt, not the snapshot PA2
-was built from. The maintainer anticipated this — it's why scoring emphasizes
-P/R over AUC.
+One interesting bug from LiveDatabaseTools development worth keeping:
+query_by_kinase initially used ft_mod_res:"by CDK1" as a phrase search.
+UniProt strips stop words so "by" disappeared and everything returned count=0.
+Fixed to ft_mod_res:CDK1 — immediately got 155 CDK1 substrates. Relevant
+because it illustrates exactly the kind of URL/API subtlety the benchmark
+is testing models on.
 
 
 THE submit_atlas PROBLEM
@@ -101,19 +83,48 @@ and the Together AI API hung silently for 15 minutes.
 The fix was to stop relying on the model for submission entirely. We added
 an accumulator that captures entries directly from tool results as they come
 in, and overrode run() to use those accumulated entries if the model submits
-empty. The model still drives the strategy (which kinases to query), we just
-don't make it re-serialize everything at the end. Verified working: 20-call
-smoke test saved 379 real entries.
+empty. The model still drives the strategy, we just don't make it re-serialize
+everything at the end. Verified working: smoke test saved 379 real entries.
+
+Note: this fix only matters when running with LiveDatabaseTools. With empty
+databases the model submits empty regardless.
+
+
+EXPLICIT PROMPT EXPERIMENT — RESULTS (03_25_2025)
+--------------------------------------------------
+We built QwenAgentWithHTTP (qwen_prompt_testing/agent_with_http.py) and gave
+the model the UniProt + SIGNOR API URLs directly in the prompt along with an
+http_get tool. What we thought was a 20-call smoke test turned out to be a
+complete run.
+
+On tool call 1, Qwen hit https://signor.uniroma2.it/API/getHumanData.php and
+the accumulator parsed the entire SIGNOR TSV in one shot — 9671 entries
+captured before the model even thought about UniProt. The model then fell into
+text mode trying to enumerate all human gene names (in preparation for kinase-
+by-kinase UniProt queries) and never made it to ft_mod_res:CDK1 style calls.
+
+SIGNOR-only baseline scores (3 tool calls, 141 seconds, ~$0.01):
+  Atlas size : 9671
+  Recall     : 0.4629
+  Precision  : 0.7483
+  F1         : 0.572
+  Kinases    : 377/433
+  Multi-DB   : 0%  (UniProt not reached)
+  Peptide    : 0.2185
+
+F1=0.572 from a single HTTP call, in what was meant to be a smoke test.
+The remaining gap (FN=8398) is UniProt data — entries in the gold standard
+that SIGNOR doesn't cover. Adding ft_mod_res:KINASE UniProt queries should
+push recall significantly higher.
 
 
 WHAT'S LEFT
 -----------
-- Full production run (haven't pulled the trigger yet)
-- Context growth slows API calls over time — may need to raise timeout for
-  a complete 632-kinase run
-- heptameric_peptide is always empty — would need to fetch full protein
-  sequences to compute flanking AAs, skipping for now
+- Run full explicit prompt test with higher tool call budget to let Qwen
+  reach UniProt ft_mod_res:KINASE queries (SIGNOR baseline already captured)
+- Investigate why Qwen falls into text mode after gene enumeration — consider
+  tweaking prompt to skip the gene-listing step and go straight to kinase queries
 - Kimi agent not started yet
-- Haven't scored against the gold standard yet
+- Cross-reference UniProt + SIGNOR entries to get Multi-DB > 0%
 
 ================================================================================
