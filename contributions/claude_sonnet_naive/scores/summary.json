@@ -1,0 +1,143 @@
+{
+  "overview": {
+    "atlas_size": 28530,
+    "recall": 0.9533,
+    "precision": 0.7062,
+    "f1": 0.8114,
+    "kinases_found": "419/433",
+    "multi_db_pct": 5.0,
+    "peptide_accuracy": 0.6768
+  },
+  "atlas_level": {
+    "total_agent_entries": 28530,
+    "total_gold_entries": 15635,
+    "true_positives": 14905,
+    "false_positives": 6201,
+    "false_negatives": 730,
+    "precision": 0.7062,
+    "recall": 0.9533,
+    "f1": 0.8114
+  },
+  "column_level": {
+    "matched_triplets": 14905,
+    "site_exact": 14905,
+    "site_total": 14905,
+    "site_accuracy": 1.0,
+    "peptide_exact": 9551,
+    "peptide_case_diff": 4215,
+    "peptide_missing": 88,
+    "peptide_mismatch": 257,
+    "peptide_total": 14111,
+    "peptide_exact_accuracy": 0.6768,
+    "peptide_close_accuracy": 0.9756,
+    "uniprot_exact": 8765,
+    "uniprot_total": 8797,
+    "uniprot_accuracy": 0.9964
+  },
+  "kinase_discovery": {
+    "kinases_in_gold": 433,
+    "kinases_discovered": 419,
+    "kinases_missed": 14,
+    "kinases_novel": 110,
+    "discovery_rate": 0.9677,
+    "missed_kinases": [
+      "BCAT2",
+      "EPHB4",
+      "ERBB3",
+      "FCGR3A",
+      "MNAT1",
+      "PDIK1L",
+      "PEG3",
+      "PRKACG",
+      "PRKAR1A",
+      "PRKRIR",
+      "PRKY",
+      "RAD17",
+      "RPS6KC1",
+      "SHB"
+    ],
+    "novel_kinases": [
+      "AATK",
+      "ACVR2B",
+      "AK2",
+      "ALPK3",
+      "APP",
+      "AUTOCATALYSIS",
+      "AUTOCATALYSIS;",
+      "B1",
+      "BCKDK",
+      "BMPR1A",
+      "CAK",
+      "CAMK",
+      "CAMK1D",
+      "CAMK2",
+      "CAMK2;",
+      "CCRK",
+      "CDC42BP",
+      "CDK11",
+      "CDK5RAP2",
+      "CHKA",
+      "CK",
+      "CK1",
+      "CKB",
+      "CSN1S1",
+      "CSNK2A3",
+      "DCLK1",
+      "DLG1",
+      "DSDNA",
+      "ELOC",
+      "FAK1",
+      "FAK2",
+      "GNA13",
+      "GSK3",
+      "GTF2H2",
+      "GWL",
+      "HIPK4",
+      "HRAS",
+      "HRI",
+      "HSP90AA1",
+      "IKBKG",
+      "IKKA",
+      "IKKB",
+      "IKKE",
+      "IL6ST",
+      "ILK1",
+      "ISPK",
+      "JAK",
+      "KHK",
+      "LKB1",
+      "MAP2K"
+    ]
+  },
+  "cross_referencing": {
+    "multi_db_count": 1435,
+    "multi_db_pct": 5.0,
+    "db_coverage": {
+      "SIGNOR": 9841,
+      "PhosphoSitePlus": 15434,
+      "UniProt": 4690
+    }
+  },
+  "per_tier": {
+    "A": {
+      "kinases": 34,
+      "gold_entries": 9517,
+      "recall": 0.962
+    },
+    "B": {
+      "kinases": 102,
+      "gold_entries": 4353,
+      "recall": 0.9407
+    },
+    "C": {
+      "kinases": 144,
+      "gold_entries": 1452,
+      "recall": 0.947
+    },
+    "D": {
+      "kinases": 153,
+      "gold_entries": 313,
+      "recall": 0.8946
+    }
+  }
+}
