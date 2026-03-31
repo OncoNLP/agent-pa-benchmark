@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "agent": "Gemini 3.1-Pro (Active Save Mode)",
+    "runtime_min": 63.18
+  },
+  "stats": {
+    "total_curated": 1428,
+    "tool_calls": 182,
+    "sources_identified": [
+      "EBI.AC.UK",
+      "EUTILS.NCBI.NLM.NIH.GOV",
+      "KORKINLAB.ORG",
+      "MAAYANLAB.CLOUD",
+      "OMNIPATHDB.ORG",
+      "PATHWAYCOMMONS.ORG",
+      "RESEARCH.BIOINFORMATICS.UDEL.EDU",
+      "REST.UNIPROT.ORG",
+      "SIGNOR.UNIROMA2.IT",
+      "SPARQL.UNIPROT.ORG"
+    ],
+    "hit_breakdown": {
+      "OMNIPATHDB.ORG": 146,
+      "MAAYANLAB.CLOUD": 1,
+      "SIGNOR.UNIROMA2.IT": 1,
+      "RESEARCH.BIOINFORMATICS.UDEL.EDU": 2,
+      "EBI.AC.UK": 8,
+      "REST.UNIPROT.ORG": 6,
+      "EUTILS.NCBI.NLM.NIH.GOV": 2,
+      "SPARQL.UNIPROT.ORG": 1,
+      "KORKINLAB.ORG": 1,
+      "PATHWAYCOMMONS.ORG": 2
+    }
+  }
+}

@@ -157,7 +157,7 @@ class PhosphoAtlasAutonomousAgent:
 
             try:
                 response = self.client.models.generate_content(
-                    model="gemini-2.5-flash", 
+                    model="gemini-3.1-pro-preview", 
                     contents=self.history,
                     config=types.GenerateContentConfig(
                         system_instruction=current_instr,
@@ -237,7 +237,7 @@ if __name__ == "__main__":
         json.dump(results, f, indent=2)
     
     log = {
-        "metadata": {"agent": "Gemini 2.5 Flash (Active Save Mode)", "runtime_min": round((time.time() - agent.start_time) / 60, 2)},
+        "metadata": {"agent": "Gemini 3.1-Pro (Active Save Mode)", "runtime_min": round((time.time() - agent.start_time) / 60, 2)},
         "stats": {
             "total_curated": len(results),
             "tool_calls": agent.tool_calls,
