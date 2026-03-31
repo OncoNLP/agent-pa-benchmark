@@ -1,5 +1,7 @@
 1. Mistral by Borna: 
 
+Naive:
+
 I previously went past zero shot and prompt engineered the model to try continuously at obtaining databases online and not stopping until it succeeds. I do not have the exact log of what it tried, but these were the websites tried and reasons for failure: 
 
 - PhosphoSitePlus — requires a license/login for bulk downloads. The "ok"     
@@ -23,11 +25,16 @@ Also, yesterday when I was trying the model before I knew that we needed to log 
 This makes me think it may be hallucinating.
 
 Todo: check for hallucinations, make it grab more kinases, give URL endpoints.
-1. Mistral by Borna: log the original url failure, and upload atlas (even failed) if any
+
+Paper informed: 
+
+The first run attempt failed on turn 3 with a 503 "unreachable_backend" error from Mistral's API, likely caused by the context size (combined OCR text was ~124k characters before any convo or tool results were added).
+
+To address this, added 2 fixes: (1) retry logic with exponential backoff (up to 5 retries for transient API errors) and (2) truncation caps on the OCR text to drop the initial context window size about in half. This run completed successfully but only ran 4 turns before submitting. It only hit phosphosite at different URL endpoints. This is almost certainly because phosphositeplus requires a license for downloads, so the agent was definitely just getting HTML errors. The 5 results may just be hallucinations based on that fact. 
+
+The model did not try SIGNOR, UniProt or any of the other dbs mentioned in the paper it was given.
 
 2. Qwen3-235B by Andrew: UniProt API worked, but other database API access failed. Log the failures in details and upload the atlas (even failed) if any.
-
-1. Mistral by Borna: log the original url failure, and upload atlas if any
 
 2. Gemini by Neel: 
 	- Failures 

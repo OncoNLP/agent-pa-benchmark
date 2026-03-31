@@ -1,0 +1,157 @@
+[
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "BCR",
+    "phospho_site": "Y177",
+    "substrate_uniprot": "P11274",
+    "heptameric_peptide": "VLEEYTA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "GSK3B",
+    "phospho_site": "S9",
+    "substrate_uniprot": "P49841",
+    "heptameric_peptide": "GRPRTTS",
+    "supporting_databases": [
+      "PhosphoSitePlus",
+      "SIGNOR"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "FOXO3",
+    "phospho_site": "S253",
+    "substrate_uniprot": "O43524",
+    "heptameric_peptide": "RRRAASM",
+    "supporting_databases": [
+      "PhosphoSitePlus",
+      "SIGNOR"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "LMNA",
+    "phospho_site": "S22",
+    "substrate_uniprot": "P02545",
+    "heptameric_peptide": "SPTRITL",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "RB1",
+    "phospho_site": "S807",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "RTDLSPI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "EGFR",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y1068",
+    "substrate_uniprot": "P00533",
+    "heptameric_peptide": "PVPEYINQ",
+    "supporting_databases": [
+      "PhosphoSitePlus",
+      "SIGNOR"
+    ]
+  },
+  {
+    "kinase_gene": "ERK1",
+    "substrate_gene": "ELK1",
+    "phospho_site": "S383",
+    "substrate_uniprot": "P19419",
+    "heptameric_peptide": "LTRSNSG",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ERK2",
+    "substrate_gene": "MAPK1",
+    "phospho_site": "T185",
+    "substrate_uniprot": "P28482",
+    "heptameric_peptide": "VADPDHD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "S33",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "DPAARDT",
+    "supporting_databases": [
+      "PhosphoSitePlus",
+      "SIGNOR"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "JUN",
+    "phospho_site": "S63",
+    "substrate_uniprot": "P05412",
+    "heptameric_peptide": "PMSPSVE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK3",
+    "substrate_gene": "FOS",
+    "phospho_site": "S374",
+    "substrate_uniprot": "P01100",
+    "heptameric_peptide": "LTDTLQA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "RPS6KB1",
+    "phospho_site": "T389",
+    "substrate_uniprot": "P23443",
+    "heptameric_peptide": "RRTLTKD",
+    "supporting_databases": [
+      "PhosphoSitePlus",
+      "SIGNOR"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCA",
+    "substrate_gene": "MARCKS",
+    "phospho_site": "S152",
+    "substrate_uniprot": "P29966",
+    "heptameric_peptide": "KKKKFSF",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "CBL",
+    "phospho_site": "Y731",
+    "substrate_uniprot": "P22681",
+    "heptameric_peptide": "DVDEYLI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "TK1",
+    "substrate_gene": "PKM",
+    "phospho_site": "Y105",
+    "substrate_uniprot": "P14618",
+    "heptameric_peptide": "GDLPAYM",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  }
+]

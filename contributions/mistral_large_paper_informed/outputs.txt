@@ -1,0 +1,96 @@
+RUN 1: DIRECT CONTEXT OR PAPER AND SUPPLEMENTS INTO THE MISTRAL OCR. STATUS 503 RECEIVED ON THE THIRD TURN: server-side error from Mistral, The large context (~124K chars of OCR text plus
+  conversation history) may be contributing.  
+
+[OCR] Extracting text from PhosphoAtlas paper and supplements...
+  [OCR] Processing PhosphoAtlas_2016.pdf...
+         Uploaded as 6a9ba022-a71a-4fe5-89f7-926ee7644934
+         Extracted 62333 chars from 24 pages
+  [OCR] Processing 00085472can152325t-sup-154570_1_supp_0_41mtrg.docx...
+         Uploaded as 060af981-78a5-4cf9-bfb4-bfb2da277a91
+         Extracted 23137 chars from 1 pages
+  [OCR] Processing 00085472can152325t-sup-154570_1_supp_0_81mtq8.docx...
+         Uploaded as dc1804c0-ddae-4951-bc47-3f3dba0c179a
+         Extracted 31055 chars from 1 pages
+  [OCR] Processing 00085472can152325t-sup-154570_1_supp_3241604_nyc8lq.pdf...
+         Uploaded as d8b85971-18de-47d4-bd73-1b5848ac2f3d
+         Extracted 7233 chars from 18 pages
+[OCR] Done. Main paper: 62333 chars, Supplements: 3 files processed
+
+[START] Running Mistral Large paper-informed agent with HTTP tools
+[TURN 1] Calling model...
+  [HTTP_GET] https://www.phosphosite.org/staticDownloads
+         -> ok (15124 chars)
+[TURN 2] Calling model...
+  [HTTP_GET] https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.gz
+         -> ok (15125 chars)
+[TURN 3] Calling model...
+Traceback (most recent call last):
+  File "/Users/bornakarimi/Documents/ucsf/agent-pa-benchmark/contributions/mistral_large_paper_informed/agent_runner.py", line 249, in <module>
+    response = client.chat.complete(
+  File "/opt/anaconda3/envs/mistral-env/lib/python3.10/site-packages/mistralai/client/chat.py", line 279, in complete
+    raise errors.SDKError("API error occurred", http_res, http_res_text)
+mistralai.client.errors.sdkerror.SDKError: API error occurred: Status 503. Body: {"object":"error","message":"Internal server error","type":"unreachable_backend","param":null,"code":"1100","raw_status_code":503}
+
+
+_______________________________________________________________________________________________________________________________________________________________________________
+
+RUN 2: 
+Two options:
+
+1. Add retry logic for transient errors (503, 429, etc.) so it recovers
+automatically                                                                 
+2. Truncate the OCR context to reduce the payload size   
+
+Going to try adding both
+
+(mistral-env) bornakarimi@bornas-MacBook-Air mistral_large_paper_informed % python agent_runner.py
+[OCR] Extracting text from PhosphoAtlas paper and supplements...
+  [OCR] Processing PhosphoAtlas_2016.pdf...
+         Uploaded as 6a9ba022-a71a-4fe5-89f7-926ee7644934
+         Extracted 62333 chars from 24 pages
+  [TRUNCATE] Main paper: 62333 -> 40000 chars
+  [OCR] Processing 00085472can152325t-sup-154570_1_supp_0_41mtrg.docx...
+         Uploaded as 060af981-78a5-4cf9-bfb4-bfb2da277a91
+         Extracted 23137 chars from 1 pages
+  [TRUNCATE] 00085472can152325t-sup-154570_1_supp_0_41mtrg.docx: 23137 -> 15000 chars
+  [OCR] Processing 00085472can152325t-sup-154570_1_supp_0_81mtq8.docx...
+         Uploaded as dc1804c0-ddae-4951-bc47-3f3dba0c179a
+         Extracted 31055 chars from 1 pages
+  [TRUNCATE] 00085472can152325t-sup-154570_1_supp_0_81mtq8.docx: 31055 -> 15000 chars
+  [OCR] Processing 00085472can152325t-sup-154570_1_supp_3241604_nyc8lq.pdf...
+         Uploaded as d8b85971-18de-47d4-bd73-1b5848ac2f3d
+         Extracted 7233 chars from 18 pages
+[OCR] Done. Main paper: 40044 chars, Supplements: 3 files processed
+
+[START] Running Mistral Large paper-informed agent with HTTP tools
+[TURN 1] Calling model...
+  [HTTP_GET] https://www.phosphosite.org/staticDownloads
+         -> ok (15124 chars)
+[TURN 2] Calling model...
+  [HTTP_GET] https://www.phosphosite.org/staticDownloads.action
+         -> ok (15124 chars)
+[TURN 3] Calling model...
+  [HTTP_GET] https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.gz
+         -> ok (15125 chars)
+  [HTTP_GET] https://www.phosphosite.org/downloads/Phosphorylation_site_dataset.gz
+         -> ok (15126 chars)
+[TURN 4] Calling model...
+  [SUBMIT] Atlas received: 5 entries
+[DONE] Turns: 4, Atlas entries: 5, Elapsed: 90.6s
+
+[SCORE] Running evaluation scorer...
+  Atlas size:       5
+  Recall:           0.0003
+  Precision:        1.0
+  F1:               0.0006
+  Kinases found:    5/433
+  Peptide accuracy: 0.0
+
+Outputs in: /Users/bornakarimi/Documents/ucsf/agent-pa-benchmark/contributions/mistral_large_paper_informed/
+  atlas.json, run_log.json
+  scores/summary.json, scores/per_kinase.json, scores/peptide_mismatches.json
+
+
+
+It ran successfully but only produced 5 kinases. It gave up after 4 turns instead of querying more databases. Same behavior as the naive prompt. 
+Also, The todel likely saw the large paper context and tried to shortcut by submitting a few example entries rather than doing exhaustive querying.
