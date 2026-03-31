@@ -1,0 +1,9 @@
+[
+  {
+    "kinase": "LCK",
+    "substrate": "SOCS3",
+    "site": "Y204",
+    "gold_peptide": "VNGHLDSyEkVTQLP",
+    "agent_peptide": "Unknown"
+  }
+]

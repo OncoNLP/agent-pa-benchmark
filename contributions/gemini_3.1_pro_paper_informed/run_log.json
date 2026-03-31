@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "agent": "Gemini 3.1-Pro (Active Save Mode)",
+    "runtime_min": 36.23
+  },
+  "stats": {
+    "total_curated": 774,
+    "tool_calls": 132,
+    "sources_identified": [
+      "API.CROSSREF.ORG",
+      "API.PHOSPHOATLAS.ORG",
+      "API.PHOSPHOSITEPLUS.ORG",
+      "EBI.AC.UK",
+      "EUTILS.NCBI.NLM.NIH.GOV",
+      "GOOGLE.COM?LIMIT=50",
+      "IDENTIFIER.DLIB.UNIROMA2.IT",
+      "MAAYANLAB.CLOUD",
+      "OMNIPATHDB.ORG",
+      "PHOSPHOATLAS.COM",
+      "PHOSPHOATLAS.ORG",
+      "PHOSPHOSITE.ORG",
+      "RESEARCH.BIOINFORMATICS.UDEL.EDU",
+      "REST.UNIPROT.ORG",
+      "SIGNOR.UNIROMA2.IT"
+    ],
+    "hit_breakdown": {
+      "OMNIPATHDB.ORG": 37,
+      "REST.UNIPROT.ORG": 26,
+      "SIGNOR.UNIROMA2.IT": 6,
+      "EUTILS.NCBI.NLM.NIH.GOV": 1,
+      "EBI.AC.UK": 18,
+      "GOOGLE.COM?LIMIT=50": 1,
+      "API.PHOSPHOSITEPLUS.ORG": 1,
+      "PHOSPHOATLAS.ORG": 1,
+      "PHOSPHOSITE.ORG": 2,
+      "API.CROSSREF.ORG": 2,
+      "API.PHOSPHOATLAS.ORG": 1,
+      "MAAYANLAB.CLOUD": 6,
+      "RESEARCH.BIOINFORMATICS.UDEL.EDU": 11,
+      "IDENTIFIER.DLIB.UNIROMA2.IT": 1,
+      "PHOSPHOATLAS.COM": 1
+    }
+  }
+}
