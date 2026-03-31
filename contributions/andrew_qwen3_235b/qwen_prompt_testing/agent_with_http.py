@@ -17,6 +17,7 @@ from contributions.andrew_qwen3_235b.agent_runner import QwenAgent
 import json
 import re
 import sys
+import uuid
 from pathlib import Path
 
 import requests as _requests
@@ -32,36 +33,59 @@ You are a bioinformatics researcher tasked with building a comprehensive
 human protein phosphorylation atlas.
 
 Your goal: curate ALL known human kinase-substrate-phosphosite relationships
-by querying the following public databases via http_get. Do NOT use
+by querying the following two public databases via http_get. Do NOT use
 list_databases or get_stats — those local tools are empty. Use http_get only.
 
-  UniProt REST API  — https://rest.uniprot.org/uniprotkb/search
-    Query Swiss-Prot human proteins. The ft_mod_res field takes a KINASE NAME
-    (e.g. CDK1, EGFR, MAPK1) — NOT a modification keyword like "phospho".
-    Example: ?query=organism_id:9606+AND+reviewed:true+AND+ft_mod_res:CDK1
-             &fields=gene_names,ft_mod_res,accession&format=json&size=500
-    Iterate over many kinase names to build exhaustive coverage.
-    Use the Link header cursor for pagination when results exceed page size.
+=== STEP 1: Pull all SIGNOR data (one call) ===
 
-  SIGNOR REST API   — https://signor.uniroma2.it/API/getHumanData.php
-    Returns all curated human signaling relationships as TSV (no parameters needed).
-    Columns: ENTITYA, TYPEA, IDA, ..., MECHANISM, RESIDUE, SEQUENCE, ...
-    Filter rows where MECHANISM == "phosphorylation" and TYPEA == "protein".
-    ENTITYA = kinase gene, ENTITYB = substrate gene, RESIDUE = phospho site,
-    SEQUENCE = heptameric peptide, IDB = substrate UniProt accession.
+  SIGNOR REST API — https://signor.uniroma2.it/API/getHumanData.php
+    No parameters needed. Returns full human dataset as TSV.
+    Filter rows: MECHANISM == "phosphorylation" AND TYPEA == "protein"
+    ENTITYA = kinase gene, ENTITYB = substrate gene
+    RESIDUE = phospho site, SEQUENCE = heptameric peptide, IDB = UniProt
 
-For each relationship, capture:
+  Make this call first. The system will parse and accumulate the entries
+  automatically. Note every unique ENTITYA (kinase gene name) you see in
+  the results — you will use that list in Step 2.
+
+=== STEP 2: Query UniProt for each kinase from Step 1 ===
+
+  UniProt REST API — https://rest.uniprot.org/uniprotkb/search
+    For EACH kinase gene name you collected from SIGNOR, make one query:
+      ?query=organism_id:9606+AND+reviewed:true+AND+ft_mod_res:KINASE_NAME
+      &fields=gene_names,ft_mod_res,accession&format=json&size=500
+
+    IMPORTANT:
+    - ft_mod_res takes the KINASE GENE NAME (e.g. CDK1, EGFR, MAPK1).
+      Do NOT use "phospho", "phosphoserine", or other modification keywords.
+    - Do NOT enumerate all human gene names first. Use the kinase list from
+      SIGNOR directly as your query list.
+    - If a page has a Link header with rel="next", follow it for pagination.
+    - After exhausting the SIGNOR kinase list, also query common kinases not
+      in SIGNOR: AKT1, AKT2, AKT3, MTOR, PIK3CA, PTEN, TP53, BRCA1, ATM,
+      ATR, CHEK1, CHEK2, MDM2, RB1, CDKN1A, CDKN2A, KRAS, BRAF, RAF1,
+      MAP2K1, MAP2K2, MAPK1, MAPK3, MAPK8, MAPK14, GSK3A, GSK3B, PRKACA,
+      PRKACB, PRKCА, PRKCB, PRKCD, PRKCE, PRKCI, PRKCZ, AURKA, AURKB,
+      PLK1, PLK2, PLK3, NEK1, NEK2, NEK6, NEK7, DYRK1A, DYRK1B, CLK1,
+      CSNK1A1, CSNK1D, CSNK1E, CSNK2A1, CSNK2A2, VRK1, VRK2, TTK, BUB1,
+      HASPIN, RPS6KB1, RPS6KB2, RPS6KA1, RPS6KA2, RPS6KA3, EIF2AK1,
+      EIF2AK2, EIF2AK3, EIF2AK4, AMPK, STK11, MARK1, MARK2, MARK3.
+
+=== OUTPUT FORMAT ===
+
+For each relationship capture:
   - kinase_gene          : kinase gene symbol (e.g. CDK1)
   - substrate_gene       : substrate gene symbol (e.g. RB1)
   - phospho_site         : residue + position (e.g. S807, T308, Y15)
   - heptameric_peptide   : 7 amino acids around the site (if available)
   - substrate_uniprot    : UniProt accession (if available)
-  - supporting_databases : list of sources (e.g. ["UniProt", "SIGNOR"])
+  - supporting_databases : list of sources — ["UniProt"], ["SIGNOR"], or both
 
 Requirements:
-  1. Be EXHAUSTIVE — missing entries is worse than having extra entries.
+  1. Be EXHAUSTIVE — missing entries is worse than extra entries.
   2. Cross-reference — if a relationship appears in both databases, list both.
-  3. Do NOT fabricate data. Only include what the APIs return.
+  3. Do NOT fabricate. Only include what the APIs return.
+  4. Do NOT stop after SIGNOR alone — UniProt adds significant coverage.
 
 When finished, call submit_atlas with your complete results.
 """.strip()
@@ -115,6 +139,61 @@ class QwenAgentWithHTTP(QwenAgent):
         self._total_input_tokens = 0
         self._total_output_tokens = 0
         self._cost_warned = False
+
+    # ── Text-mode tool call recovery ──────────────────────────────────────────
+
+    def _parse_tool_calls(self, response) -> list[tuple[str, dict]]:
+        """Extend strict parsing with <tool_call> XML fallback.
+
+        Qwen3 on Together AI occasionally emits tool calls as raw
+        <tool_call>{"name":...,"arguments":...}</tool_call> text instead of
+        structured function calls. The base class intentionally rejects these
+        (Paper 1 compliance measure). We recover them here for the HTTP
+        experiment only, so the loop keeps running after SIGNOR.
+        """
+        calls = super()._parse_tool_calls(response)
+        if calls:
+            return calls
+
+        text = response.choices[0].message.content or ""
+        # Match everything between <tool_call> tags — avoids non-greedy {.*?}
+        # breaking on nested JSON braces
+        matches = re.findall(r'<tool_call>([\s\S]*?)</tool_call>', text)
+        if not matches:
+            return []
+
+        self._pending_tool_call_ids = []
+        parsed = []
+        fake_tool_calls = []
+
+        for raw in matches:
+            try:
+                obj = json.loads(raw.strip())
+            except json.JSONDecodeError:
+                continue
+            name = obj.get("name", "")
+            args = obj.get("arguments", {})
+            if isinstance(args, str):
+                try:
+                    args = json.loads(args)
+                except json.JSONDecodeError:
+                    args = {}
+            if not name:
+                continue
+            tc_id = f"call_{uuid.uuid4().hex[:8]}"
+            parsed.append((name, args))
+            self._pending_tool_call_ids.append(tc_id)
+            fake_tool_calls.append({
+                "id": tc_id,
+                "type": "function",
+                "function": {"name": name, "arguments": json.dumps(args)},
+            })
+
+        if fake_tool_calls and self.messages and self.messages[-1]["role"] == "assistant":
+            self._log(f"[TEXT-MODE] Recovered {len(fake_tool_calls)} tool call(s) from text content")
+            self.messages[-1]["tool_calls"] = fake_tool_calls
+
+        return parsed
 
     # ── Cost tracking ─────────────────────────────────────────────────────────
 
@@ -260,9 +339,21 @@ class QwenAgentWithHTTP(QwenAgent):
         if not url:
             return {"error": "url is required"}
 
+        import time as _time
         try:
-            resp = _requests.get(url, params=params, timeout=30)
-            resp.raise_for_status()
+            # SIGNOR sometimes returns truncated responses under load — retry
+            max_attempts = 3 if "signor" in url.lower() else 1
+            resp = None
+            for attempt in range(max_attempts):
+                resp = _requests.get(url, params=params, timeout=60)
+                resp.raise_for_status()
+                if "signor" in url.lower():
+                    row_count = len(resp.text.strip().splitlines())
+                    if row_count < 100 and attempt < max_attempts - 1:
+                        self._log(f"[SIGNOR] Only {row_count} rows — retrying ({attempt + 2}/{max_attempts})")
+                        _time.sleep(3)
+                        continue
+                break
 
             # ── SIGNOR: parse full TSV, return summary only ────────────────
             if "signor" in url.lower():

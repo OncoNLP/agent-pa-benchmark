@@ -1,0 +1,352 @@
+[
+  {
+    "kinase": "SRPK1",
+    "substrate": "RBM8A",
+    "site": "S168",
+    "gold_peptide": "GGRRRsRsPDRRRR_",
+    "agent_peptide": "GGRRRSRsPDRRRR"
+  },
+  {
+    "kinase": "HASPIN",
+    "substrate": "H3C1",
+    "site": "T3",
+    "gold_peptide": "_____ArtkQtArks",
+    "agent_peptide": "T-->R"
+  },
+  {
+    "kinase": "MAPK1",
+    "substrate": "ARRB1",
+    "site": "S412",
+    "gold_peptide": "EEEDGtGsPQLNNR_",
+    "agent_peptide": "EEEDGTGsPQLNNR"
+  },
+  {
+    "kinase": "SRC",
+    "substrate": "ITGB3",
+    "site": "Y785",
+    "gold_peptide": "stFTNItyRGT____",
+    "agent_peptide": "STFTNITyRGT"
+  },
+  {
+    "kinase": "CSNK2A1",
+    "substrate": "WASF2",
+    "site": "S497",
+    "gold_peptide": "EFDEDDWsD______",
+    "agent_peptide": "EFDEDDWsD"
+  },
+  {
+    "kinase": "CDK1",
+    "substrate": "RANBP2",
+    "site": "S2280",
+    "gold_peptide": "sALsPsKsPAkLNQs",
+    "agent_peptide": "LSPSKSerPAKLN"
+  },
+  {
+    "kinase": "EPHA2",
+    "substrate": "CLDN4",
+    "site": "Y208",
+    "gold_peptide": "RsAAAsNyV______",
+    "agent_peptide": "RSAAASNyV"
+  },
+  {
+    "kinase": "PRKD2",
+    "substrate": "PRKD2",
+    "site": "S876",
+    "gold_peptide": "QGLAERIsVL_____",
+    "agent_peptide": "QGLAERIsVL"
+  },
+  {
+    "kinase": "ABL1",
+    "substrate": "PDGFRB",
+    "site": "Y934",
+    "gold_peptide": "AHAsDEIyEIMQKCW",
+    "agent_peptide": "PAHASDEiYEIMQKC"
+  },
+  {
+    "kinase": "SGK1",
+    "substrate": "CDKN1B",
+    "site": "T198",
+    "gold_peptide": "PGLRRRQt_______",
+    "agent_peptide": "PGLRRRQt"
+  },
+  {
+    "kinase": "MAPK14",
+    "substrate": "FOXO3",
+    "site": "S7",
+    "gold_peptide": "_MAEAPAsPAPLsPL",
+    "agent_peptide": "sPAPLSPL"
+  },
+  {
+    "kinase": "JAK3",
+    "substrate": "SIGLEC10",
+    "site": "Y691",
+    "gold_peptide": "PKGTQADyAEVKFQ_",
+    "agent_peptide": "PKGTQADyAEVKFQ"
+  },
+  {
+    "kinase": "MAPK8",
+    "substrate": "CDC25B",
+    "site": "S103",
+    "gold_peptide": "GLCMDsPsPMDPHMA",
+    "agent_peptide": "ESSLSSEsSESSDAG"
+  },
+  {
+    "kinase": "ZAP70",
+    "substrate": "LAT",
+    "site": "Y191",
+    "gold_peptide": "SLDGSREyVNVSQEL",
+    "agent_peptide": "LDGSREyVNVSQE"
+  },
+  {
+    "kinase": "PLK1",
+    "substrate": "TOP2A",
+    "site": "S1525",
+    "gold_peptide": "PIKyLEEsDEDDLF_",
+    "agent_peptide": "PIKYLEEsDEDDLF"
+  },
+  {
+    "kinase": "MATK",
+    "substrate": "LYN",
+    "site": "Y508",
+    "gold_peptide": "ytAtEGQyQQQP___",
+    "agent_peptide": "YTATEGQyQQQP"
+  },
+  {
+    "kinase": "DYRK4",
+    "substrate": "DYRK4",
+    "site": "Y264",
+    "gold_peptide": "EHQKVytyIQsRFYR",
+    "agent_peptide": "SSCYEHQkVYTYIQS"
+  },
+  {
+    "kinase": "SRC",
+    "substrate": "CEACAM1",
+    "site": "Y520",
+    "gold_peptide": "LTATEIIysEVKKQ_",
+    "agent_peptide": "LTATEIIySEVKKQ"
+  },
+  {
+    "kinase": "HCK",
+    "substrate": "HCK",
+    "site": "Y522",
+    "gold_peptide": "YTATEsQyQQQP___",
+    "agent_peptide": "YTATESQyQQQP"
+  },
+  {
+    "kinase": "CSNK1D",
+    "substrate": "PSEN2",
+    "site": "S7",
+    "gold_peptide": "_MLTFMAsDsEEEVC",
+    "agent_peptide": "sDSEEEVC"
+  },
+  {
+    "kinase": "CAMK2B",
+    "substrate": "CAMK2B",
+    "site": "T287",
+    "gold_peptide": "sMMHRQEtVDCLKKF",
+    "agent_peptide": "SMMHRQEtVECLKKF"
+  },
+  {
+    "kinase": "PAK1",
+    "substrate": "PXN",
+    "site": "S272",
+    "gold_peptide": "ELDELMAsLSDFKFM",
+    "agent_peptide": "ELDELMAsLSDFKIQ"
+  },
+  {
+    "kinase": "GSK3B",
+    "substrate": "FOXM1",
+    "site": "S474",
+    "gold_peptide": "PPLEEWPsPAPSFkE",
+    "agent_peptide": "S-->A"
+  },
+  {
+    "kinase": "CDK1",
+    "substrate": "NINL",
+    "site": "S185",
+    "gold_peptide": "WDSEDFGsPQKSCsP",
+    "agent_peptide": "NRHSPSWsPDGRRRQ"
+  },
+  {
+    "kinase": "AURKB",
+    "substrate": "CDCA8",
+    "site": "S275",
+    "gold_peptide": "RLAQICssIRtHK__",
+    "agent_peptide": "RLAQICSsIRTHK"
+  },
+  {
+    "kinase": "GSK3B",
+    "substrate": "OGT",
+    "site": "S3",
+    "gold_peptide": "_____MAssVGNVAD",
+    "agent_peptide": "sSVGNVAD"
+  },
+  {
+    "kinase": "CDK5",
+    "substrate": "AGAP2",
+    "site": "S279",
+    "gold_peptide": "YSSSLPSsPNVGHRE",
+    "agent_peptide": "KSKTLDNsDLHPGPP"
+  },
+  {
+    "kinase": "CSNK2A2",
+    "substrate": "EIF4EBP1",
+    "site": "S112",
+    "gold_peptide": "KRAGGEEsQFEMDI_",
+    "agent_peptide": "KRAGGEEsQFEMDI"
+  },
+  {
+    "kinase": "CDK1",
+    "substrate": "CSNK2B",
+    "site": "S209",
+    "gold_peptide": "QAAsNFksPVktIR_",
+    "agent_peptide": "QAASNFKsPVKTIR"
+  },
+  {
+    "kinase": "SGK1",
+    "substrate": "MAPT",
+    "site": "S214",
+    "gold_peptide": "GsRsRtPsLPtPPtR",
+    "agent_peptide": "GGKERPGsKEEVDED"
+  },
+  {
+    "kinase": "PLK1",
+    "substrate": "IKBKB",
+    "site": "S750",
+    "gold_peptide": "QTEEEEHsCLEQAS_",
+    "agent_peptide": "QTEEEEHsCLEQAS"
+  },
+  {
+    "kinase": "PRKCQ",
+    "substrate": "PTPN6",
+    "site": "S591",
+    "gold_peptide": "DKEKsKGsLKRK___",
+    "agent_peptide": "DKEKSKGsLKRK"
+  },
+  {
+    "kinase": "GSK3B",
+    "substrate": "STK38",
+    "site": "T7",
+    "gold_peptide": "_MAMtGstPCssMsN",
+    "agent_peptide": "tPCSSMSN"
+  },
+  {
+    "kinase": "ATM",
+    "substrate": "ABRAXAS1",
+    "site": "S404",
+    "gold_peptide": "MkGFGEYsRsPtF__",
+    "agent_peptide": "MKGFGEYsRSPTF"
+  },
+  {
+    "kinase": "MAPK1",
+    "substrate": "RUNX1",
+    "site": "S276",
+    "gold_peptide": "DTRQIQPsPPWSYDQ",
+    "agent_peptide": "VHPATPIsPGRASGM"
+  },
+  {
+    "kinase": "RPS6KA4",
+    "substrate": "HMGN1",
+    "site": "S7",
+    "gold_peptide": "_MPkRkVssAEGAAk",
+    "agent_peptide": "sSAEGAAK"
+  },
+  {
+    "kinase": "GSK3B",
+    "substrate": "STK38",
+    "site": "S6",
+    "gold_peptide": "__MAMtGstPCssMs",
+    "agent_peptide": "sTPCSSMS"
+  },
+  {
+    "kinase": "PLK1",
+    "substrate": "TERF1",
+    "site": "S435",
+    "gold_peptide": "KKLKLIssDsED___",
+    "agent_peptide": "KKLKLISsDSED"
+  },
+  {
+    "kinase": "TLK2",
+    "substrate": "ASF1B",
+    "site": "S198",
+    "gold_peptide": "PGLLPENsMDCI___",
+    "agent_peptide": "PGLLPENsMDCI"
+  },
+  {
+    "kinase": "GSK3B",
+    "substrate": "OGT",
+    "site": "S4",
+    "gold_peptide": "____MAssVGNVADS",
+    "agent_peptide": "sVGNVADS"
+  },
+  {
+    "kinase": "BTK",
+    "substrate": "GTF2I",
+    "site": "Y248",
+    "gold_peptide": "EESEDPDyyQyNIQG",
+    "agent_peptide": "EESEDPDyYQYNIQA"
+  },
+  {
+    "kinase": "CSNK2B",
+    "substrate": "MME",
+    "site": "S6",
+    "gold_peptide": "__MGKsEsQMDItDI",
+    "agent_peptide": "sQMDITDI"
+  },
+  {
+    "kinase": "PRKAA2",
+    "substrate": "RPTOR",
+    "site": "S792",
+    "gold_peptide": "DKMRRAssYSsLNSL",
+    "agent_peptide": "LTQSAPAsPTNKGVH"
+  },
+  {
+    "kinase": "PRKACA",
+    "substrate": "CFTR",
+    "site": "S768",
+    "gold_peptide": "LQARRRQsVLNLMtH",
+    "agent_peptide": "EPLERRLsLVPDSEQ"
+  },
+  {
+    "kinase": "GRK5",
+    "substrate": "ADRB2",
+    "site": "S407",
+    "gold_peptide": "DsQGRNCstNDsLL_",
+    "agent_peptide": "DSQGRNCsTNDSLL"
+  },
+  {
+    "kinase": "LATS1",
+    "substrate": "CDC26",
+    "site": "T7",
+    "gold_peptide": "_MLRRKPtRLELKLD",
+    "agent_peptide": "tRLELKLD"
+  },
+  {
+    "kinase": "CSNK1A1",
+    "substrate": "PSEN2",
+    "site": "S7",
+    "gold_peptide": "_MLTFMAsDsEEEVC",
+    "agent_peptide": "sDSEEEVC"
+  },
+  {
+    "kinase": "CAMK1",
+    "substrate": "CDKN1B",
+    "site": "T198",
+    "gold_peptide": "PGLRRRQt_______",
+    "agent_peptide": "PGLRRRQt"
+  },
+  {
+    "kinase": "PRKCA",
+    "substrate": "CORO1B",
+    "site": "S2",
+    "gold_peptide": "______MsFRKVVRQ",
+    "agent_peptide": "sFRKVVRQ"
+  },
+  {
+    "kinase": "CHEK1",
+    "substrate": "TP53",
+    "site": "T387",
+    "gold_peptide": "HkkLMFktEGPDsD_",
+    "agent_peptide": "HKKLMFKtEGPDSD"
+  }
+]

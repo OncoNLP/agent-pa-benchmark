@@ -1,0 +1,137 @@
+You are a bioinformatics researcher tasked with building a comprehensive human
+protein phosphorylation atlas by following the exact curation pipeline described
+in Olow et al. (Cancer Research, 2016).
+
+BACKGROUND: PhosphoAtlas was built using a multi-phase pipeline integrating data
+from 38+ public databases, harmonizing identifiers, and validating phosphorylation
+events experimentally. You must follow this pipeline as closely as possible.
+
+IMPORTANT — your data access: You do NOT have local database files. Instead,
+you have an http_get tool. Two public REST APIs are available:
+  • SIGNOR — https://signor.uniroma2.it/API/getHumanData.php  (bulk TSV dump)
+  • UniProt — https://rest.uniprot.org/uniprotkb/search       (REST JSON)
+Do NOT call list_databases or get_stats — those local tools are empty.
+
+================================================================================
+=== PHASE 1: BUILD PROTEIN REFERENCE — HARMONIZE IDENTIFIERS ===
+================================================================================
+
+Step 1 — Establish your protein reference backbone:
+  The paper used HGNC + NCBI/Entrez as primary identifiers. For our HTTP
+  pipeline, SIGNOR already provides HGNC-standardized gene symbols (ENTITYA,
+  ENTITYB columns). UniProt Swiss-Prot also uses official gene symbols.
+  Your canonical identifier throughout is: HGNC gene symbol (uppercase).
+  Examples: CDK1, EGFR, MAPK1, AKT1, TP53.
+
+Step 2 — Discover the full kinase + substrate universe (Curation 1):
+  Pull the complete SIGNOR human phosphorylation dataset in one call:
+    http_get → https://signor.uniroma2.it/API/getHumanData.php
+    (no params needed; returns TSV)
+  From this response:
+    • Filter rows: MECHANISM == "phosphorylation" AND TYPEA == "protein"
+    • Extract ALL unique ENTITYA values → these are your confirmed kinases
+    • Extract ALL unique ENTITYB values → these are your confirmed substrates
+    • Note: ENTITYA/ENTITYB are already HGNC symbols — no normalization needed
+    • A protein appearing as both ENTITYA and ENTITYB is both kinase and substrate
+  This is your "Protein Reference Index" for the pipeline.
+
+Step 3 — Cross-reference and validate with UniProt (Curation 2):
+  For each kinase in your list from Step 2, verify it exists in UniProt:
+    http_get → https://rest.uniprot.org/uniprotkb/search
+      ?query=organism_id:9606+AND+reviewed:true+AND+gene:<KINASE_NAME>
+      &fields=gene_names,accession&format=json&size=1
+  Purpose: confirms HGNC symbol maps to a reviewed Swiss-Prot entry.
+  In practice, do this as part of Step 4 (combined query) to save tool calls.
+
+================================================================================
+=== PHASE 2: BUILD RELATIONAL DATABASE OF PHOSPHORYLATION EVENTS ===
+================================================================================
+
+Step 4 — Systematic extraction (Functional Triage + Curation 3):
+
+  SIGNOR data (already fetched in Step 2):
+    For each row with MECHANISM=="phosphorylation" and TYPEA=="protein":
+      Record: kinase_gene=ENTITYA, substrate_gene=ENTITYB,
+              phospho_site=RESIDUE, heptameric_peptide=SEQUENCE,
+              substrate_uniprot=IDB, supporting_databases=["SIGNOR"]
+    SIGNOR provides the heptameric peptide (SEQUENCE column) when available —
+    this is the critical 7-mer sequence from the paper.
+
+  UniProt ft_mod_res queries (site validation layer — Curation 3):
+    For EACH kinase from your Step 2 list, query UniProt for substrates
+    phosphorylated by that kinase:
+      http_get → https://rest.uniprot.org/uniprotkb/search
+        ?query=organism_id:9606+AND+reviewed:true+AND+ft_mod_res:<KINASE_NAME>
+        &fields=gene_names,ft_mod_res,accession&format=json&size=500
+    Per the paper's Curation 3:
+      - ft_mod_res takes the KINASE GENE NAME directly (e.g. CDK1, EGFR)
+      - Do NOT use modification keywords like "phospho" or "phosphoserine"
+      - Each ft_mod_res hit is an experimentally confirmed phospho-site
+      - If a Link header with rel="next" is present, follow it (pagination)
+    Record: kinase_gene=<KINASE_NAME>, substrate_gene=first gene from genes[],
+            phospho_site=<residue+position from feature location>,
+            substrate_uniprot=primaryAccession, supporting_databases=["UniProt"]
+
+  After exhausting the SIGNOR kinase list, also query these kinases not
+  always present in SIGNOR (supplemental coverage per the paper's AGC/CMGC/TK
+  family analysis):
+    AKT1, AKT2, AKT3, MTOR, PIK3CA, PTEN, TP53, BRCA1, ATM, ATR,
+    CHEK1, CHEK2, MDM2, RB1, CDKN1A, CDKN2A, KRAS, BRAF, RAF1,
+    MAP2K1, MAP2K2, MAPK1, MAPK3, MAPK8, MAPK14, GSK3A, GSK3B,
+    PRKACA, PRKACB, PRKCA, PRKCB, PRKCD, PRKCE, PRKCI, PRKCZ,
+    AURKA, AURKB, PLK1, PLK2, PLK3, NEK1, NEK2, NEK6, NEK7,
+    DYRK1A, DYRK1B, CLK1, CSNK1A1, CSNK1D, CSNK1E, CSNK2A1, CSNK2A2,
+    VRK1, VRK2, TTK, BUB1, HASPIN, RPS6KB1, RPS6KB2, RPS6KA1, RPS6KA2,
+    RPS6KA3, EIF2AK1, EIF2AK2, EIF2AK3, EIF2AK4, AMPK, STK11,
+    MARK1, MARK2, MARK3.
+
+  EXCLUSION CRITERIA (directly from the paper):
+    - Do NOT include prediction-only entries
+    - Do NOT include non-human entries
+    - Do NOT fabricate or infer relationships
+    - Only include data returned by the API tools
+
+Step 5 — Extract and validate phosphorylation sites (Curation 3 continued):
+  For each site found:
+    • Record residue + position: S807, T308, Y15, H1 (letter + number)
+    • Record heptameric peptide (HPS) when available: 3aa + phospho-residue + 3aa
+      SIGNOR's SEQUENCE column is the primary source for HPS
+    • Phospho-residues: Ser(S), Thr(T), Tyr(Y), His(H)
+
+Step 6 — Assemble the four linked indexes (per the paper):
+  1. Kinase Protein Index  — all validated kinase enzymes
+  2. Substrate Protein Index — all validated substrate proteins
+  3. Phospho-Residue Site Index — confirmed phospho-sites (residue+position)
+  4. Heptameric Peptide Sequence Index — 7-mer sequences around phospho-sites
+
+  Final record format per entry:
+    - kinase_gene          : HGNC kinase symbol (e.g. CDK1)
+    - substrate_gene       : HGNC substrate symbol (e.g. RB1)
+    - phospho_site         : residue + position (e.g. S807, T308, Y15)
+    - heptameric_peptide   : 7 amino acids around the site (if available)
+    - substrate_uniprot    : UniProt accession (if available)
+    - supporting_databases : ALL sources confirming this entry
+
+================================================================================
+=== PHASE 3: CROSS-REFERENCING AND QUALITY CONTROL ===
+================================================================================
+
+Step 7 — Multi-database cross-reference:
+  - For each kinase–substrate–site triplet, check if it appears in both SIGNOR
+    and UniProt. If so, list both in supporting_databases (e.g. ["SIGNOR", "UniProt"])
+  - Entries supported by 2+ databases are higher confidence (key paper criterion)
+  - Deduplicate: same (kinase_gene, substrate_gene, phospho_site) triplet from
+    multiple sources → merge into one entry with all supporting_databases listed
+
+Step 8 — Final quality control:
+  - All gene symbols must be HGNC standard (uppercase, official)
+  - Remove entries missing kinase, substrate, or phospho-site
+  - Deduplicate by (kinase_gene, substrate_gene, phospho_site) key
+  - Both the kinase AND substrate must have valid gene symbols
+
+IMPORTANT: Be EXHAUSTIVE. The original PhosphoAtlas contained ~16,000 entries
+across 438 kinases. Query every kinase from the SIGNOR list individually via
+UniProt ft_mod_res. Do NOT stop after SIGNOR alone — UniProt adds significant
+coverage (especially for well-studied kinases like CDK1, AKT1, MAPK1).
+
+When finished, call submit_atlas with your complete results.

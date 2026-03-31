@@ -1,0 +1,134 @@
+You are a bioinformatics researcher tasked with building a comprehensive
+human protein phosphorylation atlas, guided by the methodology described
+in the PhosphoAtlas paper.
+
+================================================================================
+PAPER BACKGROUND — Olow et al., Cancer Research 2016 (PhosphoAtlas)
+================================================================================
+
+WHAT PHOSPHOATLAS IS:
+PhosphoAtlas is a curated relational database of the human phospho-reactome.
+It maps experimentally validated kinase–substrate–phosphosite relationships
+and the heptameric peptide sequences (HPS) at each catalytic interface. The
+resource was built by mining and cross-referencing 38+ public databases,
+resolving identifier ambiguities, and retaining only experimentally confirmed
+events. Final published atlas: 292 kinases with known substrates+sites,
+1,276 substrate proteins, 2,617 unique HPRs (heptameric peptide regions),
+and 4,758 unique kinase–substrate edges. Updated atlas ~16,000 entries across
+438 kinases. Primarily used for cancer signaling and kinome research at UCSF.
+
+DATA SOURCES (from the paper's Extended Methods):
+The authors integrated 38+ databases including: PhosphoSitePlus, Phospho.ELM,
+PhosphoPOINT, RegPhos 2.0, SIGNOR, UniProtKB/Swiss-Prot, UniProtKB/TrEMBL,
+HPRD, BioGRID, STRING, MINT/IntAct, APID, KEGG, HGNC, NCBI/Entrez, NCBI
+RefSeq, CCDS, Ensembl, OMIM, GO, PDB, Pfam, and others.
+Of these, only SIGNOR and UniProt have public REST APIs — both are used here.
+PhosphoSitePlus has no public API and is excluded.
+
+PIPELINE OVERVIEW (two phases from the paper):
+
+PHASE 1 — Protein Reference Index (identifier harmonization):
+  a. HGNC + NCBI/Entrez used as primary identifiers. Every protein gets a
+     standardized HGNC gene symbol (uppercase, official). Example: CDK1, EGFR.
+  b. UniProtKB used for cross-referencing ambiguous or unmatched records.
+  c. All aliases, isoforms, and redundancies are resolved into one canonical
+     record per protein. Only reviewed (Swiss-Prot) entries are preferred.
+
+PHASE 2 — Phospho-reactome curation (kinase–substrate–site extraction):
+  a. FUNCTIONAL TRIAGE: NLP + pattern matching used to classify proteins as
+     kinase enzymes (phosphorylate others) or substrate proteins (phosphorylated).
+     A protein can be both. Source databases: PhosphoSitePlus, Phospho.ELM,
+     SIGNOR, UniProt feature annotations (ft_mod_res), HPRD, and others.
+  b. CURATION 3 (site validation): For each substrate, phospho-residue sites
+     are confirmed by aligning the reported sequence against the RefSeq protein.
+     Sites from prediction-only sources are excluded. Only experimentally
+     confirmed sites are retained.
+  c. HEPTAMERIC PEPTIDE SEQUENCE (HPS): 3 amino acids upstream of the
+     phospho-residue + the phospho-residue + 3 amino acids downstream = 7 total.
+     This is the key unit for downstream kinase motif analysis. Captured when
+     available from source databases (SIGNOR has a SEQUENCE column; UniProt
+     does not always provide it).
+
+CURATION RULES:
+- INCLUDE: experimentally confirmed kinase–substrate–site triples only
+- EXCLUDE: prediction-only entries, inferred relationships, non-human entries
+- EXCLUDE: entries where kinase or substrate lacks a valid HGNC symbol
+- MERGE: same triplet (kinase, substrate, site) from multiple DBs → one entry,
+  list all supporting databases in supporting_databases field
+- Kinase = the enzyme doing the phosphorylating (ENTITYA in SIGNOR)
+- Substrate = the protein being phosphorylated (ENTITYB in SIGNOR)
+- Phospho-site notation: residue letter + position (S807, T308, Y15, H1)
+- Scope: human only (organism_id:9606 in UniProt)
+
+KINASE FAMILIES WELL-REPRESENTED IN PHOSPHOATLAS (for coverage guidance):
+AGC family (PKA, PKC, AKT, RSK): 34% of substrates
+CMGC family (CDK, MAPK, GSK3, CK2): 27% of substrates
+TK family (EGFR, SRC, ABL): 22% of substrates
+CAMK, STE, and others: remaining ~17%
+================================================================================
+
+================================================================================
+YOUR TASK
+================================================================================
+
+Using the methodology above as your guide, curate ALL known human
+kinase-substrate-phosphosite relationships by querying the following
+public databases via http_get.
+
+Do NOT use list_databases or get_stats — those local tools are empty.
+
+=== STEP 1: Pull all SIGNOR data (one call) ===
+
+  SIGNOR REST API — https://signor.uniroma2.it/API/getHumanData.php
+    No parameters needed. Returns full human dataset as TSV.
+    Filter rows: MECHANISM == "phosphorylation" AND TYPEA == "protein"
+    ENTITYA = kinase gene, ENTITYB = substrate gene
+    RESIDUE = phospho site, SEQUENCE = heptameric peptide, IDB = UniProt
+
+    Per the paper's curation rules: only keep rows where both ENTITYA and
+    ENTITYB are valid protein gene symbols, and RESIDUE is non-empty.
+
+=== STEP 2: Query UniProt for each kinase ===
+
+  UniProt REST API — https://rest.uniprot.org/uniprotkb/search
+    For EACH kinase from Step 1 AND from the supplemental list below,
+    query Swiss-Prot reviewed human entries:
+      ?query=organism_id:9606+AND+reviewed:true+AND+ft_mod_res:KINASE_NAME
+      &fields=gene_names,ft_mod_res,accession&format=json&size=500
+
+    IMPORTANT per the paper:
+    - ft_mod_res takes the KINASE GENE NAME (e.g. CDK1, EGFR, MAPK1)
+    - Only include experimentally confirmed sites (ft_mod_res filters for this)
+    - Use HGNC gene symbols for both kinase and substrate
+    - Do NOT use modification keywords like "phospho" — use kinase names only
+    - Follow Link header cursor for pagination if present
+
+    Supplemental kinase list (query these after the SIGNOR kinase list):
+    AKT1, AKT2, AKT3, MTOR, PIK3CA, PTEN, TP53, BRCA1, ATM, ATR,
+    CHEK1, CHEK2, MDM2, RB1, CDKN1A, CDKN2A, KRAS, BRAF, RAF1,
+    MAP2K1, MAP2K2, MAPK1, MAPK3, MAPK8, MAPK14, GSK3A, GSK3B,
+    PRKACA, PRKACB, PRKCA, PRKCB, PRKCD, PRKCE, PRKCI, PRKCZ,
+    AURKA, AURKB, PLK1, PLK2, PLK3, NEK1, NEK2, NEK6, NEK7,
+    DYRK1A, DYRK1B, CLK1, CSNK1A1, CSNK1D, CSNK1E, CSNK2A1, CSNK2A2,
+    VRK1, VRK2, TTK, BUB1, HASPIN, RPS6KB1, RPS6KB2, RPS6KA1, RPS6KA2,
+    RPS6KA3, EIF2AK1, EIF2AK2, EIF2AK3, EIF2AK4, AMPK, STK11,
+    MARK1, MARK2, MARK3.
+
+=== OUTPUT FORMAT (per paper schema) ===
+
+For each relationship capture:
+  - kinase_gene          : HGNC kinase gene symbol (e.g. CDK1)
+  - substrate_gene       : HGNC substrate gene symbol (e.g. RB1)
+  - phospho_site         : residue + position (e.g. S807, T308, Y15)
+  - heptameric_peptide   : 7 amino acids around the site (if available)
+  - substrate_uniprot    : UniProt accession (if available)
+  - supporting_databases : all sources (e.g. ["UniProt"], ["SIGNOR"], or both)
+
+Requirements (directly from the paper's curation criteria):
+  1. Be EXHAUSTIVE — the original atlas had ~16,000 entries across 438 kinases.
+  2. Cross-reference — if a relationship appears in both SIGNOR and UniProt,
+     list both in supporting_databases.
+  3. Experimentally confirmed only — do NOT fabricate or infer relationships.
+  4. HGNC symbols — standardize all gene names.
+
+When finished, call submit_atlas with your complete results.
