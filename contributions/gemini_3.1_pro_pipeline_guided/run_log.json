@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "agent": "Gemini 3.1-Pro (Active Save Mode)",
+    "runtime_min": 36.29
+  },
+  "stats": {
+    "total_curated": 718,
+    "tool_calls": 91,
+    "sources_identified": [
+      "API",
+      "API.PHOSPHOATLAS.ORG",
+      "API.PHOSPHOSITE.ORG",
+      "EBI.AC.UK",
+      "OTHER_API",
+      "PHOSPHO.ORG",
+      "RESEARCH.BIOINFORMATICS.UDEL.EDU",
+      "REST.UNIPROT.ORG",
+      "SIGNOR.UNIROMA2.IT",
+      "STRING-DB.ORG"
+    ],
+    "hit_breakdown": {
+      "RESEARCH.BIOINFORMATICS.UDEL.EDU": 5,
+      "SIGNOR.UNIROMA2.IT": 1,
+      "REST.UNIPROT.ORG": 64,
+      "API": 1,
+      "PHOSPHO.ORG": 1,
+      "OTHER_API": 2,
+      "STRING-DB.ORG": 2,
+      "EBI.AC.UK": 5,
+      "API.PHOSPHOSITE.ORG": 1,
+      "API.PHOSPHOATLAS.ORG": 1
+    }
+  }
+}
