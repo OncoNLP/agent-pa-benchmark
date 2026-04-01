@@ -2,6 +2,10 @@ import os
 import json
 import time
 import re
+import glob
+import importlib
+import zipfile
+import xml.etree.ElementTree as ET
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -16,6 +20,7 @@ class PhosphoAtlasAutonomousAgent:
         """Initializes the agent with persistent memory to survive long-run truncation."""
         self.client = genai.Client(api_key=api_key)
         self.history = []
+        self.base_dir = os.path.dirname(os.path.abspath(__file__))
         
         # --- PERSISTENT STATE ---
         self.internal_atlas = [] 
@@ -25,6 +30,77 @@ class PhosphoAtlasAutonomousAgent:
         self.start_time = time.time()
         self.tool_calls = 0
         self.db_hit_counts = {}
+
+        # --- SUPPLEMENTARY CONTEXT ---
+        self.supplementary_context = self._build_supplementary_context()
+
+    def _extract_docx_text(self, file_path):
+        """Extract plain text from a DOCX without external dependencies."""
+        try:
+            with zipfile.ZipFile(file_path, "r") as docx_zip:
+                xml_bytes = docx_zip.read("word/document.xml")
+            root = ET.fromstring(xml_bytes)
+            text_nodes = root.findall(".//{http://schemas.openxmlformats.org/wordprocessingml/2006/main}t")
+            chunks = [node.text.strip() for node in text_nodes if node.text and node.text.strip()]
+            return "\n".join(chunks)
+        except Exception as e:
+            return f"[DOCX_PARSE_ERROR] {os.path.basename(file_path)}: {str(e)}"
+
+    def _extract_pdf_text(self, file_path):
+        """Extract text from PDF using pypdf when available."""
+        try:
+            pypdf_module = importlib.import_module("pypdf")
+            PdfReader = pypdf_module.PdfReader
+        except Exception:
+            return f"[PDF_PARSE_ERROR] {os.path.basename(file_path)}: pypdf not installed."
+
+        try:
+            reader = PdfReader(file_path)
+            pages = [page.extract_text() or "" for page in reader.pages]
+            return "\n".join(pages)
+        except Exception as e:
+            return f"[PDF_PARSE_ERROR] {os.path.basename(file_path)}: {str(e)}"
+
+    def _build_supplementary_context(self):
+        """Load up to 3 local supplementary DOCX/PDF files and build a prompt-safe context block."""
+        candidate_files = sorted(
+            glob.glob(os.path.join(self.base_dir, "*.docx")) +
+            glob.glob(os.path.join(self.base_dir, "*.pdf"))
+        )
+
+        selected = candidate_files[:3]
+        if not selected:
+            return ""
+
+        max_chars_per_file = 8000
+        rendered_blocks = []
+
+        for path in selected:
+            ext = os.path.splitext(path)[1].lower()
+            if ext == ".docx":
+                text = self._extract_docx_text(path)
+            elif ext == ".pdf":
+                text = self._extract_pdf_text(path)
+            else:
+                continue
+
+            cleaned = re.sub(r"\s+", " ", text).strip()
+            excerpt = cleaned[:max_chars_per_file]
+            if len(cleaned) > max_chars_per_file:
+                excerpt += " ...[TRUNCATED]"
+
+            rendered_blocks.append(
+                f"FILE: {os.path.basename(path)}\nCONTENT_EXCERPT:\n{excerpt}"
+            )
+
+        if not rendered_blocks:
+            return ""
+
+        return (
+            "\n\nSUPPLEMENTARY LOCAL DATA (read and use as additional guidance):\n"
+            + "\n\n".join(rendered_blocks)
+            + "\n\nUse this supplementary data to inform strategy and normalization, but only save relationships confirmed by tool/API outputs."
+        )
 
     def _execute_http(self, call):
         """Live HTTP tool with dynamic source tracking, auto-retries, and safety guardrails."""
@@ -153,7 +229,11 @@ class PhosphoAtlasAutonomousAgent:
                 print("🧹 Cleaning history for token safety...")
                 self.history = [self.history[0]] + self.history[-6:]
 
-            current_instr = mission_prompt + f"\n\nCURRENT PROGRESS: You have already archived {len(self.internal_atlas)} kinase-substrate pairs into persistent memory. Keep querying and use save_curated_data to store new findings!"
+            current_instr = (
+                mission_prompt
+                + self.supplementary_context
+                + f"\n\nCURRENT PROGRESS: You have already archived {len(self.internal_atlas)} kinase-substrate pairs into persistent memory. Keep querying and use save_curated_data to store new findings!"
+            )
 
             try:
                 response = self.client.models.generate_content(
