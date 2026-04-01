@@ -9,13 +9,15 @@
 
 ## Overview
 
-This contribution runs Claude Sonnet 4.6 as a **genuinely autonomous agent** augmented with context from the **Olow et al. 2016 PhosphoAtlas main paper**. The agent receives the same naive task prompt plus a concise summary of:
+This contribution runs Claude Sonnet 4.6 as a **genuinely autonomous agent** augmented with context from the **Olow et al. 2016 PhosphoAtlas main paper**. The agent receives the same naive task prompt plus a concise summary describing **what** the atlas looks like and **what** databases were used:
 
 - Dataset scale (1,733 proteins, ~438 kinases, 2,617 heptameric peptides)
 - The three-phase curation pipeline (Harmonize → Build relational DB → QC)
 - Key databases (PSP, SIGNOR, UniProtKB, PhosphoPOINT, Phospho.ELM, HPRD, BioGRID, MINT, IntAct)
 - HGNC gene symbol standardization and heptameric peptide definition
 - Cross-database merging strategy and exclusion of prediction-only data
+
+The paper context gives the agent the **"what"** — what the final product looks like and which databases matter most — but not the "how." The agent still must autonomously find download endpoints, fetch raw data, parse it, and build the atlas. No URLs or API endpoints are provided.
 
 ### What the agent did differently from naive
 

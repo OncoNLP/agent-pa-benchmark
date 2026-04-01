@@ -9,7 +9,7 @@
 
 ## Overview
 
-This contribution runs Claude Sonnet 4.6 as a **genuinely autonomous agent** augmented with context from the **Olow et al. 2016 PhosphoAtlas Supplementary Extended Methods**. The agent receives the same naive task prompt plus a concise summary of the stepwise curation pipeline:
+This contribution runs Claude Sonnet 4.6 as a **genuinely autonomous agent** augmented with context from the **Olow et al. 2016 PhosphoAtlas Supplementary Extended Methods**. The agent receives the same naive task prompt plus a concise summary describing **how** to build the atlas — a step-by-step procedural recipe:
 
 - **STEP 1** — Create a Protein Reference Index (HGNC + NCBI/Entrez + RefSeq cross-linking)
 - **STEP 2** — Integrate 38+ external databases (complete inventory listed)
@@ -18,7 +18,7 @@ This contribution runs Claude Sonnet 4.6 as a **genuinely autonomous agent** aug
 - **STEP 5** — Phosphorylation site extraction and validation (RefSeq, HPS)
 - **STEP 6** — Quality control (exclude prediction-only, deduplicate)
 
-The supplement context provides **more granular, procedural guidance** than the paper context — it names 38+ specific databases and describes a 6-step pipeline, whereas the paper context gives a higher-level 3-phase overview.
+The supplement context gives the agent the **"how"** — a procedural recipe with 6 numbered steps, a comprehensive inventory of 38+ databases, alias tracking guidance, and explicit QC criteria. This contrasts with the paper context, which gives the **"what"** (what the atlas looks like and which databases matter most). Both still require the agent to autonomously find download endpoints, fetch raw data, parse it, and build the atlas — no URLs or API endpoints are provided.
 
 ### Current Status
 

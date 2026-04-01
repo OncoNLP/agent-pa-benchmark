@@ -9,17 +9,19 @@
 
 ## Overview
 
-This contribution runs Claude Sonnet 4.6 as a **genuinely autonomous agent** via the Anthropic API. The agent receives only the naive system prompt — a task description, data field definitions, and an exhaustiveness requirement. No database names, URLs, curation strategy, or domain knowledge are provided.
+This contribution runs Claude Sonnet 4.6 as a **genuinely autonomous agent** via the Anthropic API. The agent receives only the naive system prompt — a task description, data field definitions, and an exhaustiveness requirement. No database URLs, API endpoints, curation strategy, or domain knowledge are provided in the prompt.
+
+**Note on database discovery:** The agent learns database *names* (PhosphoSitePlus, SIGNOR, UniProt) by calling the `list_databases()` tool, which is part of the benchmark's tool interface. However, the local database files are empty (0 entries), so the agent must autonomously search the web to find download endpoints, fetch the raw data, figure out the data format, parse it, and build the atlas.
 
 The agent independently:
 
-1. Called `list_databases()` to discover PSP, SIGNOR, and UniProt
+1. Called `list_databases()` to learn that PSP, SIGNOR, and UniProt exist as databases
 2. Called `get_stats()`/`list_kinases()` and found all databases return 0 entries (no local data files)
 3. Used `web_search` to find each database's official website and download endpoints
 4. Used `web_fetch` to read API documentation and explore download options
 5. Used `fetch_and_parse_db` to download and parse data from discovered URLs
 6. Successfully obtained PhosphoSitePlus data (15,434 entries) from `phosphosite.org/downloads/Kinase_Substrate_Dataset.gz`
-7. Ran out of API credits before completing SIGNOR and UniProt extraction
+7. Ran out of API credits before completing SIGNOR and UniProt extraction — the agent tried multiple SIGNOR URL patterns and found the UniProt REST API, but could not finish parsing before credits were exhausted
 
 The full agent trace (every tool call, input, and result) is logged in `run_log.json`.
 
@@ -143,7 +145,7 @@ The agent has full control over which tools to call and in what order. The runne
 | `agent_runner.py` | Autonomous agent: Anthropic API loop + tool implementations |
 | `atlas.json` | 15,434 entries (PSP only — credit-limited) |
 | `run_log.json` | Full trace of every tool call with inputs and results |
-| `run.log` | Console output log |
+| `run.log` | Console output from an earlier scripted pipeline run (not the autonomous agent — see note below) |
 | `scores/summary.json` | Comprehensive scoring output |
 | `scores/per_kinase.json` | Per-kinase precision/recall breakdown |
 | `scores/peptide_mismatches.json` | Peptide mismatch details |
@@ -163,8 +165,8 @@ Requires `pip install anthropic` and API credits (~$2-5 for a full run across al
 
 ## Limitations
 
-1. **API credit constraint:** The agent ran out of credits after discovering and parsing PSP, before completing SIGNOR and UniProt. With more credits, the agent was on track for ~18k+ entries with multi-database cross-referencing.
+1. **API credit constraint:** The agent ran out of purchased API credits after discovering and parsing PSP, before completing SIGNOR and UniProt. The agent was actively trying different SIGNOR API URL patterns and had already found the UniProt REST API when credits were exhausted. With more credits, the agent was on track for ~18k+ entries with multi-database cross-referencing.
 
-2. **Rate limiting:** The Anthropic API rate-limited the agent multiple times, adding ~3 minutes of wait time.
+2. **Single-DB recall:** Even with only PSP data, the agent achieved 0.8727 recall and 0.9007 precision, demonstrating that PSP alone covers ~87% of the gold standard.
 
-3. **Single-DB recall:** Even with only PSP data, the agent achieved 0.8727 recall and 0.9007 precision, demonstrating that PSP alone covers ~87% of the gold standard.
+3. **`run.log` is from an earlier scripted run.** The `run.log` file in this folder (28,530 entries, F1=0.8114) is a leftover from an earlier scripted pipeline version of `agent_runner.py` that was subsequently replaced with the fully autonomous version. The scores in `scores/summary.json` and this README reflect the autonomous agent run (15,434 entries, F1=0.8865), which matches the trace in `run_log.json`.
