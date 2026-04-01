@@ -1,0 +1,37 @@
+[
+  {
+    "kinase": "PRKCA",
+    "substrate": "MARCKS",
+    "site": "S159",
+    "gold_peptide": "kkKKKRFsFkKsFkL",
+    "agent_peptide": "KKKKRFSFK"
+  },
+  {
+    "kinase": "SRC",
+    "substrate": "CBL",
+    "site": "Y731",
+    "gold_peptide": "QQIDSCTyEAMyNIQ",
+    "agent_peptide": "DLDYLIPL"
+  },
+  {
+    "kinase": "AKT1",
+    "substrate": "GSK3B",
+    "site": "S9",
+    "gold_peptide": "SGRPRttsFAEsCkP",
+    "agent_peptide": "RARTSSFAEP"
+  },
+  {
+    "kinase": "MAPK1",
+    "substrate": "ELK1",
+    "site": "S383",
+    "gold_peptide": "IHFWSTLsPIAPRsP",
+    "agent_peptide": "LTRSNSFVG"
+  },
+  {
+    "kinase": "CDK1",
+    "substrate": "LMNA",
+    "site": "S22",
+    "gold_peptide": "QAsstPLsPtRItRL",
+    "agent_peptide": "SPTRLLGS"
+  }
+]

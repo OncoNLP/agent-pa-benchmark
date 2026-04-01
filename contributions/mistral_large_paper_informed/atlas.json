@@ -1,0 +1,52 @@
+[
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "GSK3B",
+    "phospho_site": "S9",
+    "substrate_uniprot": "P49841",
+    "heptameric_peptide": "RARTSSFAEP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "ELK1",
+    "phospho_site": "S383",
+    "substrate_uniprot": "P19419",
+    "heptameric_peptide": "LTRSNSFVG",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCA",
+    "substrate_gene": "MARCKS",
+    "phospho_site": "S159",
+    "substrate_uniprot": "P29966",
+    "heptameric_peptide": "KKKKRFSFK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "LMNA",
+    "phospho_site": "S22",
+    "substrate_uniprot": "P02545",
+    "heptameric_peptide": "SPTRLLGS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "CBL",
+    "phospho_site": "Y731",
+    "substrate_uniprot": "P22681",
+    "heptameric_peptide": "DLDYLIPL",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  }
+]
