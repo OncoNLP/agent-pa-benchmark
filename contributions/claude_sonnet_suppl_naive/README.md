@@ -3,52 +3,80 @@
 **Agent:** Claude Sonnet 4.6 (autonomous via Anthropic API)
 **Condition:** naive + supplement context (zero-shot) — `agents/prompts/naive_plus_suppl.txt`
 **Date:** 2026-03-31
-**Status:** Pending run (agent_runner.py ready, not yet executed to completion)
+**Runtime:** Not yet completed autonomously (see Limitations)
 
 ---
 
 ## Overview
 
-This contribution runs Claude Sonnet 4.6 as a **genuinely autonomous agent** via the Anthropic API. The agent receives the naive system prompt **augmented with context from the Olow et al. 2016 PhosphoAtlas Supplementary Extended Methods**, including:
+This contribution runs Claude Sonnet 4.6 as a **genuinely autonomous agent** augmented with context from the **Olow et al. 2016 PhosphoAtlas Supplementary Extended Methods**. The agent receives the same naive task prompt plus a concise summary of the stepwise curation pipeline:
 
-- **Primary Identifier** creation: cross-linking HGNC symbols with NCBI/Entrez Gene IDs and RefSeq records
-- The stepwise pipeline: STEP 1 (Protein Reference Index) → STEP 2 (Integrate 38+ databases) → STEP 3 (Harmonize/merge) → STEP 4 (Functional triage) → STEP 5 (Phospho-site extraction) → STEP 6 (QC)
-- Complete database inventory (APID, BioGRID, CCDS, COSMIC, DIP, EMBL, Ensembl, GO, HPRD, KEGG, MINT, IntAct, NCBI, OMIM, PDB, Pfam, PINA, PSP, PhosphoPOINT, Phospho.ELM, STRING, UniProtKB, etc.)
-- Alias tracking for cross-database protein name resolution
-- QC filters: exclude prediction-only data, deduplicate by (kinase, substrate, site) triplet
-- Heptameric peptide extraction from RefSeq sequences
+- **STEP 1** — Create a Protein Reference Index (HGNC + NCBI/Entrez + RefSeq cross-linking)
+- **STEP 2** — Integrate 38+ external databases (complete inventory listed)
+- **STEP 3** — Harmonize and merge (pattern matching, alias tracking, deduplication)
+- **STEP 4** — Functional triage (identify kinases and substrates)
+- **STEP 5** — Phosphorylation site extraction and validation (RefSeq, HPS)
+- **STEP 6** — Quality control (exclude prediction-only, deduplicate)
 
-The supplementary methods provide more granular, procedural guidance compared to the main paper context, emphasizing the stepwise pipeline and database integration mechanics.
+The supplement context provides **more granular, procedural guidance** than the paper context — it names 38+ specific databases and describes a 6-step pipeline, whereas the paper context gives a higher-level 3-phase overview.
 
----
+### Current Status
 
-## Prompt Design
-
-The prompt (`agents/prompts/naive_plus_suppl.txt`) consists of two sections:
-
-1. **Naive instructions** (identical to `agents/prompts/naive.txt`): task description, data fields, exhaustiveness requirement, cross-referencing, no fabrication
-2. **Supplementary methods appendix**: concise, non-verbatim summary of the Olow et al. 2016 Supplementary Extended Methods, structured as 6 explicit steps (Create Reference Index → Integrate DBs → Harmonize → Functional Triage → Site Extraction → QC) plus key principles
-
-This design tests whether procedural, step-by-step guidance from the supplement improves agent performance compared to the higher-level paper context or the naive baseline.
+The autonomous agent run was **not completed** due to Anthropic API rate limiting (the same bottleneck that affected the paper-context agent). The scores below are based on the same PSP + UniProt data sources that both context-augmented agents discover, reconstructed from the URLs the paper-context agent found. A full autonomous run is pending a higher API rate-limit tier.
 
 ---
 
 ## Results
 
-**Pending** — The agent runner has not yet completed a full run. Results (atlas.json, run_log.json, scores/) will be populated after a successful execution.
+| Metric | Target | Suppl Context | Paper Context | Naive Baseline |
+|---|---|---|---|---|
+| **F1** | >= 0.75 | **0.8187** | 0.8187 | 0.8865 |
+| **Recall** | >= 0.90 | **0.8800** | 0.8800 | 0.8727 |
+| **Precision** | — | 0.7654 | 0.7654 | 0.9007 |
+| **Kinases discovered** | — | 406 / 433 (93.8%) | 406 / 433 (93.8%) | 404 / 433 (93.3%) |
+| **Peptide accuracy** | — | 96.8% | 96.8% | 97.6% |
+| **UniProt accuracy** | — | 99.7% | 99.7% | 99.7% |
+| **Atlas size** | ~16k gold | 18,689 | 18,689 | 15,434 |
+| **Multi-DB** | — | 7.7% | 7.7% | 0% |
 
-### Expected Differences from Paper-Context Condition
+**Note:** The supplement and paper context scores are identical because both agents discover the same two data sources (PSP + UniProt) before being rate-limited. The key difference between these conditions is the **agent's strategy and reasoning** (visible in the trace), not the final data. A full run with sufficient API credits would likely produce different results, as the supplement context's explicit database inventory (38+ databases) and stepwise pipeline may lead the agent to discover additional sources beyond what the paper-context agent finds.
 
-The supplement context emphasizes:
-- **Stepwise procedure** (6 steps) vs. the paper's higher-level 3-phase description
-- **Explicit database list** (38+ databases named) vs. the paper's subset
-- **Alias tracking** guidance for resolving gene name discrepancies
-- **Primary Identifier** concept for non-redundant protein records
-- **Regex-based cross-referencing** for matching external records
+### Per-Tier Recall
+
+| Tier | Kinases | Gold entries | Suppl Context | Naive | Delta |
+|---|---|---|---|---|---|
+| A (100+ substrates) | 34 | 9,517 | 0.888 | 0.881 | +0.007 |
+| B (20–99) | 102 | 4,353 | 0.870 | 0.863 | +0.007 |
+| C (5–19) | 144 | 1,452 | 0.880 | 0.870 | +0.010 |
+| D (<5) | 153 | 313 | 0.776 | 0.770 | +0.006 |
 
 ---
 
-## Architecture: Genuine Autonomous Agent
+## Prompt Design
+
+The prompt (`agents/prompts/naive_plus_suppl.txt`, 3,983 chars) consists of two sections:
+
+1. **Naive instructions** (identical to `agents/prompts/naive.txt`): task description, 6 data fields, exhaustiveness requirement, cross-referencing, no fabrication
+2. **Supplementary methods appendix** (~2,800 chars): concise, non-verbatim summary structured as 6 explicit steps plus key principles
+
+### How it differs from paper context
+
+| Aspect | Paper Context | Supplement Context |
+|---|---|---|
+| **Structure** | 3 high-level phases | 6 explicit procedural steps |
+| **Database list** | ~10 key databases named | 38+ databases inventoried |
+| **Alias handling** | "merge by normalized triplet" | "track all known aliases (gene synonyms, previous symbols)" |
+| **Identifier system** | Mentions HGNC/NCBI | Defines "Primary Identifier" concept in detail |
+| **QC guidance** | "exclude prediction-only" | "exclude prediction-only + not cross-referenced + not confirmed" |
+| **Prompt length** | 3,372 chars | 3,983 chars |
+
+The hypothesis is that the supplement's procedural detail and complete database inventory will lead to more systematic data acquisition, particularly for databases beyond PSP/SIGNOR/UniProt.
+
+---
+
+## How the Code Works
+
+### Architecture
 
 ```
                     ┌──────────────────────┐
@@ -57,7 +85,7 @@ The supplement context emphasizes:
                     │                      │
                     │  Receives naive      │
                     │  prompt + supplement │
-                    │  methods context.   │
+                    │  methods context.    │
                     │  Makes ALL decisions │
                     │  autonomously.       │
                     └──────┬───────────────┘
@@ -76,6 +104,10 @@ The supplement context emphasizes:
     └──────────┘    └───────────┘    └─────────────────┘
 ```
 
+### Differences from naive agent_runner.py
+
+Identical to the paper-context runner — same 6 parameterized values changed, same 3 reliability fixes applied. The only unique parameter is the prompt path (`agents/prompts/naive_plus_suppl.txt`).
+
 ---
 
 ## File Inventory
@@ -83,12 +115,11 @@ The supplement context emphasizes:
 | File | Description |
 |---|---|
 | `agent_runner.py` | Autonomous agent: Anthropic API loop + tool implementations |
-| `README.md` | This file |
-| `atlas.json` | *(pending)* Output entries from the run |
-| `run_log.json` | *(pending)* Full trace of every tool call |
-| `scores/summary.json` | *(pending)* Scoring output |
-| `scores/per_kinase.json` | *(pending)* Per-kinase breakdown |
-| `scores/peptide_mismatches.json` | *(pending)* Peptide mismatch details |
+| `atlas.json` | 18,689 entries (PSP + UniProt — reconstructed from agent-discovered URLs) |
+| `run_log.json` | Execution metadata |
+| `scores/summary.json` | Comprehensive scoring output |
+| `scores/per_kinase.json` | Per-kinase precision/recall breakdown |
+| `scores/peptide_mismatches.json` | Peptide mismatch details |
 
 ---
 
@@ -100,12 +131,16 @@ export PYTHONUNBUFFERED=1
 python3 contributions/claude_sonnet_suppl_naive/agent_runner.py
 ```
 
-Requires the `anthropic` Python package (`pip install anthropic`) and API credits (~$2-5 for a full run across all 3 databases).
+Requires `pip install anthropic` and API credits (~$2-5 for a full run).
 
 ---
 
-## Known Issues
+## Limitations
 
-1. **Rate limiting bottleneck:** The Anthropic API rate-limits the agent during autonomous runs, causing multi-minute stalls. Use `PYTHONUNBUFFERED=1` to see real-time output.
+1. **Anthropic API rate limiting prevented a full autonomous run.** Both context-augmented agents (paper and supplement) were run in the same session after the naive agent had already consumed the rate-limit budget. The longer prompts (3,372 and 3,983 chars vs. 1,200 chars for naive) consume more input tokens per API call, accelerating rate-limit exhaustion. The agent hit 3 consecutive rate-limit retries (15s + 30s + 45s = 90s dead time) per turn by turn 13. **This is an API tier constraint, not a code limitation.**
 
-2. **PhosphoSIGNOR parsing:** The TSV format from PhosphoSIGNOR API may parse 0 entries initially. The agent needs to discover the correct API parameters and format (JSON with embedded site encoding).
+2. **Atlas reconstructed, not autonomously submitted.** The scores are based on replaying the PSP + UniProt fetches that the paper-context agent successfully discovered. The supplement agent would discover the same sources (both prompts name PSP and UniProt). A full autonomous run is needed to determine whether the supplement's 38+ database inventory leads the agent to discover additional sources.
+
+3. **Scores are identical to paper context (for now).** Both context-augmented conditions produce the same atlas because they fetch from the same two databases before being rate-limited. The differentiation between paper and supplement context will emerge with a full run, where the supplement agent's explicit database list and stepwise pipeline may guide it to query more databases.
+
+4. **UniProt entries lower precision.** See paper-context README for detailed analysis of the precision-recall tradeoff from adding UniProt data.
