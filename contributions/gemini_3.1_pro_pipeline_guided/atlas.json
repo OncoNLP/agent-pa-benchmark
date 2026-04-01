@@ -1,0 +1,7227 @@
+[
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK1",
+    "phospho_site": "S317",
+    "substrate_uniprot": "O14757",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATR",
+    "substrate_gene": "CHEK1",
+    "phospho_site": "S317",
+    "substrate_uniprot": "O14757",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK1",
+    "phospho_site": "S345",
+    "substrate_uniprot": "O14757",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATR",
+    "substrate_gene": "CHEK1",
+    "phospho_site": "S345",
+    "substrate_uniprot": "O14757",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK2",
+    "substrate_gene": "FOXM1",
+    "phospho_site": "S376",
+    "substrate_uniprot": "Q08050",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "FOXM1",
+    "phospho_site": "S489",
+    "substrate_uniprot": "Q08050",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "FOXM1",
+    "phospho_site": "T611",
+    "substrate_uniprot": "Q08050",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "FOXM1",
+    "phospho_site": "S693",
+    "substrate_uniprot": "Q08050",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "FOXM1",
+    "phospho_site": "S730",
+    "substrate_uniprot": "Q08050",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "FOXM1",
+    "phospho_site": "S739",
+    "substrate_uniprot": "Q08050",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "RBBP8",
+    "phospho_site": "T315",
+    "substrate_uniprot": "Q99708",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "RBBP8",
+    "phospho_site": "S664",
+    "substrate_uniprot": "Q99708",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "RBBP8",
+    "phospho_site": "S745",
+    "substrate_uniprot": "Q99708",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "RBBP8",
+    "phospho_site": "T847",
+    "substrate_uniprot": "Q99708",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATR",
+    "substrate_gene": "RBBP8",
+    "phospho_site": "T859",
+    "substrate_uniprot": "Q99708",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "EIF2AK2",
+    "substrate_gene": "CDK1",
+    "phospho_site": "Y4",
+    "substrate_uniprot": "P06493",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PKMYT1",
+    "substrate_gene": "CDK1",
+    "phospho_site": "T14",
+    "substrate_uniprot": "P06493",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PKMYT1",
+    "substrate_gene": "CDK1",
+    "phospho_site": "Y15",
+    "substrate_uniprot": "P06493",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "WEE1",
+    "substrate_gene": "CDK1",
+    "phospho_site": "Y15",
+    "substrate_uniprot": "P06493",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "WEE2",
+    "substrate_gene": "CDK1",
+    "phospho_site": "Y15",
+    "substrate_uniprot": "P06493",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCD",
+    "substrate_gene": "CDK1",
+    "phospho_site": "Y15",
+    "substrate_uniprot": "P06493",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK7",
+    "substrate_gene": "CDK1",
+    "phospho_site": "T161",
+    "substrate_uniprot": "P06493",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKE",
+    "substrate_gene": "CDK2AP1",
+    "phospho_site": "S46",
+    "substrate_uniprot": "O14519",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "BRSK2",
+    "substrate_gene": "CDK16",
+    "phospho_site": "S12",
+    "substrate_uniprot": "Q00536",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK5",
+    "substrate_gene": "CDK16",
+    "phospho_site": "S95",
+    "substrate_uniprot": "Q00536",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "STK25",
+    "substrate_gene": "STK25",
+    "phospho_site": "T174",
+    "substrate_uniprot": "O00506",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K1",
+    "substrate_gene": "MAPK1",
+    "phospho_site": "T185",
+    "substrate_uniprot": "P28482",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K2",
+    "substrate_gene": "MAPK1",
+    "phospho_site": "T185",
+    "substrate_uniprot": "P28482",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K1",
+    "substrate_gene": "MAPK1",
+    "phospho_site": "Y187",
+    "substrate_uniprot": "P28482",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K2",
+    "substrate_gene": "MAPK1",
+    "phospho_site": "Y187",
+    "substrate_uniprot": "P28482",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "MAPK1",
+    "phospho_site": "T190",
+    "substrate_uniprot": "P28482",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "LATS2",
+    "substrate_gene": "SNAI1",
+    "phospho_site": "T203",
+    "substrate_uniprot": "O95863",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PAK1",
+    "substrate_gene": "SNAI1",
+    "phospho_site": "S246",
+    "substrate_uniprot": "O95863",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK11",
+    "substrate_gene": "NLRP1",
+    "phospho_site": "S93",
+    "substrate_uniprot": "Q9C000",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK14",
+    "substrate_gene": "NLRP1",
+    "phospho_site": "S93",
+    "substrate_uniprot": "Q9C000",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK11",
+    "substrate_gene": "NLRP1",
+    "phospho_site": "S99",
+    "substrate_uniprot": "Q9C000",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK14",
+    "substrate_gene": "NLRP1",
+    "phospho_site": "S99",
+    "substrate_uniprot": "Q9C000",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K20",
+    "substrate_gene": "NLRP1",
+    "phospho_site": "T112",
+    "substrate_uniprot": "Q9C000",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K20",
+    "substrate_gene": "NLRP1",
+    "phospho_site": "S113",
+    "substrate_uniprot": "Q9C000",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K20",
+    "substrate_gene": "NLRP1",
+    "phospho_site": "T114",
+    "substrate_uniprot": "Q9C000",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPAPK2",
+    "substrate_gene": "HSF1",
+    "phospho_site": "S121",
+    "substrate_uniprot": "Q00613",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "HSF1",
+    "phospho_site": "T142",
+    "substrate_uniprot": "Q00613",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "HSF1",
+    "phospho_site": "S216",
+    "substrate_uniprot": "Q00613",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CAMK2A",
+    "substrate_gene": "HSF1",
+    "phospho_site": "S230",
+    "substrate_uniprot": "Q00613",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "HSF1",
+    "phospho_site": "S303",
+    "substrate_uniprot": "Q00613",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK3",
+    "substrate_gene": "HSF1",
+    "phospho_site": "S307",
+    "substrate_uniprot": "Q00613",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "HSF1",
+    "phospho_site": "S320",
+    "substrate_uniprot": "Q00613",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK12",
+    "substrate_gene": "HSF1",
+    "phospho_site": "S326",
+    "substrate_uniprot": "Q00613",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK8",
+    "substrate_gene": "HSF1",
+    "phospho_site": "S363",
+    "substrate_uniprot": "Q00613",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "PGR",
+    "phospho_site": "S294",
+    "substrate_uniprot": "P06401",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "PGR",
+    "phospho_site": "S400",
+    "substrate_uniprot": "P06401",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "TBK1",
+    "substrate_gene": "MTOR",
+    "phospho_site": "S2159",
+    "substrate_uniprot": "P42345",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "MTOR",
+    "phospho_site": "T2173",
+    "substrate_uniprot": "P42345",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KB1",
+    "substrate_gene": "MTOR",
+    "phospho_site": "T2446",
+    "substrate_uniprot": "P42345",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KB1",
+    "substrate_gene": "MTOR",
+    "phospho_site": "S2448",
+    "substrate_uniprot": "P42345",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "MTOR",
+    "phospho_site": "S2481",
+    "substrate_uniprot": "P42345",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KB1",
+    "substrate_gene": "RICTOR",
+    "phospho_site": "T1135",
+    "substrate_uniprot": "Q6R327",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "RICTOR",
+    "phospho_site": "S1235",
+    "substrate_uniprot": "Q6R327",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3A",
+    "substrate_gene": "RICTOR",
+    "phospho_site": "T1695",
+    "substrate_uniprot": "Q6R327",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "RICTOR",
+    "phospho_site": "T1695",
+    "substrate_uniprot": "Q6R327",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK3",
+    "substrate_gene": "DEPTOR",
+    "phospho_site": "S235",
+    "substrate_uniprot": "Q8TB45",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK1A1",
+    "substrate_gene": "DEPTOR",
+    "phospho_site": "S286",
+    "substrate_uniprot": "Q8TB45",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK1A1",
+    "substrate_gene": "DEPTOR",
+    "phospho_site": "S287",
+    "substrate_uniprot": "Q8TB45",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "SYK",
+    "substrate_gene": "DEPTOR",
+    "phospho_site": "Y289",
+    "substrate_uniprot": "Q8TB45",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK1A1",
+    "substrate_gene": "DEPTOR",
+    "phospho_site": "S291",
+    "substrate_uniprot": "Q8TB45",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "DEPTOR",
+    "phospho_site": "S293",
+    "substrate_uniprot": "Q8TB45",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "DEPTOR",
+    "phospho_site": "T295",
+    "substrate_uniprot": "Q8TB45",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "DEPTOR",
+    "phospho_site": "S299",
+    "substrate_uniprot": "Q8TB45",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK8",
+    "substrate_gene": "RPTOR",
+    "phospho_site": "S696",
+    "substrate_uniprot": "Q8N122",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK8",
+    "substrate_gene": "RPTOR",
+    "phospho_site": "T706",
+    "substrate_uniprot": "Q8N122",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA1",
+    "substrate_gene": "RPTOR",
+    "phospho_site": "S719",
+    "substrate_uniprot": "Q8N122",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA1",
+    "substrate_gene": "RPTOR",
+    "phospho_site": "S721",
+    "substrate_uniprot": "Q8N122",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA1",
+    "substrate_gene": "RPTOR",
+    "phospho_site": "S722",
+    "substrate_uniprot": "Q8N122",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA1",
+    "substrate_gene": "RPTOR",
+    "phospho_site": "S722",
+    "substrate_uniprot": "Q8N122",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "RPTOR",
+    "phospho_site": "S791",
+    "substrate_uniprot": "Q8N122",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA1",
+    "substrate_gene": "RPTOR",
+    "phospho_site": "S792",
+    "substrate_uniprot": "Q8N122",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "RPTOR",
+    "phospho_site": "S859",
+    "substrate_uniprot": "Q8N122",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "RPTOR",
+    "phospho_site": "S863",
+    "substrate_uniprot": "Q8N122",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK8",
+    "substrate_gene": "RPTOR",
+    "phospho_site": "S863",
+    "substrate_uniprot": "Q8N122",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "NLK",
+    "substrate_gene": "RPTOR",
+    "phospho_site": "S863",
+    "substrate_uniprot": "Q8N122",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "TBK1",
+    "substrate_gene": "RPTOR",
+    "phospho_site": "S877",
+    "substrate_uniprot": "Q8N122",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "LAMTOR4",
+    "phospho_site": "S67",
+    "substrate_uniprot": "Q0VGL1",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "TNK2",
+    "substrate_gene": "AKT1",
+    "phospho_site": "Y176",
+    "substrate_uniprot": "P31749",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKE",
+    "substrate_gene": "AKT1",
+    "phospho_site": "T308",
+    "substrate_uniprot": "P31749",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PDPK1",
+    "substrate_gene": "AKT1",
+    "phospho_site": "T308",
+    "substrate_uniprot": "P31749",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "TBK1",
+    "substrate_gene": "AKT1",
+    "phospho_site": "T308",
+    "substrate_uniprot": "P31749",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKE",
+    "substrate_gene": "AKT1",
+    "phospho_site": "S473",
+    "substrate_uniprot": "P31749",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "AKT1",
+    "phospho_site": "S473",
+    "substrate_uniprot": "P31749",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKDC",
+    "substrate_gene": "AKT1",
+    "phospho_site": "S473",
+    "substrate_uniprot": "P31749",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "TBK1",
+    "substrate_gene": "AKT1",
+    "phospho_site": "S473",
+    "substrate_uniprot": "P31749",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "AKT1",
+    "phospho_site": "S477",
+    "substrate_uniprot": "P31749",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "AKT1",
+    "phospho_site": "S477",
+    "substrate_uniprot": "P31749",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "AKT1",
+    "phospho_site": "T479",
+    "substrate_uniprot": "P31749",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "AKT1",
+    "phospho_site": "T479",
+    "substrate_uniprot": "P31749",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "AKT1S1",
+    "phospho_site": "S183",
+    "substrate_uniprot": "Q96B36",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "AKT1S1",
+    "phospho_site": "S212",
+    "substrate_uniprot": "Q96B36",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "AKT1S1",
+    "phospho_site": "S221",
+    "substrate_uniprot": "Q96B36",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "AKT1S1",
+    "phospho_site": "T246",
+    "substrate_uniprot": "Q96B36",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "DYRK3",
+    "substrate_gene": "AKT1S1",
+    "phospho_site": "T246",
+    "substrate_uniprot": "Q96B36",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK7",
+    "substrate_gene": "RARA",
+    "phospho_site": "S77",
+    "substrate_uniprot": "P10276",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "RARA",
+    "phospho_site": "S96",
+    "substrate_uniprot": "P10276",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "RARA",
+    "phospho_site": "S219",
+    "substrate_uniprot": "P10276",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "RARA",
+    "phospho_site": "S369",
+    "substrate_uniprot": "P10276",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "GSK3B",
+    "phospho_site": "S9",
+    "substrate_uniprot": "P49841",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA3",
+    "substrate_gene": "GSK3B",
+    "phospho_site": "S9",
+    "substrate_uniprot": "P49841",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "SGK3",
+    "substrate_gene": "GSK3B",
+    "phospho_site": "S9",
+    "substrate_uniprot": "P49841",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "NME7",
+    "substrate_gene": "GSK3B",
+    "phospho_site": "S9",
+    "substrate_uniprot": "P49841",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "DYRK2",
+    "phospho_site": "T106",
+    "substrate_uniprot": "Q92630",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K10",
+    "substrate_gene": "DYRK2",
+    "phospho_site": "T381",
+    "substrate_uniprot": "Q92630",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "DYRK2",
+    "substrate_gene": "DYRK2",
+    "phospho_site": "Y382",
+    "substrate_uniprot": "Q92630",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "DYRK2",
+    "phospho_site": "S442",
+    "substrate_uniprot": "Q92630",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K10",
+    "substrate_gene": "DYRK2",
+    "phospho_site": "S449",
+    "substrate_uniprot": "Q92630",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "SNAI1",
+    "phospho_site": "S11",
+    "substrate_uniprot": "O95863",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "SNAI1",
+    "phospho_site": "S92",
+    "substrate_uniprot": "O95863",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "HIPK4",
+    "substrate_gene": "TP53",
+    "phospho_site": "S9",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK5",
+    "substrate_gene": "TP53",
+    "phospho_site": "S15",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "TP53RK",
+    "substrate_gene": "TP53",
+    "phospho_site": "S15",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA1",
+    "substrate_gene": "TP53",
+    "phospho_site": "S15",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "NUAK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "S15",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "TP53",
+    "phospho_site": "S15",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK1A1",
+    "substrate_gene": "TP53",
+    "phospho_site": "T18",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "VRK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "T18",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "VRK2",
+    "substrate_gene": "TP53",
+    "phospho_site": "T18",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK2",
+    "substrate_gene": "TP53",
+    "phospho_site": "S20",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK1A1",
+    "substrate_gene": "TP53",
+    "phospho_site": "S20",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PLK3",
+    "substrate_gene": "TP53",
+    "phospho_site": "S20",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK5",
+    "substrate_gene": "TP53",
+    "phospho_site": "S33",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK7",
+    "substrate_gene": "TP53",
+    "phospho_site": "S33",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPKAPK5",
+    "substrate_gene": "TP53",
+    "phospho_site": "S37",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK5",
+    "substrate_gene": "TP53",
+    "phospho_site": "S46",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "DYRK2",
+    "substrate_gene": "TP53",
+    "phospho_site": "S46",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "HIPK2",
+    "substrate_gene": "TP53",
+    "phospho_site": "S46",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCG",
+    "substrate_gene": "TP53",
+    "phospho_site": "S46",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "TAF1",
+    "substrate_gene": "TP53",
+    "phospho_site": "T55",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "GRK5",
+    "substrate_gene": "TP53",
+    "phospho_site": "T55",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "AURKB",
+    "substrate_gene": "TP53",
+    "phospho_site": "S183",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "AURKB",
+    "substrate_gene": "TP53",
+    "phospho_site": "S269",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "AURKB",
+    "substrate_gene": "TP53",
+    "phospho_site": "T284",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "AURKA",
+    "substrate_gene": "TP53",
+    "phospho_site": "S315",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "S315",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "TP53",
+    "phospho_site": "S315",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "TP53",
+    "phospho_site": "S392",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "TP53",
+    "phospho_site": "S392",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "NUAK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "S392",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "ATM",
+    "phospho_site": "S367",
+    "substrate_uniprot": "Q13315",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "ATM",
+    "phospho_site": "S1893",
+    "substrate_uniprot": "Q13315",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "ATM",
+    "phospho_site": "S1981",
+    "substrate_uniprot": "Q13315",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK2",
+    "substrate_gene": "BRCA1",
+    "phospho_site": "S988",
+    "substrate_uniprot": "P38398",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATR",
+    "substrate_gene": "BRCA1",
+    "phospho_site": "S1143",
+    "substrate_uniprot": "P38398",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATR",
+    "substrate_gene": "BRCA1",
+    "phospho_site": "S1280",
+    "substrate_uniprot": "P38398",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "BRCA1",
+    "phospho_site": "S1387",
+    "substrate_uniprot": "P38398",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATR",
+    "substrate_gene": "BRCA1",
+    "phospho_site": "S1387",
+    "substrate_uniprot": "P38398",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATR",
+    "substrate_gene": "BRCA1",
+    "phospho_site": "T1394",
+    "substrate_uniprot": "P38398",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "BRCA1",
+    "phospho_site": "S1423",
+    "substrate_uniprot": "P38398",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATR",
+    "substrate_gene": "BRCA1",
+    "phospho_site": "S1423",
+    "substrate_uniprot": "P38398",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATR",
+    "substrate_gene": "BRCA1",
+    "phospho_site": "S1457",
+    "substrate_uniprot": "P38398",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "BRCA1",
+    "phospho_site": "S1524",
+    "substrate_uniprot": "P38398",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "RB1",
+    "phospho_site": "S249",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "RB1",
+    "phospho_site": "T252",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "RB1",
+    "phospho_site": "T373",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "RB1",
+    "phospho_site": "S567",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK2",
+    "substrate_gene": "RB1",
+    "phospho_site": "S612",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "RB1",
+    "phospho_site": "S612",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "RB1",
+    "phospho_site": "S807",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK3",
+    "substrate_gene": "RB1",
+    "phospho_site": "S807",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "RB1",
+    "phospho_site": "S811",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK3",
+    "substrate_gene": "RB1",
+    "phospho_site": "S811",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK6",
+    "substrate_gene": "RB1",
+    "phospho_site": "T821",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK4",
+    "substrate_gene": "RB1",
+    "phospho_site": "T826",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "S23",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "S29",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "S33",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "HIPK2",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "S33",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "S37",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "HIPK2",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "S37",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "T41",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PTK6",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "Y64",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "Y142",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PTK6",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "Y142",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK5",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "S191",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CDK5",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "S246",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PTK6",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "Y331",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "Y333",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PTK6",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "Y333",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CHUK",
+    "substrate_gene": "NFKBIA",
+    "phospho_site": "S32",
+    "substrate_uniprot": "P25963",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKE",
+    "substrate_gene": "NFKBIA",
+    "phospho_site": "S32",
+    "substrate_uniprot": "P25963",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CHUK",
+    "substrate_gene": "NFKBIA",
+    "phospho_site": "S36",
+    "substrate_uniprot": "P25963",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "NFKBIA",
+    "phospho_site": "S36",
+    "substrate_uniprot": "P25963",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKE",
+    "substrate_gene": "NFKBIA",
+    "phospho_site": "S36",
+    "substrate_uniprot": "P25963",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "TBK1",
+    "substrate_gene": "NFKBIA",
+    "phospho_site": "S36",
+    "substrate_uniprot": "P25963",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "NFKBIA",
+    "phospho_site": "S283",
+    "substrate_uniprot": "P25963",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "NFKBIA",
+    "phospho_site": "S288",
+    "substrate_uniprot": "P25963",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "NFKBIA",
+    "phospho_site": "T291",
+    "substrate_uniprot": "P25963",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "NFKBIA",
+    "phospho_site": "S293",
+    "substrate_uniprot": "P25963",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "NFKBIA",
+    "phospho_site": "T299",
+    "substrate_uniprot": "P25963",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y9",
+    "substrate_uniprot": "O15530",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y9",
+    "substrate_uniprot": "O15530",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PDPK1",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "S241",
+    "substrate_uniprot": "O15530",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MELK",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "T354",
+    "substrate_uniprot": "O15530",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y373",
+    "substrate_uniprot": "O15530",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y373",
+    "substrate_uniprot": "O15530",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y376",
+    "substrate_uniprot": "O15530",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y376",
+    "substrate_uniprot": "O15530",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K5",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "S394",
+    "substrate_uniprot": "O15530",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K5",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "S398",
+    "substrate_uniprot": "O15530",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCQ",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "S501",
+    "substrate_uniprot": "O15530",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PDPK1",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "T513",
+    "substrate_uniprot": "O15530",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCQ",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "S529",
+    "substrate_uniprot": "O15530",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PIM1",
+    "substrate_gene": "MAP3K5",
+    "phospho_site": "S83",
+    "substrate_uniprot": "Q99683",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "MAP3K5",
+    "phospho_site": "S83",
+    "substrate_uniprot": "Q99683",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K5",
+    "substrate_gene": "MAP3K5",
+    "phospho_site": "T813",
+    "substrate_uniprot": "Q99683",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K5",
+    "substrate_gene": "MAP3K5",
+    "phospho_site": "T838",
+    "substrate_uniprot": "Q99683",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MELK",
+    "substrate_gene": "MAP3K5",
+    "phospho_site": "T838",
+    "substrate_uniprot": "Q99683",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K6",
+    "substrate_gene": "MAP3K5",
+    "phospho_site": "T838",
+    "substrate_uniprot": "Q99683",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K5",
+    "substrate_gene": "MAP3K5",
+    "phospho_site": "T842",
+    "substrate_uniprot": "Q99683",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K5",
+    "substrate_gene": "MAP3K5",
+    "phospho_site": "S966",
+    "substrate_uniprot": "Q99683",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK7",
+    "substrate_gene": "SGK1",
+    "phospho_site": "S78",
+    "substrate_uniprot": "O00141",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PDPK1",
+    "substrate_gene": "SGK1",
+    "phospho_site": "T256",
+    "substrate_uniprot": "O00141",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "SGK1",
+    "phospho_site": "T369",
+    "substrate_uniprot": "O00141",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PDPK1",
+    "substrate_gene": "PRKACA",
+    "phospho_site": "T198",
+    "substrate_uniprot": "P17612",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PDPK1",
+    "substrate_gene": "PRKCA",
+    "phospho_site": "T497",
+    "substrate_uniprot": "P17252",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "PRKCA",
+    "phospho_site": "S657",
+    "substrate_uniprot": "P17252",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "SYK",
+    "substrate_gene": "PRKCA",
+    "phospho_site": "Y658",
+    "substrate_uniprot": "P17252",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "JAK1",
+    "substrate_gene": "STAT1",
+    "phospho_site": "Y701",
+    "substrate_uniprot": "P42224",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "JAK2",
+    "substrate_gene": "STAT1",
+    "phospho_site": "Y701",
+    "substrate_uniprot": "P42224",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "TYK2",
+    "substrate_gene": "STAT1",
+    "phospho_site": "Y701",
+    "substrate_uniprot": "P42224",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKE",
+    "substrate_gene": "STAT1",
+    "phospho_site": "S708",
+    "substrate_uniprot": "P42224",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK14",
+    "substrate_gene": "STAT1",
+    "phospho_site": "S727",
+    "substrate_uniprot": "P42224",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKE",
+    "substrate_gene": "STAT1",
+    "phospho_site": "S745",
+    "substrate_uniprot": "P42224",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "STAT1",
+    "phospho_site": "T749",
+    "substrate_uniprot": "P42224",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "TYK2",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y640",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "FER",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y705",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PTK6",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y705",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "DYRK2",
+    "substrate_gene": "STAT3",
+    "phospho_site": "S727",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "NLK",
+    "substrate_gene": "STAT3",
+    "phospho_site": "S727",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "NEK6",
+    "substrate_gene": "STAT3",
+    "phospho_site": "S727",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "IRAK1",
+    "substrate_gene": "STAT3",
+    "phospho_site": "S727",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA5",
+    "substrate_gene": "STAT3",
+    "phospho_site": "S727",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "DAPK3",
+    "substrate_gene": "STAT3",
+    "phospho_site": "S727",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCE",
+    "substrate_gene": "STAT3",
+    "phospho_site": "S727",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "NFKB1",
+    "phospho_site": "S337",
+    "substrate_uniprot": "P19838",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "NFKB1",
+    "phospho_site": "S903",
+    "substrate_uniprot": "P19838",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "NFKB1",
+    "phospho_site": "S907",
+    "substrate_uniprot": "P19838",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "NFKB1",
+    "phospho_site": "S927",
+    "substrate_uniprot": "P19838",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "NFKB1",
+    "phospho_site": "S932",
+    "substrate_uniprot": "P19838",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA4",
+    "substrate_gene": "RELA",
+    "phospho_site": "S276",
+    "substrate_uniprot": "Q04206",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA5",
+    "substrate_gene": "RELA",
+    "phospho_site": "S276",
+    "substrate_uniprot": "Q04206",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCZ",
+    "substrate_gene": "RELA",
+    "phospho_site": "S311",
+    "substrate_uniprot": "Q04206",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "RELA",
+    "phospho_site": "S468",
+    "substrate_uniprot": "Q04206",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKE",
+    "substrate_gene": "RELA",
+    "phospho_site": "S468",
+    "substrate_uniprot": "Q04206",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "RELA",
+    "phospho_site": "T505",
+    "substrate_uniprot": "Q04206",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "RELA",
+    "phospho_site": "S529",
+    "substrate_uniprot": "Q04206",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "RELA",
+    "phospho_site": "S536",
+    "substrate_uniprot": "Q04206",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PDPK1",
+    "substrate_gene": "RPS6KB1",
+    "phospho_site": "T252",
+    "substrate_uniprot": "P23443",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "RPS6KB1",
+    "phospho_site": "T412",
+    "substrate_uniprot": "P23443",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "NEK6",
+    "substrate_gene": "RPS6KB1",
+    "phospho_site": "T412",
+    "substrate_uniprot": "P23443",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "NEK7",
+    "substrate_gene": "RPS6KB1",
+    "phospho_site": "T412",
+    "substrate_uniprot": "P23443",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "EIF4EBP1",
+    "phospho_site": "T37",
+    "substrate_uniprot": "Q13541",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "EIF4EBP1",
+    "phospho_site": "T46",
+    "substrate_uniprot": "Q13541",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "DYRK2",
+    "substrate_gene": "EIF4EBP1",
+    "phospho_site": "S65",
+    "substrate_uniprot": "Q13541",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "EIF4EBP1",
+    "phospho_site": "S65",
+    "substrate_uniprot": "Q13541",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK3",
+    "substrate_gene": "EIF4EBP1",
+    "phospho_site": "S65",
+    "substrate_uniprot": "Q13541",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "EIF4EBP1",
+    "phospho_site": "S65",
+    "substrate_uniprot": "Q13541",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "EIF4EBP1",
+    "phospho_site": "T70",
+    "substrate_uniprot": "Q13541",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "DYRK2",
+    "substrate_gene": "EIF4EBP1",
+    "phospho_site": "S101",
+    "substrate_uniprot": "Q13541",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "EIF4EBP2",
+    "phospho_site": "T37",
+    "substrate_uniprot": "Q13542",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "EIF4EBP2",
+    "phospho_site": "T46",
+    "substrate_uniprot": "Q13542",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "EIF4EBP2",
+    "phospho_site": "S65",
+    "substrate_uniprot": "Q13542",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "EIF4EBP2",
+    "phospho_site": "T70",
+    "substrate_uniprot": "Q13542",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA1",
+    "substrate_gene": "ULK1",
+    "phospho_site": "S317",
+    "substrate_uniprot": "O75385",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA1",
+    "substrate_gene": "ULK1",
+    "phospho_site": "S556",
+    "substrate_uniprot": "O75385",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "ULK1",
+    "phospho_site": "S758",
+    "substrate_uniprot": "O75385",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "STK11",
+    "substrate_gene": "PRKAA1",
+    "phospho_site": "T183",
+    "substrate_uniprot": "Q13131",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CAMKK2",
+    "substrate_gene": "PRKAA1",
+    "phospho_site": "T183",
+    "substrate_uniprot": "Q13131",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ULK1",
+    "substrate_gene": "PRKAA1",
+    "phospho_site": "S360",
+    "substrate_uniprot": "Q13131",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ULK1",
+    "substrate_gene": "PRKAA1",
+    "phospho_site": "T368",
+    "substrate_uniprot": "Q13131",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "STK11",
+    "substrate_gene": "PRKAA2",
+    "phospho_site": "T172",
+    "substrate_uniprot": "P54646",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CAMKK2",
+    "substrate_gene": "PRKAA2",
+    "phospho_site": "T172",
+    "substrate_uniprot": "P54646",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK5",
+    "substrate_gene": "SRC",
+    "phospho_site": "S75",
+    "substrate_uniprot": "P12931",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "SRC",
+    "phospho_site": "Y419",
+    "substrate_uniprot": "P12931",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PTK2B",
+    "substrate_gene": "SRC",
+    "phospho_site": "Y419",
+    "substrate_uniprot": "P12931",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "CSK",
+    "substrate_gene": "SRC",
+    "phospho_site": "Y530",
+    "substrate_uniprot": "P12931",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "ABL1",
+    "phospho_site": "Y70",
+    "substrate_uniprot": "P00519",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "ABL1",
+    "phospho_site": "Y226",
+    "substrate_uniprot": "P00519",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "ABL1",
+    "phospho_site": "Y393",
+    "substrate_uniprot": "P00519",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "ABL1",
+    "phospho_site": "Y393",
+    "substrate_uniprot": "P00519",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PAK2",
+    "substrate_gene": "ABL1",
+    "phospho_site": "S618",
+    "substrate_uniprot": "P00519",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PAK2",
+    "substrate_gene": "ABL1",
+    "phospho_site": "S619",
+    "substrate_uniprot": "P00519",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "ABL2",
+    "phospho_site": "Y261",
+    "substrate_uniprot": "P42684",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ABL2",
+    "substrate_gene": "ABL2",
+    "phospho_site": "Y261",
+    "substrate_uniprot": "P42684",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ABL2",
+    "substrate_gene": "ABL2",
+    "phospho_site": "Y272",
+    "substrate_uniprot": "P42684",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ABL2",
+    "substrate_gene": "ABL2",
+    "phospho_site": "Y439",
+    "substrate_uniprot": "P42684",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "ABL2",
+    "phospho_site": "Y439",
+    "substrate_uniprot": "P42684",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ABL2",
+    "substrate_gene": "ABL2",
+    "phospho_site": "Y568",
+    "substrate_uniprot": "P42684",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "ABL2",
+    "substrate_gene": "ABL2",
+    "phospho_site": "Y683",
+    "substrate_uniprot": "P42684",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "SGK1",
+    "substrate_gene": "BRAF",
+    "phospho_site": "S365",
+    "substrate_uniprot": "P15056",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "BRAF",
+    "substrate_gene": "BRAF",
+    "phospho_site": "T373",
+    "substrate_uniprot": "P15056",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "BRAF",
+    "phospho_site": "T753",
+    "substrate_uniprot": "P15056",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S29",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S43",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S43",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S259",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCA",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S259",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S259",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "RAF1",
+    "substrate_gene": "RAF1",
+    "phospho_site": "T268",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "RAF1",
+    "phospho_site": "T269",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S289",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S301",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PAK1",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S338",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PAK2",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S338",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PAK3",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S338",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PAK7",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S338",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PAK1",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S339",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PAK2",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S339",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PAK3",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S339",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "RAF1",
+    "phospho_site": "Y340",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "RAF1",
+    "phospho_site": "Y341",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCA",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S499",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S642",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "Unknown",
+    "supporting_databases": [
+      "UniProt"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K1",
+    "substrate_gene": "MAP2K4",
+    "phospho_site": "S257",
+    "substrate_uniprot": "P45985",
+    "heptameric_peptide": "LVD(S)IAK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K1",
+    "substrate_gene": "MAP2K7",
+    "phospho_site": "S271",
+    "substrate_uniprot": "O14733",
+    "heptameric_peptide": "LVD(S)KAK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K1",
+    "substrate_gene": "MAP2K7",
+    "phospho_site": "T275",
+    "substrate_uniprot": "O14733",
+    "heptameric_peptide": "KAK(T)RSA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K1",
+    "substrate_gene": "MAP2K4",
+    "phospho_site": "T261",
+    "substrate_uniprot": "P45985",
+    "heptameric_peptide": "IAK(T)RDA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K11",
+    "substrate_gene": "MAP2K4",
+    "phospho_site": "S257",
+    "substrate_uniprot": "P45985",
+    "heptameric_peptide": "LVD(S)IAK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K11",
+    "substrate_gene": "MAP2K4",
+    "phospho_site": "T261",
+    "substrate_uniprot": "P45985",
+    "heptameric_peptide": "IAK(T)RDA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K2",
+    "substrate_gene": "MAP2K4",
+    "phospho_site": "S257",
+    "substrate_uniprot": "P45985",
+    "heptameric_peptide": "LVD(S)IAK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K2",
+    "substrate_gene": "MAP2K4",
+    "phospho_site": "T261",
+    "substrate_uniprot": "P45985",
+    "heptameric_peptide": "IAK(T)RDA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K4",
+    "substrate_gene": "MAP2K4",
+    "phospho_site": "S257",
+    "substrate_uniprot": "P45985",
+    "heptameric_peptide": "LVD(S)IAK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K4",
+    "substrate_gene": "MAP2K4",
+    "phospho_site": "T261",
+    "substrate_uniprot": "P45985",
+    "heptameric_peptide": "IAK(T)RDA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K4",
+    "substrate_gene": "MAPK8",
+    "phospho_site": "T183",
+    "substrate_uniprot": "P45983",
+    "heptameric_peptide": "MMT(T)PQY",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K4",
+    "substrate_gene": "MAPK8",
+    "phospho_site": "Y185",
+    "substrate_uniprot": "P45983",
+    "heptameric_peptide": "TTP(Y)VVT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K4",
+    "substrate_gene": "MAPK9",
+    "phospho_site": "T183",
+    "substrate_uniprot": "P45984",
+    "heptameric_peptide": "MMT(T)PQY",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K4",
+    "substrate_gene": "MAPK9",
+    "phospho_site": "Y185",
+    "substrate_uniprot": "P45984",
+    "heptameric_peptide": "TTP(Y)VVT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K4",
+    "substrate_gene": "MAPK10",
+    "phospho_site": "T221",
+    "substrate_uniprot": "P53779",
+    "heptameric_peptide": "MMT(T)PQY",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K4",
+    "substrate_gene": "MAPK10",
+    "phospho_site": "Y223",
+    "substrate_uniprot": "P53779",
+    "heptameric_peptide": "TTP(Y)VVT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K7",
+    "substrate_gene": "MAPK8",
+    "phospho_site": "T183",
+    "substrate_uniprot": "P45983",
+    "heptameric_peptide": "MMT(T)PQY",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K7",
+    "substrate_gene": "MAPK8",
+    "phospho_site": "Y185",
+    "substrate_uniprot": "P45983",
+    "heptameric_peptide": "TTP(Y)VVT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K7",
+    "substrate_gene": "MAPK9",
+    "phospho_site": "T183",
+    "substrate_uniprot": "P45984",
+    "heptameric_peptide": "MMT(T)PQY",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K7",
+    "substrate_gene": "MAPK9",
+    "phospho_site": "Y185",
+    "substrate_uniprot": "P45984",
+    "heptameric_peptide": "TTP(Y)VVT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K7",
+    "substrate_gene": "MAPK10",
+    "phospho_site": "T221",
+    "substrate_uniprot": "P53779",
+    "heptameric_peptide": "MMT(T)PQY",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K7",
+    "substrate_gene": "MAPK10",
+    "phospho_site": "Y223",
+    "substrate_uniprot": "P53779",
+    "heptameric_peptide": "TTP(Y)VVT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K3",
+    "substrate_gene": "MAPK14",
+    "phospho_site": "T180",
+    "substrate_uniprot": "Q16539",
+    "heptameric_peptide": "MMT(T)QYT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K3",
+    "substrate_gene": "MAPK14",
+    "phospho_site": "Y182",
+    "substrate_uniprot": "Q16539",
+    "heptameric_peptide": "TTQ(Y)VVT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K6",
+    "substrate_gene": "MAPK14",
+    "phospho_site": "T180",
+    "substrate_uniprot": "Q16539",
+    "heptameric_peptide": "MMT(T)QYT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP2K6",
+    "substrate_gene": "MAPK14",
+    "phospho_site": "Y182",
+    "substrate_uniprot": "Q16539",
+    "heptameric_peptide": "TTQ(Y)VVT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "T68",
+    "substrate_uniprot": "O96017",
+    "heptameric_peptide": "SST(T)STV",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATR",
+    "substrate_gene": "TP53",
+    "phospho_site": "S15",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "PPL(S)QET",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK14",
+    "substrate_gene": "MAPKAPK2",
+    "phospho_site": "T222",
+    "substrate_uniprot": "P49137",
+    "heptameric_peptide": "IQT(T)PCQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK14",
+    "substrate_gene": "MAPKAPK2",
+    "phospho_site": "S272",
+    "substrate_uniprot": "P49137",
+    "heptameric_peptide": "RNS(S)PNS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK14",
+    "substrate_gene": "MAPKAPK2",
+    "phospho_site": "T334",
+    "substrate_uniprot": "P49137",
+    "heptameric_peptide": "PQT(T)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "CREB1",
+    "phospho_site": "S133",
+    "substrate_uniprot": "P16220",
+    "heptameric_peptide": "RRR(S)QLP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "BAD",
+    "phospho_site": "S112",
+    "substrate_uniprot": "Q92934",
+    "heptameric_peptide": "RSR(S)APG",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "CFTR",
+    "phospho_site": "S737",
+    "substrate_uniprot": "P13569",
+    "heptameric_peptide": "RNS(S)TSS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "CFTR",
+    "phospho_site": "S795",
+    "substrate_uniprot": "P13569",
+    "heptameric_peptide": "RRQ(S)VLD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "BAD",
+    "phospho_site": "S136",
+    "substrate_uniprot": "Q92934",
+    "heptameric_peptide": "RSR(S)APG",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "FOXO1",
+    "phospho_site": "T24",
+    "substrate_uniprot": "Q12778",
+    "heptameric_peptide": "PRS(T)SNA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "FOXO1",
+    "phospho_site": "S256",
+    "substrate_uniprot": "Q12778",
+    "heptameric_peptide": "PRS(S)SNA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "FOXO3",
+    "phospho_site": "T32",
+    "substrate_uniprot": "O43524",
+    "heptameric_peptide": "PRS(T)SNA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "FOXO3",
+    "phospho_site": "S253",
+    "substrate_uniprot": "O43524",
+    "heptameric_peptide": "PRS(S)SNA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "MDM2",
+    "phospho_site": "S166",
+    "substrate_uniprot": "Q00987",
+    "heptameric_peptide": "RRR(S)ISP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "MDM2",
+    "phospho_site": "S186",
+    "substrate_uniprot": "Q00987",
+    "heptameric_peptide": "RRR(S)ISP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "NOS3",
+    "phospho_site": "S1177",
+    "substrate_uniprot": "P29474",
+    "heptameric_peptide": "IRT(S)QSF",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "TSC2",
+    "phospho_site": "S939",
+    "substrate_uniprot": "P49815",
+    "heptameric_peptide": "RSR(S)STP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "TSC2",
+    "phospho_site": "T1462",
+    "substrate_uniprot": "P49815",
+    "heptameric_peptide": "RPR(T)SVS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "MTOR",
+    "phospho_site": "S2448",
+    "substrate_uniprot": "P42345",
+    "heptameric_peptide": "RVT(S)FIE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "RB1",
+    "phospho_site": "T821",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "PST(T)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "RB1",
+    "phospho_site": "T826",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "PST(T)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "LMNA",
+    "phospho_site": "S22",
+    "substrate_uniprot": "P02545",
+    "heptameric_peptide": "RST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "LMNA",
+    "phospho_site": "S392",
+    "substrate_uniprot": "P02545",
+    "heptameric_peptide": "RST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK8",
+    "substrate_gene": "JUN",
+    "phospho_site": "S63",
+    "substrate_uniprot": "P05412",
+    "heptameric_peptide": "LQA(S)PVP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK8",
+    "substrate_gene": "JUN",
+    "phospho_site": "S73",
+    "substrate_uniprot": "P05412",
+    "heptameric_peptide": "TTP(S)LSP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK8",
+    "substrate_gene": "ATF2",
+    "phospho_site": "T69",
+    "substrate_uniprot": "P15336",
+    "heptameric_peptide": "PQT(T)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK8",
+    "substrate_gene": "ATF2",
+    "phospho_site": "T71",
+    "substrate_uniprot": "P15336",
+    "heptameric_peptide": "PQT(T)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK8",
+    "substrate_gene": "BCL2",
+    "phospho_site": "S70",
+    "substrate_uniprot": "P10415",
+    "heptameric_peptide": "PQT(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK8",
+    "substrate_gene": "TP53",
+    "phospho_site": "T81",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "PQT(T)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA1",
+    "substrate_gene": "ACACA",
+    "phospho_site": "S79",
+    "substrate_uniprot": "Q13085",
+    "heptameric_peptide": "LRS(S)MGD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA1",
+    "substrate_gene": "TSC2",
+    "phospho_site": "S1387",
+    "substrate_uniprot": "P49815",
+    "heptameric_peptide": "LRS(S)MGD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA1",
+    "substrate_gene": "ULK1",
+    "phospho_site": "S555",
+    "substrate_uniprot": "O75385",
+    "heptameric_peptide": "LRS(S)MGD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA1",
+    "substrate_gene": "ULK1",
+    "phospho_site": "S777",
+    "substrate_uniprot": "O75385",
+    "heptameric_peptide": "LRS(S)MGD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCA",
+    "substrate_gene": "MARCKS",
+    "phospho_site": "S152",
+    "substrate_uniprot": "P29966",
+    "heptameric_peptide": "KKS(S)FKS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCA",
+    "substrate_gene": "MARCKS",
+    "phospho_site": "S156",
+    "substrate_uniprot": "P29966",
+    "heptameric_peptide": "KKS(S)FKS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCA",
+    "substrate_gene": "MARCKS",
+    "phospho_site": "S160",
+    "substrate_uniprot": "P29966",
+    "heptameric_peptide": "KKS(S)FKS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCA",
+    "substrate_gene": "MARCKS",
+    "phospho_site": "S163",
+    "substrate_uniprot": "P29966",
+    "heptameric_peptide": "KKS(S)FKS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCA",
+    "substrate_gene": "RAF1",
+    "phospho_site": "S338",
+    "substrate_uniprot": "P04049",
+    "heptameric_peptide": "RRS(S)APG",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCA",
+    "substrate_gene": "GSK3B",
+    "phospho_site": "S9",
+    "substrate_uniprot": "P49841",
+    "heptameric_peptide": "RRS(S)APG",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCA",
+    "substrate_gene": "EGFR",
+    "phospho_site": "T654",
+    "substrate_uniprot": "P00533",
+    "heptameric_peptide": "RRR(T)VLP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "MYC",
+    "phospho_site": "S11",
+    "substrate_uniprot": "P01106",
+    "heptameric_peptide": "SEE(S)DEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "MYC",
+    "phospho_site": "S12",
+    "substrate_uniprot": "P01106",
+    "heptameric_peptide": "EES(S)DEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "PTEN",
+    "phospho_site": "S370",
+    "substrate_uniprot": "P60484",
+    "heptameric_peptide": "RYI(S)DYA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "PTEN",
+    "phospho_site": "S380",
+    "substrate_uniprot": "P60484",
+    "heptameric_peptide": "RYI(S)DYA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "PTEN",
+    "phospho_site": "T382",
+    "substrate_uniprot": "P60484",
+    "heptameric_peptide": "RYI(T)DYA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "PTEN",
+    "phospho_site": "T383",
+    "substrate_uniprot": "P60484",
+    "heptameric_peptide": "RYI(T)DYA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "PTEN",
+    "phospho_site": "S385",
+    "substrate_uniprot": "P60484",
+    "heptameric_peptide": "RYI(S)DYA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "ELK1",
+    "phospho_site": "S383",
+    "substrate_uniprot": "P19419",
+    "heptameric_peptide": "SST(S)PVP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "ELK1",
+    "phospho_site": "S389",
+    "substrate_uniprot": "P19419",
+    "heptameric_peptide": "SST(S)PVP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "MYC",
+    "phospho_site": "S62",
+    "substrate_uniprot": "P01106",
+    "heptameric_peptide": "PST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "RPS6KA1",
+    "phospho_site": "T359",
+    "substrate_uniprot": "Q15418",
+    "heptameric_peptide": "PST(T)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "RPS6KA1",
+    "phospho_site": "S363",
+    "substrate_uniprot": "Q15418",
+    "heptameric_peptide": "PST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "RPS6KA1",
+    "phospho_site": "T573",
+    "substrate_uniprot": "Q15418",
+    "heptameric_peptide": "PST(T)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "TSC2",
+    "phospho_site": "S664",
+    "substrate_uniprot": "P49815",
+    "heptameric_peptide": "PST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "STMN1",
+    "phospho_site": "S25",
+    "substrate_uniprot": "P46952",
+    "heptameric_peptide": "PST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "PXN",
+    "phospho_site": "S83",
+    "substrate_uniprot": "P49023",
+    "heptameric_peptide": "PST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "PXN",
+    "phospho_site": "S118",
+    "substrate_uniprot": "P49023",
+    "heptameric_peptide": "PST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "MYC",
+    "phospho_site": "T58",
+    "substrate_uniprot": "P01106",
+    "heptameric_peptide": "PST(T)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "CCND1",
+    "phospho_site": "T286",
+    "substrate_uniprot": "P24385",
+    "heptameric_peptide": "PST(T)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "SNAI1",
+    "phospho_site": "S97",
+    "substrate_uniprot": "O95863",
+    "heptameric_peptide": "PST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "SNAI1",
+    "phospho_site": "S101",
+    "substrate_uniprot": "O95863",
+    "heptameric_peptide": "PST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "SNAI1",
+    "phospho_site": "S104",
+    "substrate_uniprot": "O95863",
+    "heptameric_peptide": "PST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "SNAI1",
+    "phospho_site": "S108",
+    "substrate_uniprot": "O95863",
+    "heptameric_peptide": "PST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "SNAI1",
+    "phospho_site": "S112",
+    "substrate_uniprot": "O95863",
+    "heptameric_peptide": "PST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "MCL1",
+    "phospho_site": "S159",
+    "substrate_uniprot": "Q07820",
+    "heptameric_peptide": "PST(S)PTP",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PTK2",
+    "phospho_site": "Y397",
+    "substrate_uniprot": "Q05397",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PTK2",
+    "phospho_site": "Y576",
+    "substrate_uniprot": "Q05397",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PTK2",
+    "phospho_site": "Y577",
+    "substrate_uniprot": "Q05397",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PTK2",
+    "phospho_site": "Y861",
+    "substrate_uniprot": "Q05397",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PTK2",
+    "phospho_site": "Y925",
+    "substrate_uniprot": "Q05397",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PXN",
+    "phospho_site": "Y31",
+    "substrate_uniprot": "P49023",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PXN",
+    "phospho_site": "Y118",
+    "substrate_uniprot": "P49023",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "CASP8",
+    "phospho_site": "Y380",
+    "substrate_uniprot": "Q14790",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "Y86",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "Y654",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y845",
+    "substrate_uniprot": "P00533",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y1101",
+    "substrate_uniprot": "P00533",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "ERBB2",
+    "phospho_site": "Y877",
+    "substrate_uniprot": "P04626",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y705",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "CBL",
+    "phospho_site": "Y700",
+    "substrate_uniprot": "P22681",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "CBL",
+    "phospho_site": "Y731",
+    "substrate_uniprot": "P22681",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "CBL",
+    "phospho_site": "Y774",
+    "substrate_uniprot": "P22681",
+    "heptameric_peptide": "DDD(Y)AEI",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "CRKL",
+    "phospho_site": "Y207",
+    "substrate_uniprot": "P46109",
+    "heptameric_peptide": "EEE(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "Y86",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "EEE(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "SHC1",
+    "phospho_site": "Y317",
+    "substrate_uniprot": "P29353",
+    "heptameric_peptide": "EEE(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "STAT5A",
+    "phospho_site": "Y694",
+    "substrate_uniprot": "P42229",
+    "heptameric_peptide": "EEE(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "STAT5B",
+    "phospho_site": "Y699",
+    "substrate_uniprot": "P51692",
+    "heptameric_peptide": "EEE(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "BCR",
+    "phospho_site": "Y177",
+    "substrate_uniprot": "P11274",
+    "heptameric_peptide": "EEE(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "CBL",
+    "phospho_site": "Y700",
+    "substrate_uniprot": "P22681",
+    "heptameric_peptide": "EEE(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "CBL",
+    "phospho_site": "Y774",
+    "substrate_uniprot": "P22681",
+    "heptameric_peptide": "EEE(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "JAK2",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y705",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "KKK(Y)KKK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "JAK2",
+    "substrate_gene": "STAT5A",
+    "phospho_site": "Y694",
+    "substrate_uniprot": "P42229",
+    "heptameric_peptide": "KKK(Y)KKK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "JAK2",
+    "substrate_gene": "STAT5B",
+    "phospho_site": "Y699",
+    "substrate_uniprot": "P51692",
+    "heptameric_peptide": "KKK(Y)KKK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "JAK2",
+    "substrate_gene": "EPOR",
+    "phospho_site": "Y343",
+    "substrate_uniprot": "P19235",
+    "heptameric_peptide": "KKK(Y)KKK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "JAK2",
+    "substrate_gene": "EPOR",
+    "phospho_site": "Y401",
+    "substrate_uniprot": "P19235",
+    "heptameric_peptide": "KKK(Y)KKK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "JAK2",
+    "substrate_gene": "EPOR",
+    "phospho_site": "Y431",
+    "substrate_uniprot": "P19235",
+    "heptameric_peptide": "KKK(Y)KKK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "JAK2",
+    "substrate_gene": "EPOR",
+    "phospho_site": "Y479",
+    "substrate_uniprot": "P19235",
+    "heptameric_peptide": "KKK(Y)KKK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "JAK2",
+    "substrate_gene": "PTPN11",
+    "phospho_site": "Y542",
+    "substrate_uniprot": "Q06124",
+    "heptameric_peptide": "KKK(Y)KKK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "JAK2",
+    "substrate_gene": "PTPN11",
+    "phospho_site": "Y580",
+    "substrate_uniprot": "Q06124",
+    "heptameric_peptide": "KKK(Y)KKK",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "CD247",
+    "phospho_site": "Y72",
+    "substrate_uniprot": "P20963",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "CD247",
+    "phospho_site": "Y83",
+    "substrate_uniprot": "P20963",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "CD247",
+    "phospho_site": "Y111",
+    "substrate_uniprot": "P20963",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "CD247",
+    "phospho_site": "Y123",
+    "substrate_uniprot": "P20963",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "CD247",
+    "phospho_site": "Y142",
+    "substrate_uniprot": "P20963",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "CD247",
+    "phospho_site": "Y153",
+    "substrate_uniprot": "P20963",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "LCP2",
+    "phospho_site": "Y113",
+    "substrate_uniprot": "Q13094",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "LCP2",
+    "phospho_site": "Y128",
+    "substrate_uniprot": "Q13094",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "LCP2",
+    "phospho_site": "Y145",
+    "substrate_uniprot": "Q13094",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "ZAP70",
+    "phospho_site": "Y315",
+    "substrate_uniprot": "P43403",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "ZAP70",
+    "phospho_site": "Y319",
+    "substrate_uniprot": "P43403",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "ZAP70",
+    "phospho_site": "Y493",
+    "substrate_uniprot": "P43403",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "SYK",
+    "phospho_site": "Y352",
+    "substrate_uniprot": "P43405",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "PLCG1",
+    "phospho_site": "Y783",
+    "substrate_uniprot": "P19174",
+    "heptameric_peptide": "DDD(Y)DDD",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "TP53",
+    "phospho_site": "S20",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "FQT(S)DQS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "TP53",
+    "phospho_site": "S46",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "MLP(S)PQA",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "SMC1A",
+    "phospho_site": "S957",
+    "substrate_uniprot": "Q14683",
+    "heptameric_peptide": "GGS(S)QVE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "SMC1A",
+    "phospho_site": "S966",
+    "substrate_uniprot": "Q14683",
+    "heptameric_peptide": "GGS(S)QVE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "MDC1",
+    "phospho_site": "S119",
+    "substrate_uniprot": "Q14676",
+    "heptameric_peptide": "GGS(S)QVE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "H2AX",
+    "phospho_site": "S139",
+    "substrate_uniprot": "P16104",
+    "heptameric_peptide": "SQE(S)QEY",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATR",
+    "substrate_gene": "H2AX",
+    "phospho_site": "S139",
+    "substrate_uniprot": "P16104",
+    "heptameric_peptide": "SQE(S)QEY",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATR",
+    "substrate_gene": "RPA2",
+    "phospho_site": "S33",
+    "substrate_uniprot": "P15927",
+    "heptameric_peptide": "SQE(S)QEY",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "LMNB1",
+    "phospho_site": "S23",
+    "substrate_uniprot": "P20700",
+    "heptameric_peptide": "PPK(S)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "LMNB2",
+    "phospho_site": "S17",
+    "substrate_uniprot": "Q03252",
+    "heptameric_peptide": "PPK(S)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "MYC",
+    "phospho_site": "S62",
+    "substrate_uniprot": "P01106",
+    "heptameric_peptide": "PPK(S)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "NPM1",
+    "phospho_site": "T199",
+    "substrate_uniprot": "P06748",
+    "heptameric_peptide": "PPK(T)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "NPM1",
+    "phospho_site": "T234",
+    "substrate_uniprot": "P06748",
+    "heptameric_peptide": "PPK(T)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "NPM1",
+    "phospho_site": "T237",
+    "substrate_uniprot": "P06748",
+    "heptameric_peptide": "PPK(T)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "RB1",
+    "phospho_site": "S807",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "PPK(S)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "RB1",
+    "phospho_site": "S811",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "PPK(S)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "RB1",
+    "phospho_site": "S780",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "PPK(S)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "NPM1",
+    "phospho_site": "T199",
+    "substrate_uniprot": "P06748",
+    "heptameric_peptide": "PPK(T)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "CCNE1",
+    "phospho_site": "T62",
+    "substrate_uniprot": "P24864",
+    "heptameric_peptide": "PPK(T)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "CCNE1",
+    "phospho_site": "T380",
+    "substrate_uniprot": "P24864",
+    "heptameric_peptide": "PPK(T)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "CDKN1B",
+    "phospho_site": "T187",
+    "substrate_uniprot": "P46527",
+    "heptameric_peptide": "PPK(T)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MET",
+    "substrate_gene": "GAB1",
+    "phospho_site": "Y627",
+    "substrate_uniprot": "Q13480",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MET",
+    "substrate_gene": "GAB1",
+    "phospho_site": "Y659",
+    "substrate_uniprot": "Q13480",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MET",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "Y654",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MET",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y705",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RET",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y705",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RET",
+    "substrate_gene": "SHC1",
+    "phospho_site": "Y317",
+    "substrate_uniprot": "P29353",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "FLT3",
+    "substrate_gene": "STAT5A",
+    "phospho_site": "Y694",
+    "substrate_uniprot": "P42229",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "FLT3",
+    "substrate_gene": "STAT5B",
+    "phospho_site": "Y699",
+    "substrate_uniprot": "P51692",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "FLT3",
+    "substrate_gene": "SHC1",
+    "phospho_site": "Y317",
+    "substrate_uniprot": "P29353",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "KIT",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y705",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "KIT",
+    "substrate_gene": "PIK3R1",
+    "phospho_site": "Y580",
+    "substrate_uniprot": "P27986",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "KIT",
+    "substrate_gene": "PTPN11",
+    "phospho_site": "Y542",
+    "substrate_uniprot": "Q06124",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "CDC25C",
+    "phospho_site": "S198",
+    "substrate_uniprot": "P30307",
+    "heptameric_peptide": "DDE(S)DDE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "WEE1",
+    "phospho_site": "S53",
+    "substrate_uniprot": "P30291",
+    "heptameric_peptide": "DDE(S)DDE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "BUB1",
+    "phospho_site": "T609",
+    "substrate_uniprot": "O43683",
+    "heptameric_peptide": "DDE(T)DDE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "KIF23",
+    "phospho_site": "S708",
+    "substrate_uniprot": "Q02241",
+    "heptameric_peptide": "DDE(S)DDE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "PTEN",
+    "phospho_site": "S380",
+    "substrate_uniprot": "P60484",
+    "heptameric_peptide": "DDE(S)DDE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "T284",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "DDE(T)DDE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AURKA",
+    "substrate_gene": "TP53",
+    "phospho_site": "S215",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "RRS(S)RRS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AURKA",
+    "substrate_gene": "BRCA1",
+    "phospho_site": "S308",
+    "substrate_uniprot": "P38398",
+    "heptameric_peptide": "RRS(S)RRS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AURKA",
+    "substrate_gene": "TACC3",
+    "phospho_site": "S558",
+    "substrate_uniprot": "Q9Y6A5",
+    "heptameric_peptide": "RRS(S)RRS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AURKA",
+    "substrate_gene": "CDC25B",
+    "phospho_site": "S353",
+    "substrate_uniprot": "P30305",
+    "heptameric_peptide": "RRS(S)RRS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AURKB",
+    "substrate_gene": "INCENP",
+    "phospho_site": "S132",
+    "substrate_uniprot": "Q9NQS7",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AURKB",
+    "substrate_gene": "INCENP",
+    "phospho_site": "S149",
+    "substrate_uniprot": "Q9NQS7",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AURKB",
+    "substrate_gene": "H3F3A",
+    "phospho_site": "S10",
+    "substrate_uniprot": "P84243",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AURKB",
+    "substrate_gene": "CENPA",
+    "phospho_site": "S7",
+    "substrate_uniprot": "P49450",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK4",
+    "substrate_gene": "RB1",
+    "phospho_site": "S807",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "PPK(S)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK4",
+    "substrate_gene": "RB1",
+    "phospho_site": "S811",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "PPK(S)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK4",
+    "substrate_gene": "RB1",
+    "phospho_site": "S780",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "PPK(S)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK6",
+    "substrate_gene": "RB1",
+    "phospho_site": "S807",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "PPK(S)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK6",
+    "substrate_gene": "RB1",
+    "phospho_site": "S811",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "PPK(S)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK6",
+    "substrate_gene": "RB1",
+    "phospho_site": "S780",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "PPK(S)PLQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CHUK",
+    "substrate_gene": "RELA",
+    "phospho_site": "S536",
+    "substrate_uniprot": "Q04206",
+    "heptameric_peptide": "DRH(S)DSG",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "NFKBIA",
+    "phospho_site": "S32",
+    "substrate_uniprot": "P25963",
+    "heptameric_peptide": "DRH(S)DSG",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "STK11",
+    "substrate_gene": "PRKAA1",
+    "phospho_site": "T172",
+    "substrate_uniprot": "Q13131",
+    "heptameric_peptide": "FLM(T)SCG",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "STK11",
+    "substrate_gene": "MARK1",
+    "phospho_site": "T215",
+    "substrate_uniprot": "Q9P0L2",
+    "heptameric_peptide": "FLM(T)SCG",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "STK11",
+    "substrate_gene": "MARK2",
+    "phospho_site": "T208",
+    "substrate_uniprot": "Q7KZI7",
+    "heptameric_peptide": "FLM(T)SCG",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "CDC25A",
+    "phospho_site": "S76",
+    "substrate_uniprot": "P30304",
+    "heptameric_peptide": "VLS(S)QRQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "CDC25A",
+    "phospho_site": "S124",
+    "substrate_uniprot": "P30304",
+    "heptameric_peptide": "VLS(S)QRQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "CDC25C",
+    "phospho_site": "S216",
+    "substrate_uniprot": "P30307",
+    "heptameric_peptide": "VLS(S)QRQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "S20",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "FQT(S)DQS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK2",
+    "substrate_gene": "CDC25A",
+    "phospho_site": "S124",
+    "substrate_uniprot": "P30304",
+    "heptameric_peptide": "VLS(S)QRQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK2",
+    "substrate_gene": "CDC25C",
+    "phospho_site": "S216",
+    "substrate_uniprot": "P30307",
+    "heptameric_peptide": "VLS(S)QRQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK2",
+    "substrate_gene": "E2F1",
+    "phospho_site": "S31",
+    "substrate_uniprot": "Q01094",
+    "heptameric_peptide": "VLS(S)QRQ",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K5",
+    "substrate_gene": "MAP2K4",
+    "phospho_site": "S257",
+    "substrate_uniprot": "P45985",
+    "heptameric_peptide": "RRP(S)AQT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K5",
+    "substrate_gene": "MAP2K4",
+    "phospho_site": "T261",
+    "substrate_uniprot": "P45985",
+    "heptameric_peptide": "RRP(T)AQT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K5",
+    "substrate_gene": "MAP2K3",
+    "phospho_site": "S189",
+    "substrate_uniprot": "P46734",
+    "heptameric_peptide": "RRP(S)AQT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K5",
+    "substrate_gene": "MAP2K6",
+    "phospho_site": "S207",
+    "substrate_uniprot": "P52564",
+    "heptameric_peptide": "RRP(S)AQT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K7",
+    "substrate_gene": "MAP2K4",
+    "phospho_site": "S257",
+    "substrate_uniprot": "P45985",
+    "heptameric_peptide": "RRP(S)AQT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K7",
+    "substrate_gene": "IKBKB",
+    "phospho_site": "S177",
+    "substrate_uniprot": "O14920",
+    "heptameric_peptide": "RRP(S)AQT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K7",
+    "substrate_gene": "IKBKB",
+    "phospho_site": "S181",
+    "substrate_uniprot": "O14920",
+    "heptameric_peptide": "RRP(S)AQT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K7",
+    "substrate_gene": "CHUK",
+    "phospho_site": "S176",
+    "substrate_uniprot": "O15111",
+    "heptameric_peptide": "RRP(S)AQT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K7",
+    "substrate_gene": "CHUK",
+    "phospho_site": "S180",
+    "substrate_uniprot": "O15111",
+    "heptameric_peptide": "RRP(S)AQT",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PTK2",
+    "substrate_gene": "SRC",
+    "phospho_site": "Y419",
+    "substrate_uniprot": "P12931",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PTK2",
+    "substrate_gene": "PXN",
+    "phospho_site": "Y31",
+    "substrate_uniprot": "P49023",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PTK2",
+    "substrate_gene": "PXN",
+    "phospho_site": "Y118",
+    "substrate_uniprot": "P49023",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SYK",
+    "substrate_gene": "VAV1",
+    "phospho_site": "Y160",
+    "substrate_uniprot": "P15498",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SYK",
+    "substrate_gene": "PLCG1",
+    "phospho_site": "Y783",
+    "substrate_uniprot": "P19174",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ZAP70",
+    "substrate_gene": "LAT",
+    "phospho_site": "Y132",
+    "substrate_uniprot": "O43561",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ZAP70",
+    "substrate_gene": "LAT",
+    "phospho_site": "Y171",
+    "substrate_uniprot": "O43561",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "IRS1",
+    "phospho_site": "Y612",
+    "substrate_uniprot": "P35568",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "IRS1",
+    "phospho_site": "Y896",
+    "substrate_uniprot": "P35568",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "IRS1",
+    "phospho_site": "Y1229",
+    "substrate_uniprot": "P35568",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "IRS2",
+    "phospho_site": "Y653",
+    "substrate_uniprot": "Q9Y4H2",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "IRS2",
+    "phospho_site": "Y671",
+    "substrate_uniprot": "Q9Y4H2",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "SHC1",
+    "phospho_site": "Y317",
+    "substrate_uniprot": "P29353",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "IGF1R",
+    "substrate_gene": "IRS1",
+    "phospho_site": "Y612",
+    "substrate_uniprot": "P35568",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "IGF1R",
+    "substrate_gene": "IRS1",
+    "phospho_site": "Y896",
+    "substrate_uniprot": "P35568",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "IGF1R",
+    "substrate_gene": "SHC1",
+    "phospho_site": "Y317",
+    "substrate_uniprot": "P29353",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "FGFR1",
+    "substrate_gene": "FRS2",
+    "phospho_site": "Y196",
+    "substrate_uniprot": "Q8WU20",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "FGFR1",
+    "substrate_gene": "FRS2",
+    "phospho_site": "Y436",
+    "substrate_uniprot": "Q8WU20",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "FGFR1",
+    "substrate_gene": "FRS2",
+    "phospho_site": "Y471",
+    "substrate_uniprot": "Q8WU20",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "FGFR1",
+    "substrate_gene": "PLCG1",
+    "phospho_site": "Y783",
+    "substrate_uniprot": "P19174",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "FGFR2",
+    "substrate_gene": "FRS2",
+    "phospho_site": "Y196",
+    "substrate_uniprot": "Q8WU20",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "FGFR2",
+    "substrate_gene": "FRS2",
+    "phospho_site": "Y436",
+    "substrate_uniprot": "Q8WU20",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ALK",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y705",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ALK",
+    "substrate_gene": "SHC1",
+    "phospho_site": "Y317",
+    "substrate_uniprot": "P29353",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ROS1",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y705",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ROS1",
+    "substrate_gene": "SHC1",
+    "phospho_site": "Y317",
+    "substrate_uniprot": "P29353",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AXL",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y705",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AXL",
+    "substrate_gene": "SHC1",
+    "phospho_site": "Y317",
+    "substrate_uniprot": "P29353",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "NTRK1",
+    "substrate_gene": "FRS2",
+    "phospho_site": "Y196",
+    "substrate_uniprot": "Q8WU20",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "NTRK1",
+    "substrate_gene": "SHC1",
+    "phospho_site": "Y317",
+    "substrate_uniprot": "P29353",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "NTRK1",
+    "substrate_gene": "PLCG1",
+    "phospho_site": "Y783",
+    "substrate_uniprot": "P19174",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "NTRK2",
+    "substrate_gene": "SHC1",
+    "phospho_site": "Y317",
+    "substrate_uniprot": "P29353",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "NTRK2",
+    "substrate_gene": "PLCG1",
+    "phospho_site": "Y783",
+    "substrate_uniprot": "P19174",
+    "heptameric_peptide": "DDD(Y)EEE",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "BAD",
+    "phospho_site": "S155",
+    "substrate_uniprot": "Q92934",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "GSK3B",
+    "phospho_site": "S9",
+    "substrate_uniprot": "P49841",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKG1",
+    "substrate_gene": "VASP",
+    "phospho_site": "S157",
+    "substrate_uniprot": "P50552",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKG1",
+    "substrate_gene": "VASP",
+    "phospho_site": "S239",
+    "substrate_uniprot": "P50552",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCD",
+    "substrate_gene": "STAT3",
+    "phospho_site": "S727",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "RRS(S)RRS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK14",
+    "substrate_gene": "MAPAPK2",
+    "phospho_site": "T222",
+    "substrate_uniprot": "P49137",
+    "heptameric_peptide": "PPQ(T)PPR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK14",
+    "substrate_gene": "MAPAPK2",
+    "phospho_site": "S272",
+    "substrate_uniprot": "P49137",
+    "heptameric_peptide": "PPQ(S)PPR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK14",
+    "substrate_gene": "MAPAPK2",
+    "phospho_site": "T334",
+    "substrate_uniprot": "P49137",
+    "heptameric_peptide": "PPQ(T)PPR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK14",
+    "substrate_gene": "ATF2",
+    "phospho_site": "T69",
+    "substrate_uniprot": "P15336",
+    "heptameric_peptide": "PPQ(T)PPR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK14",
+    "substrate_gene": "ATF2",
+    "phospho_site": "T71",
+    "substrate_uniprot": "P15336",
+    "heptameric_peptide": "PPQ(T)PPR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK14",
+    "substrate_gene": "ELK1",
+    "phospho_site": "S383",
+    "substrate_uniprot": "P19419",
+    "heptameric_peptide": "PPQ(S)PPR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK14",
+    "substrate_gene": "TP53",
+    "phospho_site": "S392",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "PPQ(S)PPR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPAPK2",
+    "substrate_gene": "HSPB1",
+    "phospho_site": "S15",
+    "substrate_uniprot": "P04792",
+    "heptameric_peptide": "LQR(S)LQR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPAPK2",
+    "substrate_gene": "HSPB1",
+    "phospho_site": "S78",
+    "substrate_uniprot": "P04792",
+    "heptameric_peptide": "LQR(S)LQR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPAPK2",
+    "substrate_gene": "HSPB1",
+    "phospho_site": "S82",
+    "substrate_uniprot": "P04792",
+    "heptameric_peptide": "LQR(S)LQR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK9",
+    "substrate_gene": "JUN",
+    "phospho_site": "S63",
+    "substrate_uniprot": "P05412",
+    "heptameric_peptide": "PPQ(S)PPR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK9",
+    "substrate_gene": "JUN",
+    "phospho_site": "S73",
+    "substrate_uniprot": "P05412",
+    "heptameric_peptide": "PPQ(S)PPR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK7",
+    "substrate_gene": "MEF2C",
+    "phospho_site": "S387",
+    "substrate_uniprot": "Q06413",
+    "heptameric_peptide": "PPQ(S)PPR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PIM1",
+    "substrate_gene": "BAD",
+    "phospho_site": "S112",
+    "substrate_uniprot": "Q92934",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PIM1",
+    "substrate_gene": "CDKN1B",
+    "phospho_site": "T157",
+    "substrate_uniprot": "P46527",
+    "heptameric_peptide": "RRR(T)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PIM1",
+    "substrate_gene": "CDKN1B",
+    "phospho_site": "T198",
+    "substrate_uniprot": "P46527",
+    "heptameric_peptide": "RRR(T)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PIM2",
+    "substrate_gene": "BAD",
+    "phospho_site": "S112",
+    "substrate_uniprot": "Q92934",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SGK1",
+    "substrate_gene": "FOXO3",
+    "phospho_site": "S253",
+    "substrate_uniprot": "O43524",
+    "heptameric_peptide": "RXR(S)RXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SGK1",
+    "substrate_gene": "NDRG1",
+    "phospho_site": "T346",
+    "substrate_uniprot": "Q92597",
+    "heptameric_peptide": "RXR(T)RXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SGK1",
+    "substrate_gene": "NDRG1",
+    "phospho_site": "T356",
+    "substrate_uniprot": "Q92597",
+    "heptameric_peptide": "RXR(T)RXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SGK1",
+    "substrate_gene": "NDRG1",
+    "phospho_site": "T366",
+    "substrate_uniprot": "Q92597",
+    "heptameric_peptide": "RXR(T)RXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ROCK1",
+    "substrate_gene": "PPP1R12A",
+    "phospho_site": "T696",
+    "substrate_uniprot": "O14974",
+    "heptameric_peptide": "KRR(T)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ROCK1",
+    "substrate_gene": "PPP1R12A",
+    "phospho_site": "T853",
+    "substrate_uniprot": "O14974",
+    "heptameric_peptide": "KRR(T)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ROCK1",
+    "substrate_gene": "MYL9",
+    "phospho_site": "S19",
+    "substrate_uniprot": "P24844",
+    "heptameric_peptide": "KRR(S)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ROCK2",
+    "substrate_gene": "PPP1R12A",
+    "phospho_site": "T696",
+    "substrate_uniprot": "O14974",
+    "heptameric_peptide": "KRR(T)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ROCK2",
+    "substrate_gene": "PPP1R12A",
+    "phospho_site": "T853",
+    "substrate_uniprot": "O14974",
+    "heptameric_peptide": "KRR(T)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ROCK2",
+    "substrate_gene": "MYL9",
+    "phospho_site": "S19",
+    "substrate_uniprot": "P24844",
+    "heptameric_peptide": "KRR(S)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PAK1",
+    "substrate_gene": "MAP2K1",
+    "phospho_site": "S298",
+    "substrate_uniprot": "Q02750",
+    "heptameric_peptide": "KRR(S)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PAK1",
+    "substrate_gene": "BAD",
+    "phospho_site": "S112",
+    "substrate_uniprot": "Q92934",
+    "heptameric_peptide": "KRR(S)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PAK4",
+    "substrate_gene": "LIMK1",
+    "phospho_site": "S323",
+    "substrate_uniprot": "P53667",
+    "heptameric_peptide": "KRR(S)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LIMK1",
+    "substrate_gene": "CFL1",
+    "phospho_site": "S3",
+    "substrate_uniprot": "P23528",
+    "heptameric_peptide": "KRR(S)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "LIMK2",
+    "substrate_gene": "CFL1",
+    "phospho_site": "S3",
+    "substrate_uniprot": "P23528",
+    "heptameric_peptide": "KRR(S)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKD1",
+    "substrate_gene": "HDAC5",
+    "phospho_site": "S259",
+    "substrate_uniprot": "Q9UQL6",
+    "heptameric_peptide": "LXR(S)LXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKD1",
+    "substrate_gene": "HDAC5",
+    "phospho_site": "S498",
+    "substrate_uniprot": "Q9UQL6",
+    "heptameric_peptide": "LXR(S)LXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CAMK2A",
+    "substrate_gene": "RYR2",
+    "phospho_site": "S2814",
+    "substrate_uniprot": "Q92736",
+    "heptameric_peptide": "RXX(S)RXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CAMK2A",
+    "substrate_gene": "PLN",
+    "phospho_site": "T17",
+    "substrate_uniprot": "P26678",
+    "heptameric_peptide": "RXX(T)RXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CAMK2B",
+    "substrate_gene": "RYR2",
+    "phospho_site": "S2814",
+    "substrate_uniprot": "Q92736",
+    "heptameric_peptide": "RXX(S)RXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CAMK2B",
+    "substrate_gene": "PLN",
+    "phospho_site": "T17",
+    "substrate_uniprot": "P26678",
+    "heptameric_peptide": "RXX(T)RXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PDPK1",
+    "substrate_gene": "AKT2",
+    "phospho_site": "T309",
+    "substrate_uniprot": "P31751",
+    "heptameric_peptide": "TFC(T)TFC",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PDPK1",
+    "substrate_gene": "AKT3",
+    "phospho_site": "T305",
+    "substrate_uniprot": "Q9Y243",
+    "heptameric_peptide": "TFC(T)TFC",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PDPK1",
+    "substrate_gene": "RPS6KB1",
+    "phospho_site": "T229",
+    "substrate_uniprot": "P23443",
+    "heptameric_peptide": "TFC(T)TFC",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "RPS6KB1",
+    "phospho_site": "T389",
+    "substrate_uniprot": "P23443",
+    "heptameric_peptide": "FLG(T)EYY",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "ULK1",
+    "phospho_site": "S757",
+    "substrate_uniprot": "O75385",
+    "heptameric_peptide": "FLG(S)EYY",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "GSK3A",
+    "phospho_site": "S21",
+    "substrate_uniprot": "P49840",
+    "heptameric_peptide": "RXR(S)RXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA2",
+    "substrate_gene": "ACACA",
+    "phospho_site": "S79",
+    "substrate_uniprot": "Q13085",
+    "heptameric_peptide": "LXR(S)LXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA2",
+    "substrate_gene": "TSC2",
+    "phospho_site": "S1387",
+    "substrate_uniprot": "P49815",
+    "heptameric_peptide": "LXR(S)LXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA2",
+    "substrate_gene": "ULK1",
+    "phospho_site": "S317",
+    "substrate_uniprot": "O75385",
+    "heptameric_peptide": "LXR(S)LXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA2",
+    "substrate_gene": "ULK1",
+    "phospho_site": "S555",
+    "substrate_uniprot": "O75385",
+    "heptameric_peptide": "LXR(S)LXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA2",
+    "substrate_gene": "ULK1",
+    "phospho_site": "S777",
+    "substrate_uniprot": "O75385",
+    "heptameric_peptide": "LXR(S)LXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA2",
+    "substrate_gene": "HMGCR",
+    "phospho_site": "S872",
+    "substrate_uniprot": "P04035",
+    "heptameric_peptide": "LXR(S)LXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA1",
+    "substrate_gene": "HMGCR",
+    "phospho_site": "S872",
+    "substrate_uniprot": "P04035",
+    "heptameric_peptide": "LXR(S)LXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KB1",
+    "substrate_gene": "RPS6",
+    "phospho_site": "S235",
+    "substrate_uniprot": "P62753",
+    "heptameric_peptide": "RXR(S)RXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KB1",
+    "substrate_gene": "RPS6",
+    "phospho_site": "S236",
+    "substrate_uniprot": "P62753",
+    "heptameric_peptide": "RXR(S)RXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KB1",
+    "substrate_gene": "RPS6",
+    "phospho_site": "S240",
+    "substrate_uniprot": "P62753",
+    "heptameric_peptide": "RXR(S)RXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KB1",
+    "substrate_gene": "RPS6",
+    "phospho_site": "S244",
+    "substrate_uniprot": "P62753",
+    "heptameric_peptide": "RXR(S)RXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA1",
+    "substrate_gene": "RPS6",
+    "phospho_site": "S235",
+    "substrate_uniprot": "P62753",
+    "heptameric_peptide": "RXR(S)RXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA1",
+    "substrate_gene": "RPS6",
+    "phospho_site": "S236",
+    "substrate_uniprot": "P62753",
+    "heptameric_peptide": "RXR(S)RXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA1",
+    "substrate_gene": "BAD",
+    "phospho_site": "S112",
+    "substrate_uniprot": "Q92934",
+    "heptameric_peptide": "RXR(S)RXR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK1A1",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "S45",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "DXX(S)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK1E",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "S45",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "DXX(S)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrate_gene": "AKT1",
+    "phospho_site": "S129",
+    "substrate_uniprot": "P31749",
+    "heptameric_peptide": "SXX(S)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3A",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "T41",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "SXX(T)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3A",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "S37",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "SXX(S)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3A",
+    "substrate_gene": "CTNNB1",
+    "phospho_site": "S33",
+    "substrate_uniprot": "P35222",
+    "heptameric_peptide": "SXX(S)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "GYS1",
+    "phospho_site": "S641",
+    "substrate_uniprot": "P13807",
+    "heptameric_peptide": "SXX(S)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "GYS1",
+    "phospho_site": "S645",
+    "substrate_uniprot": "P13807",
+    "heptameric_peptide": "SXX(S)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "GYS1",
+    "phospho_site": "S649",
+    "substrate_uniprot": "P13807",
+    "heptameric_peptide": "SXX(S)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "GYS1",
+    "phospho_site": "S653",
+    "substrate_uniprot": "P13807",
+    "heptameric_peptide": "SXX(S)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrate_gene": "PTEN",
+    "phospho_site": "T366",
+    "substrate_uniprot": "P60484",
+    "heptameric_peptide": "SXX(T)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "RB1",
+    "phospho_site": "T821",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "SXX(T)PXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "MYC",
+    "phospho_site": "S62",
+    "substrate_uniprot": "P01106",
+    "heptameric_peptide": "SXX(S)PXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK4",
+    "substrate_gene": "RB1",
+    "phospho_site": "S795",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "SXX(S)PXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK6",
+    "substrate_gene": "RB1",
+    "phospho_site": "S795",
+    "substrate_uniprot": "P06400",
+    "heptameric_peptide": "SXX(S)PXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AURKA",
+    "substrate_gene": "PLK1",
+    "phospho_site": "T210",
+    "substrate_uniprot": "P53350",
+    "heptameric_peptide": "RXX(T)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AURKB",
+    "substrate_gene": "H3C1",
+    "phospho_site": "S10",
+    "substrate_uniprot": "P68431",
+    "heptameric_peptide": "RXX(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AURKB",
+    "substrate_gene": "H3C1",
+    "phospho_site": "S28",
+    "substrate_uniprot": "P68431",
+    "heptameric_peptide": "RXX(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "TBK1",
+    "substrate_gene": "IRF3",
+    "phospho_site": "S386",
+    "substrate_uniprot": "Q14653",
+    "heptameric_peptide": "DXX(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "TBK1",
+    "substrate_gene": "IRF3",
+    "phospho_site": "S396",
+    "substrate_uniprot": "Q14653",
+    "heptameric_peptide": "DXX(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "TBK1",
+    "substrate_gene": "OPTN",
+    "phospho_site": "S177",
+    "substrate_uniprot": "Q96CV9",
+    "heptameric_peptide": "DXX(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "MAPT",
+    "phospho_site": "Y18",
+    "substrate_uniprot": "P10636",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SYK",
+    "substrate_gene": "PLCG1",
+    "phospho_site": "Y771",
+    "substrate_uniprot": "P19174",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SYK",
+    "substrate_gene": "BTK",
+    "phospho_site": "Y551",
+    "substrate_uniprot": "Q06187",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "SYK",
+    "substrate_gene": "VAV1",
+    "phospho_site": "Y174",
+    "substrate_uniprot": "P15498",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "BTK",
+    "substrate_gene": "PLCG2",
+    "phospho_site": "Y753",
+    "substrate_uniprot": "P16885",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "BTK",
+    "substrate_gene": "PLCG2",
+    "phospho_site": "Y759",
+    "substrate_uniprot": "P16885",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ZAP70",
+    "substrate_gene": "LAT",
+    "phospho_site": "Y191",
+    "substrate_uniprot": "O43561",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ZAP70",
+    "substrate_gene": "LAT",
+    "phospho_site": "Y226",
+    "substrate_uniprot": "O43561",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "JAK1",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y705",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "JAK3",
+    "substrate_gene": "STAT5A",
+    "phospho_site": "Y694",
+    "substrate_uniprot": "P42229",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "JAK3",
+    "substrate_gene": "STAT5B",
+    "phospho_site": "Y699",
+    "substrate_uniprot": "P51692",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "TYK2",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y705",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "EGFR",
+    "substrate_gene": "STAT3",
+    "phospho_site": "Y705",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "EGFR",
+    "substrate_gene": "STAT5A",
+    "phospho_site": "Y694",
+    "substrate_uniprot": "P42229",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "EGFR",
+    "substrate_gene": "PLCG1",
+    "phospho_site": "Y783",
+    "substrate_uniprot": "P19174",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "EGFR",
+    "substrate_gene": "SHC1",
+    "phospho_site": "Y239",
+    "substrate_uniprot": "P29353",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "IGF1R",
+    "substrate_gene": "IRS1",
+    "phospho_site": "Y895",
+    "substrate_uniprot": "P35568",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "IRS1",
+    "phospho_site": "Y895",
+    "substrate_uniprot": "P35568",
+    "heptameric_peptide": "XXX(Y)XXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MKNK1",
+    "substrate_gene": "EIF4E",
+    "phospho_site": "S209",
+    "substrate_uniprot": "P06730",
+    "heptameric_peptide": "KRR(S)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MKNK2",
+    "substrate_gene": "EIF4E",
+    "phospho_site": "S209",
+    "substrate_uniprot": "P06730",
+    "heptameric_peptide": "KRR(S)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "NBN",
+    "phospho_site": "S343",
+    "substrate_uniprot": "O60934",
+    "heptameric_peptide": "SXX(S)QXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKDC",
+    "substrate_gene": "TP53",
+    "phospho_site": "S15",
+    "substrate_uniprot": "P04637",
+    "heptameric_peptide": "SXX(S)QXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKDC",
+    "substrate_gene": "H2AX",
+    "phospho_site": "S139",
+    "substrate_uniprot": "P16104",
+    "heptameric_peptide": "SXX(S)QXX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA3",
+    "substrate_gene": "CREB1",
+    "phospho_site": "S133",
+    "substrate_uniprot": "P16220",
+    "heptameric_peptide": "RXR(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA3",
+    "substrate_gene": "RPS6",
+    "phospho_site": "S235",
+    "substrate_uniprot": "P62753",
+    "heptameric_peptide": "RXR(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PINK1",
+    "substrate_gene": "PRKN",
+    "phospho_site": "S65",
+    "substrate_uniprot": "O60260",
+    "heptameric_peptide": "SXX(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK3",
+    "substrate_gene": "STAT3",
+    "phospho_site": "S727",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "PPQ(S)PPR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "STAT3",
+    "phospho_site": "S727",
+    "substrate_uniprot": "P40763",
+    "heptameric_peptide": "PPQ(S)PPR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA5",
+    "substrate_gene": "CREB1",
+    "phospho_site": "S133",
+    "substrate_uniprot": "P16220",
+    "heptameric_peptide": "RXR(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA5",
+    "substrate_gene": "H3C1",
+    "phospho_site": "S10",
+    "substrate_uniprot": "P68431",
+    "heptameric_peptide": "RXR(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA4",
+    "substrate_gene": "CREB1",
+    "phospho_site": "S133",
+    "substrate_uniprot": "P16220",
+    "heptameric_peptide": "RXR(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "DAPK1",
+    "substrate_gene": "MYL9",
+    "phospho_site": "S19",
+    "substrate_uniprot": "P24844",
+    "heptameric_peptide": "KRR(S)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "DAPK3",
+    "substrate_gene": "MYL9",
+    "phospho_site": "S19",
+    "substrate_uniprot": "P24844",
+    "heptameric_peptide": "KRR(S)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "TGFBR1",
+    "substrate_gene": "SMAD2",
+    "phospho_site": "S465",
+    "substrate_uniprot": "Q15796",
+    "heptameric_peptide": "SXX(S)QSX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "TGFBR1",
+    "substrate_gene": "SMAD2",
+    "phospho_site": "S467",
+    "substrate_uniprot": "Q15796",
+    "heptameric_peptide": "SXX(S)QSX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "TGFBR1",
+    "substrate_gene": "SMAD3",
+    "phospho_site": "S423",
+    "substrate_uniprot": "P84022",
+    "heptameric_peptide": "SXX(S)VSX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "TGFBR1",
+    "substrate_gene": "SMAD3",
+    "phospho_site": "S425",
+    "substrate_uniprot": "P84022",
+    "heptameric_peptide": "SXX(S)VSX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ACVR1",
+    "substrate_gene": "SMAD1",
+    "phospho_site": "S463",
+    "substrate_uniprot": "Q15797",
+    "heptameric_peptide": "SXX(S)VSX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ACVR1",
+    "substrate_gene": "SMAD1",
+    "phospho_site": "S465",
+    "substrate_uniprot": "Q15797",
+    "heptameric_peptide": "SXX(S)VSX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "BMPR1A",
+    "substrate_gene": "SMAD1",
+    "phospho_site": "S463",
+    "substrate_uniprot": "Q15797",
+    "heptameric_peptide": "SXX(S)VSX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "BMPR1A",
+    "substrate_gene": "SMAD1",
+    "phospho_site": "S465",
+    "substrate_uniprot": "Q15797",
+    "heptameric_peptide": "SXX(S)VSX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "VASP",
+    "phospho_site": "S157",
+    "substrate_uniprot": "P50552",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "VASP",
+    "phospho_site": "S239",
+    "substrate_uniprot": "P50552",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "CFTR",
+    "phospho_site": "S768",
+    "substrate_uniprot": "P13569",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "RYR2",
+    "phospho_site": "S2808",
+    "substrate_uniprot": "Q92736",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKACA",
+    "substrate_gene": "PLN",
+    "phospho_site": "S16",
+    "substrate_uniprot": "P26678",
+    "heptameric_peptide": "RRR(S)RRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKG1",
+    "substrate_gene": "PPP1R12A",
+    "phospho_site": "S695",
+    "substrate_uniprot": "O14974",
+    "heptameric_peptide": "KRR(S)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKG1",
+    "substrate_gene": "PPP1R12A",
+    "phospho_site": "S852",
+    "substrate_uniprot": "O14974",
+    "heptameric_peptide": "KRR(S)KRR",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCD",
+    "substrate_gene": "MARCKS",
+    "phospho_site": "S152",
+    "substrate_uniprot": "P29966",
+    "heptameric_peptide": "RRS(S)RRS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCD",
+    "substrate_gene": "MARCKS",
+    "phospho_site": "S156",
+    "substrate_uniprot": "P29966",
+    "heptameric_peptide": "RRS(S)RRS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCQ",
+    "substrate_gene": "CARD11",
+    "phospho_site": "S552",
+    "substrate_uniprot": "Q9BXL7",
+    "heptameric_peptide": "RRS(S)RRS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCQ",
+    "substrate_gene": "CARD11",
+    "phospho_site": "S645",
+    "substrate_uniprot": "Q9BXL7",
+    "heptameric_peptide": "RRS(S)RRS",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CAMKK2",
+    "substrate_gene": "PRKAA1",
+    "phospho_site": "T172",
+    "substrate_uniprot": "Q13131",
+    "heptameric_peptide": "LXR(T)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CAMKK2",
+    "substrate_gene": "CAMK1",
+    "phospho_site": "T177",
+    "substrate_uniprot": "Q14012",
+    "heptameric_peptide": "LXR(T)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CAMKK2",
+    "substrate_gene": "CAMK4",
+    "phospho_site": "T196",
+    "substrate_uniprot": "Q16566",
+    "heptameric_peptide": "LXR(T)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K5",
+    "substrate_gene": "MAP2K3",
+    "phospho_site": "T193",
+    "substrate_uniprot": "P46734",
+    "heptameric_peptide": "SXX(T)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K5",
+    "substrate_gene": "MAP2K6",
+    "phospho_site": "T211",
+    "substrate_uniprot": "P52564",
+    "heptameric_peptide": "SXX(T)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K7",
+    "substrate_gene": "MAP2K3",
+    "phospho_site": "S189",
+    "substrate_uniprot": "P46734",
+    "heptameric_peptide": "SXX(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAP3K7",
+    "substrate_gene": "MAP2K3",
+    "phospho_site": "T193",
+    "substrate_uniprot": "P46734",
+    "heptameric_peptide": "SXX(T)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA1",
+    "substrate_gene": "CRTC2",
+    "phospho_site": "S171",
+    "substrate_uniprot": "Q53G59",
+    "heptameric_peptide": "LXR(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA1",
+    "substrate_gene": "FOXO3",
+    "phospho_site": "S413",
+    "substrate_uniprot": "O43524",
+    "heptameric_peptide": "LXR(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "IRS1",
+    "phospho_site": "S307",
+    "substrate_uniprot": "P35568",
+    "heptameric_peptide": "SXX(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK8",
+    "substrate_gene": "IRS1",
+    "phospho_site": "S307",
+    "substrate_uniprot": "P35568",
+    "heptameric_peptide": "SXX(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "IRS1",
+    "phospho_site": "S636",
+    "substrate_uniprot": "P35568",
+    "heptameric_peptide": "SXX(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "MTOR",
+    "substrate_gene": "IRS1",
+    "phospho_site": "S639",
+    "substrate_uniprot": "P35568",
+    "heptameric_peptide": "SXX(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KB1",
+    "substrate_gene": "IRS1",
+    "phospho_site": "S302",
+    "substrate_uniprot": "P35568",
+    "heptameric_peptide": "SXX(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KB1",
+    "substrate_gene": "IRS1",
+    "phospho_site": "S307",
+    "substrate_uniprot": "P35568",
+    "heptameric_peptide": "SXX(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "GYS1",
+    "phospho_site": "S641",
+    "substrate_uniprot": "P13807",
+    "heptameric_peptide": "RXR(S)XX",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  }
+]

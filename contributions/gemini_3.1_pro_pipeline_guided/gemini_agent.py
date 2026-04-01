@@ -157,7 +157,7 @@ class PhosphoAtlasAutonomousAgent:
 
             try:
                 response = self.client.models.generate_content(
-                    model="gemini-2.5-flash", 
+                    model="gemini-3.1-pro-preview", 
                     contents=self.history,
                     config=types.GenerateContentConfig(
                         system_instruction=current_instr,
@@ -214,20 +214,92 @@ if __name__ == "__main__":
 
     agent = PhosphoAtlasAutonomousAgent(api_key)
     
-    # Your original exhaustive prompt with the save tool instruction appended
-    prompt = """You are a bioinformatics researcher tasked with building a comprehensive human protein phosphorylation atlas from available databases.
-            Your goal: Curate ALL known human kinase-substrate-phosphosite relationships by systematically querying the databases available to you.
-            For each relationship, you must capture:
-              - Kinase gene symbol (the enzyme)
-              - Substrate gene symbol (the target protein)
-              - Phosphorylation site (e.g., Y15, S10, T161) - Heptameric peptide sequence 
-                around the site (if available) - Substrate UniProt accession (if available)
-              - Which database(s) support this relationship. Fill out the form using the xlsx format shown under the sample_PA2.xlsx.
-            Requirements: 
-            1. Be EXHAUSTIVE — the atlas should contain every kinase-substrate-site triplet present in the databases. Missing entries is worse than having extra entries. 
-            2. Cross-reference across databases — if the same relationship appears in multiple databases, record all supporting sources.
-            3. Do NOT fabricate data. Only include relationships returned 
-            by the tools. Start by discovering what databases are available, then develop and execute a systematic curation strategy.
+    prompt = """You are a bioinformatics researcher tasked with building a comprehensive human protein phosphorylation atlas by 
+                following the exact curation pipeline described in Olow et al. (Cancer Research, 2016).
+
+                BACKGROUND: PhosphoAtlas was built using a multi-phase pipeline that integrates data from 38+ 
+                public databases, harmonizes identifiers, and validates phosphorylation events experimentally.
+                You must follow this pipeline as closely as possible using the database tools available to you.
+
+                === PHASE 1: HARMONIZE AND CENTRALIZE PROTEIN DATA ===
+
+                Step 1 — Build Protein Reference Index:
+                - Discover ALL available databases (use the list_databases tool)
+                - Get statistics for each database to understand scope (get_stats tool)
+                - The databases serve as your backbone: HGNC-standardized gene symbols are the primary identifiers
+
+                Step 2 — Cross-Reference External Databases (Curation 1):
+                - For each database, list ALL kinases using pagination (list_kinases with offset/limit)
+                - Also list ALL substrates using pagination (list_substrates with offset/limit)
+                - A protein may appear as kinase in one database and substrate in another
+                - Cross-reference: if the same gene appears across databases, it validates the record
+                - Records that cannot be matched to a known gene symbol should be flagged
+
+                Step 3 — Consolidate and Validate (Curation 2):
+                - Remove redundant records (same kinase-substrate-site from multiple databases should be merged, not duplicated)
+                - Check for consistency: same relationship should have consistent phospho-site notation
+                - Merge ambiguous records where gene aliases refer to the same protein
+
+                === PHASE 2: BUILD RELATIONAL DATABASE OF PHOSPHORYLATION EVENTS ===
+
+                Step 4 — Systematic Extraction (Functional Triage):
+                For EACH database, for EACH kinase:
+                - Query ALL substrates and phospho-sites for that kinase (query_by_kinase tool)
+                - Record: kinase gene, substrate gene, phospho-site, heptameric peptide, UniProt ID, source database
+
+                Then for EACH database, for EACH substrate:
+                - Query ALL kinases that phosphorylate that substrate (query_by_substrate tool)
+                - This catches relationships where the kinase name differs across databases
+
+                Key principle from the paper:
+                - Kinase = protein that "phosphorylates" (the enzyme)
+                - Substrate = protein that "is phosphorylated" (the target)
+                - These are ROLES in a relationship, not intrinsic protein properties
+
+                Step 5 — Extract and Validate Phosphorylation Sites (Curation 3):
+                For each phospho-site found:
+                - Record the residue + position (e.g., S10, T161, Y15)
+                - Record the heptameric peptide sequence (HPS): 3 amino acids upstream + phospho-residue + 3 amino acids downstream
+                - The HPS is critical for identifying the exact phosphorylation context
+
+                EXCLUSION CRITERIA (from the paper):
+                - Do NOT include records based solely on prediction algorithms
+                - Do NOT include records not confirmed experimentally
+                - Do NOT fabricate or infer relationships
+                - Only include data returned by the database tools
+
+                Step 6 — Assemble the PhosphoAtlas:
+                Build four linked indexes:
+                1. Kinase Protein Index — all validated kinase enzymes
+                2. Substrate Protein Index — all validated substrate proteins
+                3. Phospho-Residue Site Index — confirmed phosphorylation sites
+                4. Heptameric Peptide Sequence Index — 7-mer sequences around phospho-sites
+
+                For each entry, the final record must contain:
+                - Kinase gene symbol (HGNC standard)
+                - Substrate gene symbol (HGNC standard)
+                - Phosphorylation site (residue+position)
+                - Heptameric peptide sequence (if available)
+                - Substrate UniProt accession (if available)
+                - Supporting database(s) — list ALL databases that confirm this relationship
+
+                === PHASE 3: CROSS-REFERENCING AND QUALITY CONTROL ===
+
+                Step 7 — Multi-Database Cross-Reference:
+                - For each kinase-substrate-site triplet, check if it appears in multiple databases
+                - Entries supported by 2+ databases are higher confidence
+                - Use query_all_dbs tool for efficient cross-database lookups
+                - Merge supporting_databases lists for identical triplets
+
+                Step 8 — Final Quality Control:
+                - Verify all gene symbols are HGNC standard (uppercase, official symbols)
+                - Remove entries with missing kinase, substrate, or site
+                - Deduplicate by (kinase_gene, substrate_gene, phospho_site) triplet key
+                - Sort final atlas by kinase → substrate → site
+
+            IMPORTANT: Be EXHAUSTIVE. The original PhosphoAtlas contained ~16,000 entries across 438 kinases.
+            MAKE SURE TO HIT ALL OF THE PHASES AND DONT STOP EARLY. YOU SHOULD BE MAKING API CALLS UNTIL MAX_TURNS OR MAX_TIME hits the limit.
+            Use pagination to get ALL kinases from each database. Query EVERY kinase individually. Do NOT stop after a sample.
             CRITICAL: You MUST use the `save_curated_data` tool to explicitly save every relationship you find into the final JSON atlas."""
     
     print("🚀 Starting Persistent State Run...")
@@ -237,7 +309,7 @@ if __name__ == "__main__":
         json.dump(results, f, indent=2)
     
     log = {
-        "metadata": {"agent": "Gemini 2.5 Flash (Active Save Mode)", "runtime_min": round((time.time() - agent.start_time) / 60, 2)},
+        "metadata": {"agent": "Gemini 3.1-Pro (Active Save Mode)", "runtime_min": round((time.time() - agent.start_time) / 60, 2)},
         "stats": {
             "total_curated": len(results),
             "tool_calls": agent.tool_calls,

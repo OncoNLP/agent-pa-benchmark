@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "agent": "Gemini 3.1-Pro (Active Save Mode)",
+    "runtime_min": 60.55
+  },
+  "stats": {
+    "total_curated": 979,
+    "tool_calls": 221,
+    "sources_identified": [
+      "API.PHOSPHOSITE.ORG",
+      "DB.INDRA.BIO",
+      "EBI.AC.UK",
+      "EUTILS.NCBI.NLM.NIH.GOV",
+      "MAAYANLAB.CLOUD",
+      "MYGENE.INFO",
+      "OMNIPATHDB.ORG",
+      "PHOSPHOATLAS.API",
+      "PHOSPHOATLAS.ORG",
+      "PHOSPHOSITE.ORG",
+      "REST.GENENAMES.ORG",
+      "REST.UNIPROT.ORG",
+      "SIGNOR.UNIROMA2.IT",
+      "SMART-API.INFO",
+      "WEBSERVICE.BADERLAB.ORG"
+    ],
+    "hit_breakdown": {
+      "REST.UNIPROT.ORG": 64,
+      "EBI.AC.UK": 35,
+      "SMART-API.INFO": 4,
+      "PHOSPHOSITE.ORG": 2,
+      "SIGNOR.UNIROMA2.IT": 12,
+      "API.PHOSPHOSITE.ORG": 1,
+      "MAAYANLAB.CLOUD": 11,
+      "MYGENE.INFO": 3,
+      "WEBSERVICE.BADERLAB.ORG": 1,
+      "EUTILS.NCBI.NLM.NIH.GOV": 10,
+      "PHOSPHOATLAS.ORG": 2,
+      "OMNIPATHDB.ORG": 37,
+      "DB.INDRA.BIO": 24,
+      "REST.GENENAMES.ORG": 4,
+      "PHOSPHOATLAS.API": 1
+    }
+  }
+}
