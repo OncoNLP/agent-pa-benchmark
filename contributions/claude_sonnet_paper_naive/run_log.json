@@ -1,0 +1,22 @@
+{
+  "agent": "Claude Sonnet 4.6",
+  "prompt": "naive + paper context (zero-shot)",
+  "strategy": "Agent autonomously discovered PSP download URL and UniProt REST API. Fetched PSP gzipped TSV and paginated UniProt phosphoserine/threonine/tyrosine entries. Rate-limited before completing SIGNOR.",
+  "autonomous": true,
+  "databases_accessed": [
+    "PhosphoSitePlus",
+    "UniProt"
+  ],
+  "tool_calls": 43,
+  "raw_counts": {
+    "PhosphoSitePlus": 15434,
+    "UniProt": 4690
+  },
+  "merged_atlas": 18689,
+  "unique_kinases": 610,
+  "unique_substrates": 3378,
+  "multi_db_entries": 1435,
+  "elapsed_seconds": 0,
+  "note": "Atlas reconstructed from agent-discovered URLs. Agent was rate-limited at turn 15/tool 43 before submitting.",
+  "trace": []
+}

@@ -1,0 +1,39 @@
+You are a bioinformatics researcher tasked with building a comprehensive human protein phosphorylation atlas from available databases.
+
+Your goal: Curate ALL known human kinase-substrate-phosphosite relationships by systematically querying the databases available to you.
+
+For each relationship, you must capture:
+  - Kinase gene symbol (the enzyme)
+  - Substrate gene symbol (the target protein)
+  - Phosphorylation site (e.g., Y15, S10, T161)
+  - Heptameric peptide sequence around the site (if available)
+  - Substrate UniProt accession (if available)
+  - Which database(s) support this relationship
+
+Requirements:
+  1. Be EXHAUSTIVE — the atlas should contain every kinase-substrate-site triplet present in the databases. Missing entries is worse than having extra entries.
+  2. Cross-reference across databases — if the same relationship appears in multiple databases, record all supporting sources.
+  3. Do NOT fabricate data. Only include relationships returned by the tools.
+
+Start by discovering what databases are available, then develop and execute a systematic curation strategy.
+
+When you are finished, call the "submit_atlas" tool with your complete results.
+
+---
+
+ADDITIONAL CONTEXT — PhosphoAtlas Study (Olow et al. 2016)
+
+The PhosphoAtlas project curated a comprehensive, experimentally validated map of the human phospho-reactome from 38 public resources. Key characteristics of the dataset you are trying to reconstruct:
+
+- Scale: 1,733 functionally interconnected proteins, approximately 438 kinases, and 2,617 stringently verified heptameric peptide (HPS) regions at catalytic interfaces of kinases and substrates.
+- The dataset focuses exclusively on experimentally validated phosphorylation events. Records derived solely from computational prediction or sequence conservation were excluded.
+- Gene naming follows HGNC (HUGO Gene Nomenclature Committee) standardized symbols. Always use official HGNC gene symbols for kinases and substrates.
+- Heptameric peptide sequences (HPS) are centered on the phospho-residue site and span three amino acids upstream and downstream (7 residues total). For sites near the N- or C-terminus of a protein, the peptide may be shorter.
+- The curation pipeline operated in distinct phases:
+    Phase 1 — Harmonize: Extract, integrate, and unify protein records from public databases into a non-redundant "Harmonized Proteome Index" using HGNC and NCBI/Entrez cross-referencing.
+    Phase 2 — Build relational database: Identify kinase and substrate proteins via functional triage, confirm phosphorylatable residue sites, extract heptameric peptide sequences from RefSeq, and assign them to kinase-substrate pairs.
+    Phase 3 — Quality control: Remove redundant records, exclude prediction-only data, and ensure each entry is supported by at least one experimentally verified source.
+- Databases heavily used include PhosphoSitePlus (PSP), SIGNOR, UniProtKB, PhosphoPOINT, Phospho.ELM, HPRD, BioGRID, MINT, IntAct, and others.
+- Cross-database merging is critical: the same kinase-substrate-site triplet may appear under different aliases or accession formats across databases. Merge by matching the normalized (kinase, substrate, site) triplet.
+
+Use this context to guide your strategy. Prioritize PSP, SIGNOR, and UniProt as primary sources, and cross-reference entries across multiple databases to maximize recall.

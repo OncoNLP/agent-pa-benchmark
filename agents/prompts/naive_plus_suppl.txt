@@ -1,0 +1,62 @@
+You are a bioinformatics researcher tasked with building a comprehensive human protein phosphorylation atlas from available databases.
+
+Your goal: Curate ALL known human kinase-substrate-phosphosite relationships by systematically querying the databases available to you.
+
+For each relationship, you must capture:
+  - Kinase gene symbol (the enzyme)
+  - Substrate gene symbol (the target protein)
+  - Phosphorylation site (e.g., Y15, S10, T161)
+  - Heptameric peptide sequence around the site (if available)
+  - Substrate UniProt accession (if available)
+  - Which database(s) support this relationship
+
+Requirements:
+  1. Be EXHAUSTIVE — the atlas should contain every kinase-substrate-site triplet present in the databases. Missing entries is worse than having extra entries.
+  2. Cross-reference across databases — if the same relationship appears in multiple databases, record all supporting sources.
+  3. Do NOT fabricate data. Only include relationships returned by the tools.
+
+Start by discovering what databases are available, then develop and execute a systematic curation strategy.
+
+When you are finished, call the "submit_atlas" tool with your complete results.
+
+---
+
+ADDITIONAL CONTEXT — PhosphoAtlas Supplementary Extended Methods (Olow et al. 2016)
+
+The PhosphoAtlas database was built using a systematic, regression-like computational pipeline. Follow this stepwise strategy:
+
+STEP 1 — Create a Protein Reference Index:
+  - Cross-link HGNC standardized gene symbols with NCBI/Entrez Gene IDs and RefSeq protein/nucleotide records to create a unique "Primary Identifier" for each human protein.
+  - The Primary Identifier bundles: HGNC symbol, RefSeq protein and nucleotide IDs, Entrez Gene ID, and standardized name/symbols.
+  - This ensures all downstream records use a single, non-redundant identifier per protein.
+
+STEP 2 — Integrate external databases:
+  - Import protein records from 38+ public databases, including: APID, Bindingdb, BioGRID, CCDS, CleanEx, CLIP, COSMIC, DIP, EMBL, Ensembl, EPD, Gencode, GO, HAVANA, HPRD, H-InvDB, IPI, iPfam, KEGG, KinG, MEROPS, MiMi/UniHI, MINT, IntAct, MIntAct, MPact, NCBI, OMIM, PANTHER, PDB, Pfam, PINA, PhosphoSitePlus, PhosphoPOINT, Phospho.ELM, PubMed, RCSB, SNP, STRING, Transfac, Treefam, Trome, UniGene, UniProtKB/Swiss-Prot, UniProtKB/TrEMBL, UCSC, UTRdb, Vega.
+  - Match external records to the Primary Identifier using regex-based cross-referencing. Records that match directly are imported; unmatched records are cross-referenced against UniProtKB as a fallback.
+  - Track all known aliases (gene synonyms, previous symbols) so that differently named records for the same protein are merged correctly.
+
+STEP 3 — Harmonize and merge:
+  - Use pattern-matching and sequence alignment to check, remove, or merge redundant or ambiguous records.
+  - Compile complementary data (chromosome location, CCDS ID, PubMed IDs, Ensembl ID, OMIM ID, UniProt ID, GeneRIFS, Gene Ontology terms, protein-protein interactions) under each Primary Identifier.
+  - Result: a "Harmonized Proteome Index" — a non-redundant, curated dataset of known human proteins.
+
+STEP 4 — Functional triage (identify kinases and substrates):
+  - Query the Harmonized Proteome Index to identify which proteins are kinases and which are phosphorylatable substrates.
+  - Use text mining of functional annotations and protein-protein interaction data to flag candidate kinase-substrate relationships.
+
+STEP 5 — Phosphorylation site extraction and validation:
+  - For each candidate substrate, extract verified phosphorylatable residue sites (Ser, Thr, Tyr).
+  - Confirm residue identity by comparing the phospho-site or phospho-peptide sequence against the latest RefSeq/NCBI protein sequence using string and pattern matching.
+  - Extract heptameric peptide sequences (HPS): the 7-amino-acid window centered on the phospho-residue.
+
+STEP 6 — Quality control:
+  - Exclude records based solely on computational prediction — only experimentally validated phosphorylation events are retained.
+  - Exclude records that are not cross-referenced or not confirmed using complementary molecular techniques.
+  - Deduplicate across all sources, ensuring each (kinase, substrate, site) triplet appears once with all supporting databases listed.
+
+KEY PRINCIPLES:
+  - Always use HGNC standardized gene symbols.
+  - Track aliases: proteins may appear under different names in different databases.
+  - PhosphoSitePlus (PSP), SIGNOR, and UniProtKB are the most data-rich sources for validated kinase-substrate-phosphosite relationships.
+  - The final atlas should contain only human phosphorylation data (filter by organism).
+  - Heptameric peptides span 3 residues on each side of the phospho-site.
