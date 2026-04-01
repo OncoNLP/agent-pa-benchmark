@@ -6,7 +6,7 @@
     "f1": 0.8865,
     "kinases_found": "404/433",
     "multi_db_pct": 0.0,
-    "peptide_accuracy": 0.9758
+    "peptide_accuracy": 0.9995
   },
   "atlas_level": {
     "total_agent_entries": 15434,
@@ -28,8 +28,10 @@
     "peptide_missing": 0,
     "peptide_mismatch": 7,
     "peptide_total": 13601,
+    "peptide_accuracy": 0.9995,
     "peptide_exact_accuracy": 0.9758,
-    "peptide_close_accuracy": 0.9995,
+    "peptide_mismatch_rate": 0.0005,
+    "peptide_missing_count": 0,
     "uniprot_exact": 13601,
     "uniprot_total": 13644,
     "uniprot_accuracy": 0.9968

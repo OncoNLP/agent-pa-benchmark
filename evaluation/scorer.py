@@ -128,6 +128,11 @@ def score_columns(agent_entries: list, gold: dict) -> dict:
     site_total = len(matched_keys)
 
     # SITE_+/-7_AA (heptameric peptide)
+    # NOTE: Case-insensitive comparison is the primary metric because
+    # lowercase letters in heptameric peptides (s, t, y) merely indicate
+    # "phospho-capable residue" — a display convention that varies by
+    # database (PSP vs SIGNOR vs UniProt). The amino acid identity and
+    # phosphorylation site are the same regardless of case.
     peptide_exact = 0
     peptide_case_diff = 0
     peptide_missing = 0
@@ -177,6 +182,8 @@ def score_columns(agent_entries: list, gold: dict) -> dict:
             if gold_up == agent_up:
                 uniprot_exact += 1
 
+    peptide_matched = peptide_exact + peptide_case_diff  # case-insensitive matches
+
     return {
         "matched_triplets": len(matched_keys),
         "site_exact": site_exact,
@@ -187,8 +194,12 @@ def score_columns(agent_entries: list, gold: dict) -> dict:
         "peptide_missing": peptide_missing,
         "peptide_mismatch": peptide_mismatch,
         "peptide_total": peptide_total,
+        # Primary metric: case-insensitive (biological identity match)
+        "peptide_accuracy": round(peptide_matched / peptide_total, 4) if peptide_total else 0,
+        # Secondary metrics for reporting
         "peptide_exact_accuracy": round(peptide_exact / peptide_total, 4) if peptide_total else 0,
-        "peptide_close_accuracy": round((peptide_exact + peptide_case_diff) / peptide_total, 4) if peptide_total else 0,
+        "peptide_mismatch_rate": round(peptide_mismatch / peptide_total, 4) if peptide_total else 0,
+        "peptide_missing_count": peptide_missing,
         "uniprot_exact": uniprot_exact,
         "uniprot_total": uniprot_total,
         "uniprot_accuracy": round(uniprot_exact / uniprot_total, 4) if uniprot_total else 0,
@@ -340,7 +351,7 @@ def score_atlas(agent_entries: list, gold: dict) -> dict:
         "f1": al["f1"],
         "kinases_found": f"{kd['kinases_discovered']}/{kd['kinases_in_gold']}",
         "multi_db_pct": cr["multi_db_pct"],
-        "peptide_accuracy": cl["peptide_exact_accuracy"],
+        "peptide_accuracy": cl["peptide_accuracy"],  # case-insensitive (primary)
     }
 
     return {
@@ -387,7 +398,9 @@ def main():
     print(f"F1:               {ov['f1']}")
     print(f"Kinases found:    {ov['kinases_found']}")
     print(f"Multi-DB:         {ov['multi_db_pct']}%")
-    print(f"Peptide accuracy: {ov['peptide_accuracy']}")
+    print(f"Peptide accuracy: {ov['peptide_accuracy']} (case-insensitive)")
+    print(f"  Peptide exact (case-sensitive): {cl['peptide_exact_accuracy']}")
+    print(f"  Peptide mismatches: {cl['peptide_mismatch']}/{cl['peptide_total']}")
     print(f"  TP={al['true_positives']} FP={al['false_positives']} FN={al['false_negatives']}")
     for tier, ts in scores["per_tier"].items():
         print(f"  Tier {tier}: {ts['kinases']} kinases, recall={ts['recall']}")

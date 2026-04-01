@@ -28,8 +28,10 @@
     "peptide_missing": 0,
     "peptide_mismatch": 12,
     "peptide_total": 12,
+    "peptide_accuracy": 0.0,
     "peptide_exact_accuracy": 0.0,
-    "peptide_close_accuracy": 0.0,
+    "peptide_mismatch_rate": 1.0,
+    "peptide_missing_count": 0,
     "uniprot_exact": 11,
     "uniprot_total": 12,
     "uniprot_accuracy": 0.9167
