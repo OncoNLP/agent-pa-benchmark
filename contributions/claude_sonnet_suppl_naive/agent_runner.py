@@ -49,6 +49,11 @@ except ImportError:
     sys.exit("Error: pip install anthropic")
 
 
+def _log(msg):
+    """Print with immediate flush so output is visible when piped."""
+    print(msg, flush=True)
+
+
 # ═══════════════════════════════════════════════════════════════════════════════
 # ENTRY ACCUMULATOR — stores parsed entries across multiple fetch calls
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -580,7 +585,7 @@ class ClaudeSonnetAgent:
     """Autonomous Claude Sonnet agent for phosphorylation atlas curation."""
 
     def __init__(self, api_key, model="claude-sonnet-4-6", max_turns=50):
-        self.client = anthropic.Anthropic(api_key=api_key)
+        self.client = anthropic.Anthropic(api_key=api_key, timeout=300.0)
         self.model = model
         self.max_turns = max_turns
         self.db_tools = DatabaseTools("databases")
@@ -630,10 +635,14 @@ class ClaudeSonnetAgent:
         tool_defs = get_all_tool_definitions()
         submitted = False
 
-        print(f"[AGENT] Starting Claude Sonnet agent (model={self.model})")
-        print(f"[AGENT] Tools: {[t['name'] for t in tool_defs]}")
+        _log(f"[AGENT] Starting Claude Sonnet agent (model={self.model})")
+        _log(f"[AGENT] Tools: {[t['name'] for t in tool_defs]}")
 
         for turn in range(self.max_turns):
+            # Brief pause between turns to reduce rate-limit hits
+            if turn > 0:
+                time.sleep(2)
+
             # Call the model with retry logic
             response = None
             for attempt in range(5):
@@ -648,18 +657,18 @@ class ClaudeSonnetAgent:
                     break
                 except anthropic.RateLimitError:
                     wait = 15 * (attempt + 1)
-                    print(f"[AGENT] Rate limited, waiting {wait}s (attempt {attempt + 1}/5)...")
+                    _log(f"[AGENT] Rate limited, waiting {wait}s (attempt {attempt + 1}/5)...")
                     time.sleep(wait)
                 except (anthropic.APIConnectionError, anthropic.InternalServerError) as e:
                     wait = 10 * (attempt + 1)
-                    print(f"[AGENT] Connection error, retrying in {wait}s: {e}")
+                    _log(f"[AGENT] Connection error, retrying in {wait}s: {e}")
                     time.sleep(wait)
                 except Exception as e:
-                    print(f"[AGENT] API error: {e}")
+                    _log(f"[AGENT] API error: {e}")
                     self.trace.append({"type": "error", "error": str(e)})
                     break
             if response is None:
-                print(f"[AGENT] Failed after retries, stopping.")
+                _log(f"[AGENT] Failed after retries, stopping.")
                 break
 
             # Collect text and tool_use blocks
@@ -674,11 +683,11 @@ class ClaudeSonnetAgent:
             if text_parts:
                 combined_text = " ".join(text_parts)
                 preview = combined_text[:200]
-                print(f"[AGENT] Turn {turn + 1}: {preview}{'...' if len(combined_text) > 200 else ''}")
+                _log(f"[AGENT] Turn {turn + 1}: {preview}{'...' if len(combined_text) > 200 else ''}")
 
             if not tool_uses:
                 # No tool calls — agent is done talking
-                print(f"[AGENT] Agent finished (no tool calls). stop_reason={response.stop_reason}")
+                _log(f"[AGENT] Agent finished (no tool calls). stop_reason={response.stop_reason}")
                 break
 
             # Add assistant message to conversation
@@ -705,7 +714,7 @@ class ClaudeSonnetAgent:
                 # Log
                 input_preview = json.dumps(tool_use.input)[:100]
                 result_preview = result_str[:150]
-                print(f"[TOOL {self.tool_count}] {tool_use.name}({input_preview}) "
+                _log(f"[TOOL {self.tool_count}] {tool_use.name}({input_preview}) "
                       f"-> {result_preview}{'...' if len(result_str) > 150 else ''} "
                       f"({elapsed:.1f}s)")
 
@@ -722,17 +731,17 @@ class ClaudeSonnetAgent:
             messages.append({"role": "user", "content": tool_results})
 
             if submitted:
-                print(f"[AGENT] Atlas submitted. Stopping.")
+                _log(f"[AGENT] Atlas submitted. Stopping.")
                 break
 
         entries = self.accumulator.finalize()
         if not submitted and entries:
-            print(f"[AGENT] Auto-submitting {len(entries)} accumulated entries (budget reached)")
+            _log(f"[AGENT] Auto-submitting {len(entries)} accumulated entries (budget reached)")
             self.strategy_summary = (
                 f"Autonomous agent ran {self.tool_count} tool calls across {turn + 1} turns. "
                 f"Auto-submitted accumulated entries from discovered databases."
             )
-        print(f"[AGENT] Done. {self.tool_count} tool calls, {len(entries)} entries")
+        _log(f"[AGENT] Done. {self.tool_count} tool calls, {len(entries)} entries")
         return entries
 
 
@@ -755,9 +764,9 @@ def main():
     # Load naive prompt
     prompt_path = Path("agents/prompts/naive_plus_suppl.txt")
     system_prompt = prompt_path.read_text().strip()
-    print(f"[SETUP] Prompt: {prompt_path} ({len(system_prompt)} chars)")
-    print(f"[SETUP] Model: claude-sonnet-4-6")
-    print(f"[SETUP] Condition: naive + supplement context (zero-shot)")
+    _log(f"[SETUP] Prompt: {prompt_path} ({len(system_prompt)} chars)")
+    _log(f"[SETUP] Model: claude-sonnet-4-6")
+    _log(f"[SETUP] Condition: naive + supplement context (zero-shot)")
 
     # Run agent
     t0 = time.time()
@@ -765,9 +774,9 @@ def main():
     entries = agent.run(system_prompt)
     elapsed = time.time() - t0
 
-    print(f"\n[RESULT] Elapsed: {elapsed:.1f}s ({elapsed / 60:.1f}m)")
-    print(f"[RESULT] Tool calls: {agent.tool_count}")
-    print(f"[RESULT] Atlas: {len(entries)} entries")
+    _log(f"\n[RESULT] Elapsed: {elapsed:.1f}s ({elapsed / 60:.1f}m)")
+    _log(f"[RESULT] Tool calls: {agent.tool_count}")
+    _log(f"[RESULT] Atlas: {len(entries)} entries")
 
     # Save atlas.json
     atlas_path = out_dir / "atlas.json"
@@ -803,7 +812,7 @@ def main():
         json.dump(run_log, f, indent=2)
 
     # Run scorer
-    print("\n[SCORE] Running evaluation scorer...")
+    _log("\n[SCORE] Running evaluation scorer...")
     gold_path = "gold_standard/parsed/phosphoatlas_gold.json"
     if Path(gold_path).exists():
         from evaluation.scorer import load_gold, score_atlas, score_per_kinase
@@ -824,17 +833,17 @@ def main():
             json.dump(cl.get("peptide_mismatches", []), f, indent=2)
 
         ov = scores["overview"]
-        print(f"[SCORE]   Atlas size:       {ov['atlas_size']}")
-        print(f"[SCORE]   Recall:           {ov['recall']}")
-        print(f"[SCORE]   Precision:        {ov['precision']}")
-        print(f"[SCORE]   F1:               {ov['f1']}")
-        print(f"[SCORE]   Kinases found:    {ov['kinases_found']}")
-        print(f"[SCORE]   Multi-DB:         {ov['multi_db_pct']}%")
-        print(f"[SCORE]   Peptide accuracy: {ov['peptide_accuracy']}")
-        print(f"[SCORE]   {'PASS' if ov['f1'] >= 0.75 else 'WARN'}: F1 = {ov['f1']}")
-        print(f"[SCORE]   {'PASS' if ov['recall'] >= 0.90 else 'WARN'}: Recall = {ov['recall']}")
+        _log(f"[SCORE]   Atlas size:       {ov['atlas_size']}")
+        _log(f"[SCORE]   Recall:           {ov['recall']}")
+        _log(f"[SCORE]   Precision:        {ov['precision']}")
+        _log(f"[SCORE]   F1:               {ov['f1']}")
+        _log(f"[SCORE]   Kinases found:    {ov['kinases_found']}")
+        _log(f"[SCORE]   Multi-DB:         {ov['multi_db_pct']}%")
+        _log(f"[SCORE]   Peptide accuracy: {ov['peptide_accuracy']}")
+        _log(f"[SCORE]   {'PASS' if ov['f1'] >= 0.75 else 'WARN'}: F1 = {ov['f1']}")
+        _log(f"[SCORE]   {'PASS' if ov['recall'] >= 0.90 else 'WARN'}: Recall = {ov['recall']}")
     else:
-        print(f"[SCORE]   Gold standard not found at {gold_path}")
+        _log(f"[SCORE]   Gold standard not found at {gold_path}")
 
     print(f"\n{'=' * 60}")
     print(f"Outputs in: {out_dir}/")
