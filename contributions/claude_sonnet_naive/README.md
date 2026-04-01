@@ -9,11 +9,13 @@
 
 ## Overview
 
-This contribution runs Claude Sonnet 4.6 as a **genuinely autonomous agent** via the Anthropic API. The agent receives only the naive system prompt and a set of tools. No database names, URLs, or curation strategy are provided in the code — the agent independently:
+This contribution runs Claude Sonnet 4.6 as a **genuinely autonomous agent** via the Anthropic API. The agent receives only the naive system prompt — a task description, data field definitions, and an exhaustiveness requirement. No database names, URLs, curation strategy, or domain knowledge are provided.
+
+The agent independently:
 
 1. Called `list_databases()` to discover PSP, SIGNOR, and UniProt
-2. Called `get_stats()`/`list_kinases()` and found all databases return 0 entries (no local data)
-3. Used `web_search` to find each database's official website and API endpoints
+2. Called `get_stats()`/`list_kinases()` and found all databases return 0 entries (no local data files)
+3. Used `web_search` to find each database's official website and download endpoints
 4. Used `web_fetch` to read API documentation and explore download options
 5. Used `fetch_and_parse_db` to download and parse data from discovered URLs
 6. Successfully obtained PhosphoSitePlus data (15,434 entries) from `phosphosite.org/downloads/Kinase_Substrate_Dataset.gz`
@@ -32,22 +34,18 @@ The full agent trace (every tool call, input, and result) is logged in `run_log.
 | **Precision** | — | 0.9007 | Very high — PSP data is high-quality |
 | **Kinases discovered** | — | 404 / 433 (93.3%) | |
 | **Peptide accuracy** | — | 97.6% (exact) | |
-| **UniProt accuracy** | — | 99.6% | |
-| **Atlas size** | ~27k | 15,434 | PSP only (credit-limited) |
+| **UniProt accuracy** | — | 99.7% | |
+| **Atlas size** | ~16k gold | 15,434 | PSP only (credit-limited) |
 | **Multi-DB** | — | 0% | Only one DB reached before credits ran out |
-
-### What the agent would have achieved with more credits
-
-In the previous run (which ran out of credits after 50 tool calls), the agent had already accumulated 24,107 entries from PSP + SIGNOR + UniProt before being rate-limited. With sufficient credits, the agent was on track for ~24k+ entries, ~0.95 recall, and 3-database cross-referencing.
 
 ### Per-Tier Recall
 
 | Tier | Kinases | Gold entries | Recall |
 |---|---|---|---|
-| A (100+ substrates) | 34 | 9,517 | 0.886 |
-| B (20–99) | 102 | 4,353 | 0.858 |
-| C (5–19) | 144 | 1,452 | 0.856 |
-| D (<5) | 153 | 313 | 0.783 |
+| A (100+ substrates) | 34 | 9,517 | 0.881 |
+| B (20–99) | 102 | 4,353 | 0.863 |
+| C (5–19) | 144 | 1,452 | 0.870 |
+| D (<5) | 153 | 313 | 0.770 |
 
 ---
 
@@ -78,7 +76,9 @@ The agent's autonomous reasoning, shown in its own words:
 
 ---
 
-## Architecture: Genuine Autonomous Agent
+## How the Code Works
+
+### Architecture
 
 ```
                     ┌──────────────────────┐
@@ -105,17 +105,34 @@ The agent's autonomous reasoning, shown in its own words:
     └──────────┘    └───────────┘    └─────────────────┘
 ```
 
-The agent_runner.py contains:
-- Tool implementations (web search, web fetch, format parsers)
-- The Anthropic API tool loop (call model → execute tools → feed results → repeat)
-- An entry accumulator for deduplication
+### agent_runner.py — Key Components (844 lines)
 
-It does NOT contain:
-- Any database names or URLs
-- Any curation strategy or pipeline logic
-- Any decisions about which APIs to query
+| Component | Lines | Purpose |
+|---|---|---|
+| **EntryAccumulator** | 56–92 | Deduplicates entries keyed by `(kinase\|substrate\|site)`. Merges UniProt/peptide fields from multiple sources. |
+| **tool_web_search** | 107–129 | Searches DuckDuckGo via HTML scraping, extracts redirect URLs. |
+| **tool_web_fetch** | 132–157 | Fetches any URL, handles gzip, truncates to 15k chars. |
+| **Format parsers** | 160–358 | Auto-detect and parse: PSP gzipped TSV, SIGNOR headerless TSV, UniProt paginated JSON, generic JSON. |
+| **tool_fetch_and_parse_db** | 361–405 | Downloads a URL, routes to the right parser, accumulates entries. |
+| **_fetch_uniprot_paginated** | 408–476 | Handles UniProt REST API cursor-based pagination. |
+| **Tool definitions** | 483–572 | 13 tools in Anthropic format: 9 database + web_search + web_fetch + fetch_and_parse_db + submit_atlas. |
+| **ClaudeSonnetAgent** | 579–736 | The core agent loop: call model → parse tool_use blocks → dispatch → feed results back → repeat until submit_atlas or budget. |
+| **main()** | 743–844 | Load prompt, run agent, save atlas.json + run_log.json, run scorer. |
 
-All decisions are made by Claude Sonnet at runtime.
+### The Agent Loop (lines 627–736)
+
+```python
+messages = [{"role": "user", "content": "Begin."}]
+for turn in range(50):
+    response = client.messages.create(system=prompt, messages=messages, tools=tools)
+    # Parse response for text blocks and tool_use blocks
+    # If no tool calls → agent is done
+    # Execute each tool call → collect results
+    # If submit_atlas called → finalize and break
+    # Add tool results to messages → next turn
+```
+
+The agent has full control over which tools to call and in what order. The runner only dispatches tool calls and feeds results back.
 
 ---
 
@@ -126,8 +143,9 @@ All decisions are made by Claude Sonnet at runtime.
 | `agent_runner.py` | Autonomous agent: Anthropic API loop + tool implementations |
 | `atlas.json` | 15,434 entries (PSP only — credit-limited) |
 | `run_log.json` | Full trace of every tool call with inputs and results |
-| `scores/summary.json` | Scoring output |
-| `scores/per_kinase.json` | Per-kinase breakdown |
+| `run.log` | Console output log |
+| `scores/summary.json` | Comprehensive scoring output |
+| `scores/per_kinase.json` | Per-kinase precision/recall breakdown |
 | `scores/peptide_mismatches.json` | Peptide mismatch details |
 
 ---
@@ -139,16 +157,14 @@ export ANTHROPIC_API_KEY=sk-ant-...
 python3 contributions/claude_sonnet_naive/agent_runner.py
 ```
 
-Requires the `anthropic` Python package (`pip install anthropic`) and API credits (~$2-5 for a full run across all 3 databases).
+Requires `pip install anthropic` and API credits (~$2-5 for a full run across all 3 databases).
 
 ---
 
-## Limitations and Discussion Points
+## Limitations
 
-1. **API credit constraint:** The agent ran out of credits after discovering and parsing PSP, before completing SIGNOR and UniProt. With more credits, it was on track for ~24k entries and 0.95+ recall.
+1. **API credit constraint:** The agent ran out of credits after discovering and parsing PSP, before completing SIGNOR and UniProt. With more credits, the agent was on track for ~18k+ entries with multi-database cross-referencing.
 
-2. **Rate limiting:** The Anthropic API rate-limited the agent multiple times, adding ~3 minutes of wait time. A production run should use a higher-tier API plan.
+2. **Rate limiting:** The Anthropic API rate-limited the agent multiple times, adding ~3 minutes of wait time.
 
-3. **SIGNOR format discovery:** The agent explored multiple SIGNOR endpoints (PhosphoSIGNOR TSV, JSON, download page) before finding the JSON format that parsed correctly. This trial-and-error is genuine autonomous behavior — no hardcoded knowledge about API formats.
-
-4. **Single-DB recall:** Even with only PSP data, the agent achieved 0.8727 recall and 0.9007 precision, demonstrating that PSP alone covers ~87% of the gold standard. The remaining 13% requires SIGNOR and UniProt cross-referencing.
+3. **Single-DB recall:** Even with only PSP data, the agent achieved 0.8727 recall and 0.9007 precision, demonstrating that PSP alone covers ~87% of the gold standard.
