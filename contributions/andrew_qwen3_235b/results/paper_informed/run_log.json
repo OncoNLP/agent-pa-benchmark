@@ -1,0 +1,30 @@
+{
+  "model": "Qwen/Qwen3-235B-A22B-Instruct-2507-tput",
+  "condition": "paper_informed",
+  "strategy_summary": "",
+  "metrics": {
+    "tool_calls": 1,
+    "db_tool_calls": 0,
+    "elapsed_seconds": 17.1,
+    "budget_exceeded": false,
+    "atlas_size": 9671
+  },
+  "trace": [
+    {
+      "type": "tool_call",
+      "call_number": 1,
+      "tool": "http_get",
+      "arguments": {
+        "url": "https://signor.uniroma2.it/API/getHumanData.php"
+      },
+      "result_size": 220,
+      "time": 9.73040509223938
+    },
+    {
+      "type": "text",
+      "content": "<tool_call>\n{\"name\": \"http_get\", \"arguments\": {\"url\": \"https://rest.uniprot.org/uniprotkb/search\", \"params\": {\"query\": \"organism_id:9606 AND reviewed:true AND ft_mod_res:CDK1\", \"fields\": \"gene_names,ft_mod_res,accession\", \"format\": \"json\", \"size\": 500}}\n</tool_call>",
+      "time": 17.135107040405273
+    }
+  ],
+  "tool_log": []
+}

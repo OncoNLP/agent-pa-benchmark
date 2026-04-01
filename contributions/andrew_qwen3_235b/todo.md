@@ -102,3 +102,110 @@ it, URL injection is just noise.
 - LiveDatabaseTools retained for reference/fallback only
 
 ---
+
+### Prompt fix: explicit_prompt v2 (03/30/2026)
+Previous run stalled after SIGNOR dump — Qwen spiraled into text mode
+trying to enumerate all human genes before doing UniProt queries.
+
+Fix: restructured prompt into explicit Step 1 (SIGNOR) → Step 2 (UniProt).
+Now tells the model to use SIGNOR's ENTITYA kinase names directly as the
+UniProt ft_mod_res query list. Added hardcoded supplemental kinase list
+(AKT1, MTOR, TP53, BRCA1, etc.) for kinases not in SIGNOR.
+
+Runner output redirected: results/explicit_prompt/atlas.json (was qwen_prompt_testing/)
+
+### Results folder structure (03/30/2026)
+Reorganized outputs into results/ to match Hui's folder convention:
+  results/naive/               ← empty atlas baseline
+  results/explicit_prompt/     ← _signor_only files = accidental run (F1=0.572)
+                                  atlas.json = full run (pending this session)
+  results/paper_informed/      ← pending
+  results/pipeline_informed/   ← pending
+paper/                         ← drop PhosphoAtlas PDF + supplement here
+
+### Finding 7: Explicit prompt full run results (03/30/2026)
+75 tool calls, ~14 min, ~$1.89. SIGNOR (tool 1, 9671 entries) + 74 kinase-by-kinase
+UniProt ft_mod_res queries. Model timed out after exhausting hardcoded kinase list
+(MARK3 was last). Fallback accumulator saved all entries.
+
+| Metric        | SIGNOR-only baseline | Explicit prompt (full) |
+|---------------|----------------------|------------------------|
+| Atlas size    | 9671                 | 10844                  |
+| Recall        | 0.4629               | 0.473                  |
+| Precision     | 0.7483               | 0.7235                 |
+| F1            | 0.572                | 0.572                  |
+| Kinases found | 377/433              | 377/433                |
+| Multi-DB      | 0%                   | 0%                     |
+| TP/FP/FN      | 7237/2434/8398       | 7396/2826/8239         |
+
+UniProt added 159 new TPs. F1 unchanged because precision dropped slightly
+(more FPs) while recall improved marginally. Multi-DB stays 0% — accumulator
+deduplicates by triplet but doesn't merge supporting_databases across HTTP calls.
+
+Note: SIGNOR API intermittently returns 2 rows under load. Added 3x retry
+with 3s sleep in _dispatch_http_get. Background retry run needed 2 retries
+before getting full 39643-row response.
+
+### TODO: Next runs (by Tuesday EOD)
+- [x] explicit_prompt full run → score ✓ (F1=0.572, 10844 entries)
+- [x] paper_informed: get PhosphoAtlas PDF/supplement → build prompt → run → score ✓
+- [x] pipeline_informed: adapt pipeline_guided.txt for Qwen + HTTP tools → run → score ✓
+
+---
+
+### Finding 8: paper_informed falls into text mode after SIGNOR (03/31/2026)
+Despite receiving full paper methodology context (Olow et al. 2016 + supplement),
+Qwen dropped into text mode after SIGNOR tool 1. Only 1 structured tool call fired.
+UniProt CDK1 query was recovered via XML fallback but loop terminated immediately.
+Result: SIGNOR-only atlas (9,671 entries), identical to accidental run baseline.
+Cost: ~$0.01 (essentially free — never got past SIGNOR).
+
+| Metric        | Value  |
+|---------------|--------|
+| Atlas size    | 9,671  |
+| F1            | 0.572  |
+| Recall        | 0.4629 |
+| Precision     | 0.7483 |
+| Kinases found | 377/433 |
+| Multi-DB      | 0%     |
+| Tool calls    | 1      |
+| Cost          | ~$0.01 |
+
+### Finding 9: pipeline_informed stays structured but loops redundantly (03/31/2026)
+Step-by-step pipeline phases kept Qwen in structured tool-call mode for all 222 calls —
+no text-mode drift. However, after exhausting the kinase list (~tool 75), model looped
+back through the supplemental kinase list repeatedly, firing redundant UniProt queries
+returning 0 new entries until the 60-min timeout.
+
+Final result matches explicit_prompt exactly (same 10,844 entries, same F1=0.572),
+but cost was ~$10.41 vs ~$1.89 for explicit_prompt — 5.5x more expensive for same output.
+Peptide accuracy slightly lower than explicit_prompt (0.1961 vs 0.2185).
+
+| Metric        | Value  |
+|---------------|--------|
+| Atlas size    | 10,844 |
+| F1            | 0.572  |
+| Recall        | 0.473  |
+| Precision     | 0.7235 |
+| Kinases found | 377/433 |
+| Multi-DB      | 0%     |
+| Tool calls    | 222    |
+| Cost          | ~$10.41 |
+
+### All Qwen3-235B conditions summary (03/31/2026)
+
+| Condition         | Atlas  | F1    | Recall | Precision | Kinases  | Multi-DB | Cost    |
+|-------------------|--------|-------|--------|-----------|----------|----------|---------|
+| naive             | 0      | —     | —      | —         | —        | —        | ~$0     |
+| explicit_prompt   | 10,844 | 0.572 | 0.473  | 0.7235    | 377/433  | 0%       | ~$1.89  |
+| paper_informed    | 9,671  | 0.572 | 0.4629 | 0.7483    | 377/433  | 0%       | ~$0.01  |
+| pipeline_informed | 10,844 | 0.572 | 0.473  | 0.7235    | 377/433  | 0%       | ~$10.41 |
+
+Key finding: F1 is 0.572 across all non-naive conditions. Prompt structure affects
+execution behavior (text-mode vs structured, cost) but not final F1 given our data
+ceiling of SIGNOR + UniProt only (no PSP access). Hard ceiling is ~F1=0.572 without PSP.
+
+### TODO: Remaining
+- [ ] Build aggregate_scores.py to read all summary.json files into one table
+- [ ] Investigate peptide accuracy gap: pipeline_informed 0.1961 vs explicit_prompt 0.2185
+- [ ] Write paper section: discuss PSP gap, HTTP tool as Paper 1 contribution, prompt structure findings

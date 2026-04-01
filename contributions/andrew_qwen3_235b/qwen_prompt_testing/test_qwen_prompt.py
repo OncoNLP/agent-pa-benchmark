@@ -37,9 +37,9 @@ from contributions.andrew_qwen3_235b.qwen_prompt_testing.agent_with_http import 
     EXPLICIT_PROMPT,
 )
 
-OUTPUT_DIR  = Path(__file__).resolve().parent
-ATLAS_PATH  = OUTPUT_DIR / "explicit_prompt_test_atlas.json"
-LOG_PATH    = OUTPUT_DIR / "explicit_prompt_test_log.json"
+OUTPUT_DIR  = Path(__file__).resolve().parent.parent / "results" / "explicit_prompt"
+ATLAS_PATH  = OUTPUT_DIR / "atlas.json"
+LOG_PATH    = OUTPUT_DIR / "run_log.json"
 GOLD_PATH   = PROJECT_ROOT / "gold_standard" / "parsed" / "phosphoatlas_gold.json"
 DATABASES_DIR = PROJECT_ROOT / "databases"
 
@@ -79,6 +79,7 @@ def score_atlas():
         return
 
     scores_dir = OUTPUT_DIR / "scores"
+    scores_dir.mkdir(parents=True, exist_ok=True)
     scores_dir.mkdir(exist_ok=True)
 
     cmd = [

@@ -118,13 +118,54 @@ that SIGNOR doesn't cover. Adding ft_mod_res:KINASE UniProt queries should
 push recall significantly higher.
 
 
+EXPLICIT PROMPT v2 — PROMPT FIX (03/30/2026)
+---------------------------------------------
+Root cause of text-mode stall: the v1 prompt said "iterate over many kinase
+names" — Qwen interpreted this as: first enumerate ALL human gene names from
+UniProt, build a local list, then query each. This ate the entire tool budget
+before a single ft_mod_res:KINASE call was made.
+
+Fix: prompt now has two explicit numbered steps.
+  Step 1: SIGNOR bulk pull (one call) — note every ENTITYA kinase name.
+  Step 2: query UniProt ft_mod_res:KINASE for each name from Step 1.
+  NO gene enumeration step — removed entirely.
+
+Also added a hardcoded supplemental list of ~50 common kinases not typically
+in SIGNOR (AKT1/2/3, MTOR, PIK3CA, TP53, ATM, CHEK1/2, AURKA/B, etc.) so
+UniProt coverage goes beyond just what SIGNOR knows about.
+
+Output: results/explicit_prompt/atlas.json (previous accidental run archived
+as results/explicit_prompt/atlas_signor_only.json, F1=0.572)
+
+
+EXPLICIT PROMPT — FULL RUN RESULTS (03/30/2026)
+-----------------------------------------------
+75 tool calls, ~14 min, ~$1.89. SIGNOR bulk pull (tool 1, 9671 entries) +
+74 kinase-by-kinase UniProt ft_mod_res queries from the hardcoded list in
+the prompt. Model timed out after MARK3 (last kinase in the list). Fallback
+accumulator saved all 10,844 entries.
+
+Final scores: Recall=0.473, Precision=0.7235, F1=0.572, 377/433 kinases.
+UniProt added 159 new TPs over the SIGNOR-only baseline. F1 unchanged.
+Multi-DB=0% because the HTTP accumulator doesn't merge supporting_databases
+across separate http_get calls — only deduplicates by triplet key.
+
+Text-mode recovery: after SIGNOR, Qwen consistently outputs subsequent tool
+calls as <tool_call> XML text rather than structured function calls. Added
+_parse_tool_calls override in QwenAgentWithHTTP to recover these via regex.
+Confirmed working — all 74 UniProt calls were recovered from text mode.
+
+SIGNOR reliability: API intermittently returns 2 rows (truncated) under load.
+Added 3x retry with 3s sleep in _dispatch_http_get for SIGNOR URLs. Background
+run needed 2 retries before getting the full 39643-row response.
+
+
 WHAT'S LEFT
 -----------
-- Run full explicit prompt test with higher tool call budget to let Qwen
-  reach UniProt ft_mod_res:KINASE queries (SIGNOR baseline already captured)
-- Investigate why Qwen falls into text mode after gene enumeration — consider
-  tweaking prompt to skip the gene-listing step and go straight to kinase queries
+- paper_informed: get PhosphoAtlas PDF/supplement → build prompt → run → score
+- pipeline_informed: adapt pipeline_guided.txt for Qwen + HTTP tools → run
 - Kimi agent not started yet
-- Cross-reference UniProt + SIGNOR entries to get Multi-DB > 0%
+- Multi-DB > 0%: would need to merge supporting_databases in accumulator when
+  same triplet appears in both SIGNOR and UniProt http_get responses
 
 ================================================================================
