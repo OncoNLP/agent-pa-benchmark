@@ -4,6 +4,7 @@ This folder contains an exhaustive export of all kinase–substrate–phosphosit
 
 ## Outputs
 - `phosphoatlas_kinase_substrate_sites.xlsx` — final atlas in XLSX format
+- `phosphoatlas_kinase_substrate_sites.json` — final atlas in JSON format (array of records)
 - `phosphoatlas_combined.json` — source dataset
 
 ## Columns (match `sample_PA2.xlsx`)
@@ -27,4 +28,4 @@ From the repo root (or anywhere with access to the venv):
 python /Users/lukasamare/Desktop/agent-pa-benchmark/contributions/gpt5.1/build_phosphoatlas.py
 ```
 
-The script reads `phosphoatlas_combined.json` and writes `phosphoatlas_kinase_substrate_sites.xlsx`.
+The script reads `phosphoatlas_combined.json` and writes both `phosphoatlas_kinase_substrate_sites.xlsx` and `phosphoatlas_kinase_substrate_sites.json`.

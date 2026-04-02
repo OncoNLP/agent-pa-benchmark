@@ -6,6 +6,7 @@ import openpyxl
 BASE = Path(__file__).resolve().parent
 INPUT_JSON = BASE / "phosphoatlas_combined.json"
 OUTPUT_XLSX = BASE / "phosphoatlas_kinase_substrate_sites.xlsx"
+OUTPUT_JSON = BASE / "phosphoatlas_kinase_substrate_sites.json"
 
 # Header layout based on gold_standard/sample_PA2.xlsx
 HEADERS = [
@@ -63,7 +64,23 @@ def main():
             ws.cell(row=r_idx, column=c_idx, value=row.get(header))
 
     wb.save(OUTPUT_XLSX)
-    print(f"Wrote {OUTPUT_XLSX} with {len(records)} rows")
+
+    # Also write JSON output (array of records with schema keys)
+    out_records = []
+    for rec in records:
+        out = {h: None for h in HEADERS}
+        for k, v in rec.items():
+            if k in KEY_MAP:
+                out[KEY_MAP[k]] = v
+        # Use empty-string key for the trailing blank column, matching sample header
+        if "" in out:
+            out[""] = ""
+        out_records.append(out)
+
+    with OUTPUT_JSON.open("w") as f:
+        json.dump(out_records, f, ensure_ascii=False)
+
+    print(f"Wrote {OUTPUT_XLSX} and {OUTPUT_JSON} with {len(records)} rows")
 
 
 if __name__ == "__main__":
