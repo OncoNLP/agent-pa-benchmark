@@ -1,31 +1,26 @@
 # Phosphorylation Atlas (Kinase–Substrate–Site)
 
-This folder contains an exhaustive export of all kinase–substrate–phosphosite relationships available in the provided `phosphoatlas_combined.json` dataset, formatted to match the `sample_PA2.xlsx` schema.
+This folder contains an exhaustive export of all kinase–substrate–phosphosite relationships available from the **local databases discovered outside `agent-pa-benchmark`**, formatted to match the `sample_PA2.xlsx` schema.
+
+## Databases discovered (local, outside agent-pa-benchmark)
+- **PhosphoELM** (local dump: `phosphoELM_all_2015-04.dump`)
+- **SIGNOR / PhosphoSIGNOR** (local file: `phosphosignor_kinaseALL.tsv`)
+- **UniProt** mapping for accession → gene symbol (`uniprot_acc_gene.tsv`)
+
+## Curation strategy
+1. **PhosphoSIGNOR**: parse kinase → substrate phosphosite relationships from `phosphosignor_kinaseALL.tsv` (only `mechanism=phosphorylation`).
+2. **PhosphoELM**: parse human-only entries from the dump, expanding multi-kinase entries into separate rows.
+3. **Normalize** into the sample_PA2.xlsx column layout, including a **heptameric** peptide when a full sequence is available (PhosphoELM).
+4. **Cross-reference** by merging identical kinase–substrate–site triplets and concatenating database support labels.
+5. **Export** both XLSX and JSON outputs.
 
 ## Outputs
 - `phosphoatlas_kinase_substrate_sites.xlsx` — final atlas in XLSX format
 - `phosphoatlas_kinase_substrate_sites.json` — final atlas in JSON format (array of records)
-- `phosphoatlas_combined.json` — source dataset
-
-## Columns (match `sample_PA2.xlsx`)
-- KINASE GENE
-- KINASE common name
-- KIN_ACC_ID
-- SUBSTRATE common name
-- SUB_GENE_ID
-- SUB_ACC_ID
-- SUBSTRATE GENE
-- SUB_MOD_RSD
-- SITE_GRP_ID
-- SITE_+/-7_AA
-- BE AWARE: available in PA2_2023, or in PA1_2016_HTKAM2_only
-- (blank trailing column to match sample header layout)
+- `build_phosphoatlas.py` — reproducible build script
 
 ## How to regenerate
-From the repo root (or anywhere with access to the venv):
 ```bash
 . /Users/lukasamare/.openclaw/workspace/.venv/bin/activate
 python /Users/lukasamare/Desktop/agent-pa-benchmark/contributions/gpt5.1/build_phosphoatlas.py
 ```
-
-The script reads `phosphoatlas_combined.json` and writes both `phosphoatlas_kinase_substrate_sites.xlsx` and `phosphoatlas_kinase_substrate_sites.json`.
