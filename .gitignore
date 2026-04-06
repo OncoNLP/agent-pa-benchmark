@@ -2,7 +2,7 @@
 gold_standard/input/*.xlsx
 
 # Database files (not committed — setup separately)
-databases/*/
+databases/*
 !databases/__init__.py
 !databases/tools.py
 

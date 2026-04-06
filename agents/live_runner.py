@@ -64,7 +64,9 @@ CONDITION_PROMPTS = {
 # Known data source URLs (what an agent discovers via web search)
 PSP_URL = "https://phosphosite.org/downloads/Kinase_Substrate_Dataset.gz"
 SIGNOR_API = "https://signor.uniroma2.it/API/getHumanData.php?format=tsv"
-UNIPROT_API = "https://rest.uniprot.org/uniprotkb/search?query=%28organism_id%3A9606%29&format=json&size=500"
+# UniProt: human reviewed phosphoproteins (KW-0597 = Phosphoprotein keyword)
+# Must paginate through all ~8000 to find entries with "; by KINASE" attribution
+UNIPROT_API = "https://rest.uniprot.org/uniprotkb/search?query=(organism_id:9606)%20AND%20(reviewed:true)%20AND%20(keyword:KW-0597)&format=json&fields=accession,gene_names,ft_mod_res&size=500"
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -195,19 +197,31 @@ def web_search(query: str, max_results: int = 10) -> dict:
 
 
 def web_fetch(url: str, max_bytes: int = 20_000_000, timeout: int = 60) -> tuple[str, int]:
-    """Fetch URL content, auto-decompress gzip. Returns (text, raw_bytes)."""
-    req = urllib.request.Request(url, headers={
-        "User-Agent": "Mozilla/5.0 (PhosphoAtlas-Benchmark)",
-    })
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        raw = resp.read(max_bytes)
-        content_encoding = resp.headers.get("Content-Encoding", "")
-        # Only decompress if content is actually gzip-encoded
-        if "gzip" in content_encoding or url.endswith(".gz"):
-            try:
-                raw = gzip.decompress(raw)
-            except Exception:
-                pass
+    """Fetch URL content, auto-decompress gzip. Returns (text, raw_bytes).
+
+    Uses curl subprocess for URLs with pre-encoded query params (e.g. UniProt)
+    to avoid urllib double-encoding issues.
+    """
+    import subprocess as _sp
+
+    # Use curl for URLs with %20 or %3A (already-encoded params)
+    if "%20" in url or "%3A" in url:
+        result = _sp.run(["curl", "-sL", "--max-time", str(timeout), url],
+                         capture_output=True, timeout=timeout + 10)
+        raw = result.stdout
+    else:
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (PhosphoAtlas-Benchmark)",
+        })
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            raw = resp.read(max_bytes)
+            content_encoding = resp.headers.get("Content-Encoding", "")
+            if "gzip" in content_encoding or url.endswith(".gz"):
+                try:
+                    raw = gzip.decompress(raw)
+                except Exception:
+                    pass
+
     text = raw.decode("utf-8", errors="replace")
     return text, len(raw)
 
@@ -494,6 +508,7 @@ def run_live_curation(condition: str, system_prompt: str, tracker: LiveTokenTrac
     # ── Download UniProt ─────────────────────────────────────────────────────
 
     log_fn("UNIPROT", "Downloading UniProt phosphorylation annotations...")
+    log_fn("UNIPROT", "  (Paginating ~8000 human phosphoproteins, extracting kinase-attributed sites)")
     uniprot_entries = []
     try:
         if condition == "naive":
@@ -501,34 +516,52 @@ def run_live_curation(condition: str, system_prompt: str, tracker: LiveTokenTrac
             sr = web_search("UniProt REST API phosphorylation modified residue human")
             tracker.record("web_search", 70, len(json.dumps(sr)), 3000)
 
-        # Paginate through UniProt results
+        # Paginate through ALL UniProt phosphoproteins
+        # Use curl for pagination to get Link headers
+        import subprocess as _sp
         next_url = UNIPROT_API
         page = 0
-        while next_url and page < 20:
+        while next_url and page < 50:  # up to 50 pages of 500 = 25,000 proteins
             page += 1
-            log_fn("UNIPROT", f"  Fetching page {page}...")
-            up_text, up_bytes = web_fetch(next_url, timeout=60)
-            tracker.record("web_fetch", len(next_url) + 30, len(up_text),
-                            min(len(up_text), 15000))
+            result = _sp.run(
+                ["curl", "-sD", "-", "--max-time", "60", next_url],
+                capture_output=True, timeout=70)
+            raw_output = result.stdout.decode("utf-8", errors="replace")
 
-            page_entries = parse_uniprot_json(up_text)
+            # Split headers from body
+            header_end = raw_output.find("\r\n\r\n")
+            if header_end < 0:
+                header_end = raw_output.find("\n\n")
+            if header_end >= 0:
+                headers_text = raw_output[:header_end]
+                body = raw_output[header_end:].strip()
+            else:
+                headers_text = ""
+                body = raw_output
+
+            tracker.record("web_fetch", len(next_url), len(body), min(len(body), 15000))
+
+            page_entries = parse_uniprot_json(body)
             uniprot_entries.extend(page_entries)
-            log_fn("UNIPROT", f"  Page {page}: {len(page_entries)} entries (total: {len(uniprot_entries)})")
 
-            # Check for next page link
-            try:
-                data = json.loads(up_text)
-                next_link = None
-                for link_str in data.get("links", []):
-                    if isinstance(link_str, str) and "next" in link_str.lower():
-                        next_link = link_str
-                    elif isinstance(link_str, dict) and link_str.get("rel") == "next":
-                        next_link = link_str.get("href")
-                next_url = next_link
-            except Exception:
-                next_url = None
+            if page % 5 == 0 or page == 1:
+                log_fn("UNIPROT", f"  Page {page}: +{len(page_entries)} kinase-attributed entries "
+                       f"(total: {len(uniprot_entries)})")
 
-        log_fn("UNIPROT", f"  Total UniProt entries: {len(uniprot_entries)}")
+            # Extract next page URL from Link header
+            next_url = None
+            for line in headers_text.split("\n"):
+                if line.strip().lower().startswith("link:"):
+                    # Format: Link: <https://...>; rel="next"
+                    match = re.search(r'<([^>]+)>;\s*rel="next"', line)
+                    if match:
+                        next_url = match.group(1)
+
+            if not next_url:
+                break
+
+        log_fn("UNIPROT", f"  Total UniProt kinase-attributed entries: {len(uniprot_entries)} "
+               f"(from {page} pages)")
         all_entries.extend(uniprot_entries)
     except Exception as e:
         log_fn("UNIPROT", f"  FAILED: {e}")
@@ -549,84 +582,85 @@ def run_live_curation(condition: str, system_prompt: str, tracker: LiveTokenTrac
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# MAIN
+# ITERATIVE FEEDBACK
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def main():
-    parser = argparse.ArgumentParser(
-        description="Live runner — downloads from real sources, estimates API costs",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Examples:
-  python3 agents/live_runner.py --model opus --condition naive
-  python3 agents/live_runner.py --model sonnet --condition paper_informed
-  python3 agents/live_runner.py --model gemini-pro --condition naive
-  python3 agents/live_runner.py --list-models
-""")
-    parser.add_argument("--condition", choices=list(CONDITION_PROMPTS.keys()),
-                        help="Prompt condition")
-    parser.add_argument("--model", default="opus",
-                        help=f"Model for cost estimation ({', '.join(MODEL_PRICING.keys())})")
-    parser.add_argument("--output-dir", default=None,
-                        help="Output directory (default: contributions/<model>_<condition>)")
-    parser.add_argument("--list-models", action="store_true")
-    args = parser.parse_args()
+FEEDBACK_TEMPLATE = """
+=== PERFORMANCE FEEDBACK FROM ROUND {round_num} ===
 
-    if args.list_models:
-        print("Available models and pricing (per 1M tokens):")
-        print(f"{'Model':<16} {'Label':<22} {'Input':>8} {'Output':>8}")
-        print("-" * 56)
-        for key, p in sorted(MODEL_PRICING.items()):
-            print(f"{key:<16} {p['label']:<22} ${p['input']:>6.2f}  ${p['output']:>6.2f}")
-        return
+Your atlas from Round {round_num} was scored against a curated gold standard:
 
-    if not args.condition:
-        parser.error("--condition is required")
+TRIPLET-LEVEL:  {tp} correct, {fp} extra, {fn} missed
+  Precision: {precision}  |  Recall: {recall}  |  F1: {f1}
 
-    model_label = MODEL_PRICING.get(args.model, {}).get("label", args.model)
-    out_dir = Path(args.output_dir) if args.output_dir else Path(
-        f"contributions/{args.model.replace('-', '_')}_{args.condition}")
+KINASE DISCOVERY: {kinases_found} found, {kinases_missed} missed ({discovery_rate})
+
+TOP MISSED KINASES (by gold entry count):
+{missed_kinases_detail}
+
+AREAS FOR IMPROVEMENT:
+{improvement_suggestions}
+
+=== END FEEDBACK (Round {round_num}) ===
+"""
+
+
+def generate_feedback(scores: dict, round_num: int) -> str:
+    """Generate feedback string from scoring results."""
+    al = scores["atlas_level"]
+    cl = scores["column_level"]
+    kd = scores["kinase_discovery"]
+    cr = scores["cross_referencing"]
+
+    missed = kd.get("missed_kinases", [])[:15]
+    missed_detail = "\n".join(f"  - {k}" for k in missed) if missed else "  (none)"
+
+    suggestions = []
+    if al["recall"] < 0.95:
+        suggestions.append(
+            f"- Recall is {al['recall']:.1%}. {al['false_negatives']} entries missed. "
+            f"Try additional databases or query strategies.")
+    if cr.get("multi_db_pct", 0) < 20:
+        suggestions.append(
+            f"- Only {cr.get('multi_db_pct', 0)}% entries cross-referenced. "
+            f"Query PSP, SIGNOR, and UniProt for broader coverage.")
+    if len(kd.get("missed_kinases", [])) > 10:
+        suggestions.append(
+            f"- {len(kd['missed_kinases'])} kinases missed. Check alternative gene symbols.")
+
+    return FEEDBACK_TEMPLATE.format(
+        round_num=round_num,
+        tp=al["true_positives"], fp=al["false_positives"], fn=al["false_negatives"],
+        precision=f"{al['precision']:.4f}", recall=f"{al['recall']:.4f}", f1=f"{al['f1']:.4f}",
+        kinases_found=kd.get("kinases_discovered", "?"),
+        kinases_missed=kd.get("kinases_missed", "?"),
+        discovery_rate=f"{kd.get('discovery_rate', 0):.1%}",
+        missed_kinases_detail=missed_detail,
+        improvement_suggestions="\n".join(suggestions) or "- Maintain accuracy while expanding coverage.",
+    )
+
+
+def run_single(condition, model, system_prompt, out_dir, log_fn):
+    """Run a single curation round. Returns (entries, scores, token_summary)."""
     out_dir.mkdir(parents=True, exist_ok=True)
     scores_dir = out_dir / "scores"
     scores_dir.mkdir(parents=True, exist_ok=True)
 
-    # Load system prompt
-    prompt_path = PROJECT_ROOT / CONDITION_PROMPTS[args.condition]
-    system_prompt = prompt_path.read_text().strip()
+    tracker = LiveTokenTracker(system_prompt, model=model)
 
-    log_lines = []
-    def log_fn(phase, msg):
-        line = f"[{time.strftime('%H:%M:%S')}][{phase}] {msg}"
-        log_lines.append(line)
-        print(line, flush=True)
-
-    log_fn("SETUP", f"Model: {model_label} | Condition: {args.condition}")
-    log_fn("SETUP", f"Prompt: {prompt_path} ({len(system_prompt)} chars)")
-    log_fn("SETUP", f"Output: {out_dir}")
-    log_fn("SETUP", f"Mode: LIVE (downloading from web sources)")
-
-    # Initialize tracker
-    tracker = LiveTokenTracker(system_prompt, model=args.model)
-
-    # Run live curation
     t0 = time.time()
-    entries = run_live_curation(args.condition, system_prompt, tracker, log_fn)
+    entries = run_live_curation(condition, system_prompt, tracker, log_fn)
     elapsed = time.time() - t0
 
     token_summary = tracker.summary()
-    log_fn("DONE", f"Elapsed: {elapsed:.1f}s ({elapsed / 60:.1f}m)")
-    log_fn("DONE", f"API turns: {token_summary['api_calls']}")
-    log_fn("DONE", f"Raw data downloaded: {token_summary['total_raw_data_chars']:,} chars")
-
-    log_fn("TOKENS", f"Input tokens:  {token_summary['total_input_tokens']:,}")
-    log_fn("TOKENS", f"Output tokens: {token_summary['total_output_tokens']:,}")
-    log_fn("TOKENS", f"Total tokens:  {token_summary['total_tokens']:,}")
-    log_fn("TOKENS", f"Est. cost ({model_label}): ${token_summary['estimated_cost_usd']:.2f}")
+    log_fn("DONE", f"Elapsed: {elapsed:.1f}s | Turns: {token_summary['api_calls']} | "
+           f"Data: {token_summary['total_raw_data_chars']:,} chars")
+    log_fn("TOKENS", f"Est. cost: ${token_summary['estimated_cost_usd']:.2f} "
+           f"({token_summary['total_tokens']:,} tokens)")
 
     # Save atlas
     with open(out_dir / "atlas.json", "w") as f:
         json.dump(entries, f, indent=2)
-    log_fn("SAVE", f"Atlas: {len(entries)} entries")
 
     # Compute stats
     db_counts = {}
@@ -637,32 +671,22 @@ Examples:
         if len(e.get("supporting_databases", [])) >= 2:
             multi_db += 1
 
-    # Save run_log
+    model_label = MODEL_PRICING.get(model, {}).get("label", model)
     run_log = {
-        "agent": model_label,
-        "model": args.model,
-        "condition": args.condition,
-        "mode": "live",
-        "prompt_file": str(prompt_path),
-        "prompt_chars": len(system_prompt),
-        "databases_accessed": sorted(db_counts.keys()),
-        "tool_calls": token_summary["api_calls"],
-        "raw_counts": db_counts,
+        "agent": model_label, "model": model, "condition": condition,
+        "mode": "live", "databases_accessed": sorted(db_counts.keys()),
+        "tool_calls": token_summary["api_calls"], "raw_counts": db_counts,
         "merged_atlas": len(entries),
         "unique_kinases": len(set(e["kinase_gene"] for e in entries)),
         "unique_substrates": len(set(e["substrate_gene"] for e in entries)),
-        "multi_db_entries": multi_db,
-        "elapsed_seconds": round(elapsed, 1),
+        "multi_db_entries": multi_db, "elapsed_seconds": round(elapsed, 1),
         "token_usage": token_summary,
     }
     with open(out_dir / "run_log.json", "w") as f:
         json.dump(run_log, f, indent=2)
 
-    with open(out_dir / "run.log", "w") as f:
-        f.write("\n".join(log_lines))
-
     # Score
-    log_fn("SCORE", "Running scorer...")
+    scores = None
     gold_path = PROJECT_ROOT / "gold_standard" / "parsed" / "phosphoatlas_gold.json"
     if gold_path.exists():
         from evaluation.scorer import load_gold, score_atlas, score_per_kinase
@@ -684,23 +708,161 @@ Examples:
 
         ov = scores["overview"]
         al = scores["atlas_level"]
-        log_fn("SCORE", f"  Atlas size:       {ov['atlas_size']}")
-        log_fn("SCORE", f"  Recall:           {ov['recall']}")
-        log_fn("SCORE", f"  Precision:        {ov['precision']}")
-        log_fn("SCORE", f"  F1:               {ov['f1']}")
-        log_fn("SCORE", f"  Kinases found:    {ov['kinases_found']}")
-        log_fn("SCORE", f"  Multi-DB:         {ov['multi_db_pct']}%")
-        log_fn("SCORE", f"  Peptide accuracy: {ov['peptide_accuracy']}")
-        log_fn("SCORE", f"  TP={al['true_positives']} FP={al['false_positives']} FN={al['false_negatives']}")
+        log_fn("SCORE", f"F1={ov['f1']} R={ov['recall']} P={ov['precision']} "
+               f"Kinases={ov['kinases_found']} TP={al['true_positives']} FN={al['false_negatives']}")
 
-    with open(out_dir / "run.log", "w") as f:
-        f.write("\n".join(log_lines))
+    return entries, scores, token_summary
 
-    print(f"\n{'=' * 60}")
-    print(f"  Atlas: {len(entries)} entries | F1: {scores['overview']['f1'] if gold_path.exists() else '?'}")
-    print(f"  Cost:  ${token_summary['estimated_cost_usd']:.2f} ({model_label})")
-    print(f"  Turns: {token_summary['api_calls']} | Data: {token_summary['total_raw_data_chars']:,} chars")
-    print(f"  Output: {out_dir}/")
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# MAIN
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Live runner — downloads from real sources, estimates API costs",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Single run
+  python3 agents/live_runner.py --model opus --condition naive
+
+  # Iterative (3 rounds with feedback)
+  python3 agents/live_runner.py --model opus --condition naive --iterative
+
+  # All conditions + iterative
+  python3 agents/live_runner.py --model opus --all
+
+  python3 agents/live_runner.py --list-models
+""")
+    parser.add_argument("--condition", choices=list(CONDITION_PROMPTS.keys()),
+                        help="Prompt condition")
+    parser.add_argument("--model", default="opus",
+                        help=f"Model for cost estimation ({', '.join(MODEL_PRICING.keys())})")
+    parser.add_argument("--output-dir", default=None,
+                        help="Output directory (default: contributions/<model>_<condition>)")
+    parser.add_argument("--iterative", action="store_true",
+                        help="Run 3 iterative rounds with feedback between each")
+    parser.add_argument("--all", action="store_true",
+                        help="Run all conditions (naive, paper_informed, pipeline_guided) + iterative")
+    parser.add_argument("--list-models", action="store_true")
+    args = parser.parse_args()
+
+    if args.list_models:
+        print("Available models and pricing (per 1M tokens):")
+        print(f"{'Model':<16} {'Label':<22} {'Input':>8} {'Output':>8}")
+        print("-" * 56)
+        for key, p in sorted(MODEL_PRICING.items()):
+            print(f"{key:<16} {p['label']:<22} ${p['input']:>6.2f}  ${p['output']:>6.2f}")
+        return
+
+    model_label = MODEL_PRICING.get(args.model, {}).get("label", args.model)
+    model_slug = args.model.replace("-", "_")
+
+    log_lines = []
+    def log_fn(phase, msg):
+        line = f"[{time.strftime('%H:%M:%S')}][{phase}] {msg}"
+        log_lines.append(line)
+        print(line, flush=True)
+
+    def run_condition(condition, out_dir, extra_prompt=""):
+        """Run a single condition and return scores."""
+        prompt_path = PROJECT_ROOT / CONDITION_PROMPTS[condition]
+        system_prompt = prompt_path.read_text().strip()
+        if extra_prompt:
+            system_prompt = system_prompt + "\n\n" + extra_prompt
+
+        log_fn("RUN", f"{'='*60}")
+        log_fn("RUN", f"Model: {model_label} | Condition: {condition} | Output: {out_dir}")
+
+        entries, scores, token_summary = run_single(
+            condition, args.model, system_prompt, out_dir, log_fn)
+
+        # Save log
+        with open(out_dir / "run.log", "w") as f:
+            f.write("\n".join(log_lines))
+
+        ov = scores["overview"] if scores else {}
+        print(f"\n  Atlas: {len(entries)} | F1: {ov.get('f1','?')} | "
+              f"Cost: ${token_summary['estimated_cost_usd']:.2f}\n")
+        return entries, scores
+
+    def run_iterative(condition):
+        """Run 3 iterative rounds with feedback between each."""
+        base_dir = Path(args.output_dir) if args.output_dir else Path(
+            f"contributions/{model_slug}_{condition}")
+
+        all_scores = []
+        total_cost = 0.0
+
+        for round_num in range(1, 4):
+            round_dir = base_dir / f"round{round_num}" if round_num > 1 else base_dir
+            log_fn("ITER", f"{'#'*60}")
+            log_fn("ITER", f"# ROUND {round_num}/3 — {condition}")
+            log_fn("ITER", f"{'#'*60}")
+
+            # Build feedback from all previous rounds
+            feedback_parts = []
+            for prev_round, prev_scores in enumerate(all_scores, 1):
+                feedback_parts.append(generate_feedback(prev_scores, prev_round))
+
+            extra = "\n\n".join(feedback_parts)
+            if extra:
+                extra = (
+                    f"You are on Round {round_num} of an iterative curation process.\n"
+                    f"Below is feedback from your previous round(s). Use it to improve.\n"
+                    + extra +
+                    f"\nFocus on finding the entries you missed while maintaining accuracy."
+                )
+
+            entries, scores = run_condition(condition, round_dir, extra_prompt=extra)
+            all_scores.append(scores)
+
+            ts = json.load(open(round_dir / "run_log.json")).get("token_usage", {})
+            total_cost += ts.get("estimated_cost_usd", 0)
+
+        # Print comparison
+        print(f"\n{'='*70}")
+        print(f"ITERATIVE COMPARISON — {model_label} / {condition}")
+        print(f"{'='*70}")
+        print(f"{'Round':<8} {'Entries':>8} {'Recall':>8} {'Prec':>8} {'F1':>8} {'Kinases':>10} {'FN':>6}")
+        print("-" * 70)
+        for i, s in enumerate(all_scores, 1):
+            al = s["atlas_level"]
+            kd = s["kinase_discovery"]
+            print(f"Round {i:<3} {al['total_agent_entries']:>8} {al['recall']:>8.4f} "
+                  f"{al['precision']:>8.4f} {al['f1']:>8.4f} "
+                  f"{kd['kinases_discovered']:>4}/{kd['kinases_in_gold']:<4} {al['false_negatives']:>6}")
+        print(f"\nTotal estimated cost: ${total_cost:.2f}")
+
+        # Save comparison
+        comp = [{"round": i+1, **s["overview"], **s["atlas_level"]} for i, s in enumerate(all_scores)]
+        with open(base_dir / "iterative_comparison.json", "w") as f:
+            json.dump(comp, f, indent=2)
+
+    # ── Dispatch ─────────────────────────────────────────────────────────
+
+    if args.all:
+        for cond in ["naive", "paper_informed", "pipeline_guided"]:
+            out = Path(f"contributions/{model_slug}_{cond}")
+            run_condition(cond, out)
+        # Run iterative on naive
+        run_iterative("naive")
+        # Regenerate report
+        print("\n[REPORT] Regenerating benchmark report...")
+        from evaluation.report import generate_report
+        generate_report(str(PROJECT_ROOT / "paper" / "tables" / "benchmark_summary_tables.pdf"))
+        return
+
+    if not args.condition:
+        parser.error("--condition is required (or use --all)")
+
+    if args.iterative:
+        run_iterative(args.condition)
+    else:
+        out_dir = Path(args.output_dir) if args.output_dir else Path(
+            f"contributions/{model_slug}_{args.condition}")
+        run_condition(args.condition, out_dir)
 
 
 if __name__ == "__main__":

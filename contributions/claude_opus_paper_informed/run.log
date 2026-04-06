@@ -1,34 +1,47 @@
-[10:49:41][SETUP] Model: Claude Opus 4.6 | Condition: paper_informed
-[10:49:41][SETUP] Prompt: /Users/linh/Documents/GitHub/agent-pa-benchmark/agents/prompts/paper_informed.txt (2136 chars)
-[10:49:41][SETUP] Output: contributions/claude_opus_paper_informed
-[10:49:41][SETUP] Mode: LIVE (downloading from web sources)
-[10:49:41][TURN1] Agent has paper context, proceeding to known databases...
-[10:49:41][PSP] Downloading PhosphoSitePlus Kinase_Substrate_Dataset.gz...
-[10:49:42][PSP]   Downloaded: 2,367,543 bytes -> 2,367,543 chars
-[10:49:42][PSP]   Parsed: 15586 human kinase-substrate entries
-[10:49:42][SIGNOR] Downloading SIGNOR phosphorylation data...
-[10:49:46][SIGNOR]   Downloaded: 18,944,905 bytes -> 18,915,219 chars
-[10:49:46][SIGNOR]   Parsed: 13045 phosphorylation entries
-[10:49:46][UNIPROT] Downloading UniProt phosphorylation annotations...
-[10:49:46][UNIPROT]   Fetching page 1...
-[10:49:50][UNIPROT]   Page 1: 0 entries (total: 0)
-[10:49:51][UNIPROT]   Total UniProt entries: 0
-[10:49:51][MERGE] Raw entries before dedup: 28631
-[10:49:51][MERGE] Deduplicated atlas: 20695 unique triplets
-[10:49:51][DONE] Elapsed: 9.2s (0.2m)
-[10:49:51][DONE] API turns: 5
-[10:49:51][DONE] Raw data downloaded: 41,282,803 chars
-[10:49:51][TOKENS] Input tokens:  80,516
-[10:49:51][TOKENS] Output tokens: 2,293
-[10:49:51][TOKENS] Total tokens:  82,809
-[10:49:51][TOKENS] Est. cost (Claude Opus 4.6): $1.38
-[10:49:51][SAVE] Atlas: 20695 entries
-[10:49:51][SCORE] Running scorer...
-[10:49:51][SCORE]   Atlas size:       20695
-[10:49:51][SCORE]   Recall:           0.9524
-[10:49:51][SCORE]   Precision:        0.7254
-[10:49:51][SCORE]   F1:               0.8235
-[10:49:51][SCORE]   Kinases found:    417/433
-[10:49:51][SCORE]   Multi-DB:         29.9%
-[10:49:51][SCORE]   Peptide accuracy: 0.9976
-[10:49:51][SCORE]   TP=14890 FP=5637 FN=745
+[11:19:17][RUN] ============================================================
+[11:19:17][RUN] Model: Claude Opus 4.6 | Condition: naive | Output: contributions/opus_naive
+[11:19:17][TURN1] Agent searches for phosphorylation databases...
+[11:19:21][TURN1]   Web search returned 10 results
+[11:19:21][TURN2] Agent explores PhosphoSitePlus download page...
+[11:19:22][TURN2]   PSP downloads page: 19741 chars
+[11:19:22][PSP] Downloading PhosphoSitePlus Kinase_Substrate_Dataset.gz...
+[11:19:22][PSP]   Downloaded: 2,367,543 bytes -> 2,367,543 chars
+[11:19:22][PSP]   Parsed: 15586 human kinase-substrate entries
+[11:19:22][SIGNOR] Downloading SIGNOR phosphorylation data...
+[11:19:22][SIGNOR]   Searching for SIGNOR API...
+[11:19:25][SIGNOR]   Downloaded: 184 bytes -> 184 chars
+[11:19:25][SIGNOR]   Parsed: 0 phosphorylation entries
+[11:19:25][UNIPROT] Downloading UniProt phosphorylation annotations...
+[11:19:25][UNIPROT]   (Paginating ~8000 human phosphoproteins, extracting kinase-attributed sites)
+[11:19:25][UNIPROT]   Searching for UniProt phospho API...
+[11:19:28][UNIPROT]   Page 1: +295 kinase-attributed entries (total: 295)
+[11:19:35][UNIPROT]   Page 5: +201 kinase-attributed entries (total: 1325)
+[11:19:44][UNIPROT]   Page 10: +448 kinase-attributed entries (total: 2806)
+[11:19:53][UNIPROT]   Page 15: +104 kinase-attributed entries (total: 3788)
+[11:19:56][UNIPROT]   Total UniProt kinase-attributed entries: 3809 (from 17 pages)
+[11:19:56][MERGE] Raw entries before dedup: 19395
+[11:19:56][MERGE] Deduplicated atlas: 17983 unique triplets
+[11:19:56][DONE] Elapsed: 39.5s | Turns: 24 | Data: 18,767,529 chars
+[11:19:56][TOKENS] Est. cost: $19.04 (1,224,693 tokens)
+[11:19:57][SCORE] F1=0.8235 R=0.878 P=0.7753 Kinases=405/433 TP=13727 FN=1908
+[11:19:57][RUN] ============================================================
+[11:19:57][RUN] Model: Claude Opus 4.6 | Condition: paper_informed | Output: contributions/opus_paper_informed
+[11:19:57][TURN1] Agent has paper context, proceeding to known databases...
+[11:19:57][PSP] Downloading PhosphoSitePlus Kinase_Substrate_Dataset.gz...
+[11:19:57][PSP]   Downloaded: 2,367,543 bytes -> 2,367,543 chars
+[11:19:57][PSP]   Parsed: 15586 human kinase-substrate entries
+[11:19:57][SIGNOR] Downloading SIGNOR phosphorylation data...
+[11:20:03][SIGNOR]   Downloaded: 18,944,905 bytes -> 18,915,219 chars
+[11:20:03][SIGNOR]   Parsed: 13045 phosphorylation entries
+[11:20:03][UNIPROT] Downloading UniProt phosphorylation annotations...
+[11:20:03][UNIPROT]   (Paginating ~8000 human phosphoproteins, extracting kinase-attributed sites)
+[11:20:05][UNIPROT]   Page 1: +295 kinase-attributed entries (total: 295)
+[11:20:12][UNIPROT]   Page 5: +201 kinase-attributed entries (total: 1325)
+[11:20:21][UNIPROT]   Page 10: +448 kinase-attributed entries (total: 2806)
+[11:20:30][UNIPROT]   Page 15: +104 kinase-attributed entries (total: 3788)
+[11:20:33][UNIPROT]   Total UniProt kinase-attributed entries: 3809 (from 17 pages)
+[11:20:33][MERGE] Raw entries before dedup: 32440
+[11:20:33][MERGE] Deduplicated atlas: 23342 unique triplets
+[11:20:33][DONE] Elapsed: 36.2s | Turns: 21 | Data: 37,658,866 chars
+[11:20:33][TOKENS] Est. cost: $19.94 (1,289,830 tokens)
+[11:20:33][SCORE] F1=0.7731 R=0.9529 P=0.6504 Kinases=418/433 TP=14899 FN=736

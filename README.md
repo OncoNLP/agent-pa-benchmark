@@ -122,7 +122,40 @@ contributions/
 - **Token-billed models** (Qwen/Together AI, Mistral): Extract exact counts from `response.usage`
 - **Subscription models** (Claude Max, Gemini, GPT): Use `live_runner.py` for estimation, or track `usage_metadata` from the API response
 
-### 6. Regenerate the report
+### 6. Iterative runs (3 rounds with feedback)
+
+The benchmark supports iterative refinement: run 3 rounds where each subsequent round receives performance feedback from the previous round(s). This measures whether the agent can improve its curation when told what it missed.
+
+```bash
+# Iterative run for a single condition
+python3 agents/live_runner.py --model opus --condition naive --iterative
+
+# Run everything: all 3 conditions + iterative on naive
+python3 agents/live_runner.py --model opus --all
+
+# Iterative for other models
+python3 agents/live_runner.py --model gemini-pro --condition naive --iterative
+python3 agents/live_runner.py --model qwen-235b --condition paper_informed --iterative
+```
+
+Output structure for iterative runs:
+```
+contributions/claude_opus_naive/
+├── atlas.json           # Round 1 (baseline)
+├── run_log.json
+├── scores/
+├── round2/              # Round 2 (with Round 1 feedback)
+│   ├── atlas.json
+│   ├── run_log.json
+│   └── scores/
+├── round3/              # Round 3 (with Round 1+2 feedback)
+│   ├── atlas.json
+│   ├── run_log.json
+│   └── scores/
+└── iterative_comparison.json  # Cross-round comparison
+```
+
+### 7. Regenerate the report
 
 After adding your results, regenerate the comparison PDF:
 
