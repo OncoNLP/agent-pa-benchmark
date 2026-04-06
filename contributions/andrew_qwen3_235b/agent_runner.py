@@ -65,6 +65,10 @@ class QwenAgent(BaseAgent):
     # must emit all curated entries in a single tool-call argument payload.
     MAX_TOKENS = 32_768
 
+    # Together AI pricing for Qwen3-235B (per 1M tokens)
+    COST_PER_1M_INPUT = 0.80
+    COST_PER_1M_OUTPUT = 0.80
+
     def __init__(
         self,
         databases_dir: str = "databases",
@@ -127,6 +131,9 @@ class QwenAgent(BaseAgent):
             kwargs["tool_choice"] = "auto"
 
         response = self.client.chat.completions.create(**kwargs)
+
+        # Track token usage from Together AI response
+        self._record_usage(response)
 
         # Append the assistant turn so the next API call sees a valid history.
         msg = response.choices[0].message
@@ -217,6 +224,22 @@ class QwenAgent(BaseAgent):
             "tool_call_id": tool_call_id,
             "content": json.dumps(result),
         }
+
+    def token_summary(self) -> dict:
+        """Token summary with Together AI cost calculation."""
+        base = super().token_summary()
+        cost = (
+            self.total_input_tokens * self.COST_PER_1M_INPUT / 1_000_000
+            + self.total_output_tokens * self.COST_PER_1M_OUTPUT / 1_000_000
+        )
+        base["estimated_cost_usd"] = round(cost, 4)
+        base["pricing"] = {
+            "provider": "Together AI",
+            "model": self.MODEL_ID,
+            "input_per_1m": self.COST_PER_1M_INPUT,
+            "output_per_1m": self.COST_PER_1M_OUTPUT,
+        }
+        return base
 
     def run(self, system_prompt: str, condition: str = "naive") -> dict:
         """Run the agent, falling back to accumulated entries if submit is empty."""

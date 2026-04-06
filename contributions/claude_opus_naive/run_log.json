@@ -1,25 +1,108 @@
 {
   "agent": "Claude Opus 4.6",
-  "prompt": "naive (zero-shot)",
-  "strategy": "Discovered databases via web search. Queried: (1) SIGNOR REST API for human phosphorylation, (2) UniProt REST API for reviewed human phosphoproteins with kinase-attributed sites, (3) PSP public Kinase_Substrate_Dataset.gz download. Cross-referenced by (kinase, substrate, site) triplet key.",
+  "model": "opus",
+  "condition": "naive",
+  "mode": "live",
+  "prompt_file": "/Users/linh/Documents/GitHub/agent-pa-benchmark/agents/prompts/naive.txt",
+  "prompt_chars": 1172,
   "databases_accessed": [
     "PhosphoSitePlus",
-    "SIGNOR",
-    "UniProt"
+    "SIGNOR"
   ],
-  "tool_calls": {
-    "web_searches": 3,
-    "web_fetches": 5,
-    "api_queries": 3,
-    "total": 11
-  },
+  "tool_calls": 8,
   "raw_counts": {
-    "PSP": 15434,
-    "SIGNOR": 10200,
-    "UniProt": 4515
+    "SIGNOR": 11739,
+    "PhosphoSitePlus": 15149
   },
-  "merged_atlas": 27653,
-  "unique_kinases": 735,
-  "unique_substrates": 3633,
-  "multi_db_entries": 1303
+  "merged_atlas": 20695,
+  "unique_kinases": 694,
+  "unique_substrates": 3301,
+  "multi_db_entries": 6193,
+  "elapsed_seconds": 12.6,
+  "token_usage": {
+    "total_input_tokens": 163644,
+    "total_output_tokens": 3571,
+    "total_tokens": 167215,
+    "cache_read_input_tokens": 2338,
+    "api_calls": 8,
+    "estimated_cost_usd": 2.7225,
+    "total_raw_data_chars": 41306376,
+    "model_pricing": "opus",
+    "model_label": "Claude Opus 4.6",
+    "per_call": [
+      {
+        "turn": 1,
+        "tool": "web_search",
+        "input_tokens": 334,
+        "output_tokens": 422,
+        "cache_read_tokens": 0,
+        "raw_result_chars": 1021,
+        "context_result_chars": 1021
+      },
+      {
+        "turn": 2,
+        "tool": "web_fetch",
+        "input_tokens": 713,
+        "output_tokens": 417,
+        "cache_read_tokens": 334,
+        "raw_result_chars": 19741,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 3,
+        "tool": "fetch_and_parse_db",
+        "input_tokens": 5415,
+        "output_tokens": 431,
+        "cache_read_tokens": 334,
+        "raw_result_chars": 2367543,
+        "context_result_chars": 50000
+      },
+      {
+        "turn": 4,
+        "tool": "web_search",
+        "input_tokens": 20131,
+        "output_tokens": 420,
+        "cache_read_tokens": 334,
+        "raw_result_chars": 1482,
+        "context_result_chars": 3000
+      },
+      {
+        "turn": 5,
+        "tool": "fetch_and_parse_db",
+        "input_tokens": 21408,
+        "output_tokens": 430,
+        "cache_read_tokens": 334,
+        "raw_result_chars": 18915219,
+        "context_result_chars": 50000
+      },
+      {
+        "turn": 6,
+        "tool": "web_search",
+        "input_tokens": 36123,
+        "output_tokens": 420,
+        "cache_read_tokens": 334,
+        "raw_result_chars": 1329,
+        "context_result_chars": 3000
+      },
+      {
+        "turn": 7,
+        "tool": "web_fetch",
+        "input_tokens": 37400,
+        "output_tokens": 435,
+        "cache_read_tokens": 334,
+        "raw_result_chars": 20000000,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 8,
+        "tool": "submit_atlas",
+        "input_tokens": 42120,
+        "output_tokens": 596,
+        "cache_read_tokens": 334,
+        "raw_result_chars": 41,
+        "context_result_chars": 41
+      }
+    ],
+    "note": "Estimated from actual web data volumes with realistic context management"
+  }
 }

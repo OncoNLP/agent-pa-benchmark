@@ -247,11 +247,18 @@ messages = [
     {"role": "user", "content": PROMPT},
 ]
 
+# Mistral Large pricing (per 1M tokens, 2025-Q2)
+MISTRAL_COST_PER_1M_INPUT = 2.0
+MISTRAL_COST_PER_1M_OUTPUT = 6.0
+
 MAX_TURNS = 200
 MAX_RETRIES = 5
 turn = 0
 atlas = None
 strategy_summary = ""
+total_input_tokens = 0
+total_output_tokens = 0
+per_turn_usage = []
 t0 = time.time()
 
 
@@ -287,6 +294,18 @@ while turn < MAX_TURNS:
         temperature=0.3,
         top_p=0.95,
     )
+
+    # Track token usage
+    usage = getattr(response, "usage", None)
+    if usage:
+        inp = getattr(usage, "prompt_tokens", 0) or 0
+        out = getattr(usage, "completion_tokens", 0) or 0
+        total_input_tokens += inp
+        total_output_tokens += out
+        per_turn_usage.append({"turn": turn, "input_tokens": inp, "output_tokens": out})
+        cost_so_far = (total_input_tokens * MISTRAL_COST_PER_1M_INPUT +
+                       total_output_tokens * MISTRAL_COST_PER_1M_OUTPUT) / 1_000_000
+        print(f"  [TOKENS] in={inp:,} out={out:,} | cumulative: {total_input_tokens+total_output_tokens:,} (${cost_so_far:.3f})")
 
     choice = response.choices[0]
     message = choice.message
@@ -394,8 +413,12 @@ for e in atlas:
     if len(e.get("supporting_databases", [])) >= 2:
         multi_db_count += 1
 
+token_cost = (total_input_tokens * MISTRAL_COST_PER_1M_INPUT +
+              total_output_tokens * MISTRAL_COST_PER_1M_OUTPUT) / 1_000_000
+
 run_log = {
     "agent": "Mistral Large (mistral-large-latest)",
+    "model": "mistral-large-latest",
     "condition": "paper_informed",
     "strategy_summary": strategy_summary,
     "databases_accessed": sorted(db_counts.keys()),
@@ -406,6 +429,19 @@ run_log = {
     "unique_kinases": len(set(e.get("kinase_gene", "") for e in atlas)),
     "unique_substrates": len(set(e.get("substrate_gene", "") for e in atlas)),
     "multi_db_entries": multi_db_count,
+    "token_usage": {
+        "total_input_tokens": total_input_tokens,
+        "total_output_tokens": total_output_tokens,
+        "total_tokens": total_input_tokens + total_output_tokens,
+        "estimated_cost_usd": round(token_cost, 4),
+        "api_calls": len(per_turn_usage),
+        "pricing": {
+            "provider": "Mistral AI",
+            "input_per_1m": MISTRAL_COST_PER_1M_INPUT,
+            "output_per_1m": MISTRAL_COST_PER_1M_OUTPUT,
+        },
+        "per_call": per_turn_usage,
+    },
     "paper_context": {
         "main_paper": str(MAIN_PAPER),
         "supplements": [str(f) for f in SUPPLEMENT_FILES],

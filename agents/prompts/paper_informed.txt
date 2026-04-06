@@ -8,6 +8,7 @@ Key methodological points from the paper:
 - Heptameric peptide sequences (+/-7 amino acids around the phospho-site) are captured when available
 - Entries supported by multiple databases are considered higher confidence
 - The atlas focuses on human phosphorylation only
+- PhosphoSitePlus bulk kinase-substrate dataset: http://phosphosite.org/downloads/Kinase_Substrate_Dataset.gz
 
 Your goal: Curate ALL known human kinase-substrate-phosphosite relationships by systematically querying the databases available to you.
 

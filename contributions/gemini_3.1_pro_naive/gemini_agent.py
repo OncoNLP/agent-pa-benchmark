@@ -26,6 +26,11 @@ class PhosphoAtlasAutonomousAgent:
         self.tool_calls = 0
         self.db_hit_counts = {}
 
+        # --- TOKEN TRACKING ---
+        self.total_input_tokens = 0
+        self.total_output_tokens = 0
+        self.per_turn_usage = []
+
     def _execute_http(self, call):
         """Live HTTP tool with dynamic source tracking, auto-retries, and safety guardrails."""
         self.tool_calls += 1
@@ -168,6 +173,16 @@ class PhosphoAtlasAutonomousAgent:
 
                 if not response.candidates or not response.candidates[0].content:
                     break
+
+                # Track token usage from Gemini response
+                um = getattr(response, "usage_metadata", None)
+                if um:
+                    inp = getattr(um, "prompt_token_count", 0) or 0
+                    out = getattr(um, "candidates_token_count", 0) or 0
+                    self.total_input_tokens += inp
+                    self.total_output_tokens += out
+                    self.per_turn_usage.append({"turn": turn_count, "input_tokens": inp, "output_tokens": out})
+                    print(f"📊 Tokens: in={inp:,} out={out:,} | total={self.total_input_tokens+self.total_output_tokens:,}")
                 
                 for part in response.candidates[0].content.parts:
                     if getattr(part, 'thought', False) and part.text:
@@ -232,9 +247,36 @@ if __name__ == "__main__":
     
     print("🚀 Starting Persistent State Run...")
     results = agent.run(prompt)
-    
+
+    elapsed = time.time() - agent.start_time
+
     with open("atlas.json", "w") as f:
         json.dump(results, f, indent=2)
+
+    # Save run_log with token usage (Gemini is subscription-based for most plans)
+    run_log = {
+        "agent": "Gemini 3.1 Pro",
+        "model": "gemini-3.1-pro-preview",
+        "condition": "naive",
+        "tool_calls": agent.tool_calls,
+        "elapsed_seconds": round(elapsed, 1),
+        "atlas_size": len(results),
+        "db_hit_counts": agent.db_hit_counts,
+        "token_usage": {
+            "total_input_tokens": agent.total_input_tokens,
+            "total_output_tokens": agent.total_output_tokens,
+            "total_tokens": agent.total_input_tokens + agent.total_output_tokens,
+            "api_calls": len(agent.per_turn_usage),
+            "per_call": agent.per_turn_usage,
+            "note": "Gemini is subscription-based; token counts from usage_metadata for reference",
+        },
+    }
+    with open("run_log.json", "w") as f:
+        json.dump(run_log, f, indent=2)
+
+    print(f"\n📊 Token Summary: {agent.total_input_tokens+agent.total_output_tokens:,} total "
+          f"(in={agent.total_input_tokens:,}, out={agent.total_output_tokens:,})")
+    print(f"📁 Saved atlas.json ({len(results)} entries) and run_log.json")
     
     log = {
         "metadata": {"agent": "Gemini 3.1-Pro (Active Save Mode)", "runtime_min": round((time.time() - agent.start_time) / 60, 2)},

@@ -41,7 +41,7 @@ MODEL_META = {
     "gemini_3.1_pro_pipeline_guided/gemini-3.1-pro": ("Gemini 3.1 Pro", "Proprietary", "pipeline_guided"),
     "mistral_large_naive": ("Mistral Large", "Proprietary", "naive"),
     "mistral_large_paper_informed": ("Mistral Large", "Proprietary", "paper_informed"),
-    "openclaw_live_best_effort": ("OpenCLAW Live", "Open-source", "naive"),
+    "openclaw_live_best_effort": ("GPT-5 (OpenCLAW)", "Proprietary", "naive"),
     "andrew_qwen3_235b": ("Qwen 3.2 35B", "Open-source", "naive"),
     "andrew_qwen3_235b/qwen_prompt_testing": ("Qwen 3.2 35B", "Open-source", "naive"),
     "andrew_qwen3_235b/paper_informed": ("Qwen 3.2 35B", "Open-source", "paper_informed"),
@@ -153,8 +153,24 @@ def _load_one(label, path):
             dbs_str = ", ".join(dbs_list.keys())
         else:
             dbs_str = str(dbs_list)
+        # Token usage (supports both actual API tracking and estimation)
+        token_usage = rl.get("token_usage", {})
+        total_tokens = token_usage.get("total_tokens", 0)
+        input_tokens = token_usage.get("total_input_tokens", 0)
+        output_tokens = token_usage.get("total_output_tokens", 0)
+        cost_usd = token_usage.get("estimated_cost_usd", 0)
+        # Also check for tool_calls as integer (new format) vs dict (old format)
+        tc = rl.get("tool_calls", rl.get("total_tool_calls", rl.get("db_tool_calls")))
+        if isinstance(tc, dict):
+            tool_calls = str(tc.get("total", "?"))
+        elif tc is not None:
+            tool_calls = str(tc)
     else:
         dbs_str = ", ".join(cr.get("db_coverage", {}).keys())
+        total_tokens = 0
+        input_tokens = 0
+        output_tokens = 0
+        cost_usd = 0
 
     return {
         "label": label,
@@ -185,6 +201,10 @@ def _load_one(label, path):
         "tool_calls": tool_calls,
         "runtime": runtime,
         "dbs": dbs_str,
+        "total_tokens": total_tokens,
+        "input_tokens": input_tokens,
+        "output_tokens": output_tokens,
+        "cost_usd": cost_usd,
     }
 
 
@@ -367,22 +387,51 @@ def generate_report(output_path):
     )
 
     # === Table 6: Column-level accuracy ===
-    pdf.table_caption(6, "Column-level accuracy for matched entries (naive prompt condition).")
+    pdf.table_caption(6,
+        "Column-level accuracy for matched entries (naive prompt condition). "
+        "Pep Acc = case-insensitive match rate among RETURNED peptides (excludes missing). "
+        "Hallucinated = wrong sequence returned. Missing = no peptide returned.")
     t6_rows = []
     for r in naive:
+        # Peptide accuracy excluding missing: correct / (correct + mismatch)
+        returned = (r["peptide_total"] - r["peptide_missing"])
+        correct = returned - r["peptide_mismatch"] if returned > 0 else 0
+        pep_acc_returned = correct / returned if returned > 0 else 0
         t6_rows.append([
             r["model"], f"{r['tp']:,}",
-            _fmt(r["peptide_accuracy"], pct=True),
-            _fmt(r["peptide_exact_accuracy"], pct=True),
+            f"{pep_acc_returned:.1%}",
             str(r["peptide_mismatch"]),
             str(r["peptide_missing"]),
+            f"{r['peptide_total']}",
             _fmt(r["uniprot_accuracy"], pct=True),
         ])
     pdf.tbl(
-        ["Model", "Matched", "Pep Acc", "Pep Exact", "Pep Mismatch", "Pep Missing", "UniProt Acc"],
+        ["Model", "Matched", "Pep Acc*", "Hallucinated", "Missing", "Pep Total", "UniProt Acc"],
         t6_rows,
-        col_widths=[26, 16, 16, 16, 22, 20, 74],
+        col_widths=[24, 14, 14, 18, 14, 16, 90],
     )
+
+    # === Table 7: Token usage and cost ===
+    has_tokens = any(r["total_tokens"] > 0 for r in results)
+    if has_tokens:
+        pdf.add_page()
+        pdf.table_caption(7, "Token usage and computational cost.")
+        t7_rows = []
+        for r in results:
+            if r["total_tokens"] > 0:
+                cost_str = f"${r['cost_usd']:.2f}" if r["cost_usd"] else "--"
+                t7_rows.append([
+                    r["model"], r["condition"],
+                    f"{r['input_tokens']:,}", f"{r['output_tokens']:,}",
+                    f"{r['total_tokens']:,}",
+                    r["tool_calls"], cost_str,
+                ])
+        if t7_rows:
+            pdf.tbl(
+                ["Model", "Condition", "Input Tok", "Output Tok", "Total Tok", "Tool Calls", "Est. Cost"],
+                t7_rows,
+                col_widths=[24, 22, 26, 26, 26, 18, 48],
+            )
 
     # Save
     output_path = Path(output_path)

@@ -4,60 +4,132 @@ Benchmarking AI agents on their ability to curate a comprehensive human protein 
 
 ## For Students: Getting Started
 
-### What you need
-
-1. **The prompt** — start with `agents/prompts/naive.txt`. This is the system prompt your agent receives.
-2. **The gold standard** — `gold_standard/parsed/phosphoatlas_gold.json` (already in this repo). This is what your agent's output is scored against.
-3. **The scorer** — `evaluation/scorer.py` scores your agent's output.
-
-### Step-by-step
+### 1. Clone and install
 
 ```bash
-# 1. Clone and install
 git clone https://github.com/OncoNLP/agent-pa-benchmark.git
 cd agent-pa-benchmark
 pip install -r requirements.txt
-
-# 2. Build and run your agent (your own code)
-#    Your agent should produce a JSON file — an array of objects like:
-#    [
-#      {
-#        "kinase_gene": "CDK1",
-#        "substrate_gene": "RB1",
-#        "phospho_site": "S807",
-#        "heptameric_peptide": "...",       (optional)
-#        "substrate_uniprot": "P06400",     (optional)
-#        "supporting_databases": ["PSP"]    (optional)
-#      },
-#      ...
-#    ]
-
-# 3. Score your atlas against the gold standard
-python -m evaluation.scorer \
-    --atlas path/to/your_atlas.json \
-    --gold gold_standard/parsed/phosphoatlas_gold.json \
-    --output results/scores/your_model_name
-
-# 4. Check your scores
-cat results/scores/your_model_name/summary.json
 ```
 
-### What to upload
+### 2. Understand the benchmark
 
-Create a folder under `contributions/` with your name/model:
+- **Gold standard**: `gold_standard/parsed/phosphoatlas_gold.json` (15,640 triplets, 433 kinases)
+- **Prompts**: `agents/prompts/` — three conditions (naive, paper_informed, pipeline_guided)
+- **Scorer**: `evaluation/scorer.py` — scores your atlas output
+
+### 3. Run your agent
+
+Choose the approach that matches your model:
+
+#### Option A: Live Runner (recommended, no API key needed)
+
+Downloads data from real web sources (PSP, SIGNOR, UniProt), builds the atlas, scores it, and estimates token costs for any model. This is the standard way to run all three conditions.
+
+```bash
+# List available models and their pricing
+python3 agents/live_runner.py --list-models
+
+# Run all three conditions for your model
+python3 agents/live_runner.py --model opus --condition naive
+python3 agents/live_runner.py --model opus --condition paper_informed
+python3 agents/live_runner.py --model opus --condition pipeline_guided
+
+# Other models
+python3 agents/live_runner.py --model gemini-pro --condition naive
+python3 agents/live_runner.py --model gpt-5 --condition paper_informed
+python3 agents/live_runner.py --model qwen-235b --condition naive
+
+# Custom output directory
+python3 agents/live_runner.py --model sonnet --condition naive \
+    --output-dir contributions/claude_sonnet_naive_v2
+```
+
+#### Option B: Model-specific API runner (token-based models)
+
+For **Qwen** and **Mistral** (token-billed), use the model-specific runners which capture **exact** token counts and costs from the API:
+
+```bash
+# Qwen3-235B via Together AI (exact tokens tracked)
+export TOGETHER_API_KEY=your-key
+python3 contributions/andrew_qwen3_235b/agent_runner.py
+
+# Mistral Large (exact tokens tracked)
+export MISTRAL_API_KEY=your-key
+python3 contributions/mistral_large_naive/agent_runner.py
+python3 contributions/mistral_large_paper_informed/agent_runner.py
+```
+
+For **Claude** (if you have an API key):
+
+```bash
+export ANTHROPIC_API_KEY=sk-ant-...
+python3 agents/claude_runner.py --model opus --condition naive \
+    --output contributions/claude_opus_naive
+```
+
+#### Option C: Custom agent (any model/framework)
+
+Write your own agent. Your runner must:
+1. Produce `atlas.json` (array of entries)
+2. Save `run_log.json` with `token_usage` field
+3. Run the scorer
+
+```python
+from databases.tools import DatabaseTools
+tools = DatabaseTools("databases/")
+tools.list_databases()
+tools.query_by_kinase("psp", "CDK1")
+```
+
+### 4. Score your atlas
+
+```bash
+python -m evaluation.scorer \
+    --atlas contributions/your_model/atlas.json \
+    --gold gold_standard/parsed/phosphoatlas_gold.json \
+    --output contributions/your_model/scores
+```
+
+### 5. What to upload
 
 ```
 contributions/
-└── your_name_model/
+└── your_model_condition/
     ├── agent_runner.py        # Your agent implementation
-    ├── atlas.json             # Raw atlas output from your agent
-    └── scores/                # Output from the scorer
+    ├── atlas.json             # Atlas output
+    ├── run_log.json           # MUST include token_usage field (see below)
+    └── scores/
         ├── summary.json
         ├── per_kinase.json
         └── peptide_mismatches.json
 ```
 
-Commit and push your folder. Do NOT modify files outside your own folder.
+**Token tracking is required.** Your `run_log.json` must include:
+
+```json
+{
+  "token_usage": {
+    "total_input_tokens": 150000,
+    "total_output_tokens": 5000,
+    "total_tokens": 155000,
+    "estimated_cost_usd": 2.50,
+    "api_calls": 10
+  }
+}
+```
+
+- **Token-billed models** (Qwen/Together AI, Mistral): Extract exact counts from `response.usage`
+- **Subscription models** (Claude Max, Gemini, GPT): Use `live_runner.py` for estimation, or track `usage_metadata` from the API response
+
+### 6. Regenerate the report
+
+After adding your results, regenerate the comparison PDF:
+
+```bash
+python3 -m evaluation.report
+# Output: paper/tables/benchmark_summary_tables.pdf
+```
 
 ## Repository Structure
 

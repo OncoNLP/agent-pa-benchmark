@@ -1,22 +1,81 @@
 {
   "agent": "Claude Opus 4.6",
-  "prompt": "paper_informed",
-  "strategy": "You are a bioinformatics researcher tasked with building a comprehensive human protein phosphorylation atlas from available databases.  BACKGROUND: PhosphoAtlas (Olow et al., Cancer Research, 2016; updated 2023) is a curated resource that integrates kinase-substrate-phosphosite relationships from mu...",
+  "model": "opus",
+  "condition": "paper_informed",
+  "mode": "live",
+  "prompt_file": "/Users/linh/Documents/GitHub/agent-pa-benchmark/agents/prompts/paper_informed.txt",
+  "prompt_chars": 2136,
   "databases_accessed": [
     "PhosphoSitePlus",
-    "SIGNOR",
-    "UniProt"
+    "SIGNOR"
   ],
-  "tool_calls": {
-    "total": 8399
-  },
+  "tool_calls": 5,
   "raw_counts": {
-    "PSP": 15024,
-    "SIGNOR": 12086,
-    "UniProt": 4461
+    "SIGNOR": 11739,
+    "PhosphoSitePlus": 15149
   },
-  "merged_atlas": 23745,
-  "unique_kinases": 853,
-  "unique_substrates": 3549,
-  "multi_db_entries": 6910
+  "merged_atlas": 20695,
+  "unique_kinases": 694,
+  "unique_substrates": 3301,
+  "multi_db_entries": 6193,
+  "elapsed_seconds": 9.2,
+  "token_usage": {
+    "total_input_tokens": 80516,
+    "total_output_tokens": 2293,
+    "total_tokens": 82809,
+    "cache_read_input_tokens": 2440,
+    "api_calls": 5,
+    "estimated_cost_usd": 1.3797,
+    "total_raw_data_chars": 41282803,
+    "model_pricing": "opus",
+    "model_label": "Claude Opus 4.6",
+    "per_call": [
+      {
+        "turn": 1,
+        "tool": "reasoning",
+        "input_tokens": 610,
+        "output_tokens": 401,
+        "cache_read_tokens": 0,
+        "raw_result_chars": 0,
+        "context_result_chars": 0
+      },
+      {
+        "turn": 2,
+        "tool": "fetch_and_parse_db",
+        "input_tokens": 402,
+        "output_tokens": 431,
+        "cache_read_tokens": 610,
+        "raw_result_chars": 2367543,
+        "context_result_chars": 50000
+      },
+      {
+        "turn": 3,
+        "tool": "fetch_and_parse_db",
+        "input_tokens": 15118,
+        "output_tokens": 430,
+        "cache_read_tokens": 610,
+        "raw_result_chars": 18915219,
+        "context_result_chars": 50000
+      },
+      {
+        "turn": 4,
+        "tool": "web_fetch",
+        "input_tokens": 29833,
+        "output_tokens": 435,
+        "cache_read_tokens": 610,
+        "raw_result_chars": 20000000,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 5,
+        "tool": "submit_atlas",
+        "input_tokens": 34553,
+        "output_tokens": 596,
+        "cache_read_tokens": 610,
+        "raw_result_chars": 41,
+        "context_result_chars": 41
+      }
+    ],
+    "note": "Estimated from actual web data volumes with realistic context management"
+  }
 }

@@ -49,6 +49,11 @@ class BaseAgent(ABC):
         self.strategy_summary = ""
         self.trace = []  # full conversation trace
 
+        # Token tracking — subclasses populate via _record_usage()
+        self.total_input_tokens = 0
+        self.total_output_tokens = 0
+        self.per_turn_usage = []  # list of {turn, input_tokens, output_tokens}
+
         # Build tool definitions (add submit_atlas)
         self.tool_definitions = DatabaseTools.get_tool_definitions() + [
             {
@@ -216,6 +221,7 @@ class BaseAgent(ABC):
                 "budget_exceeded": self._budget_exceeded(),
                 "atlas_size": len(self.atlas) if self.atlas else 0,
             },
+            "token_usage": self.token_summary(),
             "trace": self.trace,
             "tool_log": self.tools.call_log,
         }
@@ -290,6 +296,36 @@ class BaseAgent(ABC):
         best["all_iterations"] = all_results
         best["condition"] = "iterative"
         return best
+
+    # === Token tracking ===
+
+    def _record_usage(self, response):
+        """Extract token usage from an API response. Works with OpenAI and Mistral formats.
+
+        Subclasses can override for provider-specific extraction.
+        """
+        usage = getattr(response, "usage", None)
+        if usage is None:
+            return
+        input_tok = getattr(usage, "prompt_tokens", 0) or getattr(usage, "input_tokens", 0) or 0
+        output_tok = getattr(usage, "completion_tokens", 0) or getattr(usage, "output_tokens", 0) or 0
+        self.total_input_tokens += input_tok
+        self.total_output_tokens += output_tok
+        self.per_turn_usage.append({
+            "turn": self.tool_call_count,
+            "input_tokens": input_tok,
+            "output_tokens": output_tok,
+        })
+
+    def token_summary(self) -> dict:
+        """Return token usage summary for run_log.json."""
+        return {
+            "total_input_tokens": self.total_input_tokens,
+            "total_output_tokens": self.total_output_tokens,
+            "total_tokens": self.total_input_tokens + self.total_output_tokens,
+            "api_calls": len(self.per_turn_usage),
+            "per_call": self.per_turn_usage,
+        }
 
     # === Helpers ===
 
