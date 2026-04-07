@@ -346,3 +346,5 @@ if __name__ == "__main__":
         json.dump(log, f, indent=2)
 
     print(f"✅ COMPLETED. Saved {len(results)} entries to atlas.json.")
+
+    # https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.gz
