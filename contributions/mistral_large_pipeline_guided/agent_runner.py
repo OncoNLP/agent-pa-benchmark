@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
 """
-Mistral Large agent for the PhosphoAtlas Benchmark (naive zero-shot).
+Mistral Large agent for the PhosphoAtlas Benchmark (pipeline-guided).
 
 Uses Mistral's chat completion API with generic HTTP tools so the model
-can discover and query any online phosphorylation databases on its own.
-The model receives ONLY the naive prompt — no hints about which
-databases exist or how to query them.
+can discover and query online phosphorylation databases on its own.
+The model receives the pipeline-guided prompt (Olow et al. 2016 S1 pipeline)
+verbatim from agents/prompts/pipeline_guided.txt — no modifications.
+
+NOTE: The pipeline_guided prompt references tool names from the local
+DatabaseTools API (list_databases, list_kinases, query_by_kinase, etc.)
+that do NOT exist in this HTTP-only runner. This mismatch is intentional
+per the "no prompt modification" rule; the agent must translate the
+pipeline steps into HTTP calls against PSP/SIGNOR/UniProt on its own.
+The run_log captures whatever behavior results.
 """
 import json
 import os
@@ -150,51 +157,58 @@ TOOL_DEFINITIONS = [
 ]
 
 # -------------------------
-# 3) Prompt (naive zero-shot — from agents/prompts/naive.txt, no modifications)
+# 3) Prompt (pipeline-guided — from agents/prompts/pipeline_guided.txt, no modifications)
 # -------------------------
-PROMPT = (
-    "You are a bioinformatics researcher tasked with building a comprehensive "
-    "human protein phosphorylation atlas from available databases.\n\n"
-    "Your goal: Curate ALL known human kinase-substrate-phosphosite relationships "
-    "by systematically querying the databases available to you.\n\n"
-    "For each relationship, you must capture:\n"
-    "  - Kinase gene symbol (the enzyme)\n"
-    "  - Substrate gene symbol (the target protein)\n"
-    "  - Phosphorylation site (e.g., Y15, S10, T161)\n"
-    "  - Heptameric peptide sequence around the site (if available)\n"
-    "  - Substrate UniProt accession (if available)\n"
-    "  - Which database(s) support this relationship\n\n"
-    "Requirements:\n"
-    "  1. Be EXHAUSTIVE — the atlas should contain every kinase-substrate-site "
-    "triplet present in the databases. Missing entries is worse than having extra entries.\n"
-    "  2. Cross-reference across databases — if the same relationship appears in "
-    "multiple databases, record all supporting sources.\n"
-    "  3. Do NOT fabricate data. Only include relationships returned by the tools.\n\n"
-    "Start by discovering what databases are available, then develop and execute "
-    "a systematic curation strategy.\n\n"
-    "When you are finished, call the \"submit_atlas\" tool with your complete results."
-)
+PROMPT_PATH = Path(__file__).resolve().parent.parent.parent / "agents" / "prompts" / "pipeline_guided.txt"
+PROMPT = PROMPT_PATH.read_text()
 
 # -------------------------
 # 4) Run the agent loop
 # -------------------------
+# Mistral Large pricing (per 1M tokens, 2025-Q2)
+MISTRAL_COST_PER_1M_INPUT = 2.0
+MISTRAL_COST_PER_1M_OUTPUT = 6.0
+
 messages = [
     {"role": "user", "content": PROMPT},
 ]
 
 MAX_TURNS = 200
+MAX_RETRIES = 5
 turn = 0
 atlas = None
 strategy_summary = ""
+total_input_tokens = 0
+total_output_tokens = 0
+per_turn_usage = []
 t0 = time.time()
 
-print("[START] Running Mistral Large naive zero-shot agent with HTTP tools")
+
+def chat_complete_with_retry(client, **kwargs):
+    """Call chat.complete with exponential backoff on transient errors."""
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            return client.chat.complete(**kwargs)
+        except Exception as e:
+            err_str = str(e)
+            is_transient = any(code in err_str for code in ["503", "502", "429", "500", "unreachable"])
+            if is_transient and attempt < MAX_RETRIES:
+                wait = 2 ** attempt  # 2, 4, 8, 16, 32 seconds
+                print(f"  [RETRY] Attempt {attempt}/{MAX_RETRIES} failed ({err_str[:80]}), "
+                      f"retrying in {wait}s...")
+                time.sleep(wait)
+            else:
+                raise
+
+
+print("[START] Running Mistral Large pipeline-guided agent with HTTP tools")
 
 while turn < MAX_TURNS:
     turn += 1
     print(f"[TURN {turn}] Calling model...")
 
-    response = client.chat.complete(
+    response = chat_complete_with_retry(
+        client,
         model="mistral-large-latest",
         messages=messages,
         tools=TOOL_DEFINITIONS,
@@ -202,6 +216,18 @@ while turn < MAX_TURNS:
         temperature=0.3,
         top_p=0.95,
     )
+
+    # Track token usage from Mistral API response
+    usage = getattr(response, "usage", None)
+    if usage:
+        inp = getattr(usage, "prompt_tokens", 0) or 0
+        out = getattr(usage, "completion_tokens", 0) or 0
+        total_input_tokens += inp
+        total_output_tokens += out
+        per_turn_usage.append({"turn": turn, "input_tokens": inp, "output_tokens": out})
+        cost_so_far = (total_input_tokens * MISTRAL_COST_PER_1M_INPUT +
+                       total_output_tokens * MISTRAL_COST_PER_1M_OUTPUT) / 1_000_000
+        print(f"  [TOKENS] in={inp:,} out={out:,} | cumulative: {total_input_tokens+total_output_tokens:,} (${cost_so_far:.3f})")
 
     choice = response.choices[0]
     message = choice.message
@@ -309,9 +335,13 @@ for e in atlas:
     if len(e.get("supporting_databases", [])) >= 2:
         multi_db_count += 1
 
+token_cost = (total_input_tokens * MISTRAL_COST_PER_1M_INPUT +
+              total_output_tokens * MISTRAL_COST_PER_1M_OUTPUT) / 1_000_000
+
 run_log = {
     "agent": "Mistral Large (mistral-large-latest)",
-    "condition": "naive",
+    "model": "mistral-large-latest",
+    "condition": "pipeline_guided",
     "strategy_summary": strategy_summary,
     "databases_accessed": sorted(db_counts.keys()),
     "tool_calls": turn,
@@ -321,6 +351,19 @@ run_log = {
     "unique_kinases": len(set(e.get("kinase_gene", "") for e in atlas)),
     "unique_substrates": len(set(e.get("substrate_gene", "") for e in atlas)),
     "multi_db_entries": multi_db_count,
+    "token_usage": {
+        "total_input_tokens": total_input_tokens,
+        "total_output_tokens": total_output_tokens,
+        "total_tokens": total_input_tokens + total_output_tokens,
+        "estimated_cost_usd": round(token_cost, 4),
+        "api_calls": len(per_turn_usage),
+        "pricing": {
+            "provider": "Mistral AI",
+            "input_per_1m": MISTRAL_COST_PER_1M_INPUT,
+            "output_per_1m": MISTRAL_COST_PER_1M_OUTPUT,
+        },
+        "per_call": per_turn_usage,
+    },
 }
 with open(out_dir / "run_log.json", "w") as f:
     json.dump(run_log, f, indent=2)

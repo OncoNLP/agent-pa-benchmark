@@ -1,0 +1,35 @@
+[
+  {
+    "kinase_gene": "AKT1",
+    "substrate_gene": "GSK3B",
+    "phospho_site": "S9",
+    "heptameric_peptide": "RARTSSFA",
+    "substrate_uniprot": "P49841",
+    "supporting_databases": [
+      "PhosphoSitePlus",
+      "Signor"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrate_gene": "ELK1",
+    "phospho_site": "T368",
+    "heptameric_peptide": "PETPTHA",
+    "substrate_uniprot": "P19419",
+    "supporting_databases": [
+      "Phospho.ELM",
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "RB1",
+    "phospho_site": "S807",
+    "heptameric_peptide": "KSPARSPL",
+    "substrate_uniprot": "P06400",
+    "supporting_databases": [
+      "HPRD",
+      "PhosphoNetworks"
+    ]
+  }
+]

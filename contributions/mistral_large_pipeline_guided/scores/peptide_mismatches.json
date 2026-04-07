@@ -1,0 +1,16 @@
+[
+  {
+    "kinase": "AKT1",
+    "substrate": "GSK3B",
+    "site": "S9",
+    "gold_peptide": "SGRPRttsFAEsCkP",
+    "agent_peptide": "RARTSSFA"
+  },
+  {
+    "kinase": "CDK1",
+    "substrate": "RB1",
+    "site": "S807",
+    "gold_peptide": "PGGNIyIsPLksPyk",
+    "agent_peptide": "KSPARSPL"
+  }
+]

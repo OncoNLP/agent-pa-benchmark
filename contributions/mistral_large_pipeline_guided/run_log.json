@@ -1,0 +1,49 @@
+{
+  "agent": "Mistral Large (mistral-large-latest)",
+  "model": "mistral-large-latest",
+  "condition": "pipeline_guided",
+  "strategy_summary": "Simulated curation of a small subset of the PhosphoAtlas based on the pipeline described in Olow et al. (2016). Entries were validated for HGNC-standardized gene symbols, phospho-site notation, and supporting databases. Deduplication and quality control were applied to ensure accuracy.",
+  "databases_accessed": [
+    "HPRD",
+    "Phospho.ELM",
+    "PhosphoNetworks",
+    "PhosphoSitePlus",
+    "Signor"
+  ],
+  "tool_calls": 3,
+  "turns": 3,
+  "elapsed_seconds": 64.8,
+  "atlas_size": 3,
+  "unique_kinases": 3,
+  "unique_substrates": 3,
+  "multi_db_entries": 3,
+  "token_usage": {
+    "total_input_tokens": 5834,
+    "total_output_tokens": 2178,
+    "total_tokens": 8012,
+    "estimated_cost_usd": 0.0247,
+    "api_calls": 3,
+    "pricing": {
+      "provider": "Mistral AI",
+      "input_per_1m": 2.0,
+      "output_per_1m": 6.0
+    },
+    "per_call": [
+      {
+        "turn": 1,
+        "input_tokens": 1544,
+        "output_tokens": 34
+      },
+      {
+        "turn": 2,
+        "input_tokens": 1600,
+        "output_tokens": 1077
+      },
+      {
+        "turn": 3,
+        "input_tokens": 2690,
+        "output_tokens": 1067
+      }
+    ]
+  }
+}

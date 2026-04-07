@@ -34,6 +34,18 @@ To address this, added 2 fixes: (1) retry logic with exponential backoff (up to 
 
 The model did not try SIGNOR, UniProt or any of the other dbs mentioned in the paper it was given.
 
+# RERUNS WITH UPDATED SCORER:
+
+Re-ran everything on 2026-04-07 with the new scorer. Honestly the results are pretty rough across the board.
+
+Naive gave me 10 entries, recall basically zero (0.0005), F1 0.001. Same story as last time — the model spent 4 turns poking at PhosphoSitePlus URLs, kept hitting the license-gated HTML pages, and then just gave up and submitted. Never tried SIGNOR or UniProt. I'm skeptical that those 10 entries are even real since it never actually pulled data from anywhere.
+
+Paper-informed was actually worse, which surprised me. 37 entries but precision dropped to 8% and recall was lower than naive. You'd think handing it the full paper plus the PSP download link would help, but it just tried a few PhosphoSitePlus URLs and HGNC, then bailed after 3 turns. Completely ignored SIGNOR and UniProt even though the paper literally tells it to use them. Feels like the extra context made it more confident about hallucinating rather than more thorough.
+
+Pipeline-guided was the worst. Only 3 entries. The model hallucinated a fake GitHub repo (`phosphoatlas/phosphoatlas-databases`), got a 404, wrote a short apology, and submitted 3 entries before quitting. I think the pipeline prompt confused it — it references tool names like `list_databases` and `query_by_kinase` that belong to the local DatabaseTools API, but this runner only has HTTP, so the model was reaching for tools that weren't there.
+
+Big picture: Mistral Large just quits after 3–4 turns no matter what prompt you give it, and giving it more context seems to make things worse instead of better. Lot of hallucination across all three runs. Need to dig into the actual atlas entries and check how much of it is made up.
+
 2. Qwen3-235B by Andrew: UniProt API worked, but other database API access failed. Log the failures in details and upload the atlas (even failed) if any.
 
 2. Gemini by Neel: 

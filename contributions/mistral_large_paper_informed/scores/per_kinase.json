@@ -12,14 +12,14 @@
   },
   "ABL1": {
     "gold_entries": 229,
-    "agent_entries": 0,
-    "tp": 0,
-    "fp": 0,
-    "fn": 229,
-    "precision": 0,
-    "recall": 0.0,
-    "f1": 0,
-    "discovered": false
+    "agent_entries": 37,
+    "tp": 3,
+    "fp": 34,
+    "fn": 226,
+    "precision": 0.0811,
+    "recall": 0.0131,
+    "f1": 0.0226,
+    "discovered": true
   },
   "ABL2": {
     "gold_entries": 22,
@@ -89,14 +89,14 @@
   },
   "AKT1": {
     "gold_entries": 378,
-    "agent_entries": 1,
-    "tp": 1,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 377,
-    "precision": 1.0,
-    "recall": 0.0026,
-    "f1": 0.0052,
-    "discovered": true
+    "fn": 378,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "AKT2": {
     "gold_entries": 75,
@@ -540,14 +540,14 @@
   },
   "CDK1": {
     "gold_entries": 700,
-    "agent_entries": 1,
-    "tp": 1,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 699,
-    "precision": 1.0,
-    "recall": 0.0014,
-    "f1": 0.0028,
-    "discovered": true
+    "fn": 700,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "CDK10": {
     "gold_entries": 2,
@@ -2366,14 +2366,14 @@
   },
   "MAPK1": {
     "gold_entries": 498,
-    "agent_entries": 1,
-    "tp": 1,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 497,
-    "precision": 1.0,
-    "recall": 0.002,
-    "f1": 0.004,
-    "discovered": true
+    "fn": 498,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "MAPK10": {
     "gold_entries": 23,
@@ -3554,14 +3554,14 @@
   },
   "PRKCA": {
     "gold_entries": 614,
-    "agent_entries": 1,
-    "tp": 1,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 613,
-    "precision": 1.0,
-    "recall": 0.0016,
-    "f1": 0.0032,
-    "discovered": true
+    "fn": 614,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PRKCB": {
     "gold_entries": 137,
@@ -4104,14 +4104,14 @@
   },
   "SRC": {
     "gold_entries": 613,
-    "agent_entries": 1,
-    "tp": 1,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 612,
-    "precision": 1.0,
-    "recall": 0.0016,
-    "f1": 0.0032,
-    "discovered": true
+    "fn": 613,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "SRMS": {
     "gold_entries": 3,
