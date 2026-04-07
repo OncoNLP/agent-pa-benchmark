@@ -1,0 +1,286 @@
+{
+  "model": "Qwen/Qwen3-235B-A22B-Instruct-2507-tput",
+  "condition": "naive",
+  "strategy_summary": "",
+  "metrics": {
+    "tool_calls": 16,
+    "db_tool_calls": 16,
+    "elapsed_seconds": 347.9,
+    "budget_exceeded": false,
+    "atlas_size": 379
+  },
+  "trace": [
+    {
+      "type": "tool_call",
+      "call_number": 1,
+      "tool": "list_databases",
+      "arguments": {},
+      "result_size": 485,
+      "time": 1.3510499000549316
+    },
+    {
+      "type": "tool_call",
+      "call_number": 2,
+      "tool": "get_stats",
+      "arguments": {
+        "db": "uniprot"
+      },
+      "result_size": 144,
+      "time": 2.4219980239868164
+    },
+    {
+      "type": "tool_call",
+      "call_number": 3,
+      "tool": "list_kinases",
+      "arguments": {
+        "db": "uniprot",
+        "offset": 0,
+        "limit": 100
+      },
+      "result_size": 923,
+      "time": 6.17926287651062
+    },
+    {
+      "type": "tool_call",
+      "call_number": 4,
+      "tool": "list_kinases",
+      "arguments": {
+        "db": "uniprot",
+        "offset": 100,
+        "limit": 100
+      },
+      "result_size": 948,
+      "time": 9.823643922805786
+    },
+    {
+      "type": "tool_call",
+      "call_number": 5,
+      "tool": "list_kinases",
+      "arguments": {
+        "db": "uniprot",
+        "offset": 200,
+        "limit": 100
+      },
+      "result_size": 920,
+      "time": 12.882414102554321
+    },
+    {
+      "type": "tool_call",
+      "call_number": 6,
+      "tool": "list_kinases",
+      "arguments": {
+        "db": "uniprot",
+        "offset": 300,
+        "limit": 100
+      },
+      "result_size": 939,
+      "time": 15.54572081565857
+    },
+    {
+      "type": "tool_call",
+      "call_number": 7,
+      "tool": "list_kinases",
+      "arguments": {
+        "db": "uniprot",
+        "offset": 400,
+        "limit": 100
+      },
+      "result_size": 977,
+      "time": 17.39306378364563
+    },
+    {
+      "type": "tool_call",
+      "call_number": 8,
+      "tool": "list_kinases",
+      "arguments": {
+        "db": "uniprot",
+        "offset": 500,
+        "limit": 100
+      },
+      "result_size": 936,
+      "time": 20.97120189666748
+    },
+    {
+      "type": "tool_call",
+      "call_number": 9,
+      "tool": "list_kinases",
+      "arguments": {
+        "db": "uniprot",
+        "offset": 600,
+        "limit": 100
+      },
+      "result_size": 322,
+      "time": 23.224257946014404
+    },
+    {
+      "type": "tool_call",
+      "call_number": 10,
+      "tool": "list_substrates",
+      "arguments": {
+        "db": "uniprot",
+        "offset": 0,
+        "limit": 100
+      },
+      "result_size": 57,
+      "time": 35.38876485824585
+    },
+    {
+      "type": "tool_call",
+      "call_number": 11,
+      "tool": "query_by_kinase",
+      "arguments": {
+        "db": "uniprot",
+        "gene": "CDK1"
+      },
+      "result_size": 26372,
+      "time": 39.63310384750366
+    },
+    {
+      "type": "tool_call",
+      "call_number": 12,
+      "tool": "query_by_kinase",
+      "arguments": {
+        "db": "uniprot",
+        "gene": "AKT1"
+      },
+      "result_size": 11946,
+      "time": 48.903385162353516
+    },
+    {
+      "type": "tool_call",
+      "call_number": 13,
+      "tool": "query_by_kinase",
+      "arguments": {
+        "db": "uniprot",
+        "gene": "MAPK1"
+      },
+      "result_size": 13506,
+      "time": 52.88761496543884
+    },
+    {
+      "type": "tool_call",
+      "call_number": 14,
+      "tool": "query_by_kinase",
+      "arguments": {
+        "db": "uniprot",
+        "gene": "EGFR"
+      },
+      "result_size": 2591,
+      "time": 58.24009394645691
+    },
+    {
+      "type": "tool_call",
+      "call_number": 15,
+      "tool": "query_by_kinase",
+      "arguments": {
+        "db": "uniprot",
+        "gene": "GSK3B"
+      },
+      "result_size": 46,
+      "time": 62.95716404914856
+    },
+    {
+      "type": "tool_call",
+      "call_number": 16,
+      "tool": "query_by_kinase",
+      "arguments": {
+        "db": "uniprot",
+        "gene": "CDK2"
+      },
+      "result_size": 10209,
+      "time": 67.95212388038635
+    },
+    {
+      "type": "error",
+      "error": "Error code: 500 - {'id': 'ocQbx1y-3pDw3Z-9e19e2807d028462', 'error': {'message': 'Internal server error', 'type': 'server_error', 'param': None, 'code': None}}",
+      "time": 347.93652296066284
+    }
+  ],
+  "tool_log": [
+    {
+      "tool": "list_databases"
+    },
+    {
+      "tool": "get_stats",
+      "db": "uniprot"
+    },
+    {
+      "tool": "list_kinases",
+      "db": "uniprot",
+      "offset": 0,
+      "limit": 100
+    },
+    {
+      "tool": "list_kinases",
+      "db": "uniprot",
+      "offset": 100,
+      "limit": 100
+    },
+    {
+      "tool": "list_kinases",
+      "db": "uniprot",
+      "offset": 200,
+      "limit": 100
+    },
+    {
+      "tool": "list_kinases",
+      "db": "uniprot",
+      "offset": 300,
+      "limit": 100
+    },
+    {
+      "tool": "list_kinases",
+      "db": "uniprot",
+      "offset": 400,
+      "limit": 100
+    },
+    {
+      "tool": "list_kinases",
+      "db": "uniprot",
+      "offset": 500,
+      "limit": 100
+    },
+    {
+      "tool": "list_kinases",
+      "db": "uniprot",
+      "offset": 600,
+      "limit": 100
+    },
+    {
+      "tool": "list_substrates",
+      "db": "uniprot",
+      "offset": 0,
+      "limit": 100
+    },
+    {
+      "tool": "query_by_kinase",
+      "db": "uniprot",
+      "gene": "CDK1"
+    },
+    {
+      "tool": "query_by_kinase",
+      "db": "uniprot",
+      "gene": "AKT1"
+    },
+    {
+      "tool": "query_by_kinase",
+      "db": "uniprot",
+      "gene": "MAPK1"
+    },
+    {
+      "tool": "query_by_kinase",
+      "db": "uniprot",
+      "gene": "EGFR"
+    },
+    {
+      "tool": "query_by_kinase",
+      "db": "uniprot",
+      "gene": "GSK3B"
+    },
+    {
+      "tool": "query_by_kinase",
+      "db": "uniprot",
+      "gene": "CDK2"
+    }
+  ]
+}

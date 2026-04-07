@@ -14,6 +14,7 @@ Output: qwen_prompt_testing/explicit_prompt_test_atlas.json
 """
 
 from contributions.andrew_qwen3_235b.agent_runner import QwenAgent
+import gzip
 import json
 import re
 import sys
@@ -314,8 +315,63 @@ class QwenAgentWithHTTP(QwenAgent):
             })
         return entries
 
+    def _parse_psp_entries(self, text: str) -> list:
+        """Extract atlas entries from PSP Kinase_Substrate_Dataset TSV.
+
+        The file has 3 preamble lines (version, license, blank) before the
+        column header. We scan for the header by looking for a line starting
+        with 'GENE'. Only human substrate entries are retained.
+        """
+        entries = []
+        lines = text.strip().splitlines()
+
+        # Find the header line
+        header_idx = next(
+            (i for i, l in enumerate(lines) if l.startswith("GENE\t")), None
+        )
+        if header_idx is None:
+            return entries
+
+        header = lines[header_idx].split("\t")
+        try:
+            col = {name: i for i, name in enumerate(header)}
+            c_gene        = col["GENE"]          # kinase gene
+            c_sub_gene    = col["SUB_GENE"]      # substrate gene
+            c_sub_acc     = col["SUB_ACC_ID"]    # substrate UniProt
+            c_sub_org     = col["SUB_ORGANISM"]  # substrate organism
+            c_site        = col["SUB_MOD_RSD"]   # e.g. S807
+            c_peptide     = col["SITE_+/-7_AA"]  # heptameric peptide
+        except KeyError:
+            return entries
+
+        for line in lines[header_idx + 1:]:
+            parts = line.split("\t")
+            if len(parts) <= max(c_gene, c_sub_gene, c_sub_acc, c_sub_org, c_site, c_peptide):
+                continue
+            if parts[c_sub_org].strip().lower() != "human":
+                continue
+            kinase    = parts[c_gene].strip()
+            substrate = parts[c_sub_gene].strip()
+            site      = parts[c_site].strip()
+            if not (kinase and substrate and site):
+                continue
+            entries.append({
+                "kinase_gene":          kinase.upper(),
+                "substrate_gene":       substrate.upper(),
+                "phospho_site":         site,
+                "heptameric_peptide":   parts[c_peptide].strip(),
+                "substrate_uniprot":    parts[c_sub_acc].strip(),
+                "supporting_databases": ["PSP"],
+            })
+        return entries
+
     def _accumulate_http_entries(self, entries: list) -> int:
-        """Deduplicate and add entries to the accumulator. Returns count added."""
+        """Deduplicate and add entries to the accumulator. Returns count added.
+
+        When the same triplet appears in multiple databases, merge their
+        supporting_databases lists rather than discarding the duplicate.
+        This fixes Multi-DB % which was 0% when PSP and SIGNOR overlap.
+        """
         added = 0
         for entry in entries:
             key = (
@@ -323,10 +379,22 @@ class QwenAgentWithHTTP(QwenAgent):
                 entry.get("substrate_gene", ""),
                 entry.get("phospho_site", ""),
             )
-            if all(key) and key not in self._seen_triplets:
+            if not all(key):
+                continue
+            if key not in self._seen_triplets:
                 self._seen_triplets.add(key)
                 self._accumulated_entries.append(entry)
                 added += 1
+            else:
+                # Merge supporting_databases into existing entry
+                existing = next(
+                    e for e in self._accumulated_entries
+                    if (e["kinase_gene"], e["substrate_gene"], e["phospho_site"]) == key
+                )
+                new_dbs = entry.get("supporting_databases", [])
+                for db in new_dbs:
+                    if db not in existing["supporting_databases"]:
+                        existing["supporting_databases"].append(db)
         return added
 
     # ── http_get dispatch ─────────────────────────────────────────────────────
@@ -354,6 +422,29 @@ class QwenAgentWithHTTP(QwenAgent):
                         _time.sleep(3)
                         continue
                 break
+
+            # ── PSP: decompress .gz, parse TSV, return summary only ───────
+            if "phosphosite" in url.lower():
+                content_type = resp.headers.get("content-type", "")
+                if "gzip" in content_type or url.endswith(".gz"):
+                    raw = gzip.decompress(resp.content)
+                    text = raw.decode("utf-8", errors="replace")
+                else:
+                    text = resp.text
+                entries = self._parse_psp_entries(text)
+                added = self._accumulate_http_entries(entries)
+                self._log(f"[ACCUM] PSP: {added} new entries accumulated "
+                          f"({len(self._accumulated_entries)} total)")
+                return {
+                    "status": resp.status_code,
+                    "body": (
+                        f"[PSP] Kinase_Substrate_Dataset downloaded and parsed. "
+                        f"{len(entries)} human phosphorylation entries found, "
+                        f"{added} new entries accumulated (deduped). "
+                        f"Columns used: GENE=kinase, SUB_GENE=substrate, "
+                        f"SUB_MOD_RSD=site, SITE_+/-7_AA=peptide, SUB_ACC_ID=UniProt."
+                    ),
+                }
 
             # ── SIGNOR: parse full TSV, return summary only ────────────────
             if "signor" in url.lower():
