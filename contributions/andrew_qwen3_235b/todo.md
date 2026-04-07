@@ -231,12 +231,30 @@ overlap. Worth investigating for the paper — which kinases overlap between DBs
 Note: if Together AI stabilizes, a clean full run would add UniProt queries
 on top (same as paper_informed Run 2) and likely push Multi-DB slightly higher.
 
+### Finding 12: pipeline_informed v3 — full token tracking confirmed (04/07/2026)
+Re-ran pipeline_informed to get proper token_usage (previous run 500'd after 1 API call,
+logging only $0.003). This run completed 80 tool calls (~798s) before a request timeout.
+PSP+SIGNOR in first 2 calls (24,818 entries) as before; UniProt queries fired (tools 3–80)
+but added no new entries. Fallback accumulator saved same 24,818 entries. Results identical.
+
+| Metric        | Previous (04/07, 500'd) | This run (04/07, timeout) |
+|---------------|------------------------|---------------------------|
+| Atlas size    | 24,818                 | 24,818                    |
+| F1            | 0.869                  | 0.869                     |
+| Recall        | 0.952                  | 0.952                     |
+| Precision     | 0.799                  | 0.799                     |
+| Kinases found | 417/433                | 417/433                   |
+| Peptide acc.  | 0.980                  | 0.979                     |
+| api_calls     | 1 (incomplete)         | **17**                    |
+| Cost          | $0.003 (incomplete)    | **$0.36**                 |
+
+Token tracking is now complete and accurate. Run log has proper token_usage block.
+
 ### TODO: Remaining
 - [ ] Build aggregate_scores.py to read all summary.json files into one table
 - [ ] Investigate Multi-DB=0% for PSP+SIGNOR — are gene/site notations mismatched?
 - [ ] Write paper section: discuss PSP gap, HTTP tool as Paper 1 contribution, prompt structure findings
 - [ ] Clarify results/naive/atlas.json — 379 entries (expected empty), needs investigation
-- [ ] Consider full pipeline_informed run with UniProt if Together AI stabilizes
 
 ---
 

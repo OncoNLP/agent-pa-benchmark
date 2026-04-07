@@ -168,4 +168,20 @@ WHAT'S LEFT
 - Multi-DB > 0%: would need to merge supporting_databases in accumulator when
   same triplet appears in both SIGNOR and UniProt http_get responses
 
+
+PIPELINE_INFORMED RE-RUN FOR TOKEN TRACKING (04/07/2026)
+---------------------------------------------------------
+The 04/07 pipeline_informed run 500'd after just 1 Together AI API call, so
+token_usage only logged 1 call / $0.003 — not representative. Re-ran to get
+accurate token counts. This run timed out at tool 80 (~798s) but captured
+17 API calls and $0.36 — comparable to paper_informed (18 calls, $0.36).
+
+PSP+SIGNOR bulk dumps still dominate (first 2 tool calls, 24,818 entries).
+UniProt queries (tools 3–80) fired successfully but added 0 new entries —
+PSP+SIGNOR already cover the gold standard ceiling for this model. Results
+are identical to the 500 run (F1=0.869, 24,818 entries, 417/433 kinases).
+
+Token tracking is now correct and complete in run_log.json. No need to re-run
+pipeline_informed again unless we want to test UniProt contribution specifically.
+
 ================================================================================
