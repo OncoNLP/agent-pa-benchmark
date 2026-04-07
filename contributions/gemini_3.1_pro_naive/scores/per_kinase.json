@@ -155,13 +155,13 @@
   },
   "ATM": {
     "gold_entries": 313,
-    "agent_entries": 13,
-    "tp": 11,
+    "agent_entries": 8,
+    "tp": 6,
     "fp": 2,
-    "fn": 302,
-    "precision": 0.8462,
-    "recall": 0.0351,
-    "f1": 0.0674,
+    "fn": 307,
+    "precision": 0.75,
+    "recall": 0.0192,
+    "f1": 0.0374,
     "discovered": true
   },
   "ATR": {
@@ -188,14 +188,14 @@
   },
   "AURKB": {
     "gold_entries": 221,
-    "agent_entries": 3,
-    "tp": 2,
-    "fp": 1,
-    "fn": 219,
-    "precision": 0.6667,
-    "recall": 0.009,
-    "f1": 0.0178,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 221,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "AURKC": {
     "gold_entries": 9,
@@ -419,14 +419,14 @@
   },
   "CAMK2A": {
     "gold_entries": 171,
-    "agent_entries": 8,
-    "tp": 5,
-    "fp": 3,
-    "fn": 166,
-    "precision": 0.625,
-    "recall": 0.0292,
-    "f1": 0.0558,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 171,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "CAMK2B": {
     "gold_entries": 18,
@@ -540,14 +540,14 @@
   },
   "CDK1": {
     "gold_entries": 700,
-    "agent_entries": 12,
-    "tp": 8,
-    "fp": 4,
-    "fn": 692,
-    "precision": 0.6667,
-    "recall": 0.0114,
-    "f1": 0.0224,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 700,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "CDK10": {
     "gold_entries": 2,
@@ -650,25 +650,25 @@
   },
   "CDK19": {
     "gold_entries": 6,
-    "agent_entries": 68,
-    "tp": 6,
-    "fp": 62,
-    "fn": 0,
-    "precision": 0.0882,
-    "recall": 1.0,
-    "f1": 0.1621,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 6,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "CDK2": {
     "gold_entries": 456,
-    "agent_entries": 12,
-    "tp": 8,
-    "fp": 4,
-    "fn": 448,
-    "precision": 0.6667,
-    "recall": 0.0175,
-    "f1": 0.0341,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 456,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "CDK20": {
     "gold_entries": 2,
@@ -727,13 +727,13 @@
   },
   "CDK7": {
     "gold_entries": 53,
-    "agent_entries": 10,
-    "tp": 6,
-    "fp": 4,
-    "fn": 47,
-    "precision": 0.6,
-    "recall": 0.1132,
-    "f1": 0.1905,
+    "agent_entries": 249,
+    "tp": 53,
+    "fp": 196,
+    "fn": 0,
+    "precision": 0.2129,
+    "recall": 1.0,
+    "f1": 0.3511,
     "discovered": true
   },
   "CDK8": {
@@ -771,14 +771,14 @@
   },
   "CDKL5": {
     "gold_entries": 26,
-    "agent_entries": 21,
-    "tp": 4,
-    "fp": 17,
-    "fn": 22,
-    "precision": 0.1905,
-    "recall": 0.1538,
-    "f1": 0.1702,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 26,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "CERT1": {
     "gold_entries": 1,
@@ -793,36 +793,36 @@
   },
   "CHEK1": {
     "gold_entries": 196,
-    "agent_entries": 245,
-    "tp": 186,
-    "fp": 59,
-    "fn": 10,
-    "precision": 0.7592,
-    "recall": 0.949,
-    "f1": 0.8436,
+    "agent_entries": 8,
+    "tp": 6,
+    "fp": 2,
+    "fn": 190,
+    "precision": 0.75,
+    "recall": 0.0306,
+    "f1": 0.0588,
     "discovered": true
   },
   "CHEK2": {
     "gold_entries": 73,
-    "agent_entries": 10,
-    "tp": 6,
-    "fp": 4,
-    "fn": 67,
-    "precision": 0.6,
-    "recall": 0.0822,
-    "f1": 0.1446,
+    "agent_entries": 2,
+    "tp": 2,
+    "fp": 0,
+    "fn": 71,
+    "precision": 1.0,
+    "recall": 0.0274,
+    "f1": 0.0533,
     "discovered": true
   },
   "CHUK": {
     "gold_entries": 51,
-    "agent_entries": 113,
-    "tp": 49,
-    "fp": 64,
-    "fn": 2,
-    "precision": 0.4336,
-    "recall": 0.9608,
-    "f1": 0.5975,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 51,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "CILK1": {
     "gold_entries": 3,
@@ -914,25 +914,25 @@
   },
   "CSK": {
     "gold_entries": 21,
-    "agent_entries": 7,
-    "tp": 2,
-    "fp": 5,
-    "fn": 19,
-    "precision": 0.2857,
-    "recall": 0.0952,
-    "f1": 0.1428,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 21,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "CSNK1A1": {
     "gold_entries": 156,
-    "agent_entries": 8,
-    "tp": 3,
-    "fp": 5,
-    "fn": 153,
-    "precision": 0.375,
-    "recall": 0.0192,
-    "f1": 0.0365,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 156,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "CSNK1A1L": {
     "gold_entries": 1,
@@ -1002,14 +1002,14 @@
   },
   "CSNK2A1": {
     "gold_entries": 670,
-    "agent_entries": 19,
-    "tp": 11,
-    "fp": 8,
-    "fn": 659,
-    "precision": 0.5789,
-    "recall": 0.0164,
-    "f1": 0.0319,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 670,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "CSNK2A2": {
     "gold_entries": 102,
@@ -1035,14 +1035,14 @@
   },
   "DAPK1": {
     "gold_entries": 24,
-    "agent_entries": 3,
-    "tp": 3,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 21,
-    "precision": 1.0,
-    "recall": 0.125,
-    "f1": 0.2222,
-    "discovered": true
+    "fn": 24,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "DAPK2": {
     "gold_entries": 2,
@@ -1167,13 +1167,13 @@
   },
   "EGFR": {
     "gold_entries": 119,
-    "agent_entries": 2,
-    "tp": 1,
-    "fp": 1,
-    "fn": 118,
-    "precision": 0.5,
-    "recall": 0.0084,
-    "f1": 0.0165,
+    "agent_entries": 201,
+    "tp": 113,
+    "fp": 88,
+    "fn": 6,
+    "precision": 0.5622,
+    "recall": 0.9496,
+    "f1": 0.7063,
     "discovered": true
   },
   "EIF2AK1": {
@@ -1365,14 +1365,14 @@
   },
   "ERBB2": {
     "gold_entries": 17,
-    "agent_entries": 36,
-    "tp": 9,
-    "fp": 27,
-    "fn": 8,
-    "precision": 0.25,
-    "recall": 0.5294,
-    "f1": 0.3396,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 17,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "ERBB3": {
     "gold_entries": 19,
@@ -1431,14 +1431,14 @@
   },
   "FER": {
     "gold_entries": 17,
-    "agent_entries": 35,
-    "tp": 14,
-    "fp": 21,
-    "fn": 3,
-    "precision": 0.4,
-    "recall": 0.8235,
-    "f1": 0.5385,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 17,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "FES": {
     "gold_entries": 7,
@@ -1497,14 +1497,14 @@
   },
   "FGR": {
     "gold_entries": 15,
-    "agent_entries": 60,
-    "tp": 14,
-    "fp": 46,
-    "fn": 1,
-    "precision": 0.2333,
-    "recall": 0.9333,
-    "f1": 0.3733,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 15,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "FLT1": {
     "gold_entries": 6,
@@ -1552,14 +1552,14 @@
   },
   "FYN": {
     "gold_entries": 169,
-    "agent_entries": 18,
-    "tp": 9,
-    "fp": 9,
-    "fn": 160,
-    "precision": 0.5,
-    "recall": 0.0533,
-    "f1": 0.0963,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 169,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "GAK": {
     "gold_entries": 3,
@@ -1585,14 +1585,14 @@
   },
   "GRK2": {
     "gold_entries": 71,
-    "agent_entries": 7,
-    "tp": 7,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 64,
-    "precision": 1.0,
-    "recall": 0.0986,
-    "f1": 0.1795,
-    "discovered": true
+    "fn": 71,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "GRK3": {
     "gold_entries": 20,
@@ -1618,14 +1618,14 @@
   },
   "GRK5": {
     "gold_entries": 22,
-    "agent_entries": 8,
-    "tp": 8,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 14,
-    "precision": 1.0,
-    "recall": 0.3636,
-    "f1": 0.5333,
-    "discovered": true
+    "fn": 22,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "GRK6": {
     "gold_entries": 14,
@@ -1651,25 +1651,25 @@
   },
   "GSK3A": {
     "gold_entries": 79,
-    "agent_entries": 3,
+    "agent_entries": 0,
     "tp": 0,
-    "fp": 3,
+    "fp": 0,
     "fn": 79,
-    "precision": 0.0,
+    "precision": 0,
     "recall": 0.0,
     "f1": 0,
-    "discovered": true
+    "discovered": false
   },
   "GSK3B": {
     "gold_entries": 407,
-    "agent_entries": 3,
+    "agent_entries": 0,
     "tp": 0,
-    "fp": 3,
+    "fp": 0,
     "fn": 407,
-    "precision": 0.0,
+    "precision": 0,
     "recall": 0.0,
     "f1": 0,
-    "discovered": true
+    "discovered": false
   },
   "GTF2F1": {
     "gold_entries": 4,
@@ -1772,25 +1772,25 @@
   },
   "IGF1R": {
     "gold_entries": 26,
-    "agent_entries": 4,
+    "agent_entries": 0,
     "tp": 0,
-    "fp": 4,
+    "fp": 0,
     "fn": 26,
-    "precision": 0.0,
+    "precision": 0,
     "recall": 0.0,
     "f1": 0,
-    "discovered": true
+    "discovered": false
   },
   "IKBKB": {
     "gold_entries": 104,
-    "agent_entries": 3,
-    "tp": 1,
-    "fp": 2,
-    "fn": 103,
-    "precision": 0.3333,
-    "recall": 0.0096,
-    "f1": 0.0187,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 104,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "IKBKE": {
     "gold_entries": 41,
@@ -1816,14 +1816,14 @@
   },
   "INSR": {
     "gold_entries": 61,
-    "agent_entries": 0,
-    "tp": 0,
-    "fp": 0,
-    "fn": 61,
-    "precision": 0,
-    "recall": 0.0,
-    "f1": 0,
-    "discovered": false
+    "agent_entries": 227,
+    "tp": 43,
+    "fp": 184,
+    "fn": 18,
+    "precision": 0.1894,
+    "recall": 0.7049,
+    "f1": 0.2986,
+    "discovered": true
   },
   "IRAK1": {
     "gold_entries": 15,
@@ -1860,36 +1860,36 @@
   },
   "JAK1": {
     "gold_entries": 22,
-    "agent_entries": 0,
-    "tp": 0,
-    "fp": 0,
-    "fn": 22,
-    "precision": 0,
-    "recall": 0.0,
-    "f1": 0,
-    "discovered": false
+    "agent_entries": 52,
+    "tp": 21,
+    "fp": 31,
+    "fn": 1,
+    "precision": 0.4038,
+    "recall": 0.9545,
+    "f1": 0.5675,
+    "discovered": true
   },
   "JAK2": {
     "gold_entries": 54,
-    "agent_entries": 0,
-    "tp": 0,
-    "fp": 0,
-    "fn": 54,
-    "precision": 0,
-    "recall": 0.0,
-    "f1": 0,
-    "discovered": false
+    "agent_entries": 96,
+    "tp": 46,
+    "fp": 50,
+    "fn": 8,
+    "precision": 0.4792,
+    "recall": 0.8519,
+    "f1": 0.6134,
+    "discovered": true
   },
   "JAK3": {
     "gold_entries": 23,
-    "agent_entries": 0,
-    "tp": 0,
-    "fp": 0,
-    "fn": 23,
-    "precision": 0,
-    "recall": 0.0,
-    "f1": 0,
-    "discovered": false
+    "agent_entries": 22,
+    "tp": 18,
+    "fp": 4,
+    "fn": 5,
+    "precision": 0.8182,
+    "recall": 0.7826,
+    "f1": 0.8,
+    "discovered": true
   },
   "JMJD6": {
     "gold_entries": 1,
@@ -1915,36 +1915,36 @@
   },
   "KIT": {
     "gold_entries": 15,
-    "agent_entries": 18,
-    "tp": 6,
-    "fp": 12,
-    "fn": 9,
-    "precision": 0.3333,
-    "recall": 0.4,
-    "f1": 0.3636,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 15,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "KSR1": {
     "gold_entries": 1,
-    "agent_entries": 4,
+    "agent_entries": 0,
     "tp": 0,
-    "fp": 4,
+    "fp": 0,
     "fn": 1,
-    "precision": 0.0,
+    "precision": 0,
     "recall": 0.0,
     "f1": 0,
-    "discovered": true
+    "discovered": false
   },
   "LATS1": {
     "gold_entries": 21,
-    "agent_entries": 23,
-    "tp": 17,
-    "fp": 6,
-    "fn": 4,
-    "precision": 0.7391,
-    "recall": 0.8095,
-    "f1": 0.7727,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 21,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "LATS2": {
     "gold_entries": 22,
@@ -1959,14 +1959,14 @@
   },
   "LCK": {
     "gold_entries": 109,
-    "agent_entries": 2,
-    "tp": 2,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 107,
-    "precision": 1.0,
-    "recall": 0.0183,
-    "f1": 0.0359,
-    "discovered": true
+    "fn": 109,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "LIMK1": {
     "gold_entries": 3,
@@ -2014,14 +2014,14 @@
   },
   "LRRK2": {
     "gold_entries": 85,
-    "agent_entries": 0,
-    "tp": 0,
-    "fp": 0,
-    "fn": 85,
-    "precision": 0,
-    "recall": 0.0,
-    "f1": 0,
-    "discovered": false
+    "agent_entries": 60,
+    "tp": 33,
+    "fp": 27,
+    "fn": 52,
+    "precision": 0.55,
+    "recall": 0.3882,
+    "f1": 0.4551,
+    "discovered": true
   },
   "LTK": {
     "gold_entries": 1,
@@ -2366,14 +2366,14 @@
   },
   "MAPK1": {
     "gold_entries": 498,
-    "agent_entries": 14,
-    "tp": 5,
-    "fp": 9,
-    "fn": 493,
-    "precision": 0.3571,
-    "recall": 0.01,
-    "f1": 0.0195,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 498,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "MAPK10": {
     "gold_entries": 23,
@@ -2421,14 +2421,14 @@
   },
   "MAPK14": {
     "gold_entries": 247,
-    "agent_entries": 3,
-    "tp": 1,
-    "fp": 2,
-    "fn": 246,
-    "precision": 0.3333,
-    "recall": 0.004,
-    "f1": 0.0079,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 247,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "MAPK15": {
     "gold_entries": 12,
@@ -2443,14 +2443,14 @@
   },
   "MAPK3": {
     "gold_entries": 411,
-    "agent_entries": 19,
-    "tp": 7,
-    "fp": 12,
-    "fn": 404,
-    "precision": 0.3684,
-    "recall": 0.017,
-    "f1": 0.0325,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 411,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "MAPK4": {
     "gold_entries": 2,
@@ -2487,36 +2487,36 @@
   },
   "MAPK8": {
     "gold_entries": 190,
-    "agent_entries": 10,
-    "tp": 6,
-    "fp": 4,
-    "fn": 184,
-    "precision": 0.6,
-    "recall": 0.0316,
-    "f1": 0.06,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 190,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "MAPK9": {
     "gold_entries": 83,
-    "agent_entries": 6,
-    "tp": 5,
-    "fp": 1,
-    "fn": 78,
-    "precision": 0.8333,
-    "recall": 0.0602,
-    "f1": 0.1123,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 83,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "MAPKAPK2": {
     "gold_entries": 79,
-    "agent_entries": 11,
-    "tp": 9,
-    "fp": 2,
-    "fn": 70,
-    "precision": 0.8182,
-    "recall": 0.1139,
-    "f1": 0.2,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 79,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "MAPKAPK3": {
     "gold_entries": 6,
@@ -2553,14 +2553,14 @@
   },
   "MARK2": {
     "gold_entries": 25,
-    "agent_entries": 1,
-    "tp": 1,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 24,
-    "precision": 1.0,
-    "recall": 0.04,
-    "f1": 0.0769,
-    "discovered": true
+    "fn": 25,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "MARK3": {
     "gold_entries": 10,
@@ -2586,14 +2586,14 @@
   },
   "MAST3": {
     "gold_entries": 1,
-    "agent_entries": 1,
-    "tp": 1,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 0,
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1": 1.0,
-    "discovered": true
+    "fn": 1,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "MASTL": {
     "gold_entries": 2,
@@ -2663,25 +2663,25 @@
   },
   "MKNK1": {
     "gold_entries": 11,
-    "agent_entries": 2,
-    "tp": 1,
-    "fp": 1,
-    "fn": 10,
-    "precision": 0.5,
-    "recall": 0.0909,
-    "f1": 0.1538,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 11,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "MKNK2": {
     "gold_entries": 6,
-    "agent_entries": 2,
-    "tp": 1,
-    "fp": 1,
-    "fn": 5,
-    "precision": 0.5,
-    "recall": 0.1667,
-    "f1": 0.25,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 6,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "MNAT1": {
     "gold_entries": 3,
@@ -2773,14 +2773,14 @@
   },
   "NEK1": {
     "gold_entries": 11,
-    "agent_entries": 11,
-    "tp": 11,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 0,
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1": 1.0,
-    "discovered": true
+    "fn": 11,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "NEK11": {
     "gold_entries": 4,
@@ -2982,14 +2982,14 @@
   },
   "PAK1": {
     "gold_entries": 86,
-    "agent_entries": 6,
-    "tp": 2,
-    "fp": 4,
-    "fn": 84,
-    "precision": 0.3333,
-    "recall": 0.0233,
-    "f1": 0.0436,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 86,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PAK2": {
     "gold_entries": 54,
@@ -3004,14 +3004,14 @@
   },
   "PAK3": {
     "gold_entries": 5,
-    "agent_entries": 1,
-    "tp": 1,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 4,
-    "precision": 1.0,
-    "recall": 0.2,
-    "f1": 0.3333,
-    "discovered": true
+    "fn": 5,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PAK4": {
     "gold_entries": 21,
@@ -3081,25 +3081,25 @@
   },
   "PDGFRA": {
     "gold_entries": 8,
-    "agent_entries": 20,
-    "tp": 2,
-    "fp": 18,
-    "fn": 6,
-    "precision": 0.1,
-    "recall": 0.25,
-    "f1": 0.1429,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 8,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PDGFRB": {
     "gold_entries": 34,
-    "agent_entries": 2,
-    "tp": 1,
-    "fp": 1,
-    "fn": 33,
-    "precision": 0.5,
-    "recall": 0.0294,
-    "f1": 0.0555,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 34,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PDIK1L": {
     "gold_entries": 1,
@@ -3158,14 +3158,14 @@
   },
   "PDPK1": {
     "gold_entries": 39,
-    "agent_entries": 1,
+    "agent_entries": 0,
     "tp": 0,
-    "fp": 1,
+    "fp": 0,
     "fn": 39,
-    "precision": 0.0,
+    "precision": 0,
     "recall": 0.0,
     "f1": 0,
-    "discovered": true
+    "discovered": false
   },
   "PEG3": {
     "gold_entries": 1,
@@ -3312,14 +3312,14 @@
   },
   "PIM3": {
     "gold_entries": 7,
-    "agent_entries": 11,
-    "tp": 7,
-    "fp": 4,
-    "fn": 0,
-    "precision": 0.6364,
-    "recall": 1.0,
-    "f1": 0.7778,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 7,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PINK1": {
     "gold_entries": 17,
@@ -3389,14 +3389,14 @@
   },
   "PLK1": {
     "gold_entries": 305,
-    "agent_entries": 2,
-    "tp": 1,
-    "fp": 1,
-    "fn": 304,
-    "precision": 0.5,
-    "recall": 0.0033,
-    "f1": 0.0066,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 305,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PLK2": {
     "gold_entries": 14,
@@ -3411,25 +3411,25 @@
   },
   "PLK3": {
     "gold_entries": 32,
-    "agent_entries": 57,
-    "tp": 32,
-    "fp": 25,
-    "fn": 0,
-    "precision": 0.5614,
-    "recall": 1.0,
-    "f1": 0.7191,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 32,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PLK4": {
     "gold_entries": 23,
-    "agent_entries": 35,
-    "tp": 19,
-    "fp": 16,
-    "fn": 4,
-    "precision": 0.5429,
-    "recall": 0.8261,
-    "f1": 0.6552,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 23,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PNCK": {
     "gold_entries": 4,
@@ -3477,14 +3477,14 @@
   },
   "PRKACA": {
     "gold_entries": 703,
-    "agent_entries": 3,
-    "tp": 3,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 700,
-    "precision": 1.0,
-    "recall": 0.0043,
-    "f1": 0.0086,
-    "discovered": true
+    "fn": 703,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PRKACB": {
     "gold_entries": 5,
@@ -3554,14 +3554,14 @@
   },
   "PRKCA": {
     "gold_entries": 614,
-    "agent_entries": 11,
-    "tp": 7,
-    "fp": 4,
-    "fn": 607,
-    "precision": 0.6364,
-    "recall": 0.0114,
-    "f1": 0.0224,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 614,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PRKCB": {
     "gold_entries": 137,
@@ -3576,14 +3576,14 @@
   },
   "PRKCD": {
     "gold_entries": 177,
-    "agent_entries": 5,
-    "tp": 1,
-    "fp": 4,
-    "fn": 176,
-    "precision": 0.2,
-    "recall": 0.0056,
-    "f1": 0.0109,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 177,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PRKCE": {
     "gold_entries": 80,
@@ -3631,14 +3631,14 @@
   },
   "PRKCQ": {
     "gold_entries": 49,
-    "agent_entries": 1,
-    "tp": 1,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 48,
-    "precision": 1.0,
-    "recall": 0.0204,
-    "f1": 0.04,
-    "discovered": true
+    "fn": 49,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PRKCZ": {
     "gold_entries": 105,
@@ -3653,14 +3653,14 @@
   },
   "PRKD1": {
     "gold_entries": 82,
-    "agent_entries": 2,
-    "tp": 1,
-    "fp": 1,
-    "fn": 81,
-    "precision": 0.5,
-    "recall": 0.0122,
-    "f1": 0.0238,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 82,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "PRKD2": {
     "gold_entries": 20,
@@ -3686,13 +3686,13 @@
   },
   "PRKDC": {
     "gold_entries": 145,
-    "agent_entries": 14,
-    "tp": 11,
-    "fp": 3,
-    "fn": 134,
-    "precision": 0.7857,
-    "recall": 0.0759,
-    "f1": 0.1384,
+    "agent_entries": 323,
+    "tp": 130,
+    "fp": 193,
+    "fn": 15,
+    "precision": 0.4025,
+    "recall": 0.8966,
+    "f1": 0.5556,
     "discovered": true
   },
   "PRKG1": {
@@ -3818,14 +3818,14 @@
   },
   "RET": {
     "gold_entries": 33,
-    "agent_entries": 1,
-    "tp": 1,
+    "agent_entries": 0,
+    "tp": 0,
     "fp": 0,
-    "fn": 32,
-    "precision": 1.0,
-    "recall": 0.0303,
-    "f1": 0.0588,
-    "discovered": true
+    "fn": 33,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "RIOK3": {
     "gold_entries": 1,
@@ -3983,14 +3983,14 @@
   },
   "RPS6KB2": {
     "gold_entries": 11,
-    "agent_entries": 2,
-    "tp": 1,
-    "fp": 1,
-    "fn": 10,
-    "precision": 0.5,
-    "recall": 0.0909,
-    "f1": 0.1538,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 11,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "RPS6KC1": {
     "gold_entries": 1,
@@ -4104,14 +4104,14 @@
   },
   "SRC": {
     "gold_entries": 613,
-    "agent_entries": 27,
-    "tp": 14,
-    "fp": 13,
-    "fn": 599,
-    "precision": 0.5185,
-    "recall": 0.0228,
-    "f1": 0.0437,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 613,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "SRMS": {
     "gold_entries": 3,
@@ -4214,14 +4214,14 @@
   },
   "STK25": {
     "gold_entries": 3,
-    "agent_entries": 7,
-    "tp": 3,
-    "fp": 4,
-    "fn": 0,
-    "precision": 0.4286,
-    "recall": 1.0,
-    "f1": 0.6,
-    "discovered": true
+    "agent_entries": 0,
+    "tp": 0,
+    "fp": 0,
+    "fn": 3,
+    "precision": 0,
+    "recall": 0.0,
+    "f1": 0,
+    "discovered": false
   },
   "STK26": {
     "gold_entries": 13,
@@ -4654,13 +4654,13 @@
   },
   "VRK1": {
     "gold_entries": 16,
-    "agent_entries": 5,
-    "tp": 3,
-    "fp": 2,
-    "fn": 13,
-    "precision": 0.6,
-    "recall": 0.1875,
-    "f1": 0.2857,
+    "agent_entries": 1,
+    "tp": 1,
+    "fp": 0,
+    "fn": 15,
+    "precision": 1.0,
+    "recall": 0.0625,
+    "f1": 0.1176,
     "discovered": true
   },
   "VRK2": {
@@ -4687,14 +4687,14 @@
   },
   "WEE1": {
     "gold_entries": 2,
-    "agent_entries": 5,
+    "agent_entries": 0,
     "tp": 0,
-    "fp": 5,
+    "fp": 0,
     "fn": 2,
-    "precision": 0.0,
+    "precision": 0,
     "recall": 0.0,
     "f1": 0,
-    "discovered": true
+    "discovered": false
   },
   "WNK1": {
     "gold_entries": 9,

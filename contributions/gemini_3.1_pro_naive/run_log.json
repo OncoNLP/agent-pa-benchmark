@@ -1,34 +1,42 @@
 {
   "metadata": {
     "agent": "Gemini 3.1-Pro (Active Save Mode)",
-    "runtime_min": 63.18
+    "runtime_min": 35.12
   },
   "stats": {
-    "total_curated": 1428,
-    "tool_calls": 182,
+    "total_curated": 1576,
+    "tool_calls": 134,
     "sources_identified": [
+      "BIO.TOOLS",
       "EBI.AC.UK",
-      "EUTILS.NCBI.NLM.NIH.GOV",
-      "KORKINLAB.ORG",
+      "EXAMPLE.COM",
+      "HTTPBIN.ORG",
       "MAAYANLAB.CLOUD",
       "OMNIPATHDB.ORG",
-      "PATHWAYCOMMONS.ORG",
+      "PHOSPHOSITE.ORG",
+      "PUBLIC.NDEXBIO.ORG",
       "RESEARCH.BIOINFORMATICS.UDEL.EDU",
+      "REST.KEGG.JP",
       "REST.UNIPROT.ORG",
       "SIGNOR.UNIROMA2.IT",
-      "SPARQL.UNIPROT.ORG"
+      "SMART-API.INFO",
+      "STRING-DB.ORG"
     ],
     "hit_breakdown": {
-      "OMNIPATHDB.ORG": 146,
-      "MAAYANLAB.CLOUD": 1,
-      "SIGNOR.UNIROMA2.IT": 1,
-      "RESEARCH.BIOINFORMATICS.UDEL.EDU": 2,
-      "EBI.AC.UK": 8,
-      "REST.UNIPROT.ORG": 6,
-      "EUTILS.NCBI.NLM.NIH.GOV": 2,
-      "SPARQL.UNIPROT.ORG": 1,
-      "KORKINLAB.ORG": 1,
-      "PATHWAYCOMMONS.ORG": 2
+      "EBI.AC.UK": 14,
+      "RESEARCH.BIOINFORMATICS.UDEL.EDU": 27,
+      "MAAYANLAB.CLOUD": 19,
+      "REST.UNIPROT.ORG": 4,
+      "SIGNOR.UNIROMA2.IT": 5,
+      "SMART-API.INFO": 1,
+      "REST.KEGG.JP": 2,
+      "PHOSPHOSITE.ORG": 1,
+      "OMNIPATHDB.ORG": 34,
+      "PUBLIC.NDEXBIO.ORG": 1,
+      "HTTPBIN.ORG": 1,
+      "BIO.TOOLS": 1,
+      "EXAMPLE.COM": 2,
+      "STRING-DB.ORG": 1
     }
   }
 }
