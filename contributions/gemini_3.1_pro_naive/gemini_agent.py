@@ -406,10 +406,12 @@ if __name__ == "__main__":
             by the tools. Start by discovering what databases are available, then develop and execute a systematic curation strategy.
             CRITICAL: You MUST use the `save_curated_data` tool to explicitly save every relationship you find into the final JSON atlas."""
     
-    print(f"Starting Persistent State Run...{time.time()}")
+    run_started_at = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    print(f"Starting Persistent State Run at {run_started_at}")
     results = agent.run(prompt)
 
     elapsed = time.time() - agent.start_time
+    run_finished_at = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
     with open("atlas.json", "w") as f:
         json.dump(results, f, indent=2)
@@ -431,6 +433,18 @@ if __name__ == "__main__":
             "per_call": agent.per_turn_usage,
             "note": "Gemini is subscription-based; token counts from usage_metadata for reference",
         },
+        "metadata": {
+            "agent_mode": "Gemini 3.1-Pro (Active Save Mode)",
+            "started_at": run_started_at,
+            "finished_at": run_finished_at,
+            "runtime_min": round((time.time() - agent.start_time) / 60, 2),
+        },
+        "stats": {
+            "total_curated": len(results),
+            "tool_calls": agent.tool_calls,
+            "sources_identified": sorted(list(agent.db_hit_counts.keys())),
+            "hit_breakdown": agent.db_hit_counts,
+        },
     }
     with open("run_log.json", "w") as f:
         json.dump(run_log, f, indent=2)
@@ -438,17 +452,5 @@ if __name__ == "__main__":
     print(f"\n📊 Token Summary: {agent.total_input_tokens+agent.total_output_tokens:,} total "
           f"(in={agent.total_input_tokens:,}, out={agent.total_output_tokens:,})")
     print(f"📁 Saved atlas.json ({len(results)} entries) and run_log.json")
-    
-    log = {
-        "metadata": {"agent": "Gemini 3.1-Pro (Active Save Mode)", "runtime_min": round((time.time() - agent.start_time) / 60, 2)},
-        "stats": {
-            "total_curated": len(results),
-            "tool_calls": agent.tool_calls,
-            "sources_identified": sorted(list(agent.db_hit_counts.keys())),
-            "hit_breakdown": agent.db_hit_counts
-        }
-    }
-    with open("run_log.json", "w") as f:
-        json.dump(log, f, indent=2)
 
     print(f"✅ COMPLETED. Saved {len(results)} entries to atlas.json.")
