@@ -1,34 +1,704 @@
 {
+  "agent": "Gemini 3.1 Pro",
+  "model": "gemini-3.1-pro-preview",
+  "condition": "pipeline-guided",
+  "tool_calls": 78,
+  "elapsed_seconds": 1932.8,
+  "atlas_size": 1013,
+  "db_hit_counts": {
+    "OTHER_API": 1,
+    "API.PHOSPHOATLAS.ORG": 2,
+    "API.PHOSPHOSITE.ORG": 2,
+    "PHOSPHOATLAS.ORG": 2,
+    "API.SIGNOR.UNIROMA2.IT": 1,
+    "EBI.AC.UK": 10,
+    "REST.UNIPROT.ORG": 11,
+    "OMNIPATHDB.ORG": 22,
+    "API.OMNIPATHDB.ORG": 1,
+    "MAAYANLAB.CLOUD": 2,
+    "STRING-DB.ORG": 2,
+    "PHOSPHOSITEPLUS.LOCAL": 5
+  },
+  "token_usage": {
+    "total_input_tokens": 2897850,
+    "total_output_tokens": 112316,
+    "total_tokens": 3010166,
+    "api_calls": 127,
+    "per_call": [
+      {
+        "turn": 1,
+        "input_tokens": 1411,
+        "output_tokens": 170
+      },
+      {
+        "turn": 2,
+        "input_tokens": 2802,
+        "output_tokens": 43
+      },
+      {
+        "turn": 3,
+        "input_tokens": 4383,
+        "output_tokens": 135
+      },
+      {
+        "turn": 4,
+        "input_tokens": 5879,
+        "output_tokens": 59
+      },
+      {
+        "turn": 5,
+        "input_tokens": 10766,
+        "output_tokens": 60
+      },
+      {
+        "turn": 6,
+        "input_tokens": 12967,
+        "output_tokens": 77
+      },
+      {
+        "turn": 7,
+        "input_tokens": 13521,
+        "output_tokens": 41
+      },
+      {
+        "turn": 8,
+        "input_tokens": 14684,
+        "output_tokens": 48
+      },
+      {
+        "turn": 9,
+        "input_tokens": 6315,
+        "output_tokens": 52
+      },
+      {
+        "turn": 10,
+        "input_tokens": 11328,
+        "output_tokens": 809
+      },
+      {
+        "turn": 11,
+        "input_tokens": 13167,
+        "output_tokens": 52
+      },
+      {
+        "turn": 12,
+        "input_tokens": 13521,
+        "output_tokens": 54
+      },
+      {
+        "turn": 13,
+        "input_tokens": 20996,
+        "output_tokens": 1063
+      },
+      {
+        "turn": 14,
+        "input_tokens": 11332,
+        "output_tokens": 1059
+      },
+      {
+        "turn": 15,
+        "input_tokens": 13519,
+        "output_tokens": 1057
+      },
+      {
+        "turn": 16,
+        "input_tokens": 15715,
+        "output_tokens": 52
+      },
+      {
+        "turn": 17,
+        "input_tokens": 37119,
+        "output_tokens": 1033
+      },
+      {
+        "turn": 18,
+        "input_tokens": 39290,
+        "output_tokens": 1043
+      },
+      {
+        "turn": 19,
+        "input_tokens": 26709,
+        "output_tokens": 122
+      },
+      {
+        "turn": 20,
+        "input_tokens": 58692,
+        "output_tokens": 1032
+      },
+      {
+        "turn": 21,
+        "input_tokens": 60608,
+        "output_tokens": 52
+      },
+      {
+        "turn": 22,
+        "input_tokens": 83334,
+        "output_tokens": 1040
+      },
+      {
+        "turn": 23,
+        "input_tokens": 85332,
+        "output_tokens": 1042
+      },
+      {
+        "turn": 24,
+        "input_tokens": 28116,
+        "output_tokens": 1040
+      },
+      {
+        "turn": 25,
+        "input_tokens": 30279,
+        "output_tokens": 1046
+      },
+      {
+        "turn": 26,
+        "input_tokens": 32231,
+        "output_tokens": 1028
+      },
+      {
+        "turn": 27,
+        "input_tokens": 34542,
+        "output_tokens": 1036
+      },
+      {
+        "turn": 28,
+        "input_tokens": 36467,
+        "output_tokens": 1022
+      },
+      {
+        "turn": 29,
+        "input_tokens": 7726,
+        "output_tokens": 1039
+      },
+      {
+        "turn": 30,
+        "input_tokens": 9838,
+        "output_tokens": 1032
+      },
+      {
+        "turn": 31,
+        "input_tokens": 12040,
+        "output_tokens": 57
+      },
+      {
+        "turn": 32,
+        "input_tokens": 12530,
+        "output_tokens": 41
+      },
+      {
+        "turn": 33,
+        "input_tokens": 12846,
+        "output_tokens": 45
+      },
+      {
+        "turn": 34,
+        "input_tokens": 3069,
+        "output_tokens": 42
+      },
+      {
+        "turn": 35,
+        "input_tokens": 3455,
+        "output_tokens": 37
+      },
+      {
+        "turn": 36,
+        "input_tokens": 3884,
+        "output_tokens": 44
+      },
+      {
+        "turn": 37,
+        "input_tokens": 4858,
+        "output_tokens": 33
+      },
+      {
+        "turn": 38,
+        "input_tokens": 5412,
+        "output_tokens": 6
+      },
+      {
+        "turn": 39,
+        "input_tokens": 3428,
+        "output_tokens": 41
+      },
+      {
+        "turn": 40,
+        "input_tokens": 3861,
+        "output_tokens": 35
+      },
+      {
+        "turn": 41,
+        "input_tokens": 4541,
+        "output_tokens": 46
+      },
+      {
+        "turn": 42,
+        "input_tokens": 5624,
+        "output_tokens": 41
+      },
+      {
+        "turn": 43,
+        "input_tokens": 6849,
+        "output_tokens": 33
+      },
+      {
+        "turn": 44,
+        "input_tokens": 4017,
+        "output_tokens": 54
+      },
+      {
+        "turn": 45,
+        "input_tokens": 36331,
+        "output_tokens": 30
+      },
+      {
+        "turn": 46,
+        "input_tokens": 37530,
+        "output_tokens": 39
+      },
+      {
+        "turn": 47,
+        "input_tokens": 38466,
+        "output_tokens": 39
+      },
+      {
+        "turn": 48,
+        "input_tokens": 46098,
+        "output_tokens": 29
+      },
+      {
+        "turn": 49,
+        "input_tokens": 11053,
+        "output_tokens": 41
+      },
+      {
+        "turn": 50,
+        "input_tokens": 11942,
+        "output_tokens": 36
+      },
+      {
+        "turn": 51,
+        "input_tokens": 12568,
+        "output_tokens": 34
+      },
+      {
+        "turn": 52,
+        "input_tokens": 13165,
+        "output_tokens": 36
+      },
+      {
+        "turn": 53,
+        "input_tokens": 13891,
+        "output_tokens": 37
+      },
+      {
+        "turn": 54,
+        "input_tokens": 3436,
+        "output_tokens": 48
+      },
+      {
+        "turn": 55,
+        "input_tokens": 3801,
+        "output_tokens": 39
+      },
+      {
+        "turn": 56,
+        "input_tokens": 11180,
+        "output_tokens": 35
+      },
+      {
+        "turn": 57,
+        "input_tokens": 12038,
+        "output_tokens": 73
+      },
+      {
+        "turn": 58,
+        "input_tokens": 16110,
+        "output_tokens": 74
+      },
+      {
+        "turn": 59,
+        "input_tokens": 14874,
+        "output_tokens": 146
+      },
+      {
+        "turn": 60,
+        "input_tokens": 27349,
+        "output_tokens": 921
+      },
+      {
+        "turn": 61,
+        "input_tokens": 29269,
+        "output_tokens": 927
+      },
+      {
+        "turn": 62,
+        "input_tokens": 30750,
+        "output_tokens": 925
+      },
+      {
+        "turn": 63,
+        "input_tokens": 32294,
+        "output_tokens": 469
+      },
+      {
+        "turn": 64,
+        "input_tokens": 5458,
+        "output_tokens": 228
+      },
+      {
+        "turn": 65,
+        "input_tokens": 6560,
+        "output_tokens": 328
+      },
+      {
+        "turn": 66,
+        "input_tokens": 7612,
+        "output_tokens": 58
+      },
+      {
+        "turn": 67,
+        "input_tokens": 8562,
+        "output_tokens": 53
+      },
+      {
+        "turn": 68,
+        "input_tokens": 14893,
+        "output_tokens": 59
+      },
+      {
+        "turn": 69,
+        "input_tokens": 28207,
+        "output_tokens": 44
+      },
+      {
+        "turn": 70,
+        "input_tokens": 29836,
+        "output_tokens": 44
+      },
+      {
+        "turn": 71,
+        "input_tokens": 30902,
+        "output_tokens": 51
+      },
+      {
+        "turn": 72,
+        "input_tokens": 31457,
+        "output_tokens": 46
+      },
+      {
+        "turn": 73,
+        "input_tokens": 43952,
+        "output_tokens": 58
+      },
+      {
+        "turn": 74,
+        "input_tokens": 50697,
+        "output_tokens": 957
+      },
+      {
+        "turn": 75,
+        "input_tokens": 52398,
+        "output_tokens": 1841
+      },
+      {
+        "turn": 76,
+        "input_tokens": 55088,
+        "output_tokens": 1988
+      },
+      {
+        "turn": 77,
+        "input_tokens": 57958,
+        "output_tokens": 1731
+      },
+      {
+        "turn": 78,
+        "input_tokens": 60638,
+        "output_tokens": 1669
+      },
+      {
+        "turn": 79,
+        "input_tokens": 9591,
+        "output_tokens": 1877
+      },
+      {
+        "turn": 80,
+        "input_tokens": 12422,
+        "output_tokens": 36
+      },
+      {
+        "turn": 81,
+        "input_tokens": 12800,
+        "output_tokens": 38
+      },
+      {
+        "turn": 82,
+        "input_tokens": 13270,
+        "output_tokens": 48
+      },
+      {
+        "turn": 83,
+        "input_tokens": 14355,
+        "output_tokens": 48
+      },
+      {
+        "turn": 84,
+        "input_tokens": 3339,
+        "output_tokens": 49
+      },
+      {
+        "turn": 85,
+        "input_tokens": 40567,
+        "output_tokens": 50
+      },
+      {
+        "turn": 86,
+        "input_tokens": 83939,
+        "output_tokens": 61
+      },
+      {
+        "turn": 87,
+        "input_tokens": 86052,
+        "output_tokens": 51
+      },
+      {
+        "turn": 88,
+        "input_tokens": 86560,
+        "output_tokens": 64
+      },
+      {
+        "turn": 89,
+        "input_tokens": 4512,
+        "output_tokens": 64
+      },
+      {
+        "turn": 90,
+        "input_tokens": 7365,
+        "output_tokens": 1829
+      },
+      {
+        "turn": 91,
+        "input_tokens": 12458,
+        "output_tokens": 1744
+      },
+      {
+        "turn": 92,
+        "input_tokens": 16112,
+        "output_tokens": 1942
+      },
+      {
+        "turn": 93,
+        "input_tokens": 19824,
+        "output_tokens": 1865
+      },
+      {
+        "turn": 94,
+        "input_tokens": 12967,
+        "output_tokens": 1750
+      },
+      {
+        "turn": 95,
+        "input_tokens": 16632,
+        "output_tokens": 1939
+      },
+      {
+        "turn": 96,
+        "input_tokens": 20537,
+        "output_tokens": 1906
+      },
+      {
+        "turn": 97,
+        "input_tokens": 24437,
+        "output_tokens": 2139
+      },
+      {
+        "turn": 98,
+        "input_tokens": 28750,
+        "output_tokens": 1966
+      },
+      {
+        "turn": 99,
+        "input_tokens": 13579,
+        "output_tokens": 2215
+      },
+      {
+        "turn": 100,
+        "input_tokens": 17781,
+        "output_tokens": 2238
+      },
+      {
+        "turn": 101,
+        "input_tokens": 22135,
+        "output_tokens": 2188
+      },
+      {
+        "turn": 102,
+        "input_tokens": 26597,
+        "output_tokens": 2194
+      },
+      {
+        "turn": 103,
+        "input_tokens": 31093,
+        "output_tokens": 2235
+      },
+      {
+        "turn": 104,
+        "input_tokens": 14586,
+        "output_tokens": 2250
+      },
+      {
+        "turn": 105,
+        "input_tokens": 19022,
+        "output_tokens": 2201
+      },
+      {
+        "turn": 106,
+        "input_tokens": 23215,
+        "output_tokens": 2186
+      },
+      {
+        "turn": 107,
+        "input_tokens": 27784,
+        "output_tokens": 2216
+      },
+      {
+        "turn": 108,
+        "input_tokens": 31992,
+        "output_tokens": 2121
+      },
+      {
+        "turn": 109,
+        "input_tokens": 14430,
+        "output_tokens": 2143
+      },
+      {
+        "turn": 110,
+        "input_tokens": 18487,
+        "output_tokens": 2214
+      },
+      {
+        "turn": 111,
+        "input_tokens": 23036,
+        "output_tokens": 2213
+      },
+      {
+        "turn": 112,
+        "input_tokens": 27480,
+        "output_tokens": 2261
+      },
+      {
+        "turn": 113,
+        "input_tokens": 31949,
+        "output_tokens": 2240
+      },
+      {
+        "turn": 114,
+        "input_tokens": 14603,
+        "output_tokens": 2203
+      },
+      {
+        "turn": 115,
+        "input_tokens": 18792,
+        "output_tokens": 2179
+      },
+      {
+        "turn": 116,
+        "input_tokens": 23096,
+        "output_tokens": 2153
+      },
+      {
+        "turn": 117,
+        "input_tokens": 27462,
+        "output_tokens": 2221
+      },
+      {
+        "turn": 118,
+        "input_tokens": 31719,
+        "output_tokens": 2228
+      },
+      {
+        "turn": 119,
+        "input_tokens": 14629,
+        "output_tokens": 2201
+      },
+      {
+        "turn": 120,
+        "input_tokens": 19126,
+        "output_tokens": 2225
+      },
+      {
+        "turn": 121,
+        "input_tokens": 23427,
+        "output_tokens": 2131
+      },
+      {
+        "turn": 122,
+        "input_tokens": 27511,
+        "output_tokens": 2133
+      },
+      {
+        "turn": 123,
+        "input_tokens": 31690,
+        "output_tokens": 2173
+      },
+      {
+        "turn": 124,
+        "input_tokens": 13843,
+        "output_tokens": 2198
+      },
+      {
+        "turn": 125,
+        "input_tokens": 18208,
+        "output_tokens": 2146
+      },
+      {
+        "turn": 126,
+        "input_tokens": 22153,
+        "output_tokens": 2094
+      },
+      {
+        "turn": 127,
+        "input_tokens": 26570,
+        "output_tokens": 324
+      }
+    ],
+    "note": "Gemini is subscription-based; token counts from usage_metadata for reference"
+  },
   "metadata": {
-    "agent": "Gemini 3.1-Pro (Active Save Mode)",
-    "runtime_min": 36.29
+    "agent_mode": "Gemini 3.1-Pro (Active Save Mode)",
+    "started_at": "2026-04-08 13:57:53",
+    "finished_at": "2026-04-08 14:30:05",
+    "runtime_min": 32.21
   },
   "stats": {
-    "total_curated": 718,
-    "tool_calls": 91,
+    "total_curated": 1013,
+    "tool_calls": 78,
     "sources_identified": [
-      "API",
+      "API.OMNIPATHDB.ORG",
       "API.PHOSPHOATLAS.ORG",
       "API.PHOSPHOSITE.ORG",
+      "API.SIGNOR.UNIROMA2.IT",
       "EBI.AC.UK",
+      "MAAYANLAB.CLOUD",
+      "OMNIPATHDB.ORG",
       "OTHER_API",
-      "PHOSPHO.ORG",
-      "RESEARCH.BIOINFORMATICS.UDEL.EDU",
+      "PHOSPHOATLAS.ORG",
+      "PHOSPHOSITEPLUS.LOCAL",
       "REST.UNIPROT.ORG",
-      "SIGNOR.UNIROMA2.IT",
       "STRING-DB.ORG"
     ],
     "hit_breakdown": {
-      "RESEARCH.BIOINFORMATICS.UDEL.EDU": 5,
-      "SIGNOR.UNIROMA2.IT": 1,
-      "REST.UNIPROT.ORG": 64,
-      "API": 1,
-      "PHOSPHO.ORG": 1,
-      "OTHER_API": 2,
+      "OTHER_API": 1,
+      "API.PHOSPHOATLAS.ORG": 2,
+      "API.PHOSPHOSITE.ORG": 2,
+      "PHOSPHOATLAS.ORG": 2,
+      "API.SIGNOR.UNIROMA2.IT": 1,
+      "EBI.AC.UK": 10,
+      "REST.UNIPROT.ORG": 11,
+      "OMNIPATHDB.ORG": 22,
+      "API.OMNIPATHDB.ORG": 1,
+      "MAAYANLAB.CLOUD": 2,
       "STRING-DB.ORG": 2,
-      "EBI.AC.UK": 5,
-      "API.PHOSPHOSITE.ORG": 1,
-      "API.PHOSPHOATLAS.ORG": 1
+      "PHOSPHOSITEPLUS.LOCAL": 5
     }
   }
 }

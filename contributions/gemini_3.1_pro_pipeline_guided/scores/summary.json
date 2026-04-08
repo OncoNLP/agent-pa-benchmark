@@ -1,58 +1,59 @@
 {
   "overview": {
-    "atlas_size": 718,
-    "recall": 0.0309,
-    "precision": 0.6727,
-    "f1": 0.0591,
-    "kinases_found": "118/433",
-    "multi_db_pct": 6.3,
+    "atlas_size": 1013,
+    "recall": 0.0347,
+    "precision": 0.536,
+    "f1": 0.0652,
+    "kinases_found": "95/433",
+    "multi_db_pct": 3.9,
     "peptide_accuracy": 0.0
   },
   "atlas_level": {
-    "total_agent_entries": 718,
+    "total_agent_entries": 1013,
     "total_gold_entries": 15635,
-    "true_positives": 483,
-    "false_positives": 235,
-    "false_negatives": 15152,
-    "precision": 0.6727,
-    "recall": 0.0309,
-    "f1": 0.0591
+    "true_positives": 543,
+    "false_positives": 470,
+    "false_negatives": 15092,
+    "precision": 0.536,
+    "recall": 0.0347,
+    "f1": 0.0652
   },
   "column_level": {
-    "matched_triplets": 483,
-    "site_exact": 483,
-    "site_total": 483,
+    "matched_triplets": 543,
+    "site_exact": 543,
+    "site_total": 543,
     "site_accuracy": 1.0,
     "peptide_exact": 0,
     "peptide_case_diff": 0,
-    "peptide_missing": 0,
-    "peptide_mismatch": 474,
-    "peptide_total": 474,
+    "peptide_missing": 73,
+    "peptide_mismatch": 431,
+    "peptide_total": 504,
     "peptide_accuracy": 0.0,
     "peptide_exact_accuracy": 0.0,
-    "peptide_mismatch_rate": 1.0,
-    "peptide_missing_count": 0,
-    "uniprot_exact": 470,
-    "uniprot_total": 483,
-    "uniprot_accuracy": 0.9731
+    "peptide_mismatch_rate": 0.8552,
+    "peptide_missing_count": 73,
+    "uniprot_exact": 521,
+    "uniprot_total": 543,
+    "uniprot_accuracy": 0.9595
   },
   "kinase_discovery": {
     "kinases_in_gold": 433,
-    "kinases_discovered": 118,
-    "kinases_missed": 315,
-    "kinases_novel": 6,
-    "discovery_rate": 0.2725,
+    "kinases_discovered": 95,
+    "kinases_missed": 338,
+    "kinases_novel": 2,
+    "discovery_rate": 0.2194,
     "missed_kinases": [
       "AAK1",
+      "ABL2",
       "ACVR1B",
       "ACVRL1",
       "ADCK5",
       "ADRBK1",
       "AKT2",
-      "AKT3",
+      "ALK",
       "ALPK1",
-      "ARAF",
       "AURKC",
+      "AXL",
       "BAZ1B",
       "BCAT2",
       "BCR",
@@ -64,6 +65,7 @@
       "BMX",
       "BRD4",
       "BRSK1",
+      "BRSK2",
       "BUB1",
       "CAD",
       "CAMK1",
@@ -88,49 +90,89 @@
       "CDK18",
       "CDK19",
       "CDK20",
+      "CDK3",
       "CDK8",
-      "CDK9",
-      "CDKL2",
-      "CDKL5",
-      "CERT1"
+      "CDK9"
     ],
     "novel_kinases": [
       "BMPR1A",
-      "HIPK4",
-      "MAPAPK2",
-      "NME7",
-      "ROS1",
-      "WEE2"
+      "HIPK4"
     ]
   },
   "cross_referencing": {
-    "multi_db_count": 45,
-    "multi_db_pct": 6.3,
+    "multi_db_count": 40,
+    "multi_db_pct": 3.9,
     "db_coverage": {
-      "UniProt": 319,
-      "PhosphoSitePlus": 444
+      "OmniPath (HPRD, KEA, PhosphoSite, SIGNOR, etc.)": 2,
+      "PhosphoSitePlus, SIGNOR": 668,
+      "OmniPath (SIGNOR, ProtMapper)": 2,
+      "OmniPath (HPRD, KEA, PhosphoSite, SIGNOR)": 2,
+      "OmniPath (PhosphoSite, RLIMS-P)": 1,
+      "OmniPath (PhosphoSite, REACH)": 3,
+      "OmniPath": 223,
+      "UniProt": 42,
+      "HPRD, SIGNOR, KEA, MIMP, PhosphoSite, ProtMapper, phosphoELM": 3,
+      "HPRD, KEA, MIMP, PhosphoSite, ProtMapper, SIGNOR, Sparser, dbPTM, phosphoELM": 3,
+      "HPRD, KEA, MIMP, ProtMapper, SIGNOR, phosphoELM": 1,
+      "HPRD, KEA, MIMP, PhosphoSite, ProtMapper, SIGNOR, dbPTM, phosphoELM": 6,
+      "HPRD, KEA": 7,
+      "HPRD, KEA, PhosphoSite": 1,
+      "HPRD, KEA, MIMP, PhosphoSite, ProtMapper, SIGNOR, phosphoELM": 12,
+      "HPRD, KEA, Li2012, MIMP, PhosphoSite, ProtMapper, SIGNOR, phosphoELM": 14,
+      "KEA, Li2012, ProtMapper, SIGNOR, phosphoELM": 1,
+      "KEA, ProtMapper, SIGNOR, phosphoELM": 1,
+      "HPRD, KEA, MIMP, PhosphoSite, phosphoELM": 4,
+      "ProtMapper": 8,
+      "KEA, MIMP, PhosphoSite, ProtMapper, phosphoELM": 2,
+      "HPRD, KEA, Li2012, PhosphoSite, ProtMapper, SIGNOR, phosphoELM": 3,
+      "KEA, Li2012, MIMP, PhosphoSite, ProtMapper, SIGNOR, dbPTM, phosphoELM": 1,
+      "ProtMapper, SIGNOR": 4,
+      "MIMP, PhosphoSite, ProtMapper, SIGNOR, Sparser, dbPTM": 2,
+      "MIMP, PhosphoSite, ProtMapper, SIGNOR": 3,
+      "MIMP, PhosphoSite, ProtMapper, SIGNOR, Sparser": 2,
+      "HPRD, KEA, MIMP, PhosphoSite, ProtMapper, SIGNOR": 2,
+      "MIMP, PhosphoSite, ProtMapper": 1,
+      "HPRD, KEA, SIGNOR": 1,
+      "PhosphoSite, ProtMapper, SIGNOR": 3,
+      "PhosphoSite, ProtMapper": 1,
+      "MIMP, PhosphoSite": 3,
+      "HPRD, KEA, Li2012, MIMP, PhosphoSite, ProtMapper, SIGNOR, Sparser, phosphoELM": 1,
+      "ProtMapper, Sparser": 2,
+      "PhosphoSite, SIGNOR": 2,
+      "PhosphoSite": 1,
+      "Li2012": 4,
+      "ProtMapper, SIGNOR, Sparser": 1,
+      "HPRD, KEA, MIMP, PhosphoSite, ProtMapper, SIGNOR, Sparser, phosphoELM": 1,
+      "HPRD, KEA, PhosphoSite, ProtMapper, Sparser, phosphoELM": 1,
+      "PhosphoSite, ProtMapper, SIGNOR, dbPTM": 1,
+      "MIMP, ProtMapper, SIGNOR, Sparser": 1,
+      "HPRD, KEA, PhosphoSite, ProtMapper, dbPTM": 1,
+      "HPRD, KEA, MIMP, PhosphoSite, SIGNOR, dbPTM, phosphoELM": 1,
+      "Li2012, ProtMapper": 1,
+      "HPRD, KEA, PhosphoSite, ProtMapper, SIGNOR": 2,
+      "HPRD, KEA, PhosphoSite, ProtMapper, SIGNOR, phosphoELM": 1
     }
   },
   "per_tier": {
     "A": {
       "kinases": 34,
       "gold_entries": 9517,
-      "recall": 0.0289
+      "recall": 0.0361
     },
     "B": {
       "kinases": 102,
       "gold_entries": 4353,
-      "recall": 0.0349
+      "recall": 0.0345
     },
     "C": {
       "kinases": 144,
       "gold_entries": 1452,
-      "recall": 0.0344
+      "recall": 0.031
     },
     "D": {
       "kinases": 153,
       "gold_entries": 313,
-      "recall": 0.0192
+      "recall": 0.0128
     }
   }
 }
