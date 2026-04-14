@@ -276,5 +276,309 @@
       "type": "error",
       "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CZQu8adxKaMm4RnEtCbrG'}"
     }
-  ]
+  ],
+  "token_usage": {
+    "total_input_tokens": 258072,
+    "total_output_tokens": 13428,
+    "total_tokens": 271500,
+    "cache_read_input_tokens": 10385,
+    "api_calls": 32,
+    "estimated_cost_usd": 0.9788,
+    "total_raw_data_chars": 148369,
+    "model_pricing": "sonnet",
+    "model_label": "Claude Sonnet 4.6",
+    "note": "Reconstructed from the original Anthropic API run's 32-tool-call trace. Reflects what the original paid-API run actually billed at Sonnet pricing ($3/$15 per 1M tokens); LiveTokenTracker formulas applied to real per-call data volumes.",
+    "per_call": [
+      {
+        "turn": 1,
+        "tool": "list_databases",
+        "input_tokens": 335,
+        "output_tokens": 401,
+        "cache_read_tokens": 0,
+        "raw_result_chars": 931,
+        "context_result_chars": 93
+      },
+      {
+        "turn": 2,
+        "tool": "get_stats",
+        "input_tokens": 427,
+        "output_tokens": 403,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 78,
+        "context_result_chars": 7
+      },
+      {
+        "turn": 3,
+        "tool": "get_stats",
+        "input_tokens": 832,
+        "output_tokens": 404,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 81,
+        "context_result_chars": 8
+      },
+      {
+        "turn": 4,
+        "tool": "get_stats",
+        "input_tokens": 1238,
+        "output_tokens": 404,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 82,
+        "context_result_chars": 8
+      },
+      {
+        "turn": 5,
+        "tool": "list_kinases",
+        "input_tokens": 1644,
+        "output_tokens": 411,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 75,
+        "context_result_chars": 7
+      },
+      {
+        "turn": 6,
+        "tool": "list_kinases",
+        "input_tokens": 2057,
+        "output_tokens": 412,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 78,
+        "context_result_chars": 7
+      },
+      {
+        "turn": 7,
+        "tool": "list_kinases",
+        "input_tokens": 2471,
+        "output_tokens": 412,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 79,
+        "context_result_chars": 7
+      },
+      {
+        "turn": 8,
+        "tool": "web_search",
+        "input_tokens": 2885,
+        "output_tokens": 421,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 657,
+        "context_result_chars": 65
+      },
+      {
+        "turn": 9,
+        "tool": "web_search",
+        "input_tokens": 3324,
+        "output_tokens": 422,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 578,
+        "context_result_chars": 57
+      },
+      {
+        "turn": 10,
+        "tool": "web_search",
+        "input_tokens": 3762,
+        "output_tokens": 422,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 528,
+        "context_result_chars": 52
+      },
+      {
+        "turn": 11,
+        "tool": "web_fetch",
+        "input_tokens": 4198,
+        "output_tokens": 415,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 93,
+        "context_result_chars": 9
+      },
+      {
+        "turn": 12,
+        "tool": "web_fetch",
+        "input_tokens": 4615,
+        "output_tokens": 414,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 16511,
+        "context_result_chars": 1651
+      },
+      {
+        "turn": 13,
+        "tool": "web_fetch",
+        "input_tokens": 5500,
+        "output_tokens": 417,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 5204,
+        "context_result_chars": 520
+      },
+      {
+        "turn": 14,
+        "tool": "web_fetch",
+        "input_tokens": 6065,
+        "output_tokens": 415,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 15771,
+        "context_result_chars": 1577
+      },
+      {
+        "turn": 15,
+        "tool": "web_fetch",
+        "input_tokens": 6930,
+        "output_tokens": 416,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 4918,
+        "context_result_chars": 491
+      },
+      {
+        "turn": 16,
+        "tool": "web_search",
+        "input_tokens": 7486,
+        "output_tokens": 433,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 133,
+        "context_result_chars": 13
+      },
+      {
+        "turn": 17,
+        "tool": "web_search",
+        "input_tokens": 7922,
+        "output_tokens": 421,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 89,
+        "context_result_chars": 8
+      },
+      {
+        "turn": 18,
+        "tool": "web_fetch",
+        "input_tokens": 8345,
+        "output_tokens": 450,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 17838,
+        "context_result_chars": 1783
+      },
+      {
+        "turn": 19,
+        "tool": "web_search",
+        "input_tokens": 9304,
+        "output_tokens": 421,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 617,
+        "context_result_chars": 61
+      },
+      {
+        "turn": 20,
+        "tool": "web_fetch",
+        "input_tokens": 9742,
+        "output_tokens": 420,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 14964,
+        "context_result_chars": 1496
+      },
+      {
+        "turn": 21,
+        "tool": "fetch_and_parse_db",
+        "input_tokens": 10589,
+        "output_tokens": 438,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 242,
+        "context_result_chars": 24
+      },
+      {
+        "turn": 22,
+        "tool": "web_fetch",
+        "input_tokens": 11033,
+        "output_tokens": 421,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 17483,
+        "context_result_chars": 1748
+      },
+      {
+        "turn": 23,
+        "tool": "web_fetch",
+        "input_tokens": 11953,
+        "output_tokens": 426,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 16307,
+        "context_result_chars": 1630
+      },
+      {
+        "turn": 24,
+        "tool": "fetch_and_parse_db",
+        "input_tokens": 12844,
+        "output_tokens": 432,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 678,
+        "context_result_chars": 67
+      },
+      {
+        "turn": 25,
+        "tool": "web_fetch",
+        "input_tokens": 13295,
+        "output_tokens": 414,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 16511,
+        "context_result_chars": 1651
+      },
+      {
+        "turn": 26,
+        "tool": "web_search",
+        "input_tokens": 14180,
+        "output_tokens": 430,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 123,
+        "context_result_chars": 12
+      },
+      {
+        "turn": 27,
+        "tool": "fetch_and_parse_db",
+        "input_tokens": 14613,
+        "output_tokens": 429,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 214,
+        "context_result_chars": 21
+      },
+      {
+        "turn": 28,
+        "tool": "fetch_and_parse_db",
+        "input_tokens": 15048,
+        "output_tokens": 428,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 153,
+        "context_result_chars": 15
+      },
+      {
+        "turn": 29,
+        "tool": "web_fetch",
+        "input_tokens": 15480,
+        "output_tokens": 421,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 114,
+        "context_result_chars": 11
+      },
+      {
+        "turn": 30,
+        "tool": "web_fetch",
+        "input_tokens": 15904,
+        "output_tokens": 426,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 16551,
+        "context_result_chars": 1655
+      },
+      {
+        "turn": 31,
+        "tool": "web_search",
+        "input_tokens": 16802,
+        "output_tokens": 428,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 688,
+        "context_result_chars": 68
+      },
+      {
+        "turn": 32,
+        "tool": "unknown",
+        "input_tokens": 17249,
+        "output_tokens": 401,
+        "cache_read_tokens": 335,
+        "raw_result_chars": 0,
+        "context_result_chars": 0
+      }
+    ]
+  },
+  "mode": "api_original",
+  "billing": "anthropic_api"
 }
