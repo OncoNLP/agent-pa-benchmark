@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Claude Sonnet 4.6 Supplement-Context Agent Runner — Zero-Shot + Supplementary Methods.
+Claude Sonnet 4.6 Pipeline-Guided Agent Runner — Zero-Shot + Explicit Pipeline Steps.
 
 Runs Claude Sonnet as a genuine autonomous agent via the Anthropic API.
-The agent receives the naive system prompt augmented with context from the
-Olow et al. 2016 PhosphoAtlas Supplementary Extended Methods (stepwise
-pipeline, Primary Identifier creation, database inventory, alias tracking,
-QC filters, and harmonization procedures).
+The agent receives a pipeline-guided system prompt that walks through the
+explicit 3-phase, 8-step curation pipeline from Olow et al. 2016: harmonize
+and centralize protein data, build relational database of phosphorylation
+events, and cross-reference with quality control.
 
 Tools available to the agent:
   Database tools (from DatabaseTools — return empty without local files):
@@ -26,7 +26,7 @@ Requires: ANTHROPIC_API_KEY environment variable.
 
 Usage:
   export ANTHROPIC_API_KEY=sk-ant-...
-  python3 contributions/claude_sonnet_suppl_naive/agent_runner.py
+  python3 contributions/claude_sonnet_pipeline_guided/agent_runner.py
 """
 import csv
 import gzip
@@ -756,17 +756,17 @@ def main():
         print("  export ANTHROPIC_API_KEY=sk-ant-...")
         sys.exit(1)
 
-    out_dir = Path("contributions/claude_sonnet_suppl_naive")
+    out_dir = Path("contributions/claude_sonnet_pipeline_guided")
     out_dir.mkdir(parents=True, exist_ok=True)
     scores_dir = out_dir / "scores"
     scores_dir.mkdir(parents=True, exist_ok=True)
 
-    # Load naive prompt
-    prompt_path = Path("agents/prompts/naive_plus_suppl.txt")
+    # Load pipeline-guided prompt
+    prompt_path = Path("agents/prompts/pipeline_guided.txt")
     system_prompt = prompt_path.read_text().strip()
     _log(f"[SETUP] Prompt: {prompt_path} ({len(system_prompt)} chars)")
     _log(f"[SETUP] Model: claude-sonnet-4-6")
-    _log(f"[SETUP] Condition: naive + supplement context (zero-shot)")
+    _log(f"[SETUP] Condition: pipeline_guided (zero-shot)")
 
     # Run agent
     t0 = time.time()
@@ -795,7 +795,7 @@ def main():
     # Save run_log.json
     run_log = {
         "agent": "Claude Sonnet 4.6",
-        "prompt": "naive + supplement context (zero-shot)",
+        "prompt": "pipeline_guided (zero-shot)",
         "strategy": agent.strategy_summary,
         "autonomous": True,
         "databases_accessed": sorted(db_counts.keys()),
