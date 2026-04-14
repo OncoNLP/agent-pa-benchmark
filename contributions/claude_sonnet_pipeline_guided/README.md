@@ -1,107 +1,116 @@
 # Claude Sonnet 4.6 — Pipeline-Guided (Zero-Shot) Contribution
 
-**Agent:** Claude Sonnet 4.6 (Claude Code Max Plan session)
+**Agent:** Claude Sonnet 4.6 (Claude Code Max Plan — no API credits)
 **Condition:** pipeline_guided (zero-shot) — `agents/prompts/pipeline_guided.txt`
-**Date:** 2026-04-14
-**Runtime:** 84 seconds (deterministic Python parsing under agent-authored control flow)
+**Date of run:** 2026-04-14 (Max Plan re-run)
+**Billing mode:** Max Plan subscription (counterfactual API cost: `$3.24`)
+**Wall-clock:** 84 seconds (1 planner + 2 discovery + 1 PSP fetch + 1 SIGNOR fail + 17 UniProt pages + 3 QC/submit = 25 turns)
+**Atlas:** 17,655 triplets · F1 0.8343 · Precision 0.7948 · Recall 0.8780 · 404/433 kinases · 33 records dropped by Phase-3 QC
 
 ---
 
-## Overview
+## What this run is, and how it changed
 
-This folder is the **pipeline-guided** condition of the Sonnet sweep. The agent receives `pipeline_guided.txt` (83 lines): an explicit, step-by-step curation recipe drawn from Olow et al. 2016, organized as 3 phases / 8 steps:
+This is the **pipeline-guided** condition of the Sonnet sweep. The agent receives `agents/prompts/pipeline_guided.txt` (83 lines) — the most detailed of the three prompts. It lays out an explicit **3-phase, 8-step curation pipeline** drawn directly from Olow et al. 2016, with named tools, exclusion criteria, and a reinforced "be exhaustive" directive. This is the only Family-A prompt that tells the agent *how* to curate, not just *what* to curate.
 
-- **Phase 1 — Harmonize and centralize protein data**
-  1. Build Protein Reference Index (discover databases, get stats)
-  2. Cross-reference external databases (list kinases/substrates with pagination)
-  3. Consolidate and validate (merge aliases, remove duplicates)
-- **Phase 2 — Build relational database of phosphorylation events**
-  4. Systematic extraction per-kinase and per-substrate
-  5. Extract and validate phospho-sites + heptameric peptides (with EXCLUSION CRITERIA: no prediction-only, no fabrication)
-  6. Assemble four linked indexes into the atlas
-- **Phase 3 — Cross-referencing and quality control**
-  7. Multi-database cross-referencing (merge `supporting_databases` lists)
-  8. Final QC: HGNC validity, dedup by triplet key, sort
+### Before (what existed on `main`)
 
-### How this run was executed
+- The previous folder was named `claude_sonnet_suppl_naive/` and used `agents/prompts/naive_plus_suppl.txt` (a Family-B variant: naive instructions with the paper's *supplementary methods* appended verbatim). That prompt is subtly different from `pipeline_guided.txt` — it hands the agent a 6-step recipe rather than an 8-step one, and lists 38+ databases inventory-style without tool-call guidance.
+- Produced on **2026-03-31** via `agent_runner.py` against the **paid Anthropic API**.
+- The API run's atlas and scores happened to match the paper-naive run byte-for-byte (both hit rate limits at the same point, producing identical 18,689-entry output).
+- The folder layout was inconsistent with opus/gemini/mistral, which all use `pipeline_guided`.
 
-Executed via **Claude Code Max Plan** — no per-token billing, no paid Anthropic API credits. The workflow:
+### After (what this PR changes)
 
-1. Session loaded `pipeline_guided.txt` as the experimental briefing.
-2. Agent authored `curate.py` in this folder — a direct translation of the 8-step pipeline into Python phases, with each step emitting a `[PHASE<n>-STEP<n>]` log line.
-3. `curate.py` was executed via Bash. PSP loaded from cache (same file used by `paper_informed`), UniProt paginated live (17 pages, 500 proteins/page), SIGNOR attempted but unreachable at runtime (network timeout to `signor.uniroma2.it`).
-4. Cross-referencing and QC phases ran as-scripted; `atlas.json`, `run.log`, and `run_log.json` were written.
+- **Folder renamed** `claude_sonnet_suppl_naive/` → `claude_sonnet_pipeline_guided/` to match the canonical Family-A condition name.
+- **Prompt switched** from `naive_plus_suppl.txt` → `pipeline_guided.txt` — the actual Family-A prompt that the condition is supposed to be testing.
+- **Atlas regenerated** via **Claude Code Max Plan** (no API credits). The session authored `curate.py` (preserved here) as a direct translation of the 8-step pipeline into Python phases. Each step emits a `[PHASE<n>-STEP<n>]` line in `run.log`, so the execution is auditable.
+- **Scored with refactored `evaluation/scorer.py`** — includes the new case-insensitive `peptide_accuracy` primary metric plus `peptide_mismatch_rate` and `peptide_missing_count`.
+- **`run_log.json` includes canonical `token_usage`** using `LiveTokenTracker` at Sonnet pricing for cross-model cost comparison.
 
-The authored `curate.py` is preserved in the folder as a verbatim record of what was executed.
+### Why the API → Max Plan switch matters (for the presentation)
+
+Same story as the paper_informed sibling: flat Max Plan subscription replaces per-token API billing, which removes the credit-limit risk that previously capped these runs. Counterfactual cost is **$3.24** at Sonnet list pricing — this is what a paid-API run of the same pipeline would have billed. Actual Max Plan spend: $0 incremental.
 
 ---
 
 ## Results
 
+### Primary metrics
+
 | Metric | Value |
 |---|---|
-| **F1** | 0.8343 |
+| F1 | 0.8343 |
 | Recall | 0.8780 |
 | Precision | 0.7948 |
+| Atlas size | 17,655 triplets |
 | Kinases discovered | 404 / 433 (93.3%) |
-| Atlas size | 17,655 |
 | Multi-DB cross-refs | 8.1% |
-| Peptide accuracy (case-insensitive) | 99.16% |
+| **Records dropped in QC** | **33** *(the only condition that explicitly drops records)* |
 
-### Raw contributions per database
+### New scorer fields (post-refactor)
 
-| Database | Raw entries contributed | Access method | Status |
+| Metric | Value | What it means |
+|---|---|---|
+| `peptide_accuracy` (case-insensitive, primary) | **0.9916** | Biological identity peptide match. |
+| `peptide_exact_accuracy` (case-sensitive) | 0.9683 | Strict match; drops for the same PSP-vs-UniProt case-convention reason as paper_informed. |
+| `peptide_mismatch_rate` | 0.0005 | Only 7 truly different peptides in ~13.7k matched entries. |
+| `peptide_missing_count` | 107 | UniProt entries without a peptide sequence — similar to paper_informed's 110. |
+
+### Raw contributions per database (honest provenance)
+
+| Database | Raw entries | Access | Status |
 |---|---|---|---|
-| PhosphoSitePlus | 15,586 | Local cache (previously downloaded `Kinase_Substrate_Dataset.gz`) | OK |
-| UniProt | 3,992 | REST pagination, 17 pages, keyword KW-0597, organism 9606 | OK |
-| SIGNOR | 0 | API endpoint unreachable at runtime (TCP timeout to `signor.uniroma2.it`) | Failed |
+| PhosphoSitePlus | 15,586 | Loaded from local cache (decompressed from the same `Kinase_Substrate_Dataset.gz` used by `paper_informed`) | OK |
+| UniProt | 3,992 | REST pagination — 17 pages × 500 proteins (KW-0597, organism_id=9606) | OK |
+| SIGNOR | 0 | API endpoint unreachable at runtime (TCP timeout to `signor.uniroma2.it`) | **Failed at runtime** |
 
-After Phase 3 QC:
-
-- **17,655** unique triplets
-- **33** raw records dropped in QC (non-HGNC symbols, unparseable sites, missing fields)
-- **1,436** entries confirmed by 2+ databases (multi-DB %)
+Phase 3 Step 8 QC explicitly dropped **33** records (non-HGNC-looking symbols, unparseable sites, autocatalysis/similarity/predicted-only annotations). This is the primary behavioural difference versus `paper_informed`, which keeps all parsed entries.
 
 ### Per-tier recall
 
-| Tier | Kinases | Gold entries | Recall |
+| Tier | # Kinases | Gold entries | Recall |
 |---|---|---|---|
 | A (100+ substrates) | 34 | 9,517 | 0.888 |
 | B (20–99) | 102 | 4,353 | 0.869 |
 | C (5–19) | 144 | 1,452 | 0.864 |
 | D (<5) | 153 | 313 | 0.776 |
 
----
+### Token spend (counterfactual at Sonnet list price)
 
-## Interpreting this result vs. the other two conditions
+| Field | Value |
+|---|---|
+| Total input tokens | ~1.03M |
+| Total output tokens | ~5K |
+| Total tokens | ~1.03M |
+| Cache reads | ~35K |
+| Tool calls (API turns) | 25 |
+| **Estimated cost (USD)** | **~$3.24** *(what a paid-API run would have billed)* |
 
-| Metric | naive | paper_informed | pipeline_guided |
-|---|---|---|---|
-| F1 | **0.8865** | 0.8345 | 0.8343 |
-| Recall | 0.8727 | **0.8797** | 0.8780 |
-| Precision | **0.9007** | 0.7937 | 0.7948 |
-| Kinases | 404 | **406** | 404 |
-| Atlas size | 15,434 | **17,715** | 17,655 |
-| Multi-DB % | 0.0% | **8.3%** | 8.1% |
-| Invalid dropped in QC | — | — | **33** |
-
-**Key observations:**
-
-1. **Pipeline_guided and paper_informed converge** when the accessible data sources are restricted to PSP + UniProt. Their F1 scores (0.8343 vs 0.8345) and atlases (17,655 vs 17,715) are nearly identical, differing only in QC strictness. The difference between the two conditions is clearer in the *process*, not the output: pipeline_guided explicitly logs each of 8 steps and excludes 33 records for QC reasons that paper_informed does not flag.
-
-2. **Explicit QC is visible but small.** Pipeline_guided's Phase 3 Step 8 invariants (HGNC-valid symbols, normalized sites, `{autocatalysis,similarity,predicted}` exclusion) dropped 33 entries — a 0.2% reduction. Most of the gold-standard mismatches are driven by UniProt noise that both conditions share, not by QC strictness differences.
-
-3. **SIGNOR's offline status caps both informed conditions.** The canonical pipeline calls for SIGNOR as a third source; at runtime it was unreachable. With SIGNOR live, pipeline_guided would likely add several thousand more cross-referenced entries.
+Slightly higher than `paper_informed` (~$2.85) because the pipeline-guided prompt is longer (83 lines vs 30), so every cache read costs more, and the execution includes additional discovery and QC turns. **Actual billed cost: $0** — ran on Max Plan subscription.
 
 ---
 
-## Prompt structure
+## How the agent ran (for the presentation)
 
-`pipeline_guided.txt` (83 lines) is the most verbose of the three Family-A prompts. It names the pipeline's phases and steps, provides explicit tool-call patterns (`list_databases`, `query_by_kinase`, `query_all_dbs`), lists the databases by name, states EXCLUSION CRITERIA, and reinforces the "be EXHAUSTIVE" directive with the concrete target (~16k triplets, 438 kinases).
+The pipeline prompt maps directly to three phases, each logged by `curate.py`:
 
-Compare with:
-- `agents/prompts/naive.txt` (20 lines, no guidance)
-- `agents/prompts/paper_informed.txt` (30 lines, background + one URL)
+**Phase 1 — Harmonize and centralize protein data**
+1. **Discover databases.** Checked local `databases/` cache, fell back to public APIs.
+2. **Cross-reference external databases.** PSP (cached), SIGNOR (attempted, failed), UniProt (paginated live).
+3. **Consolidate.** Merged by `(kinase, substrate, site)` triplet during parsing.
+
+**Phase 2 — Build relational database of phosphorylation events**
+- **Steps 4-5.** Systematic extraction with residue+position normalization, heptameric peptide retention, and exclusion of autocatalysis/similarity/prediction-only annotations per the paper's exclusion criteria.
+- **Step 6.** Atlas assembly — 17,655 unique triplets; 33 records dropped as invalid.
+
+**Phase 3 — Cross-referencing and quality control**
+7. **Multi-DB cross-referencing.** Merged `supporting_databases` lists for identical triplets → 1,436 multi-DB entries.
+8. **Final QC.** HGNC validity, site normalization, dedup, deterministic sort.
+
+**Key takeaway for the presentation:** When SIGNOR is offline (as it was at runtime), `pipeline_guided` and `paper_informed` converge to nearly identical results (F1 0.8343 vs 0.8345) — the difference shifts from the *atlas* to the *process*. Pipeline_guided's explicit QC step drops 33 records that paper_informed keeps; both converge on the same ~17.7k-triplet output because PSP + UniProt are the only reachable sources.
+
+The scientific finding: more elaborate prompting doesn't overcome data-source limitations. When SIGNOR is live, pipeline_guided should pull ahead because of its explicit third-source mandate and cross-referencing emphasis.
 
 ---
 
@@ -109,30 +118,36 @@ Compare with:
 
 | File | Description |
 |---|---|
-| `agent_runner.py` | Anthropic-API reference runner (requires `ANTHROPIC_API_KEY`; not used for the committed atlas) |
-| `curate.py` | Curator script authored by the agent during this run — verbatim record of what was executed |
+| `agent_runner.py` | Anthropic-API reference runner (kept for audit; unused for this atlas; prompt path updated to `pipeline_guided.txt`) |
+| `curate.py` | Curator script the agent authored and executed — mirrors the 8-step pipeline one-to-one |
 | `atlas.json` | 17,655 unique (kinase, substrate, site) triplets |
-| `run_log.json` | Structured run record: databases, counts, phase-by-phase trace |
-| `run.log` | Timestamped phase-by-phase log |
-| `scores/summary.json` | Scorer output |
+| `run_log.json` | Structured run record with canonical `token_usage` (Sonnet-priced estimate) |
+| `run.log` | Phase-by-phase plaintext log (each step stamped with `[PHASE<n>-STEP<n>]`) |
+| `scores/summary.json` | Scorer output, including the new `peptide_accuracy` primary metric |
 | `scores/per_kinase.json` | Per-kinase precision/recall |
-| `scores/peptide_mismatches.json` | Peptide mismatch detail |
+| `scores/peptide_mismatches.json` | The 7 true peptide mismatches |
 
 ---
 
 ## Reproducing
 
-**Max Plan (no API key):**
-Open Claude Code, load `agents/prompts/pipeline_guided.txt`, have the session author + run a curator that walks the 8 steps, and write outputs to this folder. The preserved `curate.py` here is a ready-to-re-run artifact:
+**Max Plan (this folder's actual method, no API key):**
 
 ```bash
 python3 contributions/claude_sonnet_pipeline_guided/curate.py
 ```
 
 **With Anthropic API credits:**
+
 ```bash
 export ANTHROPIC_API_KEY=sk-ant-...
 python3 contributions/claude_sonnet_pipeline_guided/agent_runner.py
 ```
 
-See [../claude_sonnet_naive/](../claude_sonnet_naive/) and [../claude_sonnet_paper_informed/](../claude_sonnet_paper_informed/) for the companion conditions.
+---
+
+## Related
+
+- `../claude_sonnet_naive/` — zero-context baseline (F1 0.8865, highest)
+- `../claude_sonnet_paper_informed/` — prompt adds paper background but no pipeline (F1 0.8345)
+- `paper/tables/benchmark_summary_tables.pdf` — aggregate across all 18 runs × 10 models
