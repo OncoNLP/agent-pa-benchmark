@@ -34,7 +34,7 @@ class PhosphoAtlasAutonomousAgent:
     def _execute_http(self, call):
         """Live HTTP tool with dynamic source tracking, auto-retries, and safety guardrails."""
         self.tool_calls += 1
-        args = call.args
+        args = call.args or {}
         url = args.get('url', 'UNKNOWN_URL')
         method = args.get('method', 'GET')
         
@@ -55,19 +55,176 @@ class PhosphoAtlasAutonomousAgent:
         session.mount("https://", HTTPAdapter(max_retries=retries))
 
         try:
+            params = args.get('params') or {}
+            max_payload_chars = 150000
+            target_payload_chars = 120000
+
+            def _extract_list_payload(payload):
+                if isinstance(payload, list):
+                    return "root", None, payload
+                if isinstance(payload, dict):
+                    for key in ("results", "data", "items"):
+                        value = payload.get(key)
+                        if isinstance(value, list):
+                            return "dict", key, value
+                return None, None, None
+
+            def _truncate_items(items):
+                kept = []
+                for item in items:
+                    kept.append(item)
+                    if len(json.dumps(kept)) > target_payload_chars:
+                        kept.pop()
+                        break
+                return kept
+
+            def _rebuild_payload(container_kind, key, original_payload, items):
+                if container_kind == "root":
+                    return items
+                rebuilt = dict(original_payload)
+                rebuilt[key] = items
+                return rebuilt
+
             res = session.request(
                 method=method, 
                 url=url, 
-                params=args.get('params'), 
+                params=params, 
                 json=args.get('data'), 
                 timeout=(10, 45)
             )
             res.raise_for_status()
             data = res.json()
-            
-            if len(json.dumps(data)) > 150000:
-                print(f"⚠️ PAYLOAD BLOCKED: {len(json.dumps(data))} chars. Forcing agent to paginate.")
-                return {"error": "PAYLOAD_TOO_LARGE: Response too big for memory. Please paginate (e.g. limit=50)."}
+
+            payload_size = len(json.dumps(data))
+            if payload_size > max_payload_chars:
+                print(f"⚠️ PAYLOAD BLOCKED: {payload_size} chars. Attempting automatic downscoping.")
+
+                # Try API-agnostic pagination for oversized GET requests.
+                if method == "GET" and isinstance(params, dict):
+                    base_page_size = params.get("limit", params.get("per_page", params.get("page_size", 200)))
+                    max_pages_raw = params.get("_max_pages", 25)
+                    try:
+                        page_size = max(1, min(int(base_page_size), 2000))
+                    except Exception:
+                        page_size = 200
+                    try:
+                        max_pages = max(1, min(int(max_pages_raw), 200))
+                    except Exception:
+                        max_pages = 25
+
+                    use_page_style = any(k in params for k in ("page", "per_page", "page_size"))
+                    try:
+                        current_page = max(1, int(params.get("page", 1)))
+                    except Exception:
+                        current_page = 1
+                    try:
+                        current_offset = max(0, int(params.get("offset", 0)))
+                    except Exception:
+                        current_offset = 0
+
+                    aggregated_items = []
+                    pages_fetched = 0
+                    has_more = False
+                    next_hint = None
+                    previous_signature = None
+                    paged_status = res.status_code
+
+                    for _ in range(max_pages):
+                        page_params = dict(params)
+                        page_params.pop("_max_pages", None)
+                        if use_page_style:
+                            page_params["page"] = current_page
+                            if "per_page" in page_params:
+                                page_params["per_page"] = page_size
+                            else:
+                                page_params["page_size"] = page_size
+                        else:
+                            page_params["limit"] = page_size
+                            page_params["offset"] = current_offset
+
+                        page_res = session.request(
+                            method=method,
+                            url=url,
+                            params=page_params,
+                            timeout=(10, 45)
+                        )
+                        page_res.raise_for_status()
+                        page_data = page_res.json()
+                        paged_status = page_res.status_code
+
+                        container_kind, list_key, page_items = _extract_list_payload(page_data)
+                        if page_items is None:
+                            break
+                        if not page_items:
+                            break
+
+                        signature = f"{len(page_items)}:{json.dumps(page_items[:2], sort_keys=True)}"
+                        if previous_signature == signature:
+                            has_more = True
+                            next_hint = {"reason": "pagination_not_honored"}
+                            break
+                        previous_signature = signature
+
+                        old_len = len(aggregated_items)
+                        aggregated_items.extend(page_items)
+                        if len(json.dumps(aggregated_items)) > target_payload_chars:
+                            del aggregated_items[old_len:]
+                            has_more = True
+                            if use_page_style:
+                                next_hint = {"page": current_page}
+                            else:
+                                next_hint = {"offset": current_offset}
+                            break
+
+                        pages_fetched += 1
+                        fetched_count = len(page_items)
+                        if fetched_count < page_size:
+                            break
+
+                        if use_page_style:
+                            current_page += 1
+                        else:
+                            current_offset += fetched_count
+
+                    if pages_fetched == max_pages:
+                        has_more = True
+                        if use_page_style:
+                            next_hint = {"page": current_page}
+                        else:
+                            next_hint = {"offset": current_offset}
+
+                    if aggregated_items:
+                        print(f"⚠️ Returning partial paginated data: {len(aggregated_items)} rows.")
+                        return {
+                            "status": paged_status,
+                            "data": aggregated_items,
+                            "pagination": {
+                                "auto_paginated": True,
+                                "page_size": page_size,
+                                "pages_fetched": pages_fetched,
+                                "has_more": has_more,
+                                "next": next_hint,
+                            },
+                        }
+
+                # Universal fallback: truncate list-like payloads to fit model context budget.
+                container_kind, list_key, list_items = _extract_list_payload(data)
+                if list_items is not None:
+                    truncated_items = _truncate_items(list_items)
+                    if truncated_items:
+                        truncated_payload = _rebuild_payload(container_kind, list_key, data, truncated_items)
+                        return {
+                            "status": res.status_code,
+                            "data": truncated_payload,
+                            "pagination": {
+                                "truncated": True,
+                                "original_count": len(list_items),
+                                "returned_count": len(truncated_items),
+                                "has_more": len(truncated_items) < len(list_items),
+                            },
+                        }
+
+                return {"error": "PAYLOAD_TOO_LARGE: Response too big for memory and could not be safely downscoped."}
             
             return {"status": res.status_code, "data": data}
         except Exception as e:
@@ -75,7 +232,7 @@ class PhosphoAtlasAutonomousAgent:
 
     def _save_curated_data(self, call):
         """Tool 2: The Agent's active 'Save Button' to persist findings to atlas.json."""
-        args = call.args
+        args = call.args or {}
         k = args.get("kinase_gene", "Unknown").strip().upper()
         s = args.get("substrate_gene", "Unknown").strip().upper()
         p = args.get("phospho_site", "Unknown").strip()
@@ -174,6 +331,11 @@ class PhosphoAtlasAutonomousAgent:
                 if not response.candidates or not response.candidates[0].content:
                     break
 
+                parts = response.candidates[0].content.parts or []
+                if not parts:
+                    print("⚠️ Model returned empty content parts; ending loop safely.")
+                    break
+
                 # Track token usage from Gemini response
                 um = getattr(response, "usage_metadata", None)
                 if um:
@@ -184,14 +346,14 @@ class PhosphoAtlasAutonomousAgent:
                     self.per_turn_usage.append({"turn": turn_count, "input_tokens": inp, "output_tokens": out})
                     print(f"📊 Tokens: in={inp:,} out={out:,} | total={self.total_input_tokens+self.total_output_tokens:,}")
                 
-                for part in response.candidates[0].content.parts:
+                for part in parts:
                     if getattr(part, 'thought', False) and part.text:
                         print(f"🧠 {part.text.strip().replace('\n', ' ')[:90]}...")
 
                 self.history.append(response.candidates[0].content)
                 
                 tool_parts = []
-                for part in response.candidates[0].content.parts:
+                for part in parts:
                     if part.function_call:
                         # Route the tool to the correct Python function
                         if part.function_call.name == "http_request":
@@ -229,7 +391,6 @@ if __name__ == "__main__":
 
     agent = PhosphoAtlasAutonomousAgent(api_key)
     
-    # Your original exhaustive prompt with the save tool instruction appended
     prompt = """You are a bioinformatics researcher tasked with building a comprehensive human protein phosphorylation atlas from available databases.
             Your goal: Curate ALL known human kinase-substrate-phosphosite relationships by systematically querying the databases available to you.
             For each relationship, you must capture:
@@ -245,10 +406,12 @@ if __name__ == "__main__":
             by the tools. Start by discovering what databases are available, then develop and execute a systematic curation strategy.
             CRITICAL: You MUST use the `save_curated_data` tool to explicitly save every relationship you find into the final JSON atlas."""
     
-    print("🚀 Starting Persistent State Run...")
+    run_started_at = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    print(f"Starting Persistent State Run at {run_started_at}")
     results = agent.run(prompt)
 
     elapsed = time.time() - agent.start_time
+    run_finished_at = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
     with open("atlas.json", "w") as f:
         json.dump(results, f, indent=2)
@@ -270,6 +433,18 @@ if __name__ == "__main__":
             "per_call": agent.per_turn_usage,
             "note": "Gemini is subscription-based; token counts from usage_metadata for reference",
         },
+        "metadata": {
+            "agent_mode": "Gemini 3.1-Pro (Active Save Mode)",
+            "started_at": run_started_at,
+            "finished_at": run_finished_at,
+            "runtime_min": round((time.time() - agent.start_time) / 60, 2),
+        },
+        "stats": {
+            "total_curated": len(results),
+            "tool_calls": agent.tool_calls,
+            "sources_identified": sorted(list(agent.db_hit_counts.keys())),
+            "hit_breakdown": agent.db_hit_counts,
+        },
     }
     with open("run_log.json", "w") as f:
         json.dump(run_log, f, indent=2)
@@ -277,17 +452,5 @@ if __name__ == "__main__":
     print(f"\n📊 Token Summary: {agent.total_input_tokens+agent.total_output_tokens:,} total "
           f"(in={agent.total_input_tokens:,}, out={agent.total_output_tokens:,})")
     print(f"📁 Saved atlas.json ({len(results)} entries) and run_log.json")
-    
-    log = {
-        "metadata": {"agent": "Gemini 3.1-Pro (Active Save Mode)", "runtime_min": round((time.time() - agent.start_time) / 60, 2)},
-        "stats": {
-            "total_curated": len(results),
-            "tool_calls": agent.tool_calls,
-            "sources_identified": sorted(list(agent.db_hit_counts.keys())),
-            "hit_breakdown": agent.db_hit_counts
-        }
-    }
-    with open("run_log.json", "w") as f:
-        json.dump(log, f, indent=2)
 
     print(f"✅ COMPLETED. Saved {len(results)} entries to atlas.json.")

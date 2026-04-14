@@ -1,44 +1,192 @@
 {
+  "agent": "Gemini 3.1 Pro",
+  "model": "gemini-3.1-pro-preview",
+  "condition": "paper-informed",
+  "tool_calls": 18,
+  "elapsed_seconds": 1428.9,
+  "atlas_size": 1291,
+  "db_hit_counts": {
+    "PHOSPHOSITE.ORG": 12,
+    "SIGNOR.UNIROMA2.IT": 4,
+    "UNIPROT.ORG": 1
+  },
+  "token_usage": {
+    "total_input_tokens": 7327847,
+    "total_output_tokens": 116107,
+    "total_tokens": 7443954,
+    "api_calls": 30,
+    "per_call": [
+      {
+        "turn": 1,
+        "input_tokens": 776,
+        "output_tokens": 39
+      },
+      {
+        "turn": 2,
+        "input_tokens": 17237,
+        "output_tokens": 25
+      },
+      {
+        "turn": 3,
+        "input_tokens": 18215,
+        "output_tokens": 56
+      },
+      {
+        "turn": 4,
+        "input_tokens": 393180,
+        "output_tokens": 59
+      },
+      {
+        "turn": 5,
+        "input_tokens": 411671,
+        "output_tokens": 30
+      },
+      {
+        "turn": 6,
+        "input_tokens": 412525,
+        "output_tokens": 34
+      },
+      {
+        "turn": 7,
+        "input_tokens": 414214,
+        "output_tokens": 59
+      },
+      {
+        "turn": 8,
+        "input_tokens": 792872,
+        "output_tokens": 88
+      },
+      {
+        "turn": 9,
+        "input_tokens": 383061,
+        "output_tokens": 4415
+      },
+      {
+        "turn": 10,
+        "input_tokens": 392306,
+        "output_tokens": 37
+      },
+      {
+        "turn": 11,
+        "input_tokens": 394567,
+        "output_tokens": 61
+      },
+      {
+        "turn": 12,
+        "input_tokens": 397456,
+        "output_tokens": 4418
+      },
+      {
+        "turn": 13,
+        "input_tokens": 405156,
+        "output_tokens": 66
+      },
+      {
+        "turn": 14,
+        "input_tokens": 12509,
+        "output_tokens": 39
+      },
+      {
+        "turn": 15,
+        "input_tokens": 28146,
+        "output_tokens": 37
+      },
+      {
+        "turn": 16,
+        "input_tokens": 30880,
+        "output_tokens": 4412
+      },
+      {
+        "turn": 17,
+        "input_tokens": 38798,
+        "output_tokens": 58
+      },
+      {
+        "turn": 18,
+        "input_tokens": 114100,
+        "output_tokens": 10187
+      },
+      {
+        "turn": 19,
+        "input_tokens": 102764,
+        "output_tokens": 9333
+      },
+      {
+        "turn": 20,
+        "input_tokens": 119275,
+        "output_tokens": 9058
+      },
+      {
+        "turn": 21,
+        "input_tokens": 210535,
+        "output_tokens": 9080
+      },
+      {
+        "turn": 22,
+        "input_tokens": 226223,
+        "output_tokens": 8832
+      },
+      {
+        "turn": 23,
+        "input_tokens": 323550,
+        "output_tokens": 8926
+      },
+      {
+        "turn": 24,
+        "input_tokens": 129505,
+        "output_tokens": 10924
+      },
+      {
+        "turn": 25,
+        "input_tokens": 222361,
+        "output_tokens": 8892
+      },
+      {
+        "turn": 26,
+        "input_tokens": 237962,
+        "output_tokens": 59
+      },
+      {
+        "turn": 27,
+        "input_tokens": 310396,
+        "output_tokens": 9066
+      },
+      {
+        "turn": 28,
+        "input_tokens": 405158,
+        "output_tokens": 8733
+      },
+      {
+        "turn": 29,
+        "input_tokens": 183211,
+        "output_tokens": 9084
+      },
+      {
+        "turn": 30,
+        "input_tokens": 199238,
+        "output_tokens": 0
+      }
+    ],
+    "note": "Gemini is subscription-based; token counts from usage_metadata for reference"
+  },
   "metadata": {
-    "agent": "Gemini 3.1-Pro (Active Save Mode)",
-    "runtime_min": 60.55
+    "agent_mode": "Gemini 3.1-Pro (Active Save Mode)",
+    "started_at": "2026-04-08 12:50:18",
+    "finished_at": "2026-04-08 13:14:07",
+    "runtime_min": 23.81
   },
   "stats": {
-    "total_curated": 979,
-    "tool_calls": 221,
+    "total_curated": 1291,
+    "tool_calls": 18,
     "sources_identified": [
-      "API.PHOSPHOSITE.ORG",
-      "DB.INDRA.BIO",
-      "EBI.AC.UK",
-      "EUTILS.NCBI.NLM.NIH.GOV",
-      "MAAYANLAB.CLOUD",
-      "MYGENE.INFO",
-      "OMNIPATHDB.ORG",
-      "PHOSPHOATLAS.API",
-      "PHOSPHOATLAS.ORG",
       "PHOSPHOSITE.ORG",
-      "REST.GENENAMES.ORG",
-      "REST.UNIPROT.ORG",
       "SIGNOR.UNIROMA2.IT",
-      "SMART-API.INFO",
-      "WEBSERVICE.BADERLAB.ORG"
+      "UNIPROT.ORG"
     ],
     "hit_breakdown": {
-      "REST.UNIPROT.ORG": 64,
-      "EBI.AC.UK": 35,
-      "SMART-API.INFO": 4,
-      "PHOSPHOSITE.ORG": 2,
-      "SIGNOR.UNIROMA2.IT": 12,
-      "API.PHOSPHOSITE.ORG": 1,
-      "MAAYANLAB.CLOUD": 11,
-      "MYGENE.INFO": 3,
-      "WEBSERVICE.BADERLAB.ORG": 1,
-      "EUTILS.NCBI.NLM.NIH.GOV": 10,
-      "PHOSPHOATLAS.ORG": 2,
-      "OMNIPATHDB.ORG": 37,
-      "DB.INDRA.BIO": 24,
-      "REST.GENENAMES.ORG": 4,
-      "PHOSPHOATLAS.API": 1
+      "PHOSPHOSITE.ORG": 12,
+      "SIGNOR.UNIROMA2.IT": 4,
+      "UNIPROT.ORG": 1
     }
   }
 }
