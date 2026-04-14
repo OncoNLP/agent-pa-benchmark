@@ -1,49 +1,50 @@
 {
   "overview": {
-    "atlas_size": 15,
-    "recall": 0.0008,
-    "precision": 0.8,
-    "f1": 0.0016,
-    "kinases_found": "9/433",
-    "multi_db_pct": 33.3,
+    "atlas_size": 3,
+    "recall": 0.0001,
+    "precision": 0.6667,
+    "f1": 0.0002,
+    "kinases_found": "2/433",
+    "multi_db_pct": 100.0,
     "peptide_accuracy": 0.0
   },
   "atlas_level": {
-    "total_agent_entries": 15,
+    "total_agent_entries": 3,
     "total_gold_entries": 15635,
-    "true_positives": 12,
-    "false_positives": 3,
-    "false_negatives": 15623,
-    "precision": 0.8,
-    "recall": 0.0008,
-    "f1": 0.0016
+    "true_positives": 2,
+    "false_positives": 1,
+    "false_negatives": 15633,
+    "precision": 0.6667,
+    "recall": 0.0001,
+    "f1": 0.0002
   },
   "column_level": {
-    "matched_triplets": 12,
-    "site_exact": 12,
-    "site_total": 12,
+    "matched_triplets": 2,
+    "site_exact": 2,
+    "site_total": 2,
     "site_accuracy": 1.0,
     "peptide_exact": 0,
     "peptide_case_diff": 0,
     "peptide_missing": 0,
-    "peptide_mismatch": 12,
-    "peptide_total": 12,
+    "peptide_mismatch": 2,
+    "peptide_total": 2,
     "peptide_accuracy": 0.0,
     "peptide_exact_accuracy": 0.0,
     "peptide_mismatch_rate": 1.0,
     "peptide_missing_count": 0,
-    "uniprot_exact": 11,
-    "uniprot_total": 12,
-    "uniprot_accuracy": 0.9167
+    "uniprot_exact": 2,
+    "uniprot_total": 2,
+    "uniprot_accuracy": 1.0
   },
   "kinase_discovery": {
     "kinases_in_gold": 433,
-    "kinases_discovered": 9,
-    "kinases_missed": 424,
-    "kinases_novel": 1,
-    "discovery_rate": 0.0208,
+    "kinases_discovered": 2,
+    "kinases_missed": 431,
+    "kinases_novel": 0,
+    "discovery_rate": 0.0046,
     "missed_kinases": [
       "AAK1",
+      "ABL1",
       "ABL2",
       "ACVR1",
       "ACVR1B",
@@ -91,26 +92,26 @@
       "CDC42BPB",
       "CDC7",
       "CDK10",
-      "CDK11A",
-      "CDK11B"
+      "CDK11A"
     ],
-    "novel_kinases": [
-      "TK1"
-    ]
+    "novel_kinases": []
   },
   "cross_referencing": {
-    "multi_db_count": 5,
-    "multi_db_pct": 33.3,
+    "multi_db_count": 3,
+    "multi_db_pct": 100.0,
     "db_coverage": {
-      "PhosphoSitePlus": 15,
-      "SIGNOR": 5
+      "PhosphoSitePlus": 2,
+      "Signor": 1,
+      "Phospho.ELM": 1,
+      "HPRD": 1,
+      "PhosphoNetworks": 1
     }
   },
   "per_tier": {
     "A": {
       "kinases": 34,
       "gold_entries": 9517,
-      "recall": 0.0013
+      "recall": 0.0002
     },
     "B": {
       "kinases": 102,

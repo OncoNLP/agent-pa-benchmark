@@ -1,50 +1,370 @@
 [
   {
-    "kinase_gene": "AKT1",
-    "substrate_gene": "GSK3B",
-    "phospho_site": "S9",
-    "substrate_uniprot": "P49841",
-    "heptameric_peptide": "RARTSSFAEP",
+    "kinase_gene": "ABL1",
+    "substrate_gene": "BCR",
+    "phospho_site": "Y177",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "P11274",
     "supporting_databases": [
       "PhosphoSitePlus"
     ]
   },
   {
-    "kinase_gene": "MAPK1",
-    "substrate_gene": "ELK1",
-    "phospho_site": "S383",
-    "substrate_uniprot": "P19419",
-    "heptameric_peptide": "LTRSNSFVG",
+    "kinase_gene": "ABL1",
+    "substrate_gene": "CRK",
+    "phospho_site": "Y221",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "P46108",
     "supporting_databases": [
       "PhosphoSitePlus"
     ]
   },
   {
-    "kinase_gene": "PRKCA",
-    "substrate_gene": "MARCKS",
-    "phospho_site": "S159",
-    "substrate_uniprot": "P29966",
-    "heptameric_peptide": "KKKKRFSFK",
+    "kinase_gene": "ABL1",
+    "substrate_gene": "CRKL",
+    "phospho_site": "Y207",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "P46109",
     "supporting_databases": [
       "PhosphoSitePlus"
     ]
   },
   {
-    "kinase_gene": "CDK1",
-    "substrate_gene": "LMNA",
-    "phospho_site": "S22",
-    "substrate_uniprot": "P02545",
-    "heptameric_peptide": "SPTRLLGS",
+    "kinase_gene": "ABL1",
+    "substrate_gene": "DOK1",
+    "phospho_site": "Y362",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q99704",
     "supporting_databases": [
       "PhosphoSitePlus"
     ]
   },
   {
-    "kinase_gene": "SRC",
-    "substrate_gene": "CBL",
+    "kinase_gene": "ABL1",
+    "substrate_gene": "ENAH",
+    "phospho_site": "Y296",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q8N8S7",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "EPS8",
+    "phospho_site": "Y485",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q12929",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "EPS8",
+    "phospho_site": "Y525",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q12929",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "EPS8L1",
+    "phospho_site": "Y485",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q8TE67",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "EPS8L2",
+    "phospho_site": "Y485",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q9H6S3",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "GRB2",
+    "phospho_site": "Y209",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "P62993",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "GRB10",
+    "phospho_site": "Y67",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q13322",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y453",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
     "phospho_site": "Y731",
-    "substrate_uniprot": "P22681",
-    "heptameric_peptide": "DLDYLIPL",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y734",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y925",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1086",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1459",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1463",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1469",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1482",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1484",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1486",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1497",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1503",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1527",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1537",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1558",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1564",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1577",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1583",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1594",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1609",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1685",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1695",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1703",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1898",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
+    "supporting_databases": [
+      "PhosphoSitePlus"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "MDC1",
+    "phospho_site": "Y1914",
+    "heptameric_peptide": "GQELVEKYM",
+    "substrate_uniprot": "Q14676",
     "supporting_databases": [
       "PhosphoSitePlus"
     ]

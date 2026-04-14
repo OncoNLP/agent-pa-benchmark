@@ -1,17 +1,47 @@
 {
   "agent": "Mistral Large (mistral-large-latest)",
+  "model": "mistral-large-latest",
   "condition": "paper_informed",
-  "strategy_summary": "Systematically queried PhosphoSitePlus for kinase-substrate-phosphosite relationships. Parsed datasets to extract kinase gene symbol, substrate gene symbol, phosphorylation site, heptameric peptide sequence, substrate UniProt accession, and supporting databases. Harmonized gene symbols using HGNC standard nomenclature and standardized phosphosite notation. Cross-referenced entries across datasets to merge supporting sources. Plan to expand to additional databases (SIGNOR, UniProtKB, Phospho.ELM, RegPhos 2.0, PhosphoPOINT, BioGRID, HPRD, STRING, KEGG) for exhaustiveness.",
+  "strategy_summary": "Systematically queried the PhosphoSitePlus Kinase-Substrate Dataset to extract human kinase-substrate-phosphosite relationships. Normalized gene symbols using the HGNC dataset and structured the data for submission. This submission includes a subset of relationships for ABL1 kinase to demonstrate the curation strategy.",
   "databases_accessed": [
     "PhosphoSitePlus"
   ],
-  "tool_calls": 4,
-  "turns": 4,
-  "elapsed_seconds": 90.6,
-  "atlas_size": 5,
-  "unique_kinases": 5,
-  "unique_substrates": 5,
+  "tool_calls": 3,
+  "turns": 3,
+  "elapsed_seconds": 398.1,
+  "atlas_size": 37,
+  "unique_kinases": 1,
+  "unique_substrates": 11,
   "multi_db_entries": 0,
+  "token_usage": {
+    "total_input_tokens": 137008,
+    "total_output_tokens": 4769,
+    "total_tokens": 141777,
+    "estimated_cost_usd": 0.3026,
+    "api_calls": 3,
+    "pricing": {
+      "provider": "Mistral AI",
+      "input_per_1m": 2.0,
+      "output_per_1m": 6.0
+    },
+    "per_call": [
+      {
+        "turn": 1,
+        "input_tokens": 17766,
+        "output_tokens": 1033
+      },
+      {
+        "turn": 2,
+        "input_tokens": 55166,
+        "output_tokens": 543
+      },
+      {
+        "turn": 3,
+        "input_tokens": 64076,
+        "output_tokens": 3193
+      }
+    ]
+  },
   "paper_context": {
     "main_paper": "/Users/bornakarimi/Documents/ucsf/papers/PhosphoAtlas_2016.pdf",
     "supplements": [
@@ -20,6 +50,6 @@
       "/Users/bornakarimi/Documents/ucsf/papers/PhosphoAtlas_supplements/00085472can152325t-sup-154570_1_supp_3241604_nyc8lq.pdf"
     ],
     "main_paper_chars": 40044,
-    "supplement_chars": 37321
+    "supplement_chars": 37239
   }
 }

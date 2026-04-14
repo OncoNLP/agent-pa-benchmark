@@ -1,37 +1,23 @@
 [
   {
-    "kinase": "SRC",
-    "substrate": "CBL",
-    "site": "Y731",
-    "gold_peptide": "QQIDSCTyEAMyNIQ",
-    "agent_peptide": "DLDYLIPL"
+    "kinase": "ABL1",
+    "substrate": "CRKL",
+    "site": "Y207",
+    "gold_peptide": "IPEPAHAyAQPQttt",
+    "agent_peptide": "GQELVEKYM"
   },
   {
-    "kinase": "MAPK1",
-    "substrate": "ELK1",
-    "site": "S383",
-    "gold_peptide": "IHFWSTLsPIAPRsP",
-    "agent_peptide": "LTRSNSFVG"
+    "kinase": "ABL1",
+    "substrate": "BCR",
+    "site": "Y177",
+    "gold_peptide": "ADAEKPFyVNVEFHH",
+    "agent_peptide": "GQELVEKYM"
   },
   {
-    "kinase": "PRKCA",
-    "substrate": "MARCKS",
-    "site": "S159",
-    "gold_peptide": "kkKKKRFsFkKsFkL",
-    "agent_peptide": "KKKKRFSFK"
-  },
-  {
-    "kinase": "CDK1",
-    "substrate": "LMNA",
-    "site": "S22",
-    "gold_peptide": "QAsstPLsPtRItRL",
-    "agent_peptide": "SPTRLLGS"
-  },
-  {
-    "kinase": "AKT1",
-    "substrate": "GSK3B",
-    "site": "S9",
-    "gold_peptide": "SGRPRttsFAEsCkP",
-    "agent_peptide": "RARTSSFAEP"
+    "kinase": "ABL1",
+    "substrate": "CRK",
+    "site": "Y221",
+    "gold_peptide": "GGPEPGPyAQPsVNt",
+    "agent_peptide": "GQELVEKYM"
   }
 ]
