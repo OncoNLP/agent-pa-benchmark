@@ -1,0 +1,60 @@
+{
+  "model": "Qwen/Qwen3-235B-A22B-Instruct-2507-tput",
+  "condition": "pipeline_informed",
+  "strategy_summary": "",
+  "metrics": {
+    "tool_calls": 2,
+    "db_tool_calls": 0,
+    "elapsed_seconds": 53.8,
+    "budget_exceeded": false,
+    "atlas_size": 24818
+  },
+  "token_usage": {
+    "total_input_tokens": 3656,
+    "total_output_tokens": 83,
+    "total_tokens": 3739,
+    "api_calls": 1,
+    "per_call": [
+      {
+        "turn": 0,
+        "input_tokens": 3656,
+        "output_tokens": 83
+      }
+    ],
+    "estimated_cost_usd": 0.003,
+    "pricing": {
+      "provider": "Together AI",
+      "model": "Qwen/Qwen3-235B-A22B-Instruct-2507-tput",
+      "input_per_1m": 0.8,
+      "output_per_1m": 0.8
+    }
+  },
+  "trace": [
+    {
+      "type": "tool_call",
+      "call_number": 1,
+      "tool": "http_get",
+      "arguments": {
+        "url": "https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.gz"
+      },
+      "result_size": 271,
+      "time": 11.086483001708984
+    },
+    {
+      "type": "tool_call",
+      "call_number": 2,
+      "tool": "http_get",
+      "arguments": {
+        "url": "https://signor.uniroma2.it/API/getHumanData.php"
+      },
+      "result_size": 220,
+      "time": 16.117383003234863
+    },
+    {
+      "type": "error",
+      "error": "Error code: 500 - {'id': 'oeDNeXg-3pDw3Z-9e8af4b48893ea80', 'error': {'message': 'Internal server error', 'type': 'server_error', 'param': None, 'code': None}}",
+      "time": 53.76008105278015
+    }
+  ],
+  "tool_log": []
+}

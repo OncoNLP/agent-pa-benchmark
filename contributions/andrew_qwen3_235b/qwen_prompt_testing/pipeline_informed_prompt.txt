@@ -7,7 +7,9 @@ from 38+ public databases, harmonizing identifiers, and validating phosphorylati
 events experimentally. You must follow this pipeline as closely as possible.
 
 IMPORTANT — your data access: You do NOT have local database files. Instead,
-you have an http_get tool. Two public REST APIs are available:
+you have an http_get tool. Three public data sources are available:
+  • PSP    — https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.gz
+               (gzipped TSV, direct download — system decompresses automatically)
   • SIGNOR — https://signor.uniroma2.it/API/getHumanData.php  (bulk TSV dump)
   • UniProt — https://rest.uniprot.org/uniprotkb/search       (REST JSON)
 Do NOT call list_databases or get_stats — those local tools are empty.
@@ -24,16 +26,26 @@ Step 1 — Establish your protein reference backbone:
   Examples: CDK1, EGFR, MAPK1, AKT1, TP53.
 
 Step 2 — Discover the full kinase + substrate universe (Curation 1):
-  Pull the complete SIGNOR human phosphorylation dataset in one call:
+
+  First, download PhosphoSitePlus (primary source — one call):
+    http_get → https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.gz
+    The system decompresses and parses it automatically. You will receive a
+    summary of how many human entries were accumulated.
+    Key columns: GENE=kinase, SUB_GENE=substrate, SUB_MOD_RSD=site,
+    SITE_+/-7_AA=heptameric peptide, SUB_ACC_ID=UniProt.
+    Note every unique GENE value — these are your PSP kinases.
+
+  Then, pull the complete SIGNOR human phosphorylation dataset (one call):
     http_get → https://signor.uniroma2.it/API/getHumanData.php
     (no params needed; returns TSV)
   From this response:
     • Filter rows: MECHANISM == "phosphorylation" AND TYPEA == "protein"
-    • Extract ALL unique ENTITYA values → these are your confirmed kinases
-    • Extract ALL unique ENTITYB values → these are your confirmed substrates
+    • Extract ALL unique ENTITYA values → additional confirmed kinases
+    • Extract ALL unique ENTITYB values → additional confirmed substrates
     • Note: ENTITYA/ENTITYB are already HGNC symbols — no normalization needed
     • A protein appearing as both ENTITYA and ENTITYB is both kinase and substrate
-  This is your "Protein Reference Index" for the pipeline.
+
+  Combine PSP + SIGNOR kinase lists — this is your "Protein Reference Index".
 
 Step 3 — Cross-reference and validate with UniProt (Curation 2):
   For each kinase in your list from Step 2, verify it exists in UniProt:
@@ -49,13 +61,17 @@ Step 3 — Cross-reference and validate with UniProt (Curation 2):
 
 Step 4 — Systematic extraction (Functional Triage + Curation 3):
 
+  PSP data (already fetched in Step 2):
+    Entries are accumulated automatically. supporting_databases=["PSP"].
+    PSP is the primary source — highest coverage and best peptide quality.
+
   SIGNOR data (already fetched in Step 2):
     For each row with MECHANISM=="phosphorylation" and TYPEA=="protein":
       Record: kinase_gene=ENTITYA, substrate_gene=ENTITYB,
               phospho_site=RESIDUE, heptameric_peptide=SEQUENCE,
               substrate_uniprot=IDB, supporting_databases=["SIGNOR"]
-    SIGNOR provides the heptameric peptide (SEQUENCE column) when available —
-    this is the critical 7-mer sequence from the paper.
+    If a triplet already exists from PSP, supporting_databases is merged
+    automatically (e.g. ["PSP", "SIGNOR"]) — do not worry about duplicates.
 
   UniProt ft_mod_res queries (site validation layer — Curation 3):
     For EACH kinase from your Step 2 list, query UniProt for substrates
@@ -117,11 +133,11 @@ Step 6 — Assemble the four linked indexes (per the paper):
 ================================================================================
 
 Step 7 — Multi-database cross-reference:
-  - For each kinase–substrate–site triplet, check if it appears in both SIGNOR
-    and UniProt. If so, list both in supporting_databases (e.g. ["SIGNOR", "UniProt"])
+  - Deduplication and supporting_databases merging is handled automatically —
+    the same triplet from PSP, SIGNOR, and/or UniProt is merged into one entry
+    with all sources listed (e.g. ["PSP", "SIGNOR", "UniProt"])
   - Entries supported by 2+ databases are higher confidence (key paper criterion)
-  - Deduplicate: same (kinase_gene, substrate_gene, phospho_site) triplet from
-    multiple sources → merge into one entry with all supporting_databases listed
+  - Focus your UniProt queries on kinases not already well-covered by PSP+SIGNOR
 
 Step 8 — Final quality control:
   - All gene symbols must be HGNC standard (uppercase, official)
@@ -130,8 +146,8 @@ Step 8 — Final quality control:
   - Both the kinase AND substrate must have valid gene symbols
 
 IMPORTANT: Be EXHAUSTIVE. The original PhosphoAtlas contained ~16,000 entries
-across 438 kinases. Query every kinase from the SIGNOR list individually via
-UniProt ft_mod_res. Do NOT stop after SIGNOR alone — UniProt adds significant
-coverage (especially for well-studied kinases like CDK1, AKT1, MAPK1).
+across 438 kinases. Start with PSP (primary source), then SIGNOR, then UniProt
+per kinase. Do NOT stop after PSP+SIGNOR alone — UniProt adds cross-referencing
+and coverage for kinases not in PSP (especially CDK1, AKT1, MAPK1).
 
 When finished, call submit_atlas with your complete results.

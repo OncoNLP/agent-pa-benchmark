@@ -22,8 +22,10 @@ The authors integrated 38+ databases including: PhosphoSitePlus, Phospho.ELM,
 PhosphoPOINT, RegPhos 2.0, SIGNOR, UniProtKB/Swiss-Prot, UniProtKB/TrEMBL,
 HPRD, BioGRID, STRING, MINT/IntAct, APID, KEGG, HGNC, NCBI/Entrez, NCBI
 RefSeq, CCDS, Ensembl, OMIM, GO, PDB, Pfam, and others.
-Of these, only SIGNOR and UniProt have public REST APIs — both are used here.
-PhosphoSitePlus has no public API and is excluded.
+Of these, three are accessible here:
+  - PhosphoSitePlus bulk dataset (gzipped TSV, direct download — no login needed)
+  - SIGNOR REST API (full human dataset)
+  - UniProt REST API (ft_mod_res:KINASE queries)
 
 PIPELINE OVERVIEW (two phases from the paper):
 
@@ -77,7 +79,21 @@ public databases via http_get.
 
 Do NOT use list_databases or get_stats — those local tools are empty.
 
-=== STEP 1: Pull all SIGNOR data (one call) ===
+=== STEP 1: Download PhosphoSitePlus (one call) ===
+
+  PSP bulk dataset — https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.gz
+    Direct download, no login needed. Returns a gzipped TSV file.
+    The system will decompress and parse it automatically — you will receive
+    a summary of how many entries were accumulated.
+
+    Key columns: GENE=kinase, SUB_GENE=substrate, SUB_MOD_RSD=phospho site,
+    SITE_+/-7_AA=heptameric peptide, SUB_ACC_ID=UniProt accession.
+    Only human substrate entries (SUB_ORGANISM == "human") are retained.
+
+    Note every unique GENE (kinase) value you see in the summary — use that
+    list to guide your UniProt queries in Step 3.
+
+=== STEP 2: Pull all SIGNOR data (one call) ===
 
   SIGNOR REST API — https://signor.uniroma2.it/API/getHumanData.php
     No parameters needed. Returns full human dataset as TSV.
@@ -88,7 +104,7 @@ Do NOT use list_databases or get_stats — those local tools are empty.
     Per the paper's curation rules: only keep rows where both ENTITYA and
     ENTITYB are valid protein gene symbols, and RESIDUE is non-empty.
 
-=== STEP 2: Query UniProt for each kinase ===
+=== STEP 3: Query UniProt for each kinase ===
 
   UniProt REST API — https://rest.uniprot.org/uniprotkb/search
     For EACH kinase from Step 1 AND from the supplemental list below,
@@ -103,7 +119,7 @@ Do NOT use list_databases or get_stats — those local tools are empty.
     - Do NOT use modification keywords like "phospho" — use kinase names only
     - Follow Link header cursor for pagination if present
 
-    Supplemental kinase list (query these after the SIGNOR kinase list):
+    Supplemental kinase list (query these after the PSP + SIGNOR kinase lists):
     AKT1, AKT2, AKT3, MTOR, PIK3CA, PTEN, TP53, BRCA1, ATM, ATR,
     CHEK1, CHEK2, MDM2, RB1, CDKN1A, CDKN2A, KRAS, BRAF, RAF1,
     MAP2K1, MAP2K2, MAPK1, MAPK3, MAPK8, MAPK14, GSK3A, GSK3B,
@@ -122,12 +138,13 @@ For each relationship capture:
   - phospho_site         : residue + position (e.g. S807, T308, Y15)
   - heptameric_peptide   : 7 amino acids around the site (if available)
   - substrate_uniprot    : UniProt accession (if available)
-  - supporting_databases : all sources (e.g. ["UniProt"], ["SIGNOR"], or both)
+  - supporting_databases : all sources (e.g. ["PSP"], ["SIGNOR"], ["UniProt"], or any combination)
 
 Requirements (directly from the paper's curation criteria):
   1. Be EXHAUSTIVE — the original atlas had ~16,000 entries across 438 kinases.
-  2. Cross-reference — if a relationship appears in both SIGNOR and UniProt,
-     list both in supporting_databases.
+  2. Cross-reference — if a relationship appears in multiple databases (PSP,
+     SIGNOR, UniProt), list all in supporting_databases. This also fixes the
+     Multi-DB metric which was 0% in prior runs.
   3. Experimentally confirmed only — do NOT fabricate or infer relationships.
   4. HGNC symbols — standardize all gene names.
 

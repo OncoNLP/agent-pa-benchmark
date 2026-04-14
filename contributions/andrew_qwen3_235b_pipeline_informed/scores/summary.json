@@ -1,39 +1,39 @@
 {
   "overview": {
-    "atlas_size": 25289,
-    "recall": 0.9524,
-    "precision": 0.7849,
-    "f1": 0.8606,
+    "atlas_size": 24818,
+    "recall": 0.9522,
+    "precision": 0.7994,
+    "f1": 0.8691,
     "kinases_found": "417/433",
-    "multi_db_pct": 2.6,
-    "peptide_accuracy": 0.9764
+    "multi_db_pct": 0.0,
+    "peptide_accuracy": 0.9796
   },
   "atlas_level": {
-    "total_agent_entries": 25289,
+    "total_agent_entries": 24818,
     "total_gold_entries": 15635,
-    "true_positives": 14891,
-    "false_positives": 4082,
-    "false_negatives": 744,
-    "precision": 0.7849,
-    "recall": 0.9524,
-    "f1": 0.8606
+    "true_positives": 14887,
+    "false_positives": 3736,
+    "false_negatives": 748,
+    "precision": 0.7994,
+    "recall": 0.9522,
+    "f1": 0.8691
   },
   "column_level": {
-    "matched_triplets": 14891,
-    "site_exact": 14891,
-    "site_total": 14891,
+    "matched_triplets": 14887,
+    "site_exact": 14887,
+    "site_total": 14887,
     "site_accuracy": 1.0,
-    "peptide_exact": 8833,
-    "peptide_case_diff": 4935,
-    "peptide_missing": 46,
-    "peptide_mismatch": 287,
-    "peptide_total": 14101,
-    "peptide_accuracy": 0.9764,
-    "peptide_exact_accuracy": 0.6264,
+    "peptide_exact": 8855,
+    "peptide_case_diff": 4957,
+    "peptide_missing": 0,
+    "peptide_mismatch": 288,
+    "peptide_total": 14100,
+    "peptide_accuracy": 0.9796,
+    "peptide_exact_accuracy": 0.628,
     "peptide_mismatch_rate": 0.0204,
-    "peptide_missing_count": 46,
-    "uniprot_exact": 14783,
-    "uniprot_total": 14891,
+    "peptide_missing_count": 0,
+    "uniprot_exact": 14779,
+    "uniprot_total": 14887,
     "uniprot_accuracy": 0.9927
   },
   "kinase_discovery": {
@@ -114,11 +114,10 @@
     ]
   },
   "cross_referencing": {
-    "multi_db_count": 650,
-    "multi_db_pct": 2.6,
+    "multi_db_count": 0,
+    "multi_db_pct": 0.0,
     "db_coverage": {
       "PSP": 15149,
-      "UniProt": 1121,
       "SIGNOR": 9669
     }
   },
@@ -126,7 +125,7 @@
     "A": {
       "kinases": 34,
       "gold_entries": 9517,
-      "recall": 0.9613
+      "recall": 0.9609
     },
     "B": {
       "kinases": 102,

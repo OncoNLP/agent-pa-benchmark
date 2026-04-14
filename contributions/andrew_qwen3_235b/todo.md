@@ -205,7 +205,134 @@ Key finding: F1 is 0.572 across all non-naive conditions. Prompt structure affec
 execution behavior (text-mode vs structured, cost) but not final F1 given our data
 ceiling of SIGNOR + UniProt only (no PSP access). Hard ceiling is ~F1=0.572 without PSP.
 
+### Finding 11: pipeline_informed v2 — PSP+SIGNOR, Together AI 500 (04/07/2026)
+Two Together AI server errors today (503 then 500). Both times the run died after
+exactly 2 tool calls (PSP + SIGNOR), before UniProt queries started. Fallback
+accumulator saved 24,818 entries each time — identical to paper_informed Run 1.
+
+| Metric        | Previous (03/31) | This run (04/07) |
+|---------------|-----------------|------------------|
+| Atlas size    | 10,844          | 24,818           |
+| F1            | 0.572           | **0.869**        |
+| Recall        | 0.473           | 0.952            |
+| Precision     | 0.724           | 0.799            |
+| Kinases found | 377/433         | 417/433          |
+| Multi-DB      | 0%              | 0% (see note)    |
+| Peptide acc.  | 0.196           | 0.980            |
+| Tool calls    | 222             | 2 (cut by 500)   |
+| Cost          | ~$10.41         | ~$0.01           |
+
+Multi-DB 0% despite PSP+SIGNOR both present — suggests PSP and SIGNOR use
+different gene symbol or site notation conventions for overlapping relationships,
+so (kinase, substrate, site) keys don't match between them. The 2.6% Multi-DB
+in paper_informed came from UniProt cross-referencing PSP entries, not PSP+SIGNOR
+overlap. Worth investigating for the paper — which kinases overlap between DBs?
+
+Note: if Together AI stabilizes, a clean full run would add UniProt queries
+on top (same as paper_informed Run 2) and likely push Multi-DB slightly higher.
+
+### Finding 12: pipeline_informed v3 — full token tracking confirmed (04/07/2026)
+Re-ran pipeline_informed to get proper token_usage (previous run 500'd after 1 API call,
+logging only $0.003). This run completed 80 tool calls (~798s) before a request timeout.
+PSP+SIGNOR in first 2 calls (24,818 entries) as before; UniProt queries fired (tools 3–80)
+but added no new entries. Fallback accumulator saved same 24,818 entries. Results identical.
+
+| Metric        | Previous (04/07, 500'd) | This run (04/07, timeout) |
+|---------------|------------------------|---------------------------|
+| Atlas size    | 24,818                 | 24,818                    |
+| F1            | 0.869                  | 0.869                     |
+| Recall        | 0.952                  | 0.952                     |
+| Precision     | 0.799                  | 0.799                     |
+| Kinases found | 417/433                | 417/433                   |
+| Peptide acc.  | 0.980                  | 0.979                     |
+| api_calls     | 1 (incomplete)         | **17**                    |
+| Cost          | $0.003 (incomplete)    | **$0.36**                 |
+
+Token tracking is now complete and accurate. Run log has proper token_usage block.
+
 ### TODO: Remaining
 - [ ] Build aggregate_scores.py to read all summary.json files into one table
-- [ ] Investigate peptide accuracy gap: pipeline_informed 0.1961 vs explicit_prompt 0.2185
+- [ ] Investigate Multi-DB=0% for PSP+SIGNOR — are gene/site notations mismatched?
 - [ ] Write paper section: discuss PSP gap, HTTP tool as Paper 1 contribution, prompt structure findings
+- [ ] Clarify results/naive/atlas.json — 379 entries (expected empty), needs investigation
+
+---
+
+## Re-run after Hui's refactor (04/07/2026)
+
+### Background
+Hui pushed a code refactor (commits 906864f, 4d77ccc, 7aec32c) with three changes
+relevant to us:
+  1. scorer.py: peptide accuracy is now case-insensitive by default (exact + case-diff
+     counted together). Old metric was peptide_close_accuracy; new primary metric is
+     peptide_accuracy. Our previous numbers (0.2185, 0.1961) used the "close" metric
+     so they should be consistent, but re-scoring with the new scorer is required.
+  2. paper_informed prompt: PSP download URL added
+     (http://phosphosite.org/downloads/Kinase_Substrate_Dataset.gz).
+  3. live_runner.py: --all flag added for running all conditions in one shot.
+
+Hui asked all contributors to re-run naive, paper_informed, and pipeline_guided
+following the latest README. Old results archived to results/_archive_03_31/.
+
+### PSP discovery (04/07/2026)
+The PSP URL Hui added is a **direct public download** — no login required, HTTP 200,
+760KB gzipped TSV (last updated 2026-03-17). We confirmed this via curl HEAD request.
+
+This is significant: our F1=0.572 ceiling was entirely due to SIGNOR+UniProt only.
+PSP is the primary source in the gold standard. Claude Opus had PSP access via local
+database files (Hui populated databases/psp/ on her machine). We didn't, which is
+why our recall was capped.
+
+Fix: added gzip decompression + PSP TSV parser to _dispatch_http_get in
+agent_with_http.py. Detects "phosphosite" in URL, decompresses resp.content with
+gzip, parses human-only entries (SUB_ORGANISM == "human"), uppercases gene symbols
+to HGNC convention. Paper_informed_prompt.txt updated: PSP is now Step 1,
+SIGNOR Step 2, UniProt Step 3.
+
+Smoke test (5 tool calls) confirmed:
+  - Tool 1: PSP → 15,149 entries accumulated instantly
+  - Tool 2: SIGNOR → 9,669 new entries on top (24,818 total)
+  - Tool 3 (cut by budget): Qwen was already querying UniProt ft_mod_res:CDK1
+  - Multi-DB > 0% expected once deduplication merges PSP+SIGNOR overlaps
+
+### Finding 10: paper_informed v2 — PSP unlocks the ceiling (04/07/2026)
+
+**Run 1 (PSP + SIGNOR only, Multi-DB bug):** 2 tool calls, 34s, ~$0.01.
+Qwen followed the prompt: PSP (tool 1) → SIGNOR (tool 2) → dropped into
+text-mode before UniProt. Fallback accumulator saved 24,818 entries.
+Multi-DB was 0% due to bug: accumulator discarded duplicate triplets instead
+of merging supporting_databases across sources.
+
+**Run 2 (Multi-DB fix + full UniProt):** 70 tool calls, 11 min, ~$0.41.
+After fixing _accumulate_http_entries to merge supporting_databases on
+duplicates, Qwen ran all 3 steps: PSP → SIGNOR → 68 UniProt kinase queries.
+UniProt added 471 new entries (25,289 total). Multi-DB now 2.6%.
+
+| Metric        | Previous (03/31) | Run 1 (PSP+SIGNOR) | Run 2 (+ UniProt) |
+|---------------|-----------------|---------------------|-------------------|
+| Atlas size    | 9,671           | 24,818              | 25,289            |
+| F1            | 0.572           | 0.8691              | **0.8606**        |
+| Recall        | 0.4629          | 0.9522              | **0.9524**        |
+| Precision     | 0.7483          | 0.7994              | 0.7849            |
+| Kinases found | 377/433         | 417/433             | 417/433           |
+| Multi-DB      | 0%              | 0%                  | **2.6%**          |
+| Peptide acc.  | 0.2185          | 0.9794              | 0.9764            |
+| Tool calls    | 1               | 2                   | 70                |
+| Cost          | ~$0.01          | ~$0.01              | ~$0.41            |
+
+Note: F1 dropped slightly (0.869 → 0.861) in Run 2 because UniProt added
+471 new entries with lower precision (more FPs: 3736 → 4082) while recall
+barely moved (0.9522 → 0.9524). UniProt's marginal contribution is small
+given PSP already covers most of the gold standard.
+
+**Tier breakdown (Run 2):**
+  Tier A (34 kinases):  recall=0.9613
+  Tier B (102 kinases): recall=0.9398
+  Tier C (144 kinases): recall=0.9449
+  Tier D (153 kinases): recall=0.8914  ← rare kinases still hardest
+
+**Key finding:** PSP was the missing piece. F1 ceiling of 0.572 was entirely
+due to lack of PSP access. Adding PSP in one http_get call pushed F1 to 0.869
+and recall to 0.952. This directly answers the paper's PSP gap analysis.
+Multi-DB fix confirmed working (0% → 2.6%). UniProt adds marginal recall but
+hurts precision — PSP+SIGNOR is the sweet spot for this model.
