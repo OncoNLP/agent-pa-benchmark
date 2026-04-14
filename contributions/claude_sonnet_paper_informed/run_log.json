@@ -1,0 +1,56 @@
+{
+  "agent": "Claude Sonnet 4.6",
+  "model": "sonnet",
+  "condition": "paper_informed",
+  "prompt_path": "agents/prompts/paper_informed.txt",
+  "billing": "max_plan",
+  "databases_accessed": [
+    "PhosphoSitePlus",
+    "UniProt"
+  ],
+  "raw_counts": {
+    "PhosphoSitePlus": 15142,
+    "UniProt": 4042
+  },
+  "merged_atlas": 17715,
+  "unique_kinases": 488,
+  "unique_substrates": 3334,
+  "multi_db_entries": 1469,
+  "elapsed_seconds": 375.2,
+  "strategy_summary": "Paper-informed curation: (1) PSP Kinase_Substrate_Dataset.gz downloaded directly from phosphosite.org as specified in Olow et al. paper. Parsed human-only entries with heptameric peptides and UniProt accessions. (2) SIGNOR download attempted via multiple API endpoints. (3) UniProt REST API queried with full pagination for human reviewed phospho sites, extracting kinase attribution from 'by <kinase>' patterns. All sources merged and deduplicated by (kinase_gene, substrate_gene, phospho_site) triplet.",
+  "token_usage": {
+    "total_input_tokens": 0,
+    "total_output_tokens": 0,
+    "total_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "api_calls": 0,
+    "estimated_cost_usd": 0.0,
+    "note": "Direct Python script execution - no LLM API calls made in this subagent run"
+  },
+  "trace": [
+    {
+      "step": "DISCOVER",
+      "action": "Identified PSP, SIGNOR, UniProt as target databases"
+    },
+    {
+      "step": "DOWNLOAD",
+      "action": "PSP: loaded from disk, 15142 entries"
+    },
+    {
+      "step": "DOWNLOAD",
+      "action": "SIGNOR: failed, 0 entries"
+    },
+    {
+      "step": "DOWNLOAD",
+      "action": "UniProt: paginated REST API, 4042 entries"
+    },
+    {
+      "step": "MERGE",
+      "action": "Merged to 17715 unique (kinase, substrate, site) triplets"
+    },
+    {
+      "step": "SUBMIT",
+      "action": "Wrote atlas.json and run_log.json"
+    }
+  ]
+}

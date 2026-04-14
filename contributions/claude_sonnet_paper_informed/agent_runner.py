@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Claude Sonnet 4.6 Paper-Context Agent Runner — Zero-Shot + Main Paper Context.
+Claude Sonnet 4.6 Paper-Informed Agent Runner — Zero-Shot + Paper Background.
 
 Runs Claude Sonnet as a genuine autonomous agent via the Anthropic API.
-The agent receives the naive system prompt augmented with context from the
-Olow et al. 2016 PhosphoAtlas main paper (dataset scale, curation phases,
-key databases, HGNC naming conventions, and cross-referencing guidance).
+The agent receives a paper-informed system prompt that integrates background
+from Olow et al. 2016 PhosphoAtlas — dataset scale, HGNC naming, heptameric
+peptides, cross-referencing guidance, and the PhosphoSitePlus bulk URL.
 
 Tools available to the agent:
   Database tools (from DatabaseTools — return empty without local files):
@@ -25,7 +25,7 @@ Requires: ANTHROPIC_API_KEY environment variable.
 
 Usage:
   export ANTHROPIC_API_KEY=sk-ant-...
-  python3 contributions/claude_sonnet_paper_naive/agent_runner.py
+  python3 contributions/claude_sonnet_paper_informed/agent_runner.py
 """
 import csv
 import gzip
@@ -755,17 +755,17 @@ def main():
         print("  export ANTHROPIC_API_KEY=sk-ant-...")
         sys.exit(1)
 
-    out_dir = Path("contributions/claude_sonnet_paper_naive")
+    out_dir = Path("contributions/claude_sonnet_paper_informed")
     out_dir.mkdir(parents=True, exist_ok=True)
     scores_dir = out_dir / "scores"
     scores_dir.mkdir(parents=True, exist_ok=True)
 
-    # Load naive prompt
-    prompt_path = Path("agents/prompts/naive_plus_paper.txt")
+    # Load paper-informed prompt
+    prompt_path = Path("agents/prompts/paper_informed.txt")
     system_prompt = prompt_path.read_text().strip()
     _log(f"[SETUP] Prompt: {prompt_path} ({len(system_prompt)} chars)")
     _log(f"[SETUP] Model: claude-sonnet-4-6")
-    _log(f"[SETUP] Condition: naive + paper context (zero-shot)")
+    _log(f"[SETUP] Condition: paper_informed (zero-shot)")
 
     # Run agent
     t0 = time.time()
@@ -794,7 +794,7 @@ def main():
     # Save run_log.json
     run_log = {
         "agent": "Claude Sonnet 4.6",
-        "prompt": "naive + paper context (zero-shot)",
+        "prompt": "paper_informed (zero-shot)",
         "strategy": agent.strategy_summary,
         "autonomous": True,
         "databases_accessed": sorted(db_counts.keys()),

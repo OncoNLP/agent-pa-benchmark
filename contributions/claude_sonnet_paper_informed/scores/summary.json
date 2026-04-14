@@ -1,44 +1,46 @@
 {
   "overview": {
-    "atlas_size": 18689,
-    "recall": 0.88,
-    "precision": 0.7654,
-    "f1": 0.8187,
+    "atlas_size": 17715,
+    "recall": 0.8797,
+    "precision": 0.7937,
+    "f1": 0.8345,
     "kinases_found": "406/433",
-    "multi_db_pct": 7.7,
-    "peptide_accuracy": 0.9675
+    "multi_db_pct": 8.3,
+    "peptide_accuracy": 0.9914
   },
   "atlas_level": {
-    "total_agent_entries": 18689,
+    "total_agent_entries": 17715,
     "total_gold_entries": 15635,
-    "true_positives": 13759,
-    "false_positives": 4218,
-    "false_negatives": 1876,
-    "precision": 0.7654,
-    "recall": 0.88,
-    "f1": 0.8187
+    "true_positives": 13754,
+    "false_positives": 3575,
+    "false_negatives": 1881,
+    "precision": 0.7937,
+    "recall": 0.8797,
+    "f1": 0.8345
   },
   "column_level": {
-    "matched_triplets": 13759,
-    "site_exact": 13759,
-    "site_total": 13759,
+    "matched_triplets": 13754,
+    "site_exact": 13754,
+    "site_total": 13754,
     "site_accuracy": 1.0,
-    "peptide_exact": 13202,
-    "peptide_case_diff": 320,
-    "peptide_missing": 116,
+    "peptide_exact": 13206,
+    "peptide_case_diff": 318,
+    "peptide_missing": 110,
     "peptide_mismatch": 7,
-    "peptide_total": 13645,
-    "peptide_exact_accuracy": 0.9675,
-    "peptide_close_accuracy": 0.991,
-    "uniprot_exact": 13716,
-    "uniprot_total": 13759,
+    "peptide_total": 13641,
+    "peptide_accuracy": 0.9914,
+    "peptide_exact_accuracy": 0.9681,
+    "peptide_mismatch_rate": 0.0005,
+    "peptide_missing_count": 110,
+    "uniprot_exact": 13711,
+    "uniprot_total": 13754,
     "uniprot_accuracy": 0.9969
   },
   "kinase_discovery": {
     "kinases_in_gold": 433,
     "kinases_discovered": 406,
     "kinases_missed": 27,
-    "kinases_novel": 79,
+    "kinases_novel": 73,
     "discovery_rate": 0.9376,
     "missed_kinases": [
       "ACVR1",
@@ -74,15 +76,11 @@
       "AK2",
       "ALPK3",
       "APP",
-      "AUTOCATALYSIS",
-      "AUTOCATALYSIS;",
       "B1",
       "BCKDK",
       "CAK",
       "CAMK",
-      "CAMK1D",
       "CAMK2",
-      "CAMK2;",
       "CCRK",
       "CDC42BP",
       "CDK11",
@@ -90,7 +88,6 @@
       "CK1",
       "CKB",
       "DCLK1",
-      "DSDNA",
       "FAK1",
       "FAK2",
       "GSK3",
@@ -119,32 +116,37 @@
       "OBSCN",
       "PAK",
       "PDGFR",
-      "PFKFB3"
+      "PFKFB3",
+      "PHK",
+      "PHKG2",
+      "PI3K",
+      "PIKFYVE",
+      "PIP4K2A"
     ]
   },
   "cross_referencing": {
-    "multi_db_count": 1435,
-    "multi_db_pct": 7.7,
+    "multi_db_count": 1469,
+    "multi_db_pct": 8.3,
     "db_coverage": {
-      "PhosphoSitePlus": 15434,
-      "UniProt": 4690
+      "PhosphoSitePlus": 15142,
+      "UniProt": 4042
     }
   },
   "per_tier": {
     "A": {
       "kinases": 34,
       "gold_entries": 9517,
-      "recall": 0.8881
+      "recall": 0.888
     },
     "B": {
       "kinases": 102,
       "gold_entries": 4353,
-      "recall": 0.87
+      "recall": 0.8693
     },
     "C": {
       "kinases": 144,
       "gold_entries": 1452,
-      "recall": 0.8795
+      "recall": 0.8788
     },
     "D": {
       "kinases": 153,
