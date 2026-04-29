@@ -1,0 +1,20 @@
+[20:54:52][RUN] ============================================================
+[20:54:52][RUN] Model: GPT-5 | Condition: pipeline_guided | Output: contributions/gpt-5-live-runner_pipeline_guided
+[20:54:52][TURN1] Agent has paper context, proceeding to known databases...
+[20:54:52][PSP] Downloading PhosphoSitePlus Kinase_Substrate_Dataset.gz...
+[20:54:52][PSP]   Downloaded: 2,367,543 bytes -> 2,367,543 chars
+[20:54:53][PSP]   Parsed: 15586 human kinase-substrate entries
+[20:54:53][SIGNOR] Downloading SIGNOR phosphorylation data...
+[20:56:08][SIGNOR]   FAILED: <urlopen error [Errno 60] Operation timed out>
+[20:56:08][UNIPROT] Downloading UniProt phosphorylation annotations...
+[20:56:08][UNIPROT]   (Paginating ~8000 human phosphoproteins, extracting kinase-attributed sites)
+[20:56:10][UNIPROT]   Page 1: +295 kinase-attributed entries (total: 295)
+[20:56:17][UNIPROT]   Page 5: +201 kinase-attributed entries (total: 1325)
+[20:56:25][UNIPROT]   Page 10: +448 kinase-attributed entries (total: 2806)
+[20:56:34][UNIPROT]   Page 15: +104 kinase-attributed entries (total: 3788)
+[20:56:37][UNIPROT]   Total UniProt kinase-attributed entries: 3809 (from 17 pages)
+[20:56:37][MERGE] Raw entries before dedup: 19395
+[20:56:38][MERGE] Deduplicated atlas: 17983 unique triplets
+[20:56:38][DONE] Elapsed: 105.6s | Turns: 21 | Data: 18,743,847 chars
+[20:56:38][TOKENS] Est. cost: $10.54 (1,034,171 tokens)
+[20:56:38][SCORE] F1=0.8235 R=0.878 P=0.7753 Kinases=405/433 TP=13727 FN=1908

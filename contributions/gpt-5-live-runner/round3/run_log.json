@@ -1,0 +1,250 @@
+{
+  "agent": "GPT-5",
+  "model": "gpt-5",
+  "condition": "naive",
+  "mode": "live",
+  "databases_accessed": [
+    "PhosphoSitePlus",
+    "UniProt"
+  ],
+  "tool_calls": 24,
+  "raw_counts": {
+    "PhosphoSitePlus": 15149,
+    "UniProt": 3809
+  },
+  "merged_atlas": 17983,
+  "unique_kinases": 722,
+  "unique_substrates": 3378,
+  "multi_db_entries": 975,
+  "elapsed_seconds": 104.8,
+  "token_usage": {
+    "total_input_tokens": 1214686,
+    "total_output_tokens": 11063,
+    "total_tokens": 1225749,
+    "cache_read_input_tokens": 18768,
+    "api_calls": 24,
+    "estimated_cost_usd": 12.4787,
+    "total_raw_data_chars": 18767220,
+    "model_pricing": "gpt-5",
+    "model_label": "GPT-5",
+    "per_call": [
+      {
+        "turn": 1,
+        "tool": "web_search",
+        "input_tokens": 816,
+        "output_tokens": 422,
+        "cache_read_tokens": 0,
+        "raw_result_chars": 1108,
+        "context_result_chars": 1108
+      },
+      {
+        "turn": 2,
+        "tool": "web_fetch",
+        "input_tokens": 738,
+        "output_tokens": 417,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 19741,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 3,
+        "tool": "fetch_and_parse_db",
+        "input_tokens": 5440,
+        "output_tokens": 431,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 2367543,
+        "context_result_chars": 50000
+      },
+      {
+        "turn": 4,
+        "tool": "web_search",
+        "input_tokens": 20156,
+        "output_tokens": 420,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 1234,
+        "context_result_chars": 3000
+      },
+      {
+        "turn": 5,
+        "tool": "fetch_and_parse_db",
+        "input_tokens": 21433,
+        "output_tokens": 416,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 200,
+        "context_result_chars": 200
+      },
+      {
+        "turn": 6,
+        "tool": "web_search",
+        "input_tokens": 21906,
+        "output_tokens": 420,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 1290,
+        "context_result_chars": 3000
+      },
+      {
+        "turn": 7,
+        "tool": "web_fetch",
+        "input_tokens": 23183,
+        "output_tokens": 450,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 1104290,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 8,
+        "tool": "web_fetch",
+        "input_tokens": 27918,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 1135894,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 9,
+        "tool": "web_fetch",
+        "input_tokens": 32671,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 951967,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 10,
+        "tool": "web_fetch",
+        "input_tokens": 37424,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 1131099,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 11,
+        "tool": "web_fetch",
+        "input_tokens": 42177,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 961266,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 12,
+        "tool": "web_fetch",
+        "input_tokens": 46930,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 946272,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 13,
+        "tool": "web_fetch",
+        "input_tokens": 51683,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 1163967,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 14,
+        "tool": "web_fetch",
+        "input_tokens": 56436,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 944256,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 15,
+        "tool": "web_fetch",
+        "input_tokens": 61189,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 991460,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 16,
+        "tool": "web_fetch",
+        "input_tokens": 65942,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 1131691,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 17,
+        "tool": "web_fetch",
+        "input_tokens": 70695,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 1053858,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 18,
+        "tool": "web_fetch",
+        "input_tokens": 75448,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 876596,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 19,
+        "tool": "web_fetch",
+        "input_tokens": 80201,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 1036130,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 20,
+        "tool": "web_fetch",
+        "input_tokens": 84954,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 1065135,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 21,
+        "tool": "web_fetch",
+        "input_tokens": 89707,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 905003,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 22,
+        "tool": "web_fetch",
+        "input_tokens": 94460,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 625255,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 23,
+        "tool": "web_fetch",
+        "input_tokens": 99213,
+        "output_tokens": 468,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 351924,
+        "context_result_chars": 15000
+      },
+      {
+        "turn": 24,
+        "tool": "submit_atlas",
+        "input_tokens": 103966,
+        "output_tokens": 599,
+        "cache_read_tokens": 816,
+        "raw_result_chars": 41,
+        "context_result_chars": 41
+      }
+    ],
+    "note": "Estimated from actual web data volumes with realistic context management"
+  }
+}

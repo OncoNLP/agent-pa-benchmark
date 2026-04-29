@@ -1,0 +1,47 @@
+[
+  {
+    "round": 1,
+    "atlas_size": 17983,
+    "recall": 0.878,
+    "precision": 0.7753,
+    "f1": 0.8235,
+    "kinases_found": "405/433",
+    "multi_db_pct": 5.4,
+    "peptide_accuracy": 0.9972,
+    "total_agent_entries": 17983,
+    "total_gold_entries": 15635,
+    "true_positives": 13727,
+    "false_positives": 3979,
+    "false_negatives": 1908
+  },
+  {
+    "round": 2,
+    "atlas_size": 17983,
+    "recall": 0.878,
+    "precision": 0.7753,
+    "f1": 0.8235,
+    "kinases_found": "405/433",
+    "multi_db_pct": 5.4,
+    "peptide_accuracy": 0.9972,
+    "total_agent_entries": 17983,
+    "total_gold_entries": 15635,
+    "true_positives": 13727,
+    "false_positives": 3979,
+    "false_negatives": 1908
+  },
+  {
+    "round": 3,
+    "atlas_size": 17983,
+    "recall": 0.878,
+    "precision": 0.7753,
+    "f1": 0.8235,
+    "kinases_found": "405/433",
+    "multi_db_pct": 5.4,
+    "peptide_accuracy": 0.9972,
+    "total_agent_entries": 17983,
+    "total_gold_entries": 15635,
+    "true_positives": 13727,
+    "false_positives": 3979,
+    "false_negatives": 1908
+  }
+]
