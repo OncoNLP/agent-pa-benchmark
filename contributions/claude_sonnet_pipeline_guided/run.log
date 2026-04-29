@@ -1,0 +1,22 @@
+[2026-04-14T21:08:30Z] [PHASE1] === Phase 1: Harmonize and centralize protein data ===
+[2026-04-14T21:08:30Z] [PHASE1-STEP1] Discovering databases (local + public web APIs)
+[2026-04-14T21:08:30Z] [PHASE1-STEP2] Fetching PSP Kinase_Substrate_Dataset.gz
+[2026-04-14T21:08:30Z] [DOWNLOAD] PSP loaded from local cache: 2,367,543 chars
+[2026-04-14T21:08:30Z] [PARSE] PSP: 15586 human kinase-substrate-site entries added
+[2026-04-14T21:08:30Z] [PHASE1-STEP2] Attempting SIGNOR (phosphorylation relations)
+[2026-04-14T21:09:15Z] [ERROR] SIGNOR unreachable (<urlopen error timed out>); skipping
+[2026-04-14T21:09:15Z] [PHASE1-STEP2] Paginating UniProt human reviewed phosphoproteins
+[2026-04-14T21:09:18Z] [DOWNLOAD] UniProt page 1: running total 305 attributed entries
+[2026-04-14T21:09:28Z] [DOWNLOAD] UniProt page 5: running total 1405 attributed entries
+[2026-04-14T21:09:40Z] [DOWNLOAD] UniProt page 10: running total 2978 attributed entries
+[2026-04-14T21:09:51Z] [DOWNLOAD] UniProt page 15: running total 3969 attributed entries
+[2026-04-14T21:09:55Z] [PARSE] UniProt: 3992 kinase-attributed phospho entries added across 17 pages
+[2026-04-14T21:09:55Z] [PHASE1-STEP3] Consolidated raw counts: {'PhosphoSitePlus': 15586, 'UniProt': 3992}
+[2026-04-14T21:09:55Z] [PHASE2] === Phase 2: Build relational database ===
+[2026-04-14T21:09:55Z] [PHASE2-STEP4-5] Functional triage + site validation completed in-parser
+[2026-04-14T21:09:55Z] [PHASE2-STEP6] Atlas assembled: 17655 unique triplets, 33 records dropped as invalid (missing fields, non-HGNC symbols, unparseable sites)
+[2026-04-14T21:09:55Z] [PHASE3] === Phase 3: Cross-referencing and quality control ===
+[2026-04-14T21:09:55Z] [PHASE3-STEP7] Multi-DB cross-referenced: 1436 entries in ≥2 databases
+[2026-04-14T21:09:55Z] [PHASE3-STEP8] QC: 17655 entries, 486 kinases, 3329 substrates, sorted kinase→substrate→site
+[2026-04-14T21:09:55Z] [SUBMIT] Atlas written: /Users/lokeshmuvva/UCSF/agent-pa-benchmark/contributions/claude_sonnet_pipeline_guided/atlas.json
+[2026-04-14T21:09:55Z] [DONE] Pipeline-guided curation complete: 17655 triplets, elapsed=84.4s

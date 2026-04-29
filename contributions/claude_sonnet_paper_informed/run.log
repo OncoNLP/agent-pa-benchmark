@@ -1,0 +1,165 @@
+[2026-04-14T20:04:58Z] [DISCOVER] Checking local PSP data or downloading from PhosphoSitePlus
+[2026-04-14T20:04:58Z] [DOWNLOAD] Downloading PSP Kinase_Substrate_Dataset.gz from phosphosite.org
+[2026-04-14T20:04:59Z] [DOWNLOAD] PSP downloaded and decompressed: 2367543 bytes
+[2026-04-14T20:04:59Z] [PARSE] Parsing PSP Kinase_Substrate_Dataset
+[2026-04-14T20:04:59Z] [PARSE] PSP parsed: 15586 human kinase-substrate entries
+[2026-04-14T20:04:59Z] [DISCOVER] Attempting SIGNOR phospho data download
+[2026-04-14T20:04:59Z] [DOWNLOAD] Trying SIGNOR URL: https://signor.uniroma2.it/download_entity.php?format=tab&type=all&organism=9606
+[2026-04-14T20:05:59Z] [ERROR] SIGNOR URL failed or too small: https://signor.uniroma2.it/download_entity.php?format=tab&type=all&organism=9606
+[2026-04-14T20:05:59Z] [DOWNLOAD] Trying SIGNOR URL: https://signor.uniroma2.it/getData.php?organism=human&format=tab
+[2026-04-14T20:06:59Z] [ERROR] SIGNOR URL failed or too small: https://signor.uniroma2.it/getData.php?organism=human&format=tab
+[2026-04-14T20:06:59Z] [DOWNLOAD] Trying SIGNOR URL: https://signor.uniroma2.it/api/v1/getData/?organism=9606&format=json
+[2026-04-14T20:07:59Z] [ERROR] SIGNOR URL failed or too small: https://signor.uniroma2.it/api/v1/getData/?organism=9606&format=json
+[2026-04-14T20:07:59Z] [ERROR] All SIGNOR URLs failed
+[2026-04-14T20:07:59Z] [DISCOVER] Attempting UniProt phosphorylation data via REST API
+[2026-04-14T20:07:59Z] [DOWNLOAD] Querying UniProt REST API for human phosphorylation annotations
+[2026-04-14T20:07:59Z] [DOWNLOAD] UniProt page 0: https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+AND+ft_mod_res:phospho*+AND+reviewe...
+[2026-04-14T20:08:02Z] [DOWNLOAD] UniProt page 0: 500 entries, total so far: 500
+[2026-04-14T20:08:02Z] [PARSE] UniProt raw entries: 500
+[2026-04-14T20:08:02Z] [PARSE] UniProt parsed: 304 kinase-substrate entries
+[2026-04-14T20:08:02Z] [MERGE] Merging entries from all databases
+[2026-04-14T20:08:02Z] [MERGE] Adding 15586 PSP entries
+[2026-04-14T20:08:02Z] [MERGE] Adding 0 SIGNOR entries
+[2026-04-14T20:08:02Z] [MERGE] Adding 304 UniProt entries
+[2026-04-14T20:08:02Z] [MERGE] Total unique triplets: 15401
+[2026-04-14T20:08:02Z] [MERGE] Unique kinases: 471
+[2026-04-14T20:08:02Z] [MERGE] Unique substrates: 3048
+[2026-04-14T20:08:02Z] [MERGE] Multi-DB entries: 52
+[2026-04-14T20:08:02Z] [MERGE] Databases used: ['PhosphoSitePlus', 'UniProt']
+[2026-04-14T20:08:02Z] [SUBMIT] Writing atlas.json with 15401 entries
+[2026-04-14T20:08:02Z] [SUBMIT] atlas.json written: 3623306 bytes
+[2026-04-14T20:08:02Z] [DONE] run_log.json written
+[2026-04-14T20:08:02Z] [DONE] Curation complete. 15401 entries, 471 kinases, 3048 substrates, elapsed=184.0s
+[2026-04-14T20:10:00Z] [DISCOVER] Phase 1: PhosphoSitePlus (PSP) Kinase_Substrate_Dataset
+[2026-04-14T20:10:00Z] [DOWNLOAD] PSP file already at /Users/lokeshmuvva/UCSF/agent-pa-benchmark/databases/psp/Kinase_Substrate_Dataset, loading...
+[2026-04-14T20:10:00Z] [PARSE] PSP loaded from disk: 15586 human entries, atlas now: 15142
+[2026-04-14T20:10:00Z] [DISCOVER] Phase 2: SIGNOR phosphorylation data
+[2026-04-14T20:10:00Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/download_entity.php?format=tab&type=all&organism=9606
+[2026-04-14T20:11:15Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/download_entity.php?format=tab&type=all&organism=9606
+[2026-04-14T20:11:15Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/getData.php?organism=human&format=tab
+[2026-04-14T20:12:30Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/getData.php?organism=human&format=tab
+[2026-04-14T20:12:30Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/api/v1/getAllData/?organism=9606
+[2026-04-14T20:13:45Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/api/v1/getAllData/?organism=9606
+[2026-04-14T20:13:45Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/api/v1/getData/?organism=9606&format=json
+[2026-04-14T20:15:00Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/api/v1/getData/?organism=9606&format=json
+[2026-04-14T20:15:00Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/PhosphoSIGNOR/apis/v1/index.php?role=all&format=tsv&header=yes
+[2026-04-14T20:16:15Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/PhosphoSIGNOR/apis/v1/index.php?role=all&format=tsv&header=yes
+[2026-04-14T20:16:15Z] [ERROR] SIGNOR: all endpoints failed or returned no phosphorylation entries
+[2026-04-14T20:16:15Z] [DISCOVER] Phase 3: UniProt REST API paginated phospho data
+[2026-04-14T20:16:15Z] [DOWNLOAD] UniProt file exists, loading /Users/lokeshmuvva/UCSF/agent-pa-benchmark/databases/uniprot/uniprot_phospho_parsed.json...
+[2026-04-14T20:16:15Z] [PARSE] UniProt loaded: 252 new entries, total: 15394
+[2026-04-14T20:16:15Z] [MERGE] Finalizing and deduplicating atlas
+[2026-04-14T20:16:15Z] [MERGE] Final atlas: 15394 unique triplets
+[2026-04-14T20:16:15Z] [MERGE] Kinases: 471, Substrates: 3048
+[2026-04-14T20:16:15Z] [MERGE] Multi-DB entries: 52
+[2026-04-14T20:16:15Z] [MERGE] Databases: ['PhosphoSitePlus', 'UniProt']
+[2026-04-14T20:16:15Z] [SUBMIT] Writing 15394 entries to atlas.json
+[2026-04-14T20:16:15Z] [SUBMIT] atlas.json: 3,621,644 bytes
+[2026-04-14T20:16:15Z] [DONE] run_log.json written. Elapsed: 375.2s
+[2026-04-14T20:16:15Z] [DONE] COMPLETE: 15394 entries from ['PhosphoSitePlus', 'UniProt']
+[2026-04-14T20:16:36Z] [DISCOVER] Phase 1: PhosphoSitePlus (PSP) Kinase_Substrate_Dataset
+[2026-04-14T20:16:36Z] [DOWNLOAD] PSP file already at /Users/lokeshmuvva/UCSF/agent-pa-benchmark/databases/psp/Kinase_Substrate_Dataset, loading...
+[2026-04-14T20:16:36Z] [PARSE] PSP loaded from disk: 15586 human entries, atlas now: 15142
+[2026-04-14T20:16:36Z] [DISCOVER] Phase 2: SIGNOR phosphorylation data
+[2026-04-14T20:16:36Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/download_entity.php?format=tab&type=all&organism=9606
+[2026-04-14T20:17:51Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/download_entity.php?format=tab&type=all&organism=9606
+[2026-04-14T20:17:51Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/getData.php?organism=human&format=tab
+[2026-04-14T20:19:06Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/getData.php?organism=human&format=tab
+[2026-04-14T20:19:06Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/api/v1/getAllData/?organism=9606
+[2026-04-14T20:20:21Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/api/v1/getAllData/?organism=9606
+[2026-04-14T20:20:21Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/api/v1/getData/?organism=9606&format=json
+[2026-04-14T20:21:36Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/api/v1/getData/?organism=9606&format=json
+[2026-04-14T20:21:36Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/PhosphoSIGNOR/apis/v1/index.php?role=all&format=tsv&header=yes
+[2026-04-14T20:22:51Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/PhosphoSIGNOR/apis/v1/index.php?role=all&format=tsv&header=yes
+[2026-04-14T20:22:51Z] [ERROR] SIGNOR: all endpoints failed or returned no phosphorylation entries
+[2026-04-14T20:22:51Z] [DISCOVER] Phase 3: UniProt REST API paginated phospho data
+[2026-04-14T20:22:51Z] [DOWNLOAD] Querying UniProt REST API with full pagination
+[2026-04-14T20:22:51Z] [DOWNLOAD] UniProt page 0: fetching https://rest.uniprot.org/uniprotkb/search?query=organism_id%3A9606%20AND%20ft_mod_res%3Aphospho%2A%2...
+[2026-04-14T20:22:53Z] [DOWNLOAD] UniProt page 0: 500 proteins, 326 entries extracted
+[2026-04-14T20:22:53Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:22:53Z] [DOWNLOAD] UniProt page 1: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:22:56Z] [DOWNLOAD] UniProt page 1: 500 proteins, 257 entries extracted
+[2026-04-14T20:22:56Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:22:56Z] [DOWNLOAD] UniProt page 2: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:22:59Z] [DOWNLOAD] UniProt page 2: 500 proteins, 215 entries extracted
+[2026-04-14T20:22:59Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:22:59Z] [DOWNLOAD] UniProt page 3: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:01Z] [DOWNLOAD] UniProt page 3: 500 proteins, 486 entries extracted
+[2026-04-14T20:23:01Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:23:01Z] [DOWNLOAD] UniProt page 4: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:04Z] [DOWNLOAD] UniProt page 4: 500 proteins, 163 entries extracted
+[2026-04-14T20:23:04Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:23:04Z] [DOWNLOAD] UniProt page 5: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:06Z] [DOWNLOAD] UniProt page 5: 500 proteins, 176 entries extracted
+[2026-04-14T20:23:06Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:23:06Z] [DOWNLOAD] UniProt page 6: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:09Z] [DOWNLOAD] UniProt page 6: 500 proteins, 480 entries extracted
+[2026-04-14T20:23:09Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:23:09Z] [DOWNLOAD] UniProt page 7: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:12Z] [DOWNLOAD] UniProt page 7: 500 proteins, 237 entries extracted
+[2026-04-14T20:23:12Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:23:12Z] [DOWNLOAD] UniProt page 8: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:14Z] [DOWNLOAD] UniProt page 8: 500 proteins, 252 entries extracted
+[2026-04-14T20:23:14Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:23:14Z] [DOWNLOAD] UniProt page 9: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:17Z] [DOWNLOAD] UniProt page 9: 500 proteins, 561 entries extracted
+[2026-04-14T20:23:17Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:23:17Z] [DOWNLOAD] UniProt page 10: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:20Z] [DOWNLOAD] UniProt page 10: 500 proteins, 160 entries extracted
+[2026-04-14T20:23:20Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:23:20Z] [DOWNLOAD] UniProt page 11: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:22Z] [DOWNLOAD] UniProt page 11: 500 proteins, 194 entries extracted
+[2026-04-14T20:23:22Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:23:22Z] [DOWNLOAD] UniProt page 12: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:25Z] [DOWNLOAD] UniProt page 12: 500 proteins, 377 entries extracted
+[2026-04-14T20:23:25Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:23:25Z] [DOWNLOAD] UniProt page 13: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:28Z] [DOWNLOAD] UniProt page 13: 500 proteins, 123 entries extracted
+[2026-04-14T20:23:28Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:23:28Z] [DOWNLOAD] UniProt page 14: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:30Z] [DOWNLOAD] UniProt page 14: 500 proteins, 45 entries extracted
+[2026-04-14T20:23:30Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:23:30Z] [DOWNLOAD] UniProt page 15: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:32Z] [DOWNLOAD] UniProt page 15: 500 proteins, 10 entries extracted
+[2026-04-14T20:23:32Z] [DOWNLOAD] UniProt next page cursor found
+[2026-04-14T20:23:32Z] [DOWNLOAD] UniProt page 16: fetching https://rest.uniprot.org/uniprotkb/search?format=json&fields=accession,gene_names,ft_mod_res&query=o...
+[2026-04-14T20:23:33Z] [DOWNLOAD] UniProt page 16: 63 proteins, 2 entries extracted
+[2026-04-14T20:23:33Z] [DOWNLOAD] UniProt: last page (63 < 500 proteins)
+[2026-04-14T20:23:33Z] [PARSE] UniProt total: 8063 proteins processed, 4064 k-s entries
+[2026-04-14T20:23:33Z] [PARSE] UniProt added 2573 new unique entries, total: 17715
+[2026-04-14T20:23:33Z] [MERGE] Finalizing and deduplicating atlas
+[2026-04-14T20:23:33Z] [MERGE] Final atlas: 17715 unique triplets
+[2026-04-14T20:23:33Z] [MERGE] Kinases: 488, Substrates: 3334
+[2026-04-14T20:23:33Z] [MERGE] Multi-DB entries: 1469
+[2026-04-14T20:23:33Z] [MERGE] Databases: ['PhosphoSitePlus', 'UniProt']
+[2026-04-14T20:23:33Z] [SUBMIT] Writing 17715 entries to atlas.json
+[2026-04-14T20:23:33Z] [SUBMIT] atlas.json: 4,136,637 bytes
+[2026-04-14T20:23:33Z] [DONE] run_log.json written. Elapsed: 417.1s
+[2026-04-14T20:23:33Z] [DONE] COMPLETE: 17715 entries from ['PhosphoSitePlus', 'UniProt']
+[2026-04-14T20:23:36Z] [DISCOVER] Phase 1: PhosphoSitePlus (PSP) Kinase_Substrate_Dataset
+[2026-04-14T20:23:36Z] [DOWNLOAD] PSP file already at /Users/lokeshmuvva/UCSF/agent-pa-benchmark/databases/psp/Kinase_Substrate_Dataset, loading...
+[2026-04-14T20:23:36Z] [PARSE] PSP loaded from disk: 15586 human entries, atlas now: 15142
+[2026-04-14T20:23:36Z] [DISCOVER] Phase 2: SIGNOR phosphorylation data
+[2026-04-14T20:23:36Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/download_entity.php?format=tab&type=all&organism=9606
+[2026-04-14T20:24:51Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/download_entity.php?format=tab&type=all&organism=9606
+[2026-04-14T20:24:51Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/getData.php?organism=human&format=tab
+[2026-04-14T20:26:06Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/getData.php?organism=human&format=tab
+[2026-04-14T20:26:06Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/api/v1/getAllData/?organism=9606
+[2026-04-14T20:27:21Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/api/v1/getAllData/?organism=9606
+[2026-04-14T20:27:21Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/api/v1/getData/?organism=9606&format=json
+[2026-04-14T20:28:36Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/api/v1/getData/?organism=9606&format=json
+[2026-04-14T20:28:36Z] [DOWNLOAD] Trying SIGNOR: https://signor.uniroma2.it/PhosphoSIGNOR/apis/v1/index.php?role=all&format=tsv&header=yes
+[2026-04-14T20:29:51Z] [ERROR] SIGNOR URL returned small/empty response (0 chars): https://signor.uniroma2.it/PhosphoSIGNOR/apis/v1/index.php?role=all&format=tsv&header=yes
+[2026-04-14T20:29:51Z] [ERROR] SIGNOR: all endpoints failed or returned no phosphorylation entries
+[2026-04-14T20:29:51Z] [DISCOVER] Phase 3: UniProt REST API paginated phospho data
+[2026-04-14T20:29:51Z] [DOWNLOAD] UniProt file exists, loading /Users/lokeshmuvva/UCSF/agent-pa-benchmark/databases/uniprot/uniprot_phospho_parsed.json...
+[2026-04-14T20:29:51Z] [PARSE] UniProt loaded: 2573 new entries, total: 17715
+[2026-04-14T20:29:51Z] [MERGE] Finalizing and deduplicating atlas
+[2026-04-14T20:29:51Z] [MERGE] Final atlas: 17715 unique triplets
+[2026-04-14T20:29:52Z] [MERGE] Kinases: 488, Substrates: 3334
+[2026-04-14T20:29:52Z] [MERGE] Multi-DB entries: 1469
+[2026-04-14T20:29:52Z] [MERGE] Databases: ['PhosphoSitePlus', 'UniProt']
+[2026-04-14T20:29:52Z] [SUBMIT] Writing 17715 entries to atlas.json
+[2026-04-14T20:29:52Z] [SUBMIT] atlas.json: 4,136,637 bytes
+[2026-04-14T20:29:52Z] [DONE] run_log.json written. Elapsed: 375.2s
+[2026-04-14T20:29:52Z] [DONE] COMPLETE: 17715 entries from ['PhosphoSitePlus', 'UniProt']

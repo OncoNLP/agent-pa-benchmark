@@ -1,12 +1,5 @@
 [
   {
-    "kinase": "CDK2",
-    "substrate": "RECQL4",
-    "site": "S89",
-    "gold_peptide": "LNRAATKsPQPtPGR",
-    "agent_peptide": "LNRAATKsPQStPGR"
-  },
-  {
     "kinase": "LATS1",
     "substrate": "YAP1",
     "site": "S381",
@@ -19,6 +12,13 @@
     "site": "S40",
     "gold_peptide": "GQGAPGPsLTGSPWP",
     "agent_peptide": "RFIGRRQsLIEDARK"
+  },
+  {
+    "kinase": "PRKACA",
+    "substrate": "GFPT1",
+    "site": "S235",
+    "gold_peptide": "TGkDKkGsCNLsRVD",
+    "agent_peptide": "TARTQIGsKFTRWGs"
   },
   {
     "kinase": "PRKACA",
@@ -35,17 +35,17 @@
     "agent_peptide": "LNRAATKsPQStPGR"
   },
   {
+    "kinase": "CDK2",
+    "substrate": "RECQL4",
+    "site": "S89",
+    "gold_peptide": "LNRAATKsPQPtPGR",
+    "agent_peptide": "LNRAATKsPQStPGR"
+  },
+  {
     "kinase": "CAMK2B",
     "substrate": "CAMK2B",
     "site": "T287",
     "gold_peptide": "sMMHRQEtVDCLKKF",
     "agent_peptide": "sMMHRQEtVECLKKF"
-  },
-  {
-    "kinase": "PRKACA",
-    "substrate": "GFPT1",
-    "site": "S235",
-    "gold_peptide": "TGkDKkGsCNLsRVD",
-    "agent_peptide": "TARTQIGsKFTRWGs"
   }
 ]
