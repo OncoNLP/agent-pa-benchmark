@@ -1,0 +1,121 @@
+[
+  {
+    "kinase": "DAPK1",
+    "substrate": "TP53",
+    "site": "S20",
+    "gold_peptide": "PLsQEtFsDLWkLLP",
+    "agent_peptide": "ETFSDLW"
+  },
+  {
+    "kinase": "TAF1",
+    "substrate": "TP53",
+    "site": "T55",
+    "gold_peptide": "DDIEQWFtEDPGPDE",
+    "agent_peptide": "QWFTEDP"
+  },
+  {
+    "kinase": "CDK1",
+    "substrate": "TP53",
+    "site": "S315",
+    "gold_peptide": "LPNNtsssPQPkkkP",
+    "agent_peptide": "NNTSSSP"
+  },
+  {
+    "kinase": "CHEK2",
+    "substrate": "TP53",
+    "site": "S20",
+    "gold_peptide": "PLsQEtFsDLWkLLP",
+    "agent_peptide": "ETFSDLW"
+  },
+  {
+    "kinase": "NUAK1",
+    "substrate": "TP53",
+    "site": "S15",
+    "gold_peptide": "PsVEPPLsQEtFsDL",
+    "agent_peptide": "PPLSQET"
+  },
+  {
+    "kinase": "CDK5",
+    "substrate": "TP53",
+    "site": "S15",
+    "gold_peptide": "PsVEPPLsQEtFsDL",
+    "agent_peptide": "PPLSQET"
+  },
+  {
+    "kinase": "MAPKAPK5",
+    "substrate": "TP53",
+    "site": "S37",
+    "gold_peptide": "NVLsPLPsQAMDDLM",
+    "agent_peptide": "LPSQAMD"
+  },
+  {
+    "kinase": "AURKA",
+    "substrate": "TP53",
+    "site": "S315",
+    "gold_peptide": "LPNNtsssPQPkkkP",
+    "agent_peptide": "NNTSSSP"
+  },
+  {
+    "kinase": "VRK1",
+    "substrate": "TP53",
+    "site": "T18",
+    "gold_peptide": "EPPLsQEtFsDLWkL",
+    "agent_peptide": "SQETFSD"
+  },
+  {
+    "kinase": "CDK7",
+    "substrate": "TP53",
+    "site": "S33",
+    "gold_peptide": "LPENNVLsPLPsQAM",
+    "agent_peptide": "NVLSPLP"
+  },
+  {
+    "kinase": "CDK2",
+    "substrate": "TP53",
+    "site": "S315",
+    "gold_peptide": "LPNNtsssPQPkkkP",
+    "agent_peptide": "NNTSSSP"
+  },
+  {
+    "kinase": "CDK5",
+    "substrate": "TP53",
+    "site": "S33",
+    "gold_peptide": "LPENNVLsPLPsQAM",
+    "agent_peptide": "NVLSPLP"
+  },
+  {
+    "kinase": "PLK3",
+    "substrate": "TP53",
+    "site": "S20",
+    "gold_peptide": "PLsQEtFsDLWkLLP",
+    "agent_peptide": "ETFSDLW"
+  },
+  {
+    "kinase": "DYRK2",
+    "substrate": "TP53",
+    "site": "S46",
+    "gold_peptide": "AMDDLMLsPDDIEQW",
+    "agent_peptide": "LMLSPDD"
+  },
+  {
+    "kinase": "HIPK2",
+    "substrate": "TP53",
+    "site": "S46",
+    "gold_peptide": "AMDDLMLsPDDIEQW",
+    "agent_peptide": "LMLSPDD"
+  },
+  {
+    "kinase": "ATM",
+    "substrate": "TP53",
+    "site": "S15",
+    "gold_peptide": "PsVEPPLsQEtFsDL",
+    "agent_peptide": "PPLSQET"
+  },
+  {
+    "kinase": "GRK5",
+    "substrate": "TP53",
+    "site": "T55",
+    "gold_peptide": "DDIEQWFtEDPGPDE",
+    "agent_peptide": "QWFTEDP"
+  }
+]

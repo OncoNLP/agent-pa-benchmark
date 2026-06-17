@@ -1,0 +1,396 @@
+{
+  "agent": "Kimi (kimi-k2.6)",
+  "model": "kimi-k2.6",
+  "provider_base_url": "https://api.moonshot.ai/v1",
+  "condition": "paper_informed",
+  "strategy_summary": "Systematically queried the OmniPath web service (ptms endpoint) for human phosphorylation enzyme-substrate interactions, which aggregates experimentally validated data from PhosphoSitePlus, SIGNOR, HPRD, dbPTM, phosphoELM, PhosphoNetworks, KEA, and other resources. Retrieved entries in batches and via filtered queries (by residue type and kinase) to circumvent response-size limits. Cross-referenced supporting databases directly from the OmniPath sources field for each kinase-substrate-site triplet. Extracted HGNC gene symbols, substrate UniProt accessions, and phosphosite coordinates (e.g., Y204) from the API responses. Heptameric peptide sequences were not available from the queried endpoint and could not be retrieved due to context constraints.",
+  "databases_accessed": [
+    "BEL-Large-Corpus_ProtMapper",
+    "HPRD",
+    "HPRD_MIMP",
+    "KEA",
+    "Li2012",
+    "MIMP",
+    "NCI-PID_ProtMapper",
+    "PhosphoNetworks",
+    "PhosphoSite",
+    "PhosphoSite_MIMP",
+    "PhosphoSite_ProtMapper",
+    "ProtMapper",
+    "REACH_ProtMapper",
+    "RLIMS-P_ProtMapper",
+    "Reactome_ProtMapper",
+    "SIGNOR",
+    "SIGNOR_ProtMapper",
+    "Sparser_ProtMapper",
+    "dbPTM",
+    "phosphoELM",
+    "phosphoELM_MIMP"
+  ],
+  "tool_calls": 57,
+  "turns": 57,
+  "elapsed_seconds": 743.3,
+  "atlas_size": 113,
+  "unique_kinases": 17,
+  "unique_substrates": 21,
+  "multi_db_entries": 107,
+  "token_usage": {
+    "total_input_tokens": 6635785,
+    "total_input_tokens_cached": 6368736,
+    "total_input_tokens_uncached": 267049,
+    "total_output_tokens": 47185,
+    "total_tokens": 6682970,
+    "estimated_cost_usd": 1.4614,
+    "api_calls": 57,
+    "pricing": {
+      "provider": "Moonshot AI (Kimi)",
+      "input_per_1m_cache_hit": 0.16,
+      "input_per_1m_cache_miss": 0.95,
+      "output_per_1m": 4.0
+    },
+    "per_call": [
+      {
+        "turn": 1,
+        "input_tokens_cached": 992,
+        "input_tokens_uncached": 0,
+        "output_tokens": 1718
+      },
+      {
+        "turn": 2,
+        "input_tokens_cached": 512,
+        "input_tokens_uncached": 2309,
+        "output_tokens": 161
+      },
+      {
+        "turn": 3,
+        "input_tokens_cached": 2048,
+        "input_tokens_uncached": 5597,
+        "output_tokens": 118
+      },
+      {
+        "turn": 4,
+        "input_tokens_cached": 6144,
+        "input_tokens_uncached": 3923,
+        "output_tokens": 187
+      },
+      {
+        "turn": 5,
+        "input_tokens_cached": 8192,
+        "input_tokens_uncached": 2635,
+        "output_tokens": 212
+      },
+      {
+        "turn": 6,
+        "input_tokens_cached": 10240,
+        "input_tokens_uncached": 6810,
+        "output_tokens": 1183
+      },
+      {
+        "turn": 7,
+        "input_tokens_cached": 16384,
+        "input_tokens_uncached": 7888,
+        "output_tokens": 466
+      },
+      {
+        "turn": 8,
+        "input_tokens_cached": 22528,
+        "input_tokens_uncached": 7354,
+        "output_tokens": 239
+      },
+      {
+        "turn": 9,
+        "input_tokens_cached": 28672,
+        "input_tokens_uncached": 6593,
+        "output_tokens": 150
+      },
+      {
+        "turn": 10,
+        "input_tokens_cached": 34816,
+        "input_tokens_uncached": 1456,
+        "output_tokens": 317
+      },
+      {
+        "turn": 11,
+        "input_tokens_cached": 34816,
+        "input_tokens_uncached": 2630,
+        "output_tokens": 414
+      },
+      {
+        "turn": 12,
+        "input_tokens_cached": 36864,
+        "input_tokens_uncached": 7858,
+        "output_tokens": 516
+      },
+      {
+        "turn": 13,
+        "input_tokens_cached": 43008,
+        "input_tokens_uncached": 11745,
+        "output_tokens": 400
+      },
+      {
+        "turn": 14,
+        "input_tokens_cached": 53248,
+        "input_tokens_uncached": 9823,
+        "output_tokens": 617
+      },
+      {
+        "turn": 15,
+        "input_tokens_cached": 61440,
+        "input_tokens_uncached": 14085,
+        "output_tokens": 623
+      },
+      {
+        "turn": 16,
+        "input_tokens_cached": 73728,
+        "input_tokens_uncached": 8242,
+        "output_tokens": 387
+      },
+      {
+        "turn": 17,
+        "input_tokens_cached": 81920,
+        "input_tokens_uncached": 3519,
+        "output_tokens": 1100
+      },
+      {
+        "turn": 18,
+        "input_tokens_cached": 83968,
+        "input_tokens_uncached": 7765,
+        "output_tokens": 238
+      },
+      {
+        "turn": 19,
+        "input_tokens_cached": 90112,
+        "input_tokens_uncached": 6721,
+        "output_tokens": 349
+      },
+      {
+        "turn": 20,
+        "input_tokens_cached": 96256,
+        "input_tokens_uncached": 966,
+        "output_tokens": 41
+      },
+      {
+        "turn": 21,
+        "input_tokens_cached": 96256,
+        "input_tokens_uncached": 1047,
+        "output_tokens": 42
+      },
+      {
+        "turn": 22,
+        "input_tokens_cached": 96256,
+        "input_tokens_uncached": 1129,
+        "output_tokens": 503
+      },
+      {
+        "turn": 23,
+        "input_tokens_cached": 96256,
+        "input_tokens_uncached": 1667,
+        "output_tokens": 80
+      },
+      {
+        "turn": 24,
+        "input_tokens_cached": 96256,
+        "input_tokens_uncached": 1834,
+        "output_tokens": 97
+      },
+      {
+        "turn": 25,
+        "input_tokens_cached": 96256,
+        "input_tokens_uncached": 2554,
+        "output_tokens": 65
+      },
+      {
+        "turn": 26,
+        "input_tokens_cached": 98304,
+        "input_tokens_uncached": 1416,
+        "output_tokens": 155
+      },
+      {
+        "turn": 27,
+        "input_tokens_cached": 98304,
+        "input_tokens_uncached": 6635,
+        "output_tokens": 566
+      },
+      {
+        "turn": 28,
+        "input_tokens_cached": 104448,
+        "input_tokens_uncached": 6970,
+        "output_tokens": 575
+      },
+      {
+        "turn": 29,
+        "input_tokens_cached": 110592,
+        "input_tokens_uncached": 1436,
+        "output_tokens": 55
+      },
+      {
+        "turn": 30,
+        "input_tokens_cached": 110592,
+        "input_tokens_uncached": 1526,
+        "output_tokens": 220
+      },
+      {
+        "turn": 31,
+        "input_tokens_cached": 110592,
+        "input_tokens_uncached": 32887,
+        "output_tokens": 549
+      },
+      {
+        "turn": 32,
+        "input_tokens_cached": 143360,
+        "input_tokens_uncached": 748,
+        "output_tokens": 201
+      },
+      {
+        "turn": 33,
+        "input_tokens_cached": 143360,
+        "input_tokens_uncached": 1049,
+        "output_tokens": 84
+      },
+      {
+        "turn": 34,
+        "input_tokens_cached": 143360,
+        "input_tokens_uncached": 1233,
+        "output_tokens": 408
+      },
+      {
+        "turn": 35,
+        "input_tokens_cached": 143360,
+        "input_tokens_uncached": 8440,
+        "output_tokens": 463
+      },
+      {
+        "turn": 36,
+        "input_tokens_cached": 151552,
+        "input_tokens_uncached": 747,
+        "output_tokens": 70
+      },
+      {
+        "turn": 37,
+        "input_tokens_cached": 151552,
+        "input_tokens_uncached": 7425,
+        "output_tokens": 558
+      },
+      {
+        "turn": 38,
+        "input_tokens_cached": 157696,
+        "input_tokens_uncached": 1873,
+        "output_tokens": 114
+      },
+      {
+        "turn": 39,
+        "input_tokens_cached": 157696,
+        "input_tokens_uncached": 2021,
+        "output_tokens": 116
+      },
+      {
+        "turn": 40,
+        "input_tokens_cached": 157696,
+        "input_tokens_uncached": 9094,
+        "output_tokens": 316
+      },
+      {
+        "turn": 41,
+        "input_tokens_cached": 165888,
+        "input_tokens_uncached": 1272,
+        "output_tokens": 70
+      },
+      {
+        "turn": 42,
+        "input_tokens_cached": 165888,
+        "input_tokens_uncached": 1377,
+        "output_tokens": 48
+      },
+      {
+        "turn": 43,
+        "input_tokens_cached": 165888,
+        "input_tokens_uncached": 1479,
+        "output_tokens": 549
+      },
+      {
+        "turn": 44,
+        "input_tokens_cached": 165888,
+        "input_tokens_uncached": 5910,
+        "output_tokens": 706
+      },
+      {
+        "turn": 45,
+        "input_tokens_cached": 169984,
+        "input_tokens_uncached": 8910,
+        "output_tokens": 1247
+      },
+      {
+        "turn": 46,
+        "input_tokens_cached": 178176,
+        "input_tokens_uncached": 2013,
+        "output_tokens": 51
+      },
+      {
+        "turn": 47,
+        "input_tokens_cached": 178176,
+        "input_tokens_uncached": 2112,
+        "output_tokens": 338
+      },
+      {
+        "turn": 48,
+        "input_tokens_cached": 180224,
+        "input_tokens_uncached": 7328,
+        "output_tokens": 913
+      },
+      {
+        "turn": 49,
+        "input_tokens_cached": 186368,
+        "input_tokens_uncached": 2133,
+        "output_tokens": 468
+      },
+      {
+        "turn": 50,
+        "input_tokens_cached": 188416,
+        "input_tokens_uncached": 588,
+        "output_tokens": 1030
+      },
+      {
+        "turn": 51,
+        "input_tokens_cached": 188416,
+        "input_tokens_uncached": 8544,
+        "output_tokens": 453
+      },
+      {
+        "turn": 52,
+        "input_tokens_cached": 196608,
+        "input_tokens_uncached": 905,
+        "output_tokens": 469
+      },
+      {
+        "turn": 53,
+        "input_tokens_cached": 196608,
+        "input_tokens_uncached": 1409,
+        "output_tokens": 61
+      },
+      {
+        "turn": 54,
+        "input_tokens_cached": 196608,
+        "input_tokens_uncached": 1505,
+        "output_tokens": 85
+      },
+      {
+        "turn": 55,
+        "input_tokens_cached": 196608,
+        "input_tokens_uncached": 1625,
+        "output_tokens": 1196
+      },
+      {
+        "turn": 56,
+        "input_tokens_cached": 196608,
+        "input_tokens_uncached": 6712,
+        "output_tokens": 114
+      },
+      {
+        "turn": 57,
+        "input_tokens_cached": 202752,
+        "input_tokens_uncached": 3577,
+        "output_tokens": 24714
+      }
+    ]
+  }
+}

@@ -1,0 +1,662 @@
+[
+  {
+    "kinase_gene": "AKT1",
+    "substrates": [
+      {
+        "kinase_gene": "AKT1",
+        "substrate_gene": "RAB3IP",
+        "phospho_site": "S163",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:31204173"
+        ],
+        "substrate_uniprot": "Q96QF0"
+      },
+      {
+        "kinase_gene": "AKT1",
+        "substrate_gene": "RAB3IP",
+        "phospho_site": "S165",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:31204173"
+        ],
+        "substrate_uniprot": "Q96QF0"
+      },
+      {
+        "kinase_gene": "AKT1",
+        "substrate_gene": "GSK3B",
+        "phospho_site": "S9",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:12054501"
+        ],
+        "substrate_uniprot": "P49841"
+      },
+      {
+        "kinase_gene": "AKT1",
+        "substrate_gene": "BCAM",
+        "phospho_site": "S621",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:15975931"
+        ],
+        "substrate_uniprot": "P50895"
+      },
+      {
+        "kinase_gene": "AKT1",
+        "substrate_gene": "GSK3A",
+        "phospho_site": "S21",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:17625112"
+        ],
+        "substrate_uniprot": "P49840"
+      },
+      {
+        "kinase_gene": "AKT1",
+        "substrate_gene": "EZH2",
+        "phospho_site": "S21",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:16224021"
+        ],
+        "substrate_uniprot": "Q15910"
+      },
+      {
+        "kinase_gene": "AKT1",
+        "substrate_gene": "PALLD",
+        "phospho_site": "S1118",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:20471940"
+        ],
+        "substrate_uniprot": "Q8WX93"
+      },
+      {
+        "kinase_gene": "AKT1",
+        "substrate_gene": "USP4",
+        "phospho_site": "S445",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:30514904"
+        ],
+        "substrate_uniprot": "Q13107"
+      },
+      {
+        "kinase_gene": "AKT1",
+        "substrate_gene": "TBC1D4",
+        "phospho_site": "S588",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:11994271"
+        ],
+        "substrate_uniprot": "O60343"
+      },
+      {
+        "kinase_gene": "AKT1",
+        "substrate_gene": "TBC1D4",
+        "phospho_site": "T642",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:11994271"
+        ],
+        "substrate_uniprot": "O60343"
+      }
+    ],
+    "kinase_uniprot": "P31749",
+    "kinase_family": "AGC",
+    "kinase_citations": [
+      "UniProt:P31749"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrates": [
+      {
+        "kinase_gene": "CDK1",
+        "substrate_gene": "EZH2",
+        "phospho_site": "T345",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:20935635"
+        ],
+        "substrate_uniprot": "Q15910"
+      },
+      {
+        "kinase_gene": "CDK1",
+        "substrate_gene": "CUX1",
+        "phospho_site": "S1237",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:11584018"
+        ],
+        "substrate_uniprot": "P39880"
+      }
+    ],
+    "kinase_uniprot": "P06493",
+    "kinase_family": "CMGC",
+    "kinase_citations": [
+      "UniProt:P06493"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrates": [
+      {
+        "kinase_gene": "CDK2",
+        "substrate_gene": "EZH2",
+        "phospho_site": "T345",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:20935635"
+        ],
+        "substrate_uniprot": "Q15910"
+      },
+      {
+        "kinase_gene": "CDK2",
+        "substrate_gene": "RBL2",
+        "phospho_site": "T642",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:11157749"
+        ],
+        "substrate_uniprot": "Q08999"
+      },
+      {
+        "kinase_gene": "CDK2",
+        "substrate_gene": "MYBL2",
+        "phospho_site": "S577",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:9840932"
+        ],
+        "substrate_uniprot": "P10244"
+      }
+    ],
+    "kinase_uniprot": "P24941",
+    "kinase_family": "CMGC",
+    "kinase_citations": [
+      "UniProt:P24941"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK1",
+    "substrates": [
+      {
+        "kinase_gene": "MAPK1",
+        "substrate_gene": "PML",
+        "phospho_site": "S40",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:15093545"
+        ],
+        "substrate_uniprot": "P29590"
+      },
+      {
+        "kinase_gene": "MAPK1",
+        "substrate_gene": "CEP55",
+        "phospho_site": "S425",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:16198290"
+        ],
+        "substrate_uniprot": "Q53EZ4"
+      },
+      {
+        "kinase_gene": "MAPK1",
+        "substrate_gene": "TPR",
+        "phospho_site": "T2137",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:18794356"
+        ],
+        "substrate_uniprot": "P12270"
+      }
+    ],
+    "kinase_uniprot": "P28482",
+    "kinase_family": "CMGC",
+    "kinase_citations": [
+      "UniProt:P28482"
+    ]
+  },
+  {
+    "kinase_gene": "MAPK3",
+    "substrates": [
+      {
+        "kinase_gene": "MAPK3",
+        "substrate_gene": "MAGEA11",
+        "phospho_site": "S174",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:19828458"
+        ],
+        "substrate_uniprot": "P43364"
+      }
+    ],
+    "kinase_uniprot": "P27361",
+    "kinase_family": "CMGC",
+    "kinase_citations": [
+      "UniProt:P27361"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrates": [
+      {
+        "kinase_gene": "SRC",
+        "substrate_gene": "CTNND1",
+        "phospho_site": "Y228",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:11382764"
+        ],
+        "substrate_uniprot": "O60716"
+      },
+      {
+        "kinase_gene": "SRC",
+        "substrate_gene": "VCL",
+        "phospho_site": "Y100",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:15229287"
+        ],
+        "substrate_uniprot": "P18206"
+      },
+      {
+        "kinase_gene": "SRC",
+        "substrate_gene": "EZR",
+        "phospho_site": "Y146",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:15647376"
+        ],
+        "substrate_uniprot": "P15311"
+      },
+      {
+        "kinase_gene": "SRC",
+        "substrate_gene": "ARHGDIA",
+        "phospho_site": "Y156",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:16943322"
+        ],
+        "substrate_uniprot": "P52565"
+      }
+    ],
+    "kinase_uniprot": "P12931",
+    "kinase_family": "TK",
+    "kinase_citations": [
+      "UniProt:P12931"
+    ]
+  },
+  {
+    "kinase_gene": "GSK3B",
+    "substrates": [
+      {
+        "kinase_gene": "GSK3B",
+        "substrate_gene": "STAT2",
+        "phospho_site": "S381",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:31843895"
+        ],
+        "substrate_uniprot": "P52630"
+      },
+      {
+        "kinase_gene": "GSK3B",
+        "substrate_gene": "MAPT",
+        "phospho_site": "T548",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:21215781"
+        ],
+        "substrate_uniprot": "P10636"
+      }
+    ],
+    "kinase_uniprot": "P49841",
+    "kinase_family": "CMGC",
+    "kinase_citations": [
+      "UniProt:P49841"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCA",
+    "substrates": [
+      {
+        "kinase_gene": "PRKCA",
+        "substrate_gene": "RRAD",
+        "phospho_site": "S257",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:9677319"
+        ],
+        "substrate_uniprot": "P55042"
+      }
+    ],
+    "kinase_uniprot": "P17252",
+    "kinase_family": "AGC",
+    "kinase_citations": [
+      "UniProt:P17252"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCB",
+    "substrates": [
+      {
+        "kinase_gene": "PRKCB",
+        "substrate_gene": "ORAI1",
+        "phospho_site": "S30",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:20534587"
+        ],
+        "substrate_uniprot": "Q96D31"
+      }
+    ],
+    "kinase_uniprot": "P05771",
+    "kinase_family": "AGC",
+    "kinase_citations": [
+      "UniProt:P05771"
+    ]
+  },
+  {
+    "kinase_gene": "CAMK2A",
+    "substrates": [
+      {
+        "kinase_gene": "CAMK2A",
+        "substrate_gene": "GFAP",
+        "phospho_site": "S17",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:7822264"
+        ],
+        "substrate_uniprot": "P14136"
+      }
+    ],
+    "kinase_uniprot": "Q9UQM7",
+    "kinase_family": "CAMK",
+    "kinase_citations": [
+      "UniProt:Q9UQM7"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrates": [
+      {
+        "kinase_gene": "INSR",
+        "substrate_gene": "DOK1",
+        "phospho_site": "Y398",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:11551902"
+        ],
+        "substrate_uniprot": "Q99704"
+      }
+    ],
+    "kinase_uniprot": "P06213",
+    "kinase_family": "TK",
+    "kinase_citations": [
+      "UniProt:P06213"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA3",
+    "substrates": [
+      {
+        "kinase_gene": "RPS6KA3",
+        "substrate_gene": "CASP8",
+        "phospho_site": "T263",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:21183680"
+        ],
+        "substrate_uniprot": "Q14790"
+      }
+    ],
+    "kinase_uniprot": "P51812",
+    "kinase_family": "AGC",
+    "kinase_citations": [
+      "UniProt:P51812"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KA5",
+    "substrates": [
+      {
+        "kinase_gene": "RPS6KA5",
+        "substrate_gene": "STAT3",
+        "phospho_site": "S727",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:12763138"
+        ],
+        "substrate_uniprot": "P40763"
+      }
+    ],
+    "kinase_uniprot": "O75582",
+    "kinase_family": "AGC",
+    "kinase_citations": [
+      "UniProt:O75582"
+    ]
+  },
+  {
+    "kinase_gene": "PRKD1",
+    "substrates": [
+      {
+        "kinase_gene": "PRKD1",
+        "substrate_gene": "SSH1",
+        "phospho_site": "S978",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:19567672"
+        ],
+        "substrate_uniprot": "Q8WYL5"
+      }
+    ],
+    "kinase_uniprot": "Q15139",
+    "kinase_family": "CAMK",
+    "kinase_citations": [
+      "UniProt:Q15139"
+    ]
+  },
+  {
+    "kinase_gene": "CSNK2A1",
+    "substrates": [
+      {
+        "kinase_gene": "CSNK2A1",
+        "substrate_gene": "NFKBIA",
+        "phospho_site": "S36",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:10398585"
+        ],
+        "substrate_uniprot": "P25963"
+      }
+    ],
+    "kinase_uniprot": "P68400",
+    "kinase_family": "other",
+    "kinase_citations": [
+      "UniProt:P68400"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrates": [
+      {
+        "kinase_gene": "LCK",
+        "substrate_gene": "PTEN",
+        "phospho_site": "Y315",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:11948419"
+        ],
+        "substrate_uniprot": "P60484"
+      }
+    ],
+    "kinase_uniprot": "P06239",
+    "kinase_family": "TK",
+    "kinase_citations": [
+      "UniProt:P06239"
+    ]
+  },
+  {
+    "kinase_gene": "MST1",
+    "substrates": [
+      {
+        "kinase_gene": "MST1",
+        "substrate_gene": "PRKCA",
+        "phospho_site": "T228",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:26414765"
+        ],
+        "substrate_uniprot": "P17252"
+      }
+    ],
+    "kinase_uniprot": "P26927",
+    "kinase_family": "STE",
+    "kinase_citations": [
+      "UniProt:P26927"
+    ]
+  },
+  {
+    "kinase_gene": "RET",
+    "substrates": [
+      {
+        "kinase_gene": "RET",
+        "substrate_gene": "RET",
+        "phospho_site": "Y1090",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:14711813"
+        ],
+        "substrate_uniprot": "P07949"
+      }
+    ],
+    "kinase_uniprot": "P07949",
+    "kinase_family": "TK",
+    "kinase_citations": [
+      "UniProt:P07949"
+    ]
+  },
+  {
+    "kinase_gene": "CDK5",
+    "substrates": [
+      {
+        "kinase_gene": "CDK5",
+        "substrate_gene": "STMN3",
+        "phospho_site": "S73",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:22577147"
+        ],
+        "substrate_uniprot": "Q9NZ72"
+      }
+    ],
+    "kinase_uniprot": "Q00535",
+    "kinase_family": "CMGC",
+    "kinase_citations": [
+      "UniProt:Q00535"
+    ]
+  },
+  {
+    "kinase_gene": "PKN1",
+    "substrates": [
+      {
+        "kinase_gene": "PKN1",
+        "substrate_gene": "PKN1",
+        "phospho_site": "T64",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:10467162"
+        ],
+        "substrate_uniprot": "Q16512"
+      }
+    ],
+    "kinase_uniprot": "Q16512",
+    "kinase_family": "AGC",
+    "kinase_citations": [
+      "UniProt:Q16512"
+    ]
+  },
+  {
+    "kinase_gene": "ERBB2",
+    "substrates": [
+      {
+        "kinase_gene": "ERBB2",
+        "substrate_gene": "BBC3",
+        "phospho_site": "Y172",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:24236056"
+        ],
+        "substrate_uniprot": "Q9BXH1"
+      }
+    ],
+    "kinase_uniprot": "P04626",
+    "kinase_family": "TK",
+    "kinase_citations": [
+      "UniProt:P04626"
+    ]
+  },
+  {
+    "kinase_gene": "EIF2AK1",
+    "substrates": [
+      {
+        "kinase_gene": "EIF2AK1",
+        "substrate_gene": "EIF2S1",
+        "phospho_site": "S52",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:11041858"
+        ],
+        "substrate_uniprot": "P05198"
+      }
+    ],
+    "kinase_uniprot": "Q9BQI3",
+    "kinase_family": "other",
+    "kinase_citations": [
+      "UniProt:Q9BQI3"
+    ]
+  },
+  {
+    "kinase_gene": "LATS1",
+    "substrates": [
+      {
+        "kinase_gene": "LATS1",
+        "substrate_gene": "WWTR1",
+        "phospho_site": "S89",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:22658639"
+        ],
+        "substrate_uniprot": "Q9GZV5"
+      }
+    ],
+    "kinase_uniprot": "O95835",
+    "kinase_family": "AGC",
+    "kinase_citations": [
+      "UniProt:O95835"
+    ]
+  },
+  {
+    "kinase_gene": "PRKAA1",
+    "substrates": [
+      {
+        "kinase_gene": "PRKAA1",
+        "substrate_gene": "GBF1",
+        "phospho_site": "T1337",
+        "evidence_level": "high",
+        "citations": [
+          "PMID:18063581"
+        ],
+        "substrate_uniprot": "Q92538"
+      }
+    ],
+    "kinase_uniprot": "Q13131",
+    "kinase_family": "CAMK",
+    "kinase_citations": [
+      "UniProt:Q13131"
+    ]
+  }
+]

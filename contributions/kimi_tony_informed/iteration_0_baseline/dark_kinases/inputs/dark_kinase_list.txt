@@ -1,0 +1,22 @@
+# Dark kinase universe — DO NOT POPULATE YET.
+# Goal for this task is unresolved (2026-06-03): per-entity curation given
+# the IDG/DKK set vs. agent-discovers-the-set vs. single atlas pass. See
+# the docstring in ../agent_runner.py for the three candidate designs.
+#
+# One HGNC gene symbol per line. Anything after the first tab is ignored.
+# Comments (#) and blank lines OK.
+#
+# Sourcing options (decision pending — see kimi_tony_informed/CLAUDE.md
+# "Open issues" section):
+#
+#   1. Pharos T-dark list via API:
+#        https://pharos.nih.gov/idg/api/v1/targets?filter=tdl:Tdark
+#      Filter to family=Kinase.
+#
+#   2. Filter Tony's Kinome_Kinase_List.xlsx by low PubMed_Specific
+#      (proxy for "understudied"). The xlsx has a `PubMed_Specific` column;
+#      e.g., keep rows with PubMed_Specific < 25.
+#
+#   3. Checked-in DKK (Dark Kinome Knowledgebase) list — source TBD.
+#
+# Until populated, the runner will exit with a clear error message.

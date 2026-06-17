@@ -1,0 +1,128 @@
+{
+  "overview": {
+    "atlas_size": 42,
+    "recall": 0.0024,
+    "precision": 0.881,
+    "f1": 0.0048,
+    "kinases_found": "23/433",
+    "multi_db_pct": 0.0,
+    "peptide_accuracy": 0.0
+  },
+  "atlas_level": {
+    "total_agent_entries": 42,
+    "total_gold_entries": 15635,
+    "true_positives": 37,
+    "false_positives": 5,
+    "false_negatives": 15598,
+    "precision": 0.881,
+    "recall": 0.0024,
+    "f1": 0.0048
+  },
+  "column_level": {
+    "matched_triplets": 37,
+    "site_exact": 37,
+    "site_total": 37,
+    "site_accuracy": 1.0,
+    "peptide_exact": 0,
+    "peptide_case_diff": 0,
+    "peptide_missing": 32,
+    "peptide_mismatch": 0,
+    "peptide_total": 32,
+    "peptide_accuracy": 0.0,
+    "peptide_exact_accuracy": 0.0,
+    "peptide_mismatch_rate": 0.0,
+    "peptide_missing_count": 32,
+    "uniprot_exact": 36,
+    "uniprot_total": 37,
+    "uniprot_accuracy": 0.973
+  },
+  "kinase_discovery": {
+    "kinases_in_gold": 433,
+    "kinases_discovered": 23,
+    "kinases_missed": 410,
+    "kinases_novel": 1,
+    "discovery_rate": 0.0531,
+    "missed_kinases": [
+      "AAK1",
+      "ABL1",
+      "ABL2",
+      "ACVR1",
+      "ACVR1B",
+      "ACVRL1",
+      "ADCK5",
+      "ADRBK1",
+      "AKT2",
+      "AKT3",
+      "ALK",
+      "ALPK1",
+      "ARAF",
+      "ATM",
+      "ATR",
+      "AURKA",
+      "AURKB",
+      "AURKC",
+      "AXL",
+      "BAZ1B",
+      "BCAT2",
+      "BCR",
+      "BCR/ABL",
+      "BLK",
+      "BLVRA",
+      "BMP2K",
+      "BMPR1B",
+      "BMX",
+      "BRAF",
+      "BRD4",
+      "BRSK1",
+      "BRSK2",
+      "BTK",
+      "BUB1",
+      "CAD",
+      "CAMK1",
+      "CAMK1G",
+      "CAMK2B",
+      "CAMK2D",
+      "CAMK2G",
+      "CAMK4",
+      "CAMKK1",
+      "CAMKK2",
+      "CASK",
+      "CDC42BPA",
+      "CDC42BPB",
+      "CDC7",
+      "CDK10",
+      "CDK11A",
+      "CDK11B"
+    ],
+    "novel_kinases": [
+      "MST1"
+    ]
+  },
+  "cross_referencing": {
+    "multi_db_count": 0,
+    "multi_db_pct": 0.0,
+    "db_coverage": {}
+  },
+  "per_tier": {
+    "A": {
+      "kinases": 34,
+      "gold_entries": 9517,
+      "recall": 0.0029
+    },
+    "B": {
+      "kinases": 102,
+      "gold_entries": 4353,
+      "recall": 0.0016
+    },
+    "C": {
+      "kinases": 144,
+      "gold_entries": 1452,
+      "recall": 0.0007
+    },
+    "D": {
+      "kinases": 153,
+      "gold_entries": 313,
+      "recall": 0.0032
+    }
+  }
+}

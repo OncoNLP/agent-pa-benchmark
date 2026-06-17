@@ -1,0 +1,26 @@
+# Orphan phosphosite list — POPULATE BEFORE RUNNING.
+#
+# One entry per line. Format:
+#     UNIPROT/SITE
+#     UNIPROT/SITE/FLANKING_PEPTIDE
+# Examples:
+#     P12345/S123
+#     Q9Y6K9/S207/SLRRSSP
+#
+# Comments (#) and blank lines OK.
+#
+# Sourcing options (decision pending — see kimi_tony_informed/CLAUDE.md
+# "Open issues" section):
+#
+#   1. Public MS phosphoproteomics datasets (e.g. PRIDE PXD*, CPTAC) —
+#      filter to sites with no annotated kinase in PSP and SIGNOR.
+#
+#   2. Tony's TierA edges file does NOT supply orphan sites (every row
+#      has an annotated kinase). It can be used to define "what counts
+#      as known" so we can subtract from any candidate phospho-site list.
+#
+#   3. PhosphoSitePlus Phosphorylation_site_dataset minus
+#      Kinase_Substrate_Dataset — yields "observed sites with no
+#      annotated kinase."
+#
+# Until populated, the runner will exit with a clear error message.

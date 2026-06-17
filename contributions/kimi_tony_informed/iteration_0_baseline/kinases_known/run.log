@@ -1,0 +1,244 @@
+[START] Kimi Kinases_Known discovery runner (model=kimi-k2.6)
+[TURN 1] Calling model...
+  [TOKENS] in=1,206 (cached=0) out=895 | cumulative $0.0047
+  [HTTP_GET] https://signor.uniroma2.it/API/getHumanData.php
+         -> ok (15048 chars)
+[TURN 2] Calling model...
+  [TOKENS] in=7,131 (cached=1,024) out=649 | cumulative $0.0133
+  [HTTP_GET] https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.gz
+         -> ok (15046 chars)
+[TURN 3] Calling model...
+  [TOKENS] in=38,905 (cached=6,144) out=527 | cumulative $0.0475
+  [HTTP_GET] https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 4] Calling model...
+  [TOKENS] in=39,467 (cached=36,864) out=523 | cumulative $0.0580
+  [HTTP_GET] https://signor.uniroma2.it/API/getHumanData.php?mechanism=phosphorylation
+         -> ok (15048 chars)
+[TURN 5] Calling model...
+  [TOKENS] in=45,054 (cached=38,912) out=481 | cumulative $0.0719
+  [HTTP_GET] https://signor.uniroma2.it/API/getData.php?protein=AKT1&format=txt
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 6] Calling model...
+  [TOKENS] in=45,570 (cached=43,008) out=57 | cumulative $0.0815
+  [HTTP_GET] https://signor.uniroma2.it/API/getData.php?entity=AKT1&format=txt
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 7] Calling model...
+  [TOKENS] in=45,662 (cached=45,056) out=112 | cumulative $0.0897
+  [HTTP_GET] https://signor.uniroma2.it/API/getData.php?id=AKT1
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 8] Calling model...
+  [TOKENS] in=45,809 (cached=45,056) out=46 | cumulative $0.0978
+  [HTTP_GET] https://signor.uniroma2.it/API/
+         -> ERROR: HTTP Error 403: Forbidden
+[TURN 9] Calling model...
+  [TOKENS] in=45,889 (cached=45,056) out=1,751 | cumulative $0.1128
+  [HTTP_GET] https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.gz
+         -> ok (15046 chars)
+[TURN 10] Calling model...
+  [TOKENS] in=78,765 (cached=45,056) out=523 | cumulative $0.1542
+  [HTTP_GET] https://www.phosphosite.org/downloads
+         -> ERROR: HTTP Error 403: Forbidden
+[TURN 11] Calling model...
+  [TOKENS] in=79,322 (cached=77,824) out=1,295 | cumulative $0.1732
+  [HTTP_GET] https://signor.uniroma2.it/API/getData.php?protein=P31749
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 12] Calling model...
+  [TOKENS] in=80,652 (cached=77,824) out=116 | cumulative $0.1888
+  [HTTP_GET] https://signor.uniroma2.it/API/getProteinData.php?id=AKT1
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 13] Calling model...
+  [TOKENS] in=80,803 (cached=79,872) out=98 | cumulative $0.2029
+  [HTTP_GET] https://signor.uniroma2.it/API/search.php?q=AKT1
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 14] Calling model...
+  [TOKENS] in=80,936 (cached=79,872) out=170 | cumulative $0.2173
+  [HTTP_GET] https://www.phosphosite.org/simpleSearchSubmitAction.action?searchStr=AKT1
+         -> ok (15045 chars)
+[TURN 15] Calling model...
+  [TOKENS] in=85,083 (cached=79,872) out=881 | cumulative $0.2386
+  [HTTP_GET] https://signor.uniroma2.it/API/getHumanData.php
+         -> ok (15048 chars)
+[TURN 16] Calling model...
+  [TOKENS] in=91,100 (cached=83,968) out=979 | cumulative $0.2627
+  [HTTP_GET] https://www.phosphosite.org/kinaseSubstrateData.action?kinase=AKT1
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 17] Calling model...
+  [TOKENS] in=92,114 (cached=90,112) out=63 | cumulative $0.2793
+  [HTTP_GET] https://www.phosphosite.org/ajaxKinaseSubstrateData?kinase=AKT1
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 18] Calling model...
+  [TOKENS] in=92,212 (cached=90,112) out=537 | cumulative $0.2979
+  [HTTP_GET] https://signor.uniroma2.it/API/getHumanData.php?MECHANISM=phosphorylation
+         -> ok (15048 chars)
+[TURN 19] Calling model...
+  [TOKENS] in=97,758 (cached=92,160) out=348 | cumulative $0.3193
+  [HTTP_GET] https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.zip
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 20] Calling model...
+  [TOKENS] in=98,141 (cached=96,256) out=212 | cumulative $0.3374
+  [HTTP_GET] https://www.ndexbio.org/#/network?uuid=signor
+         -> ok (15045 chars)
+[TURN 21] Calling model...
+  [TOKENS] in=104,623 (cached=96,256) out=738 | cumulative $0.3637
+  [HTTP_GET] https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.csv
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 22] Calling model...
+  [TOKENS] in=105,396 (cached=104,448) out=38 | cumulative $0.3814
+  [HTTP_GET] https://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.txt
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 23] Calling model...
+  [TOKENS] in=105,469 (cached=104,448) out=117 | cumulative $0.3996
+  [HTTP_GET] https://r.jina.ai/http://www.phosphosite.org/downloads/Kinase_Substrate_Dataset.
+         -> ERROR: HTTP Error 422: Unprocessable Entity
+[TURN 24] Calling model...
+  [TOKENS] in=105,623 (cached=104,448) out=270 | cumulative $0.4185
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=keyword:KW-0418+AND+organism_id:
+         -> ok (15048 chars)
+[TURN 25] Calling model...
+  [TOKENS] in=110,348 (cached=104,448) out=149 | cumulative $0.4414
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=keyword:KW-0418+AND+organism_id:
+         -> ok (15047 chars)
+[TURN 26] Calling model...
+  [TOKENS] in=114,952 (cached=108,544) out=220 | cumulative $0.4657
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=keyword:KW-0418+AND+organism_id:
+         -> ok (11372 chars)
+[TURN 27] Calling model...
+  [TOKENS] in=118,780 (cached=114,688) out=236 | cumulative $0.4889
+  [HTTP_GET] https://github.com/cellsignal/phosphositeplus
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 28] Calling model...
+  [TOKENS] in=119,051 (cached=116,736) out=1,629 | cumulative $0.5163
+  [HTTP_GET] https://www.phosphosite.org/api/
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 29] Calling model...
+  [TOKENS] in=120,715 (cached=118,784) out=51 | cumulative $0.5373
+  [HTTP_GET] https://www.phosphosite.org/webservice
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 30] Calling model...
+  [TOKENS] in=120,801 (cached=118,784) out=462 | cumulative $0.5601
+  [HTTP_GET] http://dbptm.mbc.nctu.edu.tw/api.php?type=kinase_substrate&kinase=AKT1
+         -> ERROR: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[TURN 31] Calling model...
+  [TOKENS] in=121,311 (cached=118,784) out=107 | cumulative $0.5819
+  [HTTP_GET] http://regphos.mbc.nctu.edu.tw/
+         -> ERROR: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[TURN 32] Calling model...
+  [TOKENS] in=121,466 (cached=120,832) out=97 | cumulative $0.6023
+  [HTTP_GET] https://raw.githubusercontent.com/cellsignal/phosphositeplus/master/Kinase_Subst
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 33] Calling model...
+  [TOKENS] in=121,598 (cached=120,832) out=1,239 | cumulative $0.6273
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=keyword:KW-0418+AND+organism_id:
+         -> ok (15046 chars)
+[TURN 34] Calling model...
+  [TOKENS] in=127,598 (cached=120,832) out=128 | cumulative $0.6536
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=keyword:KW-0418+AND+organism_id:
+         -> ok (15045 chars)
+[TURN 35] Calling model...
+  [TOKENS] in=132,487 (cached=126,976) out=85 | cumulative $0.6795
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=keyword:KW-0418+AND+organism_id:
+         -> ok (15045 chars)
+[TURN 36] Calling model...
+  [TOKENS] in=137,333 (cached=131,072) out=85 | cumulative $0.7067
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=keyword:KW-0418+AND+organism_id:
+         -> ok (11372 chars)
+[TURN 37] Calling model...
+  [TOKENS] in=141,026 (cached=137,216) out=424 | cumulative $0.7340
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=keyword:KW-0418+AND+organism_id:
+         -> ok (11372 chars)
+[TURN 38] Calling model...
+  [TOKENS] in=145,058 (cached=139,264) out=351 | cumulative $0.7632
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=keyword:KW-0418+AND+organism_id:
+         -> ERROR: HTTP Error 400: Bad Request
+[TURN 39] Calling model...
+  [TOKENS] in=145,444 (cached=143,360) out=145 | cumulative $0.7887
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=keyword:KW-0418+AND+organism_id:
+         -> ERROR: HTTP Error 400: Bad Request
+[TURN 40] Calling model...
+  [TOKENS] in=145,624 (cached=145,408) out=250 | cumulative $0.8131
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=keyword:KW-0418+AND+organism_id:
+         -> ERROR: HTTP Error 500: Internal Server Error
+[TURN 41] Calling model...
+  [TOKENS] in=145,910 (cached=145,408) out=1,607 | cumulative $0.8433
+  [HTTP_GET] https://raw.githubusercontent.com/search?o=desc&q=Kinase_Substrate_Dataset&s=ind
+         -> ERROR: HTTP Error 400: Bad Request
+[TURN 42] Calling model...
+  [TOKENS] in=147,552 (cached=145,408) out=301 | cumulative $0.8698
+  [HTTP_GET] http://phospho.elm.eu.org/phosphoELM_all_latest.dump.tgz
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 43] Calling model...
+  [TOKENS] in=147,888 (cached=147,456) out=40 | cumulative $0.8940
+  [HTTP_GET] http://phospho.elm.eu.org/dataset.html
+         -> ok (6368 chars)
+[TURN 44] Calling model...
+  [TOKENS] in=149,800 (cached=147,456) out=897 | cumulative $0.9234
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=cc_ptm:(phosphorylated+by+AKT1)+
+         -> ok (8435 chars)
+[TURN 45] Calling model...
+  [TOKENS] in=153,626 (cached=149,504) out=312 | cumulative $0.9525
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/P49841?format=json&fields=accession,gene_name
+         -> ok (2031 chars)
+[TURN 46] Calling model...
+  [TOKENS] in=154,607 (cached=153,600) out=587 | cumulative $0.9804
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=cc_ptm:(phosphorylated+by+AKT1)+
+         -> ok (11871 chars)
+[TURN 47] Calling model...
+  [TOKENS] in=159,301 (cached=153,600) out=277 | cumulative $1.0115
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/accessions/P49841,P31749?format=json&fields=a
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 48] Calling model...
+  [TOKENS] in=159,613 (cached=157,696) out=153 | cumulative $1.0391
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?format=json&query=accession:P49841+OR+
+         -> ok (7992 chars)
+[TURN 49] Calling model...
+  [TOKENS] in=162,508 (cached=157,696) out=667 | cumulative $1.0716
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?format=json&query=keyword:KW-0418+AND+
+         -> ok (15046 chars)
+[TURN 50] Calling model...
+  [TOKENS] in=168,035 (cached=161,792) out=167 | cumulative $1.1041
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?format=json&query=keyword:KW-0418+AND+
+         -> ok (15046 chars)
+[TURN 51] Calling model...
+  [TOKENS] in=173,385 (cached=167,936) out=1,931 | cumulative $1.1438
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?format=json&query=accession:Q96QF0+OR+
+         -> ok (15045 chars)
+[TURN 52] Calling model...
+  [TOKENS] in=180,477 (cached=172,032) out=466 | cumulative $1.1813
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?format=json&query=accession:Q96QF0+OR+
+         -> ok (14668 chars)
+[TURN 53] Calling model...
+  [TOKENS] in=186,614 (cached=180,224) out=734 | cumulative $1.2191
+  [HTTP_GET] https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=GSK3A+
+         -> ok (459 chars)
+[TURN 54] Calling model...
+  [TOKENS] in=187,528 (cached=186,368) out=447 | cumulative $1.2518
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?format=json&query=accession:Q15910+OR+
+         -> ok (15045 chars)
+[TURN 55] Calling model...
+  [TOKENS] in=193,463 (cached=186,368) out=253 | cumulative $1.2894
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?format=json&query=accession:Q15910+OR+
+         -> ok (11663 chars)
+[TURN 56] Calling model...
+  [TOKENS] in=197,328 (cached=192,512) out=691 | cumulative $1.3275
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=cc_ptm:(phosphorylated+by+CDK1)+
+         -> ok (15045 chars)
+[TURN 57] Calling model...
+  [TOKENS] in=203,200 (cached=196,608) out=641 | cumulative $1.3678
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=cc_ptm:(phosphorylated+by+AKT1)+
+         -> ok (15045 chars)
+[TURN 58] Calling model...
+  [NUDGE] context at 77% of window — demanding submit_kinases_known_atlas
+  [TOKENS] in=208,530 (cached=202,752) out=18,799 | cumulative $1.4809
+  [SUBMIT] received 24 kinase records
+[DONE] Turns: 58, Records: 24, Elapsed: 1707.3s
+
+[SCORE] Running evaluation scorer...
+  Atlas size:       42
+  Recall:           0.0024
+  Precision:        0.881
+  F1:               0.0048
+  Kinases found:    23/433
+  Peptide accuracy: 0.0
+
+Outputs in: /Users/bornakarimi/Documents/ucsf/agents/agent-pa-benchmark/contributions/kimi_tony_informed/iteration_0_baseline/kinases_known/

@@ -1,0 +1,381 @@
+{
+  "agent": "Kimi (kimi-k2.6)",
+  "model": "kimi-k2.6",
+  "provider_base_url": "https://api.moonshot.ai/v1",
+  "condition": "kinases_known",
+  "tier": "iteration_0_baseline",
+  "strategy_summary": "Curated human kinases and substrates by querying UniProt modified-residue annotations (ft_mod_res) for explicit kinase mentions (e.g., 'by PKB/AKT1') with supporting primary-literature PMIDs, supplemented with direct phosphorylation edges parsed from the SIGNOR human dataset (phosphorylation mechanism, residue-level). Only substrate sites with a direct PMID or UniProt curation were retained.",
+  "turns": 58,
+  "elapsed_seconds": 1707.3,
+  "records_submitted": 24,
+  "atlas_size_flat": 42,
+  "unique_kinases": 24,
+  "unique_substrates": 38,
+  "multi_db_entries": 0,
+  "databases_accessed": [],
+  "token_usage": {
+    "total_input_tokens": 6815647,
+    "total_input_tokens_cached": 6554624,
+    "total_input_tokens_uncached": 261023,
+    "total_output_tokens": 46054,
+    "total_tokens": 6861701,
+    "estimated_cost_usd": 1.4809,
+    "api_calls": 58,
+    "pricing": {
+      "provider": "Moonshot AI (Kimi)",
+      "input_per_1m_cache_hit": 0.16,
+      "input_per_1m_cache_miss": 0.95,
+      "output_per_1m": 4.0
+    },
+    "per_call": [
+      {
+        "turn": 1,
+        "input_tokens_cached": 0,
+        "input_tokens_uncached": 1206,
+        "output_tokens": 895
+      },
+      {
+        "turn": 2,
+        "input_tokens_cached": 1024,
+        "input_tokens_uncached": 6107,
+        "output_tokens": 649
+      },
+      {
+        "turn": 3,
+        "input_tokens_cached": 6144,
+        "input_tokens_uncached": 32761,
+        "output_tokens": 527
+      },
+      {
+        "turn": 4,
+        "input_tokens_cached": 36864,
+        "input_tokens_uncached": 2603,
+        "output_tokens": 523
+      },
+      {
+        "turn": 5,
+        "input_tokens_cached": 38912,
+        "input_tokens_uncached": 6142,
+        "output_tokens": 481
+      },
+      {
+        "turn": 6,
+        "input_tokens_cached": 43008,
+        "input_tokens_uncached": 2562,
+        "output_tokens": 57
+      },
+      {
+        "turn": 7,
+        "input_tokens_cached": 45056,
+        "input_tokens_uncached": 606,
+        "output_tokens": 112
+      },
+      {
+        "turn": 8,
+        "input_tokens_cached": 45056,
+        "input_tokens_uncached": 753,
+        "output_tokens": 46
+      },
+      {
+        "turn": 9,
+        "input_tokens_cached": 45056,
+        "input_tokens_uncached": 833,
+        "output_tokens": 1751
+      },
+      {
+        "turn": 10,
+        "input_tokens_cached": 45056,
+        "input_tokens_uncached": 33709,
+        "output_tokens": 523
+      },
+      {
+        "turn": 11,
+        "input_tokens_cached": 77824,
+        "input_tokens_uncached": 1498,
+        "output_tokens": 1295
+      },
+      {
+        "turn": 12,
+        "input_tokens_cached": 77824,
+        "input_tokens_uncached": 2828,
+        "output_tokens": 116
+      },
+      {
+        "turn": 13,
+        "input_tokens_cached": 79872,
+        "input_tokens_uncached": 931,
+        "output_tokens": 98
+      },
+      {
+        "turn": 14,
+        "input_tokens_cached": 79872,
+        "input_tokens_uncached": 1064,
+        "output_tokens": 170
+      },
+      {
+        "turn": 15,
+        "input_tokens_cached": 79872,
+        "input_tokens_uncached": 5211,
+        "output_tokens": 881
+      },
+      {
+        "turn": 16,
+        "input_tokens_cached": 83968,
+        "input_tokens_uncached": 7132,
+        "output_tokens": 979
+      },
+      {
+        "turn": 17,
+        "input_tokens_cached": 90112,
+        "input_tokens_uncached": 2002,
+        "output_tokens": 63
+      },
+      {
+        "turn": 18,
+        "input_tokens_cached": 90112,
+        "input_tokens_uncached": 2100,
+        "output_tokens": 537
+      },
+      {
+        "turn": 19,
+        "input_tokens_cached": 92160,
+        "input_tokens_uncached": 5598,
+        "output_tokens": 348
+      },
+      {
+        "turn": 20,
+        "input_tokens_cached": 96256,
+        "input_tokens_uncached": 1885,
+        "output_tokens": 212
+      },
+      {
+        "turn": 21,
+        "input_tokens_cached": 96256,
+        "input_tokens_uncached": 8367,
+        "output_tokens": 738
+      },
+      {
+        "turn": 22,
+        "input_tokens_cached": 104448,
+        "input_tokens_uncached": 948,
+        "output_tokens": 38
+      },
+      {
+        "turn": 23,
+        "input_tokens_cached": 104448,
+        "input_tokens_uncached": 1021,
+        "output_tokens": 117
+      },
+      {
+        "turn": 24,
+        "input_tokens_cached": 104448,
+        "input_tokens_uncached": 1175,
+        "output_tokens": 270
+      },
+      {
+        "turn": 25,
+        "input_tokens_cached": 104448,
+        "input_tokens_uncached": 5900,
+        "output_tokens": 149
+      },
+      {
+        "turn": 26,
+        "input_tokens_cached": 108544,
+        "input_tokens_uncached": 6408,
+        "output_tokens": 220
+      },
+      {
+        "turn": 27,
+        "input_tokens_cached": 114688,
+        "input_tokens_uncached": 4092,
+        "output_tokens": 236
+      },
+      {
+        "turn": 28,
+        "input_tokens_cached": 116736,
+        "input_tokens_uncached": 2315,
+        "output_tokens": 1629
+      },
+      {
+        "turn": 29,
+        "input_tokens_cached": 118784,
+        "input_tokens_uncached": 1931,
+        "output_tokens": 51
+      },
+      {
+        "turn": 30,
+        "input_tokens_cached": 118784,
+        "input_tokens_uncached": 2017,
+        "output_tokens": 462
+      },
+      {
+        "turn": 31,
+        "input_tokens_cached": 118784,
+        "input_tokens_uncached": 2527,
+        "output_tokens": 107
+      },
+      {
+        "turn": 32,
+        "input_tokens_cached": 120832,
+        "input_tokens_uncached": 634,
+        "output_tokens": 97
+      },
+      {
+        "turn": 33,
+        "input_tokens_cached": 120832,
+        "input_tokens_uncached": 766,
+        "output_tokens": 1239
+      },
+      {
+        "turn": 34,
+        "input_tokens_cached": 120832,
+        "input_tokens_uncached": 6766,
+        "output_tokens": 128
+      },
+      {
+        "turn": 35,
+        "input_tokens_cached": 126976,
+        "input_tokens_uncached": 5511,
+        "output_tokens": 85
+      },
+      {
+        "turn": 36,
+        "input_tokens_cached": 131072,
+        "input_tokens_uncached": 6261,
+        "output_tokens": 85
+      },
+      {
+        "turn": 37,
+        "input_tokens_cached": 137216,
+        "input_tokens_uncached": 3810,
+        "output_tokens": 424
+      },
+      {
+        "turn": 38,
+        "input_tokens_cached": 139264,
+        "input_tokens_uncached": 5794,
+        "output_tokens": 351
+      },
+      {
+        "turn": 39,
+        "input_tokens_cached": 143360,
+        "input_tokens_uncached": 2084,
+        "output_tokens": 145
+      },
+      {
+        "turn": 40,
+        "input_tokens_cached": 145408,
+        "input_tokens_uncached": 216,
+        "output_tokens": 250
+      },
+      {
+        "turn": 41,
+        "input_tokens_cached": 145408,
+        "input_tokens_uncached": 502,
+        "output_tokens": 1607
+      },
+      {
+        "turn": 42,
+        "input_tokens_cached": 145408,
+        "input_tokens_uncached": 2144,
+        "output_tokens": 301
+      },
+      {
+        "turn": 43,
+        "input_tokens_cached": 147456,
+        "input_tokens_uncached": 432,
+        "output_tokens": 40
+      },
+      {
+        "turn": 44,
+        "input_tokens_cached": 147456,
+        "input_tokens_uncached": 2344,
+        "output_tokens": 897
+      },
+      {
+        "turn": 45,
+        "input_tokens_cached": 149504,
+        "input_tokens_uncached": 4122,
+        "output_tokens": 312
+      },
+      {
+        "turn": 46,
+        "input_tokens_cached": 153600,
+        "input_tokens_uncached": 1007,
+        "output_tokens": 587
+      },
+      {
+        "turn": 47,
+        "input_tokens_cached": 153600,
+        "input_tokens_uncached": 5701,
+        "output_tokens": 277
+      },
+      {
+        "turn": 48,
+        "input_tokens_cached": 157696,
+        "input_tokens_uncached": 1917,
+        "output_tokens": 153
+      },
+      {
+        "turn": 49,
+        "input_tokens_cached": 157696,
+        "input_tokens_uncached": 4812,
+        "output_tokens": 667
+      },
+      {
+        "turn": 50,
+        "input_tokens_cached": 161792,
+        "input_tokens_uncached": 6243,
+        "output_tokens": 167
+      },
+      {
+        "turn": 51,
+        "input_tokens_cached": 167936,
+        "input_tokens_uncached": 5449,
+        "output_tokens": 1931
+      },
+      {
+        "turn": 52,
+        "input_tokens_cached": 172032,
+        "input_tokens_uncached": 8445,
+        "output_tokens": 466
+      },
+      {
+        "turn": 53,
+        "input_tokens_cached": 180224,
+        "input_tokens_uncached": 6390,
+        "output_tokens": 734
+      },
+      {
+        "turn": 54,
+        "input_tokens_cached": 186368,
+        "input_tokens_uncached": 1160,
+        "output_tokens": 447
+      },
+      {
+        "turn": 55,
+        "input_tokens_cached": 186368,
+        "input_tokens_uncached": 7095,
+        "output_tokens": 253
+      },
+      {
+        "turn": 56,
+        "input_tokens_cached": 192512,
+        "input_tokens_uncached": 4816,
+        "output_tokens": 691
+      },
+      {
+        "turn": 57,
+        "input_tokens_cached": 196608,
+        "input_tokens_uncached": 6592,
+        "output_tokens": 641
+      },
+      {
+        "turn": 58,
+        "input_tokens_cached": 202752,
+        "input_tokens_uncached": 5778,
+        "output_tokens": 18799
+      }
+    ]
+  }
+}

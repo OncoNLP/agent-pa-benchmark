@@ -1,0 +1,1821 @@
+[
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "SOCS3",
+    "phospho_site": "Y204",
+    "substrate_uniprot": "O14543",
+    "supporting_databases": [
+      "KEA",
+      "MIMP",
+      "PhosphoNetworks",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "SOCS3",
+    "phospho_site": "Y221",
+    "substrate_uniprot": "O14543",
+    "supporting_databases": [
+      "KEA",
+      "MIMP",
+      "PhosphoNetworks",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "TERT",
+    "phospho_site": "Y707",
+    "substrate_uniprot": "O14746",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y651",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "HPRD",
+      "KEA",
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y595",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "HPRD",
+      "KEA",
+      "PhosphoNetworks",
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y697",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "HPRD",
+      "KEA",
+      "PhosphoNetworks"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y625",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y571",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y771",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y559",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y755",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y757",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y780",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y569",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "MIMP",
+      "PhosphoSite_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y581",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "MIMP",
+      "PhosphoSite_MIMP",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y605",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "MIMP",
+      "PhosphoSite_MIMP",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y707",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "MIMP",
+      "PhosphoSite_MIMP",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y811",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "MIMP",
+      "PhosphoSite_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y813",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "MIMP",
+      "PhosphoSite_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y827",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "MIMP",
+      "PhosphoSite_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "FYN",
+    "substrate_gene": "FYB1",
+    "phospho_site": "Y836",
+    "substrate_uniprot": "O15117",
+    "supporting_databases": [
+      "MIMP",
+      "PhosphoSite_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "PLSCR1",
+    "phospho_site": "Y74",
+    "substrate_uniprot": "O15162",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "HPRD_MIMP",
+      "KEA",
+      "Li2012",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "PLSCR1",
+    "phospho_site": "Y69",
+    "substrate_uniprot": "O15162",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "HPRD_MIMP",
+      "KEA",
+      "Li2012",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PLSCR1",
+    "phospho_site": "Y74",
+    "substrate_uniprot": "O15162",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "KEA",
+      "Li2012",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PLSCR1",
+    "phospho_site": "Y69",
+    "substrate_uniprot": "O15162",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "HPRD_MIMP",
+      "KEA",
+      "Li2012",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "ABL1",
+    "substrate_gene": "TP73",
+    "phospho_site": "Y99",
+    "substrate_uniprot": "O15350",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "NCI-PID_ProtMapper",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CDK2",
+    "substrate_gene": "TP73",
+    "phospho_site": "T86",
+    "substrate_uniprot": "O15350",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "TP73",
+    "phospho_site": "S47",
+    "substrate_uniprot": "O15350",
+    "supporting_databases": [
+      "KEA",
+      "MIMP",
+      "NCI-PID_ProtMapper",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "AURKB",
+    "substrate_gene": "BIRC5",
+    "phospho_site": "T117",
+    "substrate_uniprot": "O15392",
+    "supporting_databases": [
+      "KEA",
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "dbPTM",
+      "phosphoELM"
+    ]
+  },
+  {
+    "kinase_gene": "AURKB",
+    "substrate_gene": "BIRC5",
+    "phospho_site": "T34",
+    "substrate_uniprot": "O15392",
+    "supporting_databases": [
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "CDK1",
+    "substrate_gene": "BIRC5",
+    "phospho_site": "T34",
+    "substrate_uniprot": "O15392",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y373",
+    "substrate_uniprot": "O15530",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y9",
+    "substrate_uniprot": "O15530",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite_MIMP",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y376",
+    "substrate_uniprot": "O15530",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y246",
+    "substrate_uniprot": "O15530",
+    "supporting_databases": [
+      "HPRD",
+      "KEA"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y485",
+    "substrate_uniprot": "O15530",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y249",
+    "substrate_uniprot": "O15530",
+    "supporting_databases": [
+      "KEA"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y358",
+    "substrate_uniprot": "O15530",
+    "supporting_databases": [
+      "KEA"
+    ]
+  },
+  {
+    "kinase_gene": "RET",
+    "substrate_gene": "PDPK1",
+    "phospho_site": "Y9",
+    "substrate_uniprot": "O15530",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "PRKCQ",
+    "substrate_gene": "WIPF1",
+    "phospho_site": "S488",
+    "substrate_uniprot": "O43516",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoNetworks",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "FOXO3",
+    "phospho_site": "S644",
+    "substrate_uniprot": "O43524",
+    "supporting_databases": [
+      "KEA",
+      "MIMP",
+      "NCI-PID_ProtMapper",
+      "PhosphoNetworks",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "FOXO3",
+    "phospho_site": "S280",
+    "substrate_uniprot": "O43524",
+    "supporting_databases": [
+      "PhosphoNetworks"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "FOXO3",
+    "phospho_site": "S294",
+    "substrate_uniprot": "O43524",
+    "supporting_databases": [
+      "ProtMapper",
+      "Sparser_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "S19",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite_MIMP",
+      "ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "S33",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "S50",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite_MIMP",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "S35",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "T68",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "RPS6KB2",
+    "substrate_gene": "HSPB1",
+    "phospho_site": "T110",
+    "substrate_uniprot": "P04792",
+    "supporting_databases": [
+      "PhosphoNetworks"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "T26",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "S28",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "T383",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "ProtMapper",
+      "Sparser_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "T387",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "ProtMapper",
+      "Sparser_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "S15",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "REACH_ProtMapper",
+      "Sparser_ProtMapper",
+      "ProtMapper",
+      "RLIMS-P_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "S516",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "REACH_ProtMapper",
+      "Sparser_ProtMapper",
+      "ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "TTK",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "T68",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "T68",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "T26",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite_MIMP",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "T205",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "PhosphoNetworks",
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "S164",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "PhosphoNetworks",
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "PLK1",
+    "substrate_gene": "CHEK2",
+    "phospho_site": "S210",
+    "substrate_uniprot": "O96017",
+    "supporting_databases": [
+      "PhosphoNetworks",
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "ATM",
+    "substrate_gene": "ABL1",
+    "phospho_site": "S446",
+    "substrate_uniprot": "P00519",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "HPRD",
+      "KEA",
+      "PhosphoSite",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "phosphoELM"
+    ]
+  },
+  {
+    "kinase_gene": "TTK",
+    "substrate_gene": "ABL1",
+    "phospho_site": "T735",
+    "substrate_uniprot": "P00519",
+    "supporting_databases": [
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "phosphoELM"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "S20",
+    "substrate_uniprot": "P04637",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "NCI-PID_ProtMapper",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "Reactome_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "S15",
+    "substrate_uniprot": "P04637",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "T18",
+    "substrate_uniprot": "P04637",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "S366",
+    "substrate_uniprot": "P04637",
+    "supporting_databases": [
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "S378",
+    "substrate_uniprot": "P04637",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "S37",
+    "substrate_uniprot": "P04637",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "T387",
+    "substrate_uniprot": "P04637",
+    "supporting_databases": [
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "TP53",
+    "phospho_site": "T377",
+    "substrate_uniprot": "P04637",
+    "supporting_databases": [
+      "ProtMapper",
+      "Sparser_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "NFKB1",
+    "phospho_site": "S923",
+    "substrate_uniprot": "P19838",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "KEA",
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "phosphoELM"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "NFKB1",
+    "phospho_site": "S927",
+    "substrate_uniprot": "P19838",
+    "supporting_databases": [
+      "NCI-PID_ProtMapper",
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "dbPTM",
+      "phosphoELM"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "NFKB1",
+    "phospho_site": "S932",
+    "substrate_uniprot": "P19838",
+    "supporting_databases": [
+      "NCI-PID_ProtMapper",
+      "PhosphoSite",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "dbPTM"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "NFKB1",
+    "phospho_site": "S924",
+    "substrate_uniprot": "P19838",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoNetworks",
+      "PhosphoSite_MIMP",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "NFKB1",
+    "phospho_site": "S928",
+    "substrate_uniprot": "P19838",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoNetworks",
+      "PhosphoSite_MIMP",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "NFKB1",
+    "phospho_site": "S80",
+    "substrate_uniprot": "P19838",
+    "supporting_databases": [
+      "PhosphoSite"
+    ]
+  },
+  {
+    "kinase_gene": "IKBKB",
+    "substrate_gene": "NFKB1",
+    "phospho_site": "S933",
+    "substrate_uniprot": "P19838",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "MIMP",
+      "PhosphoSite_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "CDC25A",
+    "phospho_site": "S124",
+    "substrate_uniprot": "P30304",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "NCI-PID_ProtMapper",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "Reactome_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "CDC25A",
+    "phospho_site": "S76",
+    "substrate_uniprot": "P30304",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "RLIMS-P_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "CDC25A",
+    "phospho_site": "S279",
+    "substrate_uniprot": "P30304",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "NCI-PID_ProtMapper",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "CDC25A",
+    "phospho_site": "S293",
+    "substrate_uniprot": "P30304",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "NCI-PID_ProtMapper",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "CDC25A",
+    "phospho_site": "T507",
+    "substrate_uniprot": "P30304",
+    "supporting_databases": [
+      "KEA",
+      "MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "CDC25A",
+    "phospho_site": "S178",
+    "substrate_uniprot": "P30304",
+    "supporting_databases": [
+      "HPRD",
+      "HPRD_MIMP",
+      "KEA",
+      "MIMP",
+      "NCI-PID_ProtMapper",
+      "PhosphoSite",
+      "PhosphoSite_MIMP",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "REACH_ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Sparser_ProtMapper",
+      "dbPTM",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "CDC25A",
+    "phospho_site": "S239",
+    "substrate_uniprot": "P30304",
+    "supporting_databases": [
+      "HPRD",
+      "KEA"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "CDC25A",
+    "phospho_site": "S253",
+    "substrate_uniprot": "P30304",
+    "supporting_databases": [
+      "HPRD",
+      "KEA"
+    ]
+  },
+  {
+    "kinase_gene": "CHEK1",
+    "substrate_gene": "CDC25A",
+    "phospho_site": "T467",
+    "substrate_uniprot": "P30304",
+    "supporting_databases": [
+      "KEA"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y869",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "NCI-PID_ProtMapper",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "Sparser_ProtMapper",
+      "MIMP",
+      "KEA",
+      "SIGNOR_ProtMapper",
+      "HPRD_MIMP",
+      "PhosphoSite",
+      "phosphoELM",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP",
+      "RLIMS-P_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y944",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "Sparser_ProtMapper",
+      "MIMP",
+      "KEA",
+      "REACH_ProtMapper",
+      "HPRD_MIMP",
+      "PhosphoSite",
+      "phosphoELM",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y915",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "MIMP",
+      "KEA",
+      "HPRD_MIMP",
+      "PhosphoSite",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y1016",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "PhosphoSite_ProtMapper",
+      "NCI-PID_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "MIMP",
+      "KEA",
+      "SIGNOR_ProtMapper",
+      "HPRD_MIMP",
+      "PhosphoSite",
+      "phosphoELM",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP",
+      "Reactome_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y1125",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "Li2012",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "Sparser_ProtMapper",
+      "MIMP",
+      "KEA",
+      "SIGNOR_ProtMapper",
+      "REACH_ProtMapper",
+      "HPRD_MIMP",
+      "PhosphoSite",
+      "phosphoELM",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP",
+      "RLIMS-P_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y1172",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "NCI-PID_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "Reactome_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y1110",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "PhosphoSite_ProtMapper",
+      "NCI-PID_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "SIGNOR_ProtMapper",
+      "PhosphoSite",
+      "Reactome_ProtMapper",
+      "RLIMS-P_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y1092",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "NCI-PID_ProtMapper",
+      "ProtMapper",
+      "MIMP",
+      "KEA",
+      "HPRD_MIMP",
+      "Reactome_ProtMapper",
+      "PhosphoSite",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP",
+      "HPRD"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y998",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "MIMP",
+      "KEA",
+      "HPRD_MIMP",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP",
+      "HPRD"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y764",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "MIMP",
+      "KEA",
+      "PhosphoSite",
+      "PhosphoSite_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y727",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "MIMP",
+      "KEA",
+      "HPRD_MIMP",
+      "PhosphoSite",
+      "PhosphoSite_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y1069",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "NCI-PID_ProtMapper",
+      "ProtMapper",
+      "Reactome_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y1197",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "NCI-PID_ProtMapper",
+      "Sparser_ProtMapper",
+      "ProtMapper",
+      "Reactome_ProtMapper",
+      "RLIMS-P_ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "EGFR",
+    "phospho_site": "Y891",
+    "substrate_uniprot": "P00533",
+    "supporting_databases": [
+      "REACH_ProtMapper",
+      "Sparser_ProtMapper",
+      "ProtMapper"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "GAST",
+    "phospho_site": "Y87",
+    "substrate_uniprot": "P01350",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "ProtMapper",
+      "MIMP",
+      "KEA",
+      "phosphoELM",
+      "phosphoELM_MIMP"
+    ]
+  },
+  {
+    "kinase_gene": "EGFR",
+    "substrate_gene": "CALM2",
+    "phospho_site": "Y100",
+    "substrate_uniprot": "P0DP24",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "MIMP",
+      "KEA",
+      "SIGNOR_ProtMapper",
+      "HPRD_MIMP",
+      "phosphoELM",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP",
+      "HPRD"
+    ]
+  },
+  {
+    "kinase_gene": "EGFR",
+    "substrate_gene": "CALM1",
+    "phospho_site": "Y100",
+    "substrate_uniprot": "P0DP23",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "MIMP",
+      "KEA",
+      "SIGNOR_ProtMapper",
+      "HPRD_MIMP",
+      "phosphoELM",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP",
+      "HPRD"
+    ]
+  },
+  {
+    "kinase_gene": "EGFR",
+    "substrate_gene": "CALM3",
+    "phospho_site": "Y100",
+    "substrate_uniprot": "P0DP25",
+    "supporting_databases": [
+      "BEL-Large-Corpus_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "MIMP",
+      "KEA",
+      "SIGNOR_ProtMapper",
+      "HPRD_MIMP",
+      "phosphoELM",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP",
+      "HPRD"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "CALM2",
+    "phospho_site": "Y100",
+    "substrate_uniprot": "P0DP24",
+    "supporting_databases": [
+      "ProtMapper",
+      "SIGNOR",
+      "MIMP",
+      "KEA",
+      "SIGNOR_ProtMapper",
+      "HPRD_MIMP",
+      "phosphoELM",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP",
+      "HPRD"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "CALM2",
+    "phospho_site": "Y139",
+    "substrate_uniprot": "P0DP24",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "HPRD",
+      "MIMP",
+      "KEA"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "CALM1",
+    "phospho_site": "Y100",
+    "substrate_uniprot": "P0DP23",
+    "supporting_databases": [
+      "ProtMapper",
+      "SIGNOR",
+      "MIMP",
+      "KEA",
+      "SIGNOR_ProtMapper",
+      "HPRD_MIMP",
+      "phosphoELM",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP",
+      "HPRD"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "CALM1",
+    "phospho_site": "Y139",
+    "substrate_uniprot": "P0DP23",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "HPRD",
+      "MIMP",
+      "KEA"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "CALM3",
+    "phospho_site": "Y100",
+    "substrate_uniprot": "P0DP25",
+    "supporting_databases": [
+      "ProtMapper",
+      "SIGNOR",
+      "MIMP",
+      "KEA",
+      "SIGNOR_ProtMapper",
+      "HPRD_MIMP",
+      "phosphoELM",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP",
+      "HPRD"
+    ]
+  },
+  {
+    "kinase_gene": "INSR",
+    "substrate_gene": "CALM3",
+    "phospho_site": "Y139",
+    "substrate_uniprot": "P0DP25",
+    "supporting_databases": [
+      "HPRD_MIMP",
+      "HPRD",
+      "MIMP",
+      "KEA"
+    ]
+  },
+  {
+    "kinase_gene": "LCK",
+    "substrate_gene": "ESR1",
+    "phospho_site": "Y537",
+    "substrate_uniprot": "P03372",
+    "supporting_databases": [
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "MIMP",
+      "KEA",
+      "SIGNOR_ProtMapper",
+      "HPRD_MIMP",
+      "PhosphoSite",
+      "phosphoELM",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP",
+      "HPRD"
+    ]
+  },
+  {
+    "kinase_gene": "SRC",
+    "substrate_gene": "ESR1",
+    "phospho_site": "Y537",
+    "substrate_uniprot": "P03372",
+    "supporting_databases": [
+      "Li2012",
+      "PhosphoSite_ProtMapper",
+      "ProtMapper",
+      "SIGNOR",
+      "Sparser_ProtMapper",
+      "MIMP",
+      "KEA",
+      "SIGNOR_ProtMapper",
+      "REACH_ProtMapper",
+      "HPRD_MIMP",
+      "PhosphoSite",
+      "phosphoELM",
+      "phosphoELM_MIMP",
+      "PhosphoSite_MIMP",
+      "HPRD",
+      "RLIMS-P_ProtMapper"
+    ]
+  }
+]
