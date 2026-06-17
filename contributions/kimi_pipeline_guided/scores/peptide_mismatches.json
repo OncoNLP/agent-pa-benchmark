@@ -1,0 +1,16 @@
+[
+  {
+    "kinase": "CSNK1A1",
+    "substrate": "PSEN2",
+    "site": "S7",
+    "gold_peptide": "_MLTFMAsDsEEEVC",
+    "agent_peptide": "sDSEEEVC"
+  },
+  {
+    "kinase": "MAPK1",
+    "substrate": "PARVA",
+    "site": "S4",
+    "gold_peptide": "____MAtsPQKsPsV",
+    "agent_peptide": "sPQKSPSV"
+  }
+]

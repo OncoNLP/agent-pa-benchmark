@@ -1,0 +1,22 @@
+# Phosphatase universe — POPULATE BEFORE RUNNING.
+#
+# One HGNC gene symbol per line. Anything after the first tab is ignored.
+# Comments (#) and blank lines OK.
+#
+# Sourcing options (decision pending — see kimi_tony_informed/CLAUDE.md
+# "Open issues" section):
+#
+#   1. DEPOD human phosphatase list (~200 entries):
+#        https://depod.bioss.uni-freiburg.de/download/DEPOD_PPase_human.txt
+#
+#   2. UniProt query — reviewed human entries with EC:3.1.3.* and family
+#      annotation containing PTP / DUSP / PPP / PPM:
+#        https://rest.uniprot.org/uniprotkb/search?query=ec:3.1.3+AND+organism_id:9606+AND+reviewed:true&format=tsv&fields=gene_primary,protein_families
+#
+#   3. Checked-in HGNC group export — gene groups 692/693/694 cover
+#      PTP / DUSP / PPP-PPM families.
+#
+# Tony's Kinome_Kinase_List.xlsx does NOT include phosphatases (it's a
+# kinome list), so it isn't a source for this list.
+#
+# Until populated, the runner will exit with a clear error message.

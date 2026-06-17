@@ -1,0 +1,177 @@
+[START] Running Kimi naive zero-shot agent with HTTP tools (model=kimi-k2.6)
+[TURN 1] Calling model...
+  [TOKENS] in=516 (cached=0) out=814 | cumulative $0.0037
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+AND+annotation:
+         -> ERROR: HTTP Error 400: Bad Request
+  [HTTP_GET] https://www.phosphosite.org/home/restapi
+         -> ERROR: HTTP Error 404: Not Found
+  [HTTP_GET] https://reactome.org/ContentService/data/schema/PhysicalEntity
+         -> ERROR: HTTP Error 400: 
+[TURN 2] Calling model...
+  [TOKENS] in=1,425 (cached=512) out=220 | cumulative $0.0056
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+annotation:(typ
+         -> ERROR: HTTP Error 400: Bad Request
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=P53_HUMAN&fields=accession,gene_
+         -> ok (10270 chars)
+  [HTTP_GET] https://www.phosphosite.org/home/restapi/showSites
+         -> ERROR: HTTP Error 404: Not Found
+[TURN 3] Calling model...
+  [TOKENS] in=4,924 (cached=1,024) out=1,867 | cumulative $0.0169
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (14 chars)
+  [HTTP_GET] http://phospho.elm.eu.org/api/querySequences
+         -> ERROR: HTTP Error 404: Not Found
+  [HTTP_GET] https://dbptm.mbc.nctu.edu.tw/
+         -> ERROR: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+  [HTTP_GET] https://signor.uniroma2.it/download.php
+         -> ERROR: <urlopen error [Errno 60] Operation timed out>
+[TURN 4] Calling model...
+  [TOKENS] in=6,935 (cached=4,096) out=1,101 | cumulative $0.0247
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+ft_mod_res:*pho
+         -> ok (15125 chars)
+  [HTTP_GET] https://reactome.org/ContentService/search/query?query=phosphorylation&species=H
+         -> ok (15124 chars)
+  [HTTP_GET] https://webservice.thebiogrid.org/interactions/?searchNames=true&geneList=TP53&o
+         -> ERROR: HTTP Error 401: Unauthorized
+  [HTTP_GET] https://www.ebi.ac.uk/intact/ws/interaction/findInteractor/TP53
+         -> ERROR: HTTP Error 404: 
+[TURN 5] Calling model...
+  [TOKENS] in=18,337 (cached=6,144) out=2,342 | cumulative $0.0466
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+ft_mod_res:*pho
+         -> ok (2267 chars)
+  [HTTP_GET] https://www.phosphosite.org/home/restapi/showSites?gene=TP53
+         -> ERROR: HTTP Error 404: Not Found
+  [HTTP_GET] https://www.phosphosite.org/home/restapi/showKinases
+         -> ERROR: HTTP Error 404: Not Found
+  [HTTP_GET] https://phospho.elm.eu.org/
+         -> ERROR: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1017)>
+  [HTTP_GET] http://localhost:8080
+         -> ERROR: <urlopen error [Errno 61] Connection refused>
+[TURN 6] Calling model...
+  [TOKENS] in=21,736 (cached=16,384) out=3,160 | cumulative $0.0669
+  [HTTP_GET] http://phospho.elm.eu.org/
+         -> ok (15124 chars)
+  [HTTP_GET] https://www.phosphosite.org/downloads/
+         -> ERROR: HTTP Error 403: Forbidden
+  [HTTP_GET] https://reactome.org/ContentService/data/query/R-HSA-74742
+         -> ok (6884 chars)
+  [HTTP_GET] https://reactome.org/ContentService/data/participants/R-HSA-74742
+         -> ok (2209 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (15125 chars)
+[TURN 7] Calling model...
+  [TOKENS] in=38,220 (cached=20,480) out=3,372 | cumulative $0.1006
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (3500 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (3500 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (3336 chars)
+  [HTTP_GET] http://phospho.elm.eu.org/dataset.html
+         -> ok (6368 chars)
+[TURN 8] Calling model...
+  [TOKENS] in=50,212 (cached=36,864) out=1,006 | cumulative $0.1232
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (3500 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (3500 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (3336 chars)
+  [HTTP_GET] http://phospho.elm.eu.org/byAccession/P04637.html
+         -> ok (15124 chars)
+[TURN 9] Calling model...
+  [TOKENS] in=63,299 (cached=49,152) out=2,410 | cumulative $0.1541
+  [HTTP_GET] http://phospho.elm.eu.org/byAccession/P04637.csv
+         -> ok (4100 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/accessions?accessions=O75030,P06401,Q08050,O9
+         -> ok (15125 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/search?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (15124 chars)
+[TURN 10] Calling model...
+  [TOKENS] in=77,415 (cached=61,440) out=6,626 | cumulative $0.2056
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (15126 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/accessions?accessions=O75030,P06401,Q08050,O9
+         -> ok (15124 chars)
+[TURN 11] Calling model...
+  [TOKENS] in=94,672 (cached=75,776) out=998 | cumulative $0.2397
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (9918 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (6094 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (3336 chars)
+[TURN 12] Calling model...
+  [TOKENS] in=108,215 (cached=94,208) out=2,210 | cumulative $0.2769
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=accession:A0MZ66+OR+accession:A1
+         -> ok (9345 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/accessions?accessions=A0MZ66,A1A5B4,A6NNZ2,B2
+         -> ok (15125 chars)
+[TURN 13] Calling model...
+  [TOKENS] in=120,294 (cached=106,496) out=1,773 | cumulative $0.3142
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (15126 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (15126 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=organism_id:9606+ft_mod_res:(pho
+         -> ok (15125 chars)
+[TURN 14] Calling model...
+  [TOKENS] in=143,372 (cached=118,784) out=2,750 | cumulative $0.3675
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=accession:A0MZ66+OR+accession:A1
+         -> ok (15124 chars)
+[TURN 15] Calling model...
+  [TOKENS] in=153,375 (cached=143,360) out=8,486 | cumulative $0.4339
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=accession:A0MZ66+OR+accession:A1
+         -> ok (14618 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/accessions?accessions=P04637,P06401,Q08050,O9
+         -> ok (4133 chars)
+[TURN 16] Calling model...
+  [TOKENS] in=170,390 (cached=151,552) out=4,673 | cumulative $0.4947
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/accessions?accessions=A0MZ66,A1A5B4,A6NNZ2,B2
+         -> ok (15124 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=accession:O00571+OR+accession:O0
+         -> ok (15124 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=accession:O15156+OR+accession:O1
+         -> ok (15124 chars)
+[TURN 17] Calling model...
+  [TOKENS] in=196,024 (cached=169,984) out=6,791 | cumulative $0.5738
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/accessions?accessions=O00571,O00622,O00763,O1
+         -> ok (7318 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/accessions?accessions=O14777,O14791,O14827,O1
+         -> ok (6699 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/accessions?accessions=O14974,O14994,O15111,O1
+         -> ok (8358 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/accessions?accessions=O15259,O15264,O15294,O1
+         -> ok (7887 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/accessions?accessions=O43156,O43164,O43166,O4
+         -> ok (9026 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=accession:O43181+OR+accession:O4
+         -> ok (15124 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=accession:O43683+OR+accession:O4
+         -> ok (15124 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=accession:O60506+OR+accession:O6
+         -> ok (15124 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=accession:O75116+OR+accession:O7
+         -> ok (15124 chars)
+  [HTTP_GET] https://rest.uniprot.org/uniprotkb/stream?query=accession:O75582+OR+accession:O7
+         -> ok (10791 chars)
+[TURN 18] Calling model...
+  [TOKENS] in=254,036 (cached=194,560) out=8,107 | cumulative $0.6939
+  [TEXT] ...
+[TURN 19] Calling model...
+  [NUDGE] context at 96% of window — demanding submit_atlas
+  [TOKENS] in=208,917 (cached=512) out=29,132 | cumulative $1.0085
+  [SUBMIT] Atlas received: 385 entries
+[DONE] Turns: 19, Atlas entries: 385, Elapsed: 2208.5s
+
+[SCORE] Running evaluation scorer...
+  Atlas size:       385
+  Recall:           0.01
+  Precision:        0.4149
+  F1:               0.0195
+  Kinases found:    54/433
+  Peptide accuracy: 0.0
+
+Outputs in: /Users/bornakarimi/Documents/ucsf/agent-pa-benchmark/contributions/kimi_naive/
+  atlas.json, run_log.json
+  scores/summary.json, scores/per_kinase.json, scores/peptide_mismatches.json

@@ -1,0 +1,150 @@
+{
+  "agent": "Kimi (kimi-k2.6)",
+  "model": "kimi-k2.6",
+  "provider_base_url": "https://api.moonshot.ai/v1",
+  "condition": "naive",
+  "strategy_summary": "Systematic curation of human kinase-substrate-phosphosite relationships from three primary sources: (1) UniProt KB accessed via REST API streaming and batch TSV/JSON queries for proteins with ft_mod_res annotations containing explicit kinase assignments ('by KINASE') for phosphoserine, phosphothreonine, and phosphotyrosine residues across the human proteome; (2) Phospho.ELM CSV downloads for individual substrates (e.g., P04637/TP53) providing manually curated kinase-site relationships with sequence context; (3) Reactome ContentService API for structured phosphorylation reactions (e.g., INSR->SHC1 Y427). Entries were cross-referenced across databases where overlapping relationships were identified, and heptameric peptides were derived from retrieved FASTA sequences where available. The atlas captures 272 distinct kinase-substrate-site triplets with explicit kinase annotations.",
+  "databases_accessed": [
+    "Phospho.ELM",
+    "Reactome",
+    "UniProt"
+  ],
+  "tool_calls": 19,
+  "turns": 19,
+  "elapsed_seconds": 2208.5,
+  "atlas_size": 385,
+  "unique_kinases": 98,
+  "unique_substrates": 110,
+  "multi_db_entries": 8,
+  "token_usage": {
+    "total_input_tokens": 1732314,
+    "total_input_tokens_cached": 1251328,
+    "total_input_tokens_uncached": 480986,
+    "total_output_tokens": 87838,
+    "total_tokens": 1820152,
+    "estimated_cost_usd": 1.0085,
+    "api_calls": 19,
+    "pricing": {
+      "provider": "Moonshot AI (Kimi)",
+      "input_per_1m_cache_hit": 0.16,
+      "input_per_1m_cache_miss": 0.95,
+      "output_per_1m": 4.0
+    },
+    "per_call": [
+      {
+        "turn": 1,
+        "input_tokens_cached": 0,
+        "input_tokens_uncached": 516,
+        "output_tokens": 814
+      },
+      {
+        "turn": 2,
+        "input_tokens_cached": 512,
+        "input_tokens_uncached": 913,
+        "output_tokens": 220
+      },
+      {
+        "turn": 3,
+        "input_tokens_cached": 1024,
+        "input_tokens_uncached": 3900,
+        "output_tokens": 1867
+      },
+      {
+        "turn": 4,
+        "input_tokens_cached": 4096,
+        "input_tokens_uncached": 2839,
+        "output_tokens": 1101
+      },
+      {
+        "turn": 5,
+        "input_tokens_cached": 6144,
+        "input_tokens_uncached": 12193,
+        "output_tokens": 2342
+      },
+      {
+        "turn": 6,
+        "input_tokens_cached": 16384,
+        "input_tokens_uncached": 5352,
+        "output_tokens": 3160
+      },
+      {
+        "turn": 7,
+        "input_tokens_cached": 20480,
+        "input_tokens_uncached": 17740,
+        "output_tokens": 3372
+      },
+      {
+        "turn": 8,
+        "input_tokens_cached": 36864,
+        "input_tokens_uncached": 13348,
+        "output_tokens": 1006
+      },
+      {
+        "turn": 9,
+        "input_tokens_cached": 49152,
+        "input_tokens_uncached": 14147,
+        "output_tokens": 2410
+      },
+      {
+        "turn": 10,
+        "input_tokens_cached": 61440,
+        "input_tokens_uncached": 15975,
+        "output_tokens": 6626
+      },
+      {
+        "turn": 11,
+        "input_tokens_cached": 75776,
+        "input_tokens_uncached": 18896,
+        "output_tokens": 998
+      },
+      {
+        "turn": 12,
+        "input_tokens_cached": 94208,
+        "input_tokens_uncached": 14007,
+        "output_tokens": 2210
+      },
+      {
+        "turn": 13,
+        "input_tokens_cached": 106496,
+        "input_tokens_uncached": 13798,
+        "output_tokens": 1773
+      },
+      {
+        "turn": 14,
+        "input_tokens_cached": 118784,
+        "input_tokens_uncached": 24588,
+        "output_tokens": 2750
+      },
+      {
+        "turn": 15,
+        "input_tokens_cached": 143360,
+        "input_tokens_uncached": 10015,
+        "output_tokens": 8486
+      },
+      {
+        "turn": 16,
+        "input_tokens_cached": 151552,
+        "input_tokens_uncached": 18838,
+        "output_tokens": 4673
+      },
+      {
+        "turn": 17,
+        "input_tokens_cached": 169984,
+        "input_tokens_uncached": 26040,
+        "output_tokens": 6791
+      },
+      {
+        "turn": 18,
+        "input_tokens_cached": 194560,
+        "input_tokens_uncached": 59476,
+        "output_tokens": 8107
+      },
+      {
+        "turn": 19,
+        "input_tokens_cached": 512,
+        "input_tokens_uncached": 208405,
+        "output_tokens": 29132
+      }
+    ]
+  }
+}
